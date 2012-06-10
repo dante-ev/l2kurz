@@ -24,10 +24,10 @@
    latexsym,
    lmodern,
    graphicx,
-   textcomp,
-   hyperref}
+   textcomp}
 
-
+% Zum Schluss laden:
+\usepackage{hyperref}
 
 \hypersetup{%
   pdftitle={LaTeX2e-Kurzbeschreibung},
@@ -119,12 +119,13 @@
   \kern-.1em/\kern-.15em%
   \lower.25ex\hbox{\scriptsize #2}}
 
-\nonfrenchspacing      % german.sty sets frenchspacing automatically.
-%  However, some examples are pointless with frenchspacing in action. 
-%  Besides, the larger space after a sentence make the text more readable.
 
 
 \begin{document}
+
+\nonfrenchspacing      % babel sets frenchspacing automatically.
+%  However, some examples are pointless with frenchspacing in action. 
+%  Besides, the larger space after a sentence make the text more readable.
 
 \begin{titlepage}
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}

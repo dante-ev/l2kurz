@@ -31,15 +31,7 @@ so bezieht sich das normalerweise auch auf \texttt{ngerman}.
 
 
 \subsection{Zeilen- und Seiten-Umbruch}
- 
-\newenvironment{specialparskip}{%
-  \par
-  \setlength{\parindent}{0pt}%
-  \setlength{\parskip}{5pt plus 2pt minus 1pt}%
-}{%
-  \par
-}
- 
+
 \subsubsection{Blocksatz}
 
 Normaler Text wird im Blocksatz, d.\,h.~mit Randausgleich
@@ -226,6 +218,7 @@ einen Satz beenden.
 Ausnahmen von diesen Regeln muss man \LaTeX\ mit den folgenden
 Befehlen mitteilen:
 
+% Todo: bessere Beschreibung (schaltet nur den extra Leerraum nach einem Satzende bei \nonfrenchspacing aus)
 Ein Backslash (\verb:\:) vor einem Leerzeichen bedeutet, dass diese
 Leerstelle nicht verbreitert werden darf.
 
