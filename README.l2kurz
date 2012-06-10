@@ -1,0 +1,24 @@
+Dieses Verzeichnis enthaelt die deutschsprachige
+LaTeX2e-Kurzbeschreibung als PDF und als LaTeX-Quelltext.
+
+l2kurz.pdf
+  PDF, formatiert fuer 1-seitigen Ausdruck
+
+l2kurz2.pdf  
+  PDF, formatiert fuer doppelseitigen Ausdruck
+  
+l2kurz.tex  (Stammdatei)
+l2k1.tex 
+l2k2.tex 
+l2k3.tex 
+l2k4.tex
+l2k5.tex 
+l2k6.tex, 
+l2ka.tex 
+l2ksym.tex 
+a.ps
+  LaTeX-Quelltext, benoetigt TC-Fonts und hyperref.sty
+
+Bitte, senden Sie Kommentare, Aenderungswuensche oder
+Hinweise auf Fehler an Walter Schmidt <w-a-schmidt@arcor.de>
+

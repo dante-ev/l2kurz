@@ -1,0 +1,601 @@
+% master: l2kurz.tex
+% L2K3.TEX - 3.Teil der LaTeX2e-Kurzbeschreibung v2.2
+% L2K3.TEX - 3.Teil der LaTeX2e-Kurzbeschreibung Mainz 1994, 1995
+% LK3.TEX  - 3.Teil der LaTeX-Kurzbeschreibung Graz-Wien 1987
+% last changes: 2001-06-10
+
+\section{Setzen von mathematischen Formeln} \label{math}
+ 
+\subsection{Allgemeines}
+ 
+Mathematische Textteile innerhalb eines Absatzes werden zwischen
+\verb|\(| und~\verb|\)| oder zwischen \verb|$| und~\verb|$| oder
+zwischen \verb|\begin{math}| und \verb|\end{math}|
+eingeschlossen.
+Als mathematische Texte gelten sowohl komplette mathematische
+Formeln als auch einzelne Variablennamen, die sich auf Formeln
+beziehen, griechische Buchstaben und diverse Sonderzeichen.
+\exa
+Seien \(a\) und \(b\) die Katheten
+und \(c\) die Hypotenuse,
+dann gilt \(c^{2}=a^{2}+b^{2}\)
+(Satz des Pythagoras).
+\exb
+\begin{verbatim}
+Seien \(a\) und \(b\) die Katheten
+und \(c\) die Hypotenuse,
+dann gilt \(c^{2}=a^{2}+b^{2}\)
+(Satz des Pythagoras).
+\end{verbatim}
+\exc
+\exa
+\TeX\ spricht man wie
+ \(\tau\epsilon\chi\) aus.\\[6pt]
+Mit \(\heartsuit\)-lichen
+ Gr"u"sen
+\exb
+\begin{verbatim}
+\TeX\ spricht man wie
+ \(\tau\epsilon\chi\) aus.\\
+Mit \(\heartsuit\)-lichen
+ Gr"u"sen
+\end{verbatim}
+\exc
+ 
+%\begin{sloppypar}
+%\hbadness=2000\relax %% `underfull hbox'-Fehlermeldung aus
+Gr"o"sere mathematische Formeln oder Gleichungen setzt man besser
+in eigene Zeilen. Wenn sie \emph{keine} Gleichungsnummer erhalten 
+sollen, stellt man sie dazu zwischen \verb|\begin{displaymath}| und
+\verb|\end{displaymath}| oder zwischen \verb|\[| und~\verb|\]|; 
+wenn sie eine Gleichungsnummer erhalten sollen, stellt man sie
+zwischen \verb|\begin{equation}| und \verb|\end{equation}|.
+%\end{sloppypar}
+\exa
+Seien \(a\) und \(b\) die Katheten
+und \(c\) die Hypotenuse,
+dann gilt
+\begin{equation}
+c = \sqrt{  a^{2}+b^{2}  }
+\end{equation}
+(Satz des Pythagoras).
+\exb
+\begin{verbatim}
+Seien \(a\) und \(b\) die Katheten
+und \(c\) die Hypotenuse,
+dann gilt
+\begin{equation}
+c = \sqrt{  a^{2}+b^{2}  }
+\end{equation}
+(Satz des Pythagoras).
+\end{verbatim}
+\exc
+
+Mit \verb|\label| und \verb|\ref| kann man die Gleichungsnummern
+im Text ansprechen.
+
+\exa
+\begin{equation} \label{eps}
+\varepsilon > 0
+\end{equation}
+ 
+Aus (\ref{eps}) folgt \dots
+\exb
+\begin{verbatim}
+\begin{equation} \label{eps}
+\varepsilon > 0
+\end{equation}
+ 
+Aus (\ref{eps}) folgt \dots
+\end{verbatim}
+\exc
+ 
+ 
+ 
+Das Setzen im mathematischen Modus unterscheidet sich vom
+Text-Modus vor allem durch folgende Punkte:
+\begin{enumerate}
+\item Leerzeilen sind verboten (Mathematische Formeln m"ussen
+  innerhalb eines Absatzes stehen).
+
+\item Leerstellen und Zeilenwechsel haben bei der Eingabe keine
+  Bedeutung, alle Ab"-st"ande werden nach der Logik der
+  mathematischen Aus"-dr"u"cke automatisch bestimmt oder m"ussen
+  durch spezielle Befehle wie \verb|\,| oder~\verb|\qquad|
+  angegeben werden.
+\exa
+\begin{equation}
+\forall x \in \mathbf{R}:
+\qquad x^{2} \geq 0
+\end{equation}
+\exb
+\begin{verbatim}
+\begin{equation}
+\forall x \in \mathbf{R}:
+\qquad x^{2} \geq 0
+\end{equation}
+\end{verbatim}
+\exc
+ 
+\item Jeder einzelne Buchstabe wird als Name einer Variablen
+  betrachtet und entsprechend gesetzt (kursiv mit
+  zu"-s"atz"-lichem Abstand).  Will man innerhalb eines
+  mathematischen Textes normalen Text (in aufrechter Schrift, mit
+  Wort"-ab"-st"anden) setzen, mu"s man diesen in
+  \verb|\textnormal{...}| einschlie"sen.
+\exa
+\begin{equation}
+x^{2} \geq 0\qquad
+\textnormal{f"ur alle }
+x \in \mathbf{R}
+\end{equation}
+\exb
+\begin{verbatim}
+\begin{equation}
+x^{2} \geq 0\qquad
+\textnormal{f"ur alle }
+x \in \mathbf{R}
+\end{equation}
+\end{verbatim}
+\exc
+ 
+ 
+\end{enumerate}
+ 
+\subsection{Elemente in mathematischen Formeln}
+ 
+In diesem Abschnitt werden die wichtigsten Elemente, die in
+mathematischen Formeln verwendet werden, kurz beschrieben.  Eine
+Liste aller ver"-f"ug"-baren Symbole ent"-h"alt
+Kapitel~\ref{symbols}.
+ 
+\bigskip
+
+\begin{sloppypar} 
+\hbadness=1550\relax %% `underfull hbox'-Fehlermeldung aus
+Kleine \textbf{griechische Buchstaben} werden als \verb|\alpha|,
+\verb|\beta|, \verb|\gamma|, \verb|\delta|, usw.\ eingegeben,
+gro"se griechische Buchstaben als \verb|\mathrm{A}|,
+\verb|\mathrm{B}|, \verb|\Gamma|, \verb|\Delta|, usw.
+\end{sloppypar}
+\exa
+\(\lambda, \xi, \pi, \mu,
+ \Phi, \Omega \)
+\exb
+\begin{verbatim}
+\(\lambda, \xi, \pi, \mu,
+ \Phi, \Omega \)
+\end{verbatim}
+\exc
+ 
+Weiters gibt es eine F"ulle von \textbf{mathematischen Symbolen}:
+von \(\in\) "uber \(\Rightarrow\) bis~\(\infty\) (siehe
+Kapitel~\ref{symbols}).
+ 
+\bigskip
+
+Neben der voreingestellten Kursivschrift f"ur die Variablen
+bietet \LaTeX\ eine Auswahl von mathematischen \textbf{Alphabeten} an:
+\exa
+\(\mathrm{ABCabc}\) \\
+\(\mathbf{ABCabc}\) \\
+\(\mathsf{ABCabc}\) \\
+\(\mathtt{ABCabc}\) \\
+\(\mathcal{ABC}\)
+\exb
+\begin{verbatim}
+\(\mathrm{ABCabc}\)
+\(\mathbf{ABCabc}\)
+\(\mathsf{ABCabc}\)
+\(\mathtt{ABCabc}\)
+\(\mathcal{ABC}\)
+\end{verbatim}
+\exc
+Die kalligraphischen Buchstaben (\verb:\mathcal:) gibt es nur als
+Gro"sbuchstaben. Mit dem Paket \texttt{amsymb} \cite{ch8} stehen
+auch Alphabete fÅr Mengenzeichen und Frakturschrift zur Verf"ugung.
+Lokal k"onnen noch weitere installiert sein -- siehe \local.
+
+
+\bigskip
+
+\textbf{Exponenten und Indizes} k"onnen mit den Zeichen \verb|^|
+und \verb|_| hoch- bzw.\ tiefgestellt werden.
+\exa
+\(a_{1}\) \qquad
+\(x^{2}\) \qquad
+\(e^{-\alpha t}\) \qquad
+\(a^{3}_{ij}\)
+\exb
+\begin{verbatim}
+\(a_{1}\) \qquad
+\(x^{2}\) \qquad
+\(e^{-\alpha t}\) \qquad
+\(a^{3}_{ij}\)
+\end{verbatim}
+\exc
+ 
+Das \textbf{Wurzelzeichen} wird mit \verb|\sqrt|, \textit{n}-te
+Wurzeln werden mit \verb|\sqrt[|\textit{n}\verb|]| eingegeben.
+Die Gr"o"se des Wurzelzeichens wird von \LaTeX\ automatisch
+ge"-w"ahlt.
+\exa
+\(\sqrt{x}\) \qquad
+\(\sqrt{ x^{2}+\sqrt{y} }\)
+\qquad \(\sqrt[3]{2}\)
+\exb
+\begin{verbatim}
+\(\sqrt{x}\) \qquad
+\(\sqrt{ x^{2}+\sqrt{y} }\)
+\qquad \(\sqrt[3]{2}\)
+\end{verbatim}
+\exc
+ 
+Die Befehle \verb|\overline| und \verb|\underline| bewirken
+\textbf{waagrechte Striche} direkt "uber bzw.\ unter einem
+Ausdruck.
+\exa
+\(\overline{m+n}\)
+\exb
+\begin{verbatim}
+\(\overline{m+n}\)
+\end{verbatim}
+\exc
+ 
+Die Befehle \verb|\overbrace| und \verb|\underbrace| bewirken
+\textbf{waagrechte Klammern} "uber bzw.\ unter einem Ausdruck.
+\exa
+\(\underbrace{a+b+\cdots+z}_{26}\)
+\exb
+\begin{verbatim}
+\(\underbrace{a+b+\cdots+z}_{26}\)
+\end{verbatim}
+\exc
+ 
+Um mathematische \textbf{Akzente} wie Pfeile oder Schlangen auf
+Variablen zu setzen, gibt es die in Tabelle~\ref{mathakz} auf
+Seite~\pageref{mathakz} an"-ge"-f"uhrten Befehle.
+L"angere Tilden und Dacherln, die sich "uber mehrere (bis zu~3)
+Zeichen erstrecken k"onnen, er"-h"alt man mit \verb|\widetilde|
+bzw.\ \verb|\widehat|.
+Ableitungszeichen werden mit \verb|'| (Apostroph) eingegeben.
+\exa
+\begin{displaymath}
+y=x^{2} \qquad
+y'=2x   \qquad
+y''=2
+\end{displaymath}
+\exb
+\begin{verbatim}
+\begin{displaymath}
+y=x^{2} \qquad
+y'=2x   \qquad
+y''=2
+\end{displaymath}
+\end{verbatim}
+\exc
+ 
+Mathematische \textbf{Funktionen} werden in der Literatur
+"ublicherweise nicht kursiv (wie die Namen von Variablen),
+sondern in "`normaler"' Schrift dargestellt.
+\LaTeX\ stellt die folgenden Befehle f"ur mathematische
+Funktionen zur Ver"-f"ugung:
+\begin{verbatim}
+\arccos   \cos    \csc   \exp   \ker     \limsup  \min   \sinh
+\arcsin   \cosh   \deg   \gcd   \lg      \ln      \Pr    \sup
+\arctan   \cot    \det   \hom   \lim     \log     \sec   \tan
+\arg      \coth   \dim   \inf   \liminf  \max     \sin   \tanh
+\end{verbatim}
+F"ur die Modulo-Funktion gibt es zwei verschiedene Befehle:
+\verb|\bmod| f"ur den bin"aren Operator \(a \bmod b\) und
+\verb|\pmod{...}| f"ur die Angabe in der Form \(x\equiv a
+\pmod{b}\).
+ 
+\exa
+\begin{displaymath}
+\lim_{x \to 0} \frac{\sin x}{x}
+=1
+\end{displaymath}
+\exb
+\begin{verbatim}
+\begin{displaymath}
+\lim_{x \to 0} \frac{\sin x}{x}
+=1
+\end{displaymath}
+\end{verbatim}
+\exc
+ 
+Ein \textbf{Bruch} (fraction) wird mit dem Befehl
+\verb|\frac{...}{...}| gesetzt.  F"ur einfache Br"uche kann man
+aber auch den Operator~\verb|/| verwenden.
+\exa
+\(1\frac{1}{2}\)~Stunden
+\begin{displaymath}
+\frac{ x^{2} }{ k+1 } \qquad
+x^{ \frac{2}{k+1} } \qquad
+x^{ 1/2 }
+\end{displaymath}
+\exb
+\begin{verbatim}
+\(1\frac{1}{2}\)~Stunden
+\begin{displaymath}
+\frac{ x^{2} }{ k+1 } \qquad
+x^{ \frac{2}{k+1} } \qquad
+x^{ 1/2 }
+\end{displaymath}
+\end{verbatim}
+\exc
+
+\textbf{Binomial-Koeffizienten} k"onnen in der Form
+\verb|{...\choose...}| gesetzt werden.
+Mit dem Befehl~\verb|\atop| er"-h"alt man das Gleiche ohne
+Klammern.
+\exa
+\begin{displaymath}
+{ n \choose k } \qquad
+{ x\atop y+2 }
+\end{displaymath}
+\exb
+\begin{verbatim}
+\begin{displaymath}
+{ n \choose k } \qquad
+{ x\atop y+2 }
+\end{displaymath}
+\end{verbatim}
+\exc
+
+\medskip
+
+Das \textbf{Integralzeichen} wird mit \verb|\int| eingegeben, das
+\textbf{Summenzeichen} mit \verb|\sum|.
+Die obere und untere Grenze wird mit \verb|^| bzw.~\verb|_| wie
+beim \mbox{Hoch-}\slash Tief"-stellen angegeben.
+ 
+Normalerweise werden die Grenzen neben das Integralzeichen
+gesetzt (um Platz zu sparen), durch Ein"-f"ugen des Befehls
+\verb|\limits| wird erreicht, da"s die Grenzen oberhalb und
+unterhalb des Integralzeichens gesetzt werden.
+ 
+Beim Summenzeichen hingegen werden die Grenzen bei der Angabe von
+\verb|\nolimits| oder im laufenden Text neben das Summenzeichen
+gesetzt, ansonsten aber unter- und oberhalb.
+\exa
+\begin{displaymath}
+\sum_{i=1}^{n} \qquad
+\int_{0}^{\frac{\pi}{2}} \qquad
+\int \limits_{-\infty}^{+\infty}
+\end{displaymath}
+\exb
+\begin{verbatim}
+\begin{displaymath}
+\sum_{i=1}^{n} \qquad
+\int_{0}^{\frac{\pi}{2}} \qquad
+\int \limits_{-\infty}^{+\infty}
+\end{displaymath}
+\end{verbatim}
+\exc
+ 
+F"ur \textbf{Klammern} und andere Begrenzer gibt es in \TeX\ 
+viele verschiedene Symbole
+(z.\,B.~\([\;\langle\;\|\;\updownarrow\)).
+Runde und eckige Klammern k"onnen mit den entsprechenden Tasten
+eingegeben werden, geschwungene mit~\verb|\{|, die anderen mit
+speziellen Befehlen (z.\,B.~\verb|\updownarrow|).
+ 
+Setzt man den Befehl \verb|\left| vor "offnende Klammern und den
+Befehl \verb|\right| vor schlie"sende, so wird automatisch die
+richtige Gr"o"se ge"-w"ahlt.
+\exa
+\begin{displaymath}
+1 + \left( \frac{1}{ 1-x^{2} }
+    \right) ^3
+\end{displaymath}
+\exb
+\begin{verbatim}
+\begin{displaymath}
+1 + \left( \frac{1}{ 1-x^{2} }
+    \right) ^3
+\end{displaymath}
+\end{verbatim}
+\exc
+ 
+In manchen F"allen m"ochte man die Gr"o"se der Klammern lieber
+selbst festlegen, dazu sind die Befehle
+\verb|\bigl|,
+\verb|\Bigl|,
+\verb|\biggl| und
+\verb|\Biggl| anstelle von \verb|\left|
+und analog \verb|\bigr| etc.\ anstelle von \verb|\right|
+anzugeben.
+\exa
+\begin{displaymath}
+\Bigl( (x+1) (x-1) \Bigr) ^{2}
+\end{displaymath}
+\exb
+\begin{verbatim}
+\begin{displaymath}
+\Bigl( (x+1) (x-1) \Bigr) ^{2}
+\end{displaymath}
+\end{verbatim}
+\exc
+ 
+Um in Formeln \textbf{3~Punkte} (z.\,B.\ f"ur \(1,2,\ldots,n\))
+auszugeben, gibt es die Befehle
+\verb|\ldots| und \verb|\cdots|.
+\verb|\ldots| setzt die Punkte auf die Grundlinie (low),
+\verb|\cdots| setzt sie in die Mitte der Zeilen"-h"ohe
+(centered).
+Au"serdem gibt es die Befehle
+\verb|\vdots| f"ur vertikal und
+\verb|\ddots| f"ur diagonal angeordnete Punkte.
+\exa
+\begin{displaymath}
+x_{1},\ldots,x_{n} \qquad
+x_{1}+\cdots+x_{n}
+\end{displaymath}
+\exb
+\begin{verbatim}
+\begin{displaymath}
+x_{1},\ldots,x_{n} \qquad
+x_{1}+\cdots+x_{n}
+\end{displaymath}
+\end{verbatim}
+\exc
+
+
+\subsection{Nebeneinander Setzen}
+ 
+Wenn man mit den von \TeX\ ge"-w"ahlten \textbf{Ab"-st"anden}
+innerhalb von Formeln nicht zufrieden ist, kann man sie mit
+expliziten Befehlen ver"-"andern. Die wichtigsten sind
+\verb|\,| f"ur einen sehr kleinen Abstand,
+\verb*|\ | f"ur einen mittleren,
+\verb|\quad| und \verb|\qquad| f"ur gro"se Ab"-st"ande sowie
+\verb|\!| f"ur die Verkleinerung eines Abstands.
+\exa
+\begin{displaymath}
+F_{n} = F_{n-1} + F_{n-2}
+ \qquad n \ge 2
+\end{displaymath}
+\exb
+\begin{verbatim}
+\begin{displaymath}
+F_{n} = F_{n-1} + F_{n-2}
+ \qquad n \ge 2
+\end{displaymath}
+\end{verbatim}
+\exc
+ 
+\exa
+\begin{displaymath}
+\int\!\!\!\int_{D} \mathrm{d}x\,\mathrm{d}y
+\quad \textnormal{statt} \quad
+\int\int_{D} \mathrm{d}x \mathrm{d}y
+\end{displaymath}
+\exb
+\begin{verbatim}
+\begin{displaymath}
+\int\!\!\!\int_{D} 
+\mathrm{d}x\,\mathrm{d}y
+\quad \textnormal{statt} \quad
+\int\int_{D} 
+\mathrm{d}x \mathrm{d}y
+\end{displaymath}
+\end{verbatim}
+\exc
+
+
+\subsection{"Ubereinander Setzen}
+
+F"ur \textbf{Matrizen} u.\,"a.\ gibt es die
+\texttt{array}-Umgebung, die "ahnlich wie die
+\texttt{tabular}-Umgebung funktioniert.
+Der Befehl~\verb|\\| trennt die Zeilen.
+\exa
+\begin{displaymath}
+\mathbf{X} =
+\left( \begin{array}{ccc}
+x_{11} & x_{12} & \ldots \\
+x_{21} & x_{22} & \ldots \\
+\vdots & \vdots & \ddots
+\end{array} \right)
+\end{displaymath}
+\exb
+\begin{verbatim}
+\begin{displaymath}
+\mathbf{X} =
+\left( \begin{array}{ccc}
+x_{11} & x_{12} & \ldots \\
+x_{21} & x_{22} & \ldots \\
+\vdots & \vdots & \ddots
+\end{array} \right)
+\end{displaymath}
+\end{verbatim}
+\exc
+
+\begin{sloppypar}
+F"ur \textbf{mehrzeilige} Formeln oder Gleichungssysteme
+verwendet man die Umgebungen \texttt{eqnarray} und
+\texttt{eqnarray*} statt \texttt{equation}.
+Bei \texttt{eqnarray} er"-h"alt jede Zeile eine eigene
+Gleichungsnummer, bei \texttt{eqnarray*} wird ebenso wie bei
+\texttt{displaymath} \emph{keine} Nummer hinzu"-ge"-f"ugt.
+F"ur Gleichungssysteme, die \emph{eine} gemeinsame Nummer
+erhalten sollen, kann man eine \texttt{array}-Umgebung innerhalb
+der \texttt{equation}-Umgebung verwenden.
+\end{sloppypar}
+
+Die Umgebungen \texttt{eqnarray} und \texttt{eqnarray*}
+funktionieren wie eine 3-spaltige Tabelle der Form~\verb|{rcl}|,
+wobei die mittlere Spalte f"ur das Gleichheits- oder
+Ungleichheitszeichen verwendet wird, nach dem die Zeilen
+ausgerichtet werden sollen.
+Der Befehl~\verb|\\| trennt die Zeilen.
+\exa
+\begin{eqnarray}
+f(x) & = & \cos x       \\
+f'(x) & = & -\sin x     \\
+\int_{0}^{x} f(y)\,\mathrm{d}y &
+ = & \sin x
+\end{eqnarray}
+\exb
+\begin{verbatim}
+\begin{eqnarray}
+f(x) & = & \cos x       \\
+f'(x) & = & -\sin x     \\
+\int_{0}^{x} f(y)\,\mathrm{d}y &
+ = & \sin x
+\end{eqnarray}
+\end{verbatim}
+\exc
+ 
+\textbf{Zu lange Gleichungen} werden von \LaTeX\ \textit{nicht}
+automatisch abgeteilt.
+Der Autor mu"s bestimmen, an welcher Stelle abgeteilt und wie
+weit ein"-ge"-r"uckt werden soll.
+Meistens verwendet man da"-f"ur eine der beiden folgenden
+Varianten:
+\exa
+\begin{eqnarray}
+\sin x & = & x -\frac{x^{3}}{3!}
+     +\frac{x^{5}}{5!} - {} % empty group for correct spacing
+                            % around the `-'
+                    \nonumber\\
+ & &{} -\frac{x^{7}}{7!} + \cdots % ditto
+\end{eqnarray}
+\exb
+\begin{verbatim}
+\begin{eqnarray}
+\sin x & = & x -\frac{x^{3}}{3!}
+     +\frac{x^{5}}{5!} - {} 
+                    \nonumber\\
+ & &{} -\frac{x^{7}}{7!} + \cdots
+\end{eqnarray}
+\end{verbatim}
+\exc
+\exa
+\begin{eqnarray}
+\lefteqn{ \cos x = 1
+     -\frac{x^{2}}{2!} + {} }
+                    \nonumber\\
+ & & {} +\frac{x^{4}}{4!}
+     -\frac{x^{6}}{6!} + \cdots
+\end{eqnarray}
+\exb
+\begin{verbatim}
+\begin{eqnarray}
+\lefteqn{ \cos x = 1
+     -\frac{x^{2}}{2!} +{} }
+                    \nonumber\\
+ & &{} +\frac{x^{4}}{4!}
+     -\frac{x^{6}}{6!} + \cdots
+\end{eqnarray}
+\end{verbatim}
+\exc
+Der Befehl \verb|\nonumber| bewirkt, da"s an diese Stelle keine
+Gleichungsnummer gesetzt wird.
+Der Befehl \verb|\lefteqn| er"-m"og"-licht Ausnahmen von der
+Spaltenaufteilung innerhalb \texttt{eqnarray}. 
+Genauere Informationen ent"-h"alt das \manual.
+
+\endinput

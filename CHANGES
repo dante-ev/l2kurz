@@ -1,0 +1,361 @@
+============================================================
+Aenderungen von Version 2.2 zu 2.3  2003-04-10 (WaS)
+
+* Die Kurzbeschreibung wird unter die "GNU Free 
+  Documentation License" gestellt.
+  
+* 7.3 (Andere Schriftfamilien):  Erwaehnung von mathpazo
+  statt mathpple
+  
+* 8.1.1 (Zeilenabstand):  sinnvolleres Anwendungsbeispiel
+  fuer \linespread
+
+* diverse Schreibfehler beseitigt; Abkuerzungen und Akronyme
+  mit Kapitaelchen gesetzt
+  
+* E-Mail-Adresse aktualisiert
+
+
+============================================================
+Aenderungen von Version 2.1 zu 2.2  2001-06-10 (WaS)
+
+* Die Kurzbeschreibung wird nur noch als Quelltext und PDF
+  verteilt.  DVI ist nicht sinnvoll, da wegen eingebundenem
+  EPS-Bild abhaengig vom Treiber; PostScript ist
+  unwirtschaftlich (zu gross) und bietet keine Vorteile
+  gegenueber PDF.  Die PDF-Version wurde mit VTeX 7.32
+  erzeugt und macht keine Probleme mit Acrobat Reader 5.
+
+* Quelltext:  hyperref.sty und die TC-Fonts (!) werden
+  jetzt zwingend vorausgesetzt.
+  
+* zahlreiche kleine Verbesserungen der Formulierung;
+  Schreibfehler ausgebessert; Querverweise ergaenzt;
+
+* 1.1.3:  LaTeX wird nur noch jaehrlich aktualisiert
+
+* 1.2.4 (Arbeitsablauf):  Neben DVI werden nun auch 
+  PDF und PostScript als Ausgabeformate erwaehnt.
+
+* Tab.1 (Klassen):  statt slides wird foils erwaehnt; 
+  proc wird weggelasen, weil auch im LaTeX-Handbuch 
+  nicht beschrieben.
+  
+* Tab.3 (Pakete):  geometry und fancyhdr ergaenzt, weil 
+  populaer; array u.a. weggelassen, weil fuer Anfaenger 
+  irrelevant.
+
+* Kap.4 (Formeln):  Differentiale werden jetzt aufrecht 
+  gescbrieben: \mathrm{d}x
+
+* Kap.5 (Bilder):  Neue Formulierung ohne Bezug auf
+  DVI-Treiber; auf vielfache Anregung hin wird generell 
+  auf graphicx.sty statt auf graphics.sty verwiesen.
+
+* Kap.7 (Schriften):  Aenderungen in Hinblick auf die
+  inzwischen uebliche Unterstuetzung von
+  PostScript-Schriften.
+
+* Literatur: Hinweise auf neue PSNFSS-Doku (ab v8.1) und auf
+  die FAQ ergaenzt.
+
+* Neue E-Mail-Adresse was@VR-Web.de
+
+
+============================================================
+Korrekturen in v2.1 [1999-05-24 (WaS)]
+
+* 3.1: Querverweis korrigiert (2.5 stattt 2.4)
+
+
+============================================================
+Aenderungen von v2.0 zu v2.1 [1999-04-18 (WaS)]
+
+Fehlerkorrekturen:
+
+* Praeambel:  \NeedsTeXFormat{LaTeX2e}[1998/06/01]
+
+* 2.5:  `In Tab. 1 ...  sind Klassen aufgefuehrt, ...'
+  (statt:  `alle Klassen');
+  
+* 4.1, Aufzaehlungspunkt 3:  \textnormal statt \textrm
+
+* 4.5:  \backslash aus Tab.9 entfernt (siehe Tab.15)
+
+* 4.5:  \lhd, \unlhd, \rhd, \unrhd von Tab.12 nach Tab.11
+  (Operatoren) versetzt.
+
+* 4.5: In Tab.12 (Relationen) den Doppelpunkt (:) ergaenzt.
+
+* Schreib-, Satz- und stilistische Fehler korrigiert
+
+Sonstige Aenderungen:
+
+* Wenn die tc-Fonts fehlen, wird die Liste der TS1-Symbole
+  durch einen Hinweistext ersetzt; es sollte aber _kein_
+  TeX-Fehler auftreten.  Es wird dazu die Existenz von
+  tcrm1095.tfm abgeprueft.
+  
+* Neue Email-Adresse <walter.schmidt@arcormail.de>
+  
+* Die Bedingungen fuer eine Verteilung der Kurzbeschreibung
+  erscheinen nun auch in der gedruckten Fassung.
+  
+* geaendertes CTAN-Verzeichnis
+  
+* Kopfzeilen entfernt;  durch die Untergliederung in viele
+  kurze Abschnitte mit eigenen Ueberschriften sind lebende 
+  Kolumnentitel IMHO ueberfluesig; ausserdem vertragen sie 
+  sich schlecht mit den vielen Abschnittsueberschriften am 
+  Seitenanfang.
+
+* Aus den meisten Quellcode-Beispielen wurde die fuer
+  Anfaenger abschreckende german-Notation entfernt. (z.T.
+  durch Umformulieren ;-)  In Kap.2.4.5 wird aber explizit
+  darauf hingewiesen, dass sie in _einigen_ Beispiel benutzt
+  wird.
+  
+* In den Quellcode-Beispielen werden die expliziten
+  Zeilenenden \\ weggelassen, wenn die einzelnen Zeilen
+  getrennte Beispiele darstellen. (Uebersichtlichkeit!)
+  
+* 2.7 (inputenc.sty):  Hinweis auf VMS ergaenzt; Fussnote
+  entfernt (die Fehlermeldung wurde inzwischen vernessert!)
+  
+* Tab.1 (Klassen) + Tab.3 (Pakete):  Hinweis auf a4.sty
+  entfernt; stattdessen wird nun auf die KOMA-Script-Klassen
+  hingewiesen.
+
+* Tab.3 (Pakete):  alltt.sty aufgefuehrt, weil es zur
+  Basisverteilung gehoert und ausserdem in der
+  Kurzbeschreibung selbst benutzt wird. (was wiederum in
+  Abschnitt 2.6 erwaehnt wird.)
+  
+* 3.2.1:  Hinweis auf Klasse slides ergaenzt; Formulierung
+  geaendert.
+  
+* 3.6:  Den Hinweis ergaenzt, dass \footnote nicht in
+  Gleitobjekten, Tabellen und der tabular-Umg. erlaubt ist.
+
+* 4.5:  Tab.13 heisst jetzt `Negierte Relationen'  (anstelle
+  von `Negationen')
+  
+* 6.2.1:  Ergaenzung: Was geschieht bei \begin{figure}[h] ?
+
+* 7.3:  In Tab.18 courier.sty und mathpple.sty ergaenzt.
+
+* 8.1.2: Text und Beispiele uebersichtlicher angeordnet.
+
+* Anhang A (Textsymbole):  Es sind nun diejenigen Symbole
+  gekennzeichnet, die auch mit PostScript-Fonts verfuegbar
+  verfuegbar sind, wenn diese fuer TS1 aufbereitet wurden.
+
+* ebd.: Fuer die auch ohne textcomp.sty vorhandenen Symbole
+  werden die ueblichen Makros entspr. Abschnitt 3.4.5 
+  angegeben, also z.B. \S statt \textsection.
+
+* Literatur:  `Notes on the setup of PostScript fonts ...'
+  entfernt, weil es leider teilweise veraltet und
+  irrefuehrend ist.  
+  K. Reckdahls "epslatex" auf vielfachen Wunsch ergaenzt.
+  A. Reicherts Typografie-Workshop ergaenzt.
+
+
+============================================================
+Aenderungen von Version 1.2 zu 2.0 (WaS)
+
+Die `Kurzbeschreibung' wurde im Wesentlichen aktualisiert
+und an einigen Stellen (hoffentlich) verbessert.  Es war
+aber _nicht_ meine Absicht, sie `vollstaendiger' zu machen;
+das wuerde schlussendlich zu einem zweiten `LaTeX-Handbuch'
+fuehren.  LaTeX 2.09 wird nicht mehr beruecksichtigt.
+
+Die wichtigsten Aenderungen im Detail:
+
+* E. Schlegl aus der Autorenliste gestrichen, weil die von
+  ihr verfasste Einleitung neu formuliert wurde.
+  
+* Kein twoside-Layout (stoert beim normalen Ausdrucken)
+
+* a4.sty wird nicht mehr benutzt, weil sein Satzspiegel bei 
+  einseitiger Formatierung nicht horizontal zentriert ist.
+
+* Eigenes Titelblatt; dieses umd die folgende Seite neu
+  formuliert und gestaltet.
+
+* 1.2.1:  Die manuelle Arbeitsweise wird nur noch in der
+  Vergangenheitsform erlaeutert.
+
+* In Kap.  1 ergaenzt, wofuer LaTeX geeignet ist, und wofuer
+  nicht; Liste der Vor- und Nachteile von LaTeX nur in
+  diesem Rahmen.
+
+* 1.1.3:  `LaTeX 2e':  Das Dokument bezieht sich nun auf
+  LaTeX2e von Juni 1998, wegen mathptmx.sty und \mathring.
+
+* neues Kap.  1.2.4:  typische Arbeitsweise von LaTeX
+  (Editieren, Setzen, Preview, Druck)
+
+* Die Reihenfolge in Kapitel 2 umgestellt:  `Spezielle
+  Zeichen' umbenannt in `Zeichensatz' und nach hinten
+  verschoben, weil inputenc erst verstaendlich ist, nachdem
+  `Pakete' erklaert wurden.
+
+* Den Begriff `Vorspann' eingefuehrt, weil nachfolgend
+  darauf verwiesen wird:  Pakete werden nur im `Vorspann'
+  geladen.
+
+* Im Abschnitt `Zeichensatz' wird nun auch die direkte
+  Eingabe von Sonderzeichen beschrieben.  Das wird
+  heutzutage als Selbstverstaendlichkeit erwartet und darf
+  keinesfalls erst als `Sonderfall' in einem spaeteren
+  Kapitel auftauchen!  Leider gibt es keine fuer den
+  normalen Benutzer brauchbaren Tabellen der (im Text oder
+  in Formeln) erlaubten Eingabezeichen, auf die hier
+  verwiesen werden koennte!  Auf's Listing von inputenc.dtx
+  sollte jedenfalls nicht verwiesen werden.
+
+* Die Tabelle `Pakete' wurde ueberarbeitet.
+
+* Den Abschnitt `Layout' entfernt, denn `Klassen' und
+  `Pakete' haben nicht nur mit Layout zu tun.  Nachdem fuer
+  diesen Abschnitt nur noch `Seitenstil' uebrig bleibt, habe
+  ich das zusammen mit den Gleitobjekten in einen neuen
+  Abschnitt `Seitenaufbau' versetzt.
+
+* Den Abschnitt `Deutschsprachige Texte' an den Anfang des
+  Kapitels `Setzen von Text' verschoben, weil man das als
+  Allererstes braucht!  In den folgenden Abschnitten wird
+  dann jeweils erwaehnt, was sich durch Laden von german.sty
+  aendert.  Die Liste der internen Bezeichner wie
+  \chaptername wurde weggelassen.
+
+* Im Kapitel `Blocksatz' die Hinweise auf Absaetze mit
+  vertikalem Abstand anstelle des Einzugs entfernt.  Die
+  angegebenen Befehle hatten zu viele unschoene
+  Nebenwirkungen!  Leider gibt es AFAIK keine allgemein
+  verfuegbares Paket, das nur die Absaetze entsprechend
+  umstellt.
+
+* Im Abschnitt `Silbentrennung' wird nicht mehr auf den
+  german-Befehl "= hingewiesen, weil der in der Hand eines
+  Laien gefaehrlich ist:  Bei zusammengesetzten Woertern
+  sollte man lieber _nur_ explizite Trennstellen mit \-
+  angeben, siehe gerdoc.tex!  Der Befehl \discretionary wird
+  nicht mehr beschrieben; in deutschen Texten wird
+  normalerweise nur "ck, "ff usw.  gebraucht, und mit der
+  neuen Rechtschreibung nicht einmal mehr das!
+
+* Anfuehrungszeichen:  `` und '' sind nicht _englische_
+  Quotes, sondern _amerikanische_.  Die Beschreibung der
+  deutschen Anfuehrungszeichen als Ligaturen ,, und '' wurde
+  entfernt, denn mit der allgemeinen Verfuegbarkeit vom
+  german.sty ist sie nicht noetig und verwirrt nur.
+
+* Den Abschnitt `Akzente und spezielle Zeichen' weitgehend
+  umgeschrieben und nochmal auf die direkte Eingabe von
+  Sonderzeichen hingewiesen.
+
+* Den Abschnitt `Abstaende' umbenannt in `Wortabstand' und
+  weiter nach vorne versetzt.
+
+* Im Abschnitt `Hervorgehobene Woerter' nur noch \emph
+  erklaert, nicht mehr \em.  Auch die Beschreibung von
+  \nocorr gehoert IMO nicht in eine Kurzanleitung (siehe
+  T.Oetikers engl.  Fassung!).  Den Abschnitt umbenannt in
+  `Hervorgehobener Text'.
+
+* Neu:  `Hochgestellter Text'
+
+* `Setzen von ...  Formeln / Allgemeines':  Hochstellen von
+  Text gehoert nicht mehr zu `mathematischen Texten', und
+  Tiefstellen wird hier ganz einfach nicht mehr erwaehnt.
+
+* In den Tabellen der math.  Symbole ist nun klar erkennbar,
+  ob ein Zeichen Operator, Relation oder Delimiter ist.  Das
+  \| (aus der Tabelle `sonstige Symbole') wurde zu den
+  Klammerungssymbolen versetzt.  Dort wurden auch | und
+  \backslash neu aufgenommen.
+
+* In Tabelle `Relationen' \notin ergaenzt.
+
+* In der Tabelle `Klammern' die Synonyme fuer \{ \} \[ \]
+  entfernt.  Ist in einer Kurzanleitung IMO unnoetig und
+  verwirrt nur.
+
+* Tabelle `Synonyme' entfernt - Begruendung dito!
+
+* Kapitel `Gleitobjekte':  Die Erklaerung der Umgebungen
+  figure und table schien mir besser unter den Oberbegriff
+  `Gleitobjekte' zu passen.  Ich erinnere mich, dass ich
+  selbst seinerzeit LaTeX durch die `Kurzanleitung'
+  kennenlernte; der eigentliche Sinn von Gleitobjekten blieb
+  mir dabei lange unklar, da ich die Umgebungen `figure' und
+  `table' primaer mit Ihrem Inhalt (Bilder und Tabellen) in
+  Zusammenhang brachte, weniger mit dem `Gleiten'.
+  Ausserdem wurden ser Begriff `Tafel' durch `Tabelle'
+  ersetzt und die Erklaerung der Plazierungsparameter
+  korrigiert.
+
+* Neues Kapitel `Setzen von Bildern'
+
+* Neues Kapitel `Schriften' (Groessen, Stil,
+  Schriftfamilien, europaeische Schriften).  Eine Uebersicht
+  ueber die TS1-Textsymbole ist bewusst nur als Anhang
+  aufgenommen; sie sollte entfallen, sobald eine derartige
+  Liste in der offiziellen LaTeX-Doku enthalten ist.
+  (Hoffentlich bald !!!)
+
+* Horizontale Abstaende:  Beispiele geaendert
+
+* Tab `Laengenmasse':  Big Point zusaetzlich aufgefuehrt,
+  weil diese Masseinheit im Zusammenhang mit PostScript
+  haeufig vorkommt.  Es werden soweit wie moeglich _exakte_
+  Definitionen angegeben!
+
+* Briefe:  Den Hinweis auf Adressetiketten entfernt, weil
+  das auch im offiziellen LaTeX-Handbuch nicht beschrieben
+  wird (und weil es sowieso ein Schmarrn ist ;-).  Hinweis
+  auf dinbrief.cls.
+
+* Robuste und zerbrechliche Befehle:  Das Kapitel enthaelt
+  nun eine Kurzfassung dessen, was im LaTeX(2e)-Handbuch
+  steht.  Befehle, die in der Kurzanleitung sonst nicht
+  erwaenht werden, werden auch hier nicht in Bezug auf
+  `Robustheit' oder `bewegte Argumente' beschrieben.  Der
+  Titel des Kapitels wurde in `Zerbrechliche Befehle'
+  geaendert, weil das Wort `robust' gar nicht erst
+  eingefuehrt wird.
+
+* Kompatibilitaet mit LaTeX 2.09:  Abschnitt entfernt!  Wer
+  schon mit LaTeX 2.09 zu tun hatte, wird heute keine
+  Lektuere fuer Einsteiger lesen!
+
+* Literaturverzeichnis: Total ueberarbeitet und aktualisiert.
+
+* L2K4.TEX auf drei Dateien (L2K4, L2K5, L2K6) aufgeteilt.
+
+============================================================
+Changes from version 1.1 to 1.2 
+*  Added german editions of Lamport and Goosens et. al.
+*  Updated to LaTeX2e 95/06/01 (mentioning cfgguide.tex,
+   modguide.tex, fontenc.sty, inputenc.sty)
+*  Changed list of packages, added `fontenc'/`inputenc'
+*  Rewrote paragraph about float placement parameters, additional
+   explanation of \nocorr
+*  Added more hyphenation suggestions, `sloppypar' environment,
+   and `\hbadness' hacks to avoid `underfull hbox' warnings (and
+   to simplify a change of the paper size)
+*  Replaced almost all old style font command \rm,...\tt by
+   their \text... equivalents, replaced $...$ by \(...\)
+   
+
+============================================================
+Changes from version 1 to 1.1
+*  Applied orthographical and stilistic corrections, many of
+   which were suggested by Luzia Dietsche
+*  Rewrote one sentence to avoid `overfull hbox'
+*  Added `newlfont' to the list of packages
+
+== finis
+

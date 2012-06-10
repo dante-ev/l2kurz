@@ -1,0 +1,274 @@
+% master: l2kurz.tex
+% l2k6.tex - 6.Teil der LaTeX2e-Kurzbeschreibung v2.3
+% 2003-04-10 (WaS)
+
+\section{Spezialit"aten}
+ 
+Das komplette Men"u der Spezialit"aten, die von \LaTeX\ serviert
+werden, ist im \manual\ und in der Online-Dokumentation beschrieben.
+Hier soll nur auf einige besondere "`Schmankerln"' hingewiesen
+werden.
+ 
+\subsection{Abst"ande}
+
+\subsubsection{Zeilenabstand}
+
+Um in einem Schriftst"uck gr"o"sere Zeilen"-ab"-st"ande zu verwenden,
+als es in der Dokumentklasse vorgesehen ist, gibt es in
+\LaTeX\ den Befehl \verb:\linespread:, der im Vorspann stehen sollte
+und dann auf das gesamte Dokument wirkt.  Das kann beispielsweise
+dann notwendig werden, wenn eine Schrift benutzt wird, die eine gr"o"serer x-H"ohe 
+hat als die voreingestellte Computer-Modern.  Fr die Schrift "`Palatino"' etwa
+ist eine Vergr"o"serung des Zeilenabstandes um ca.\ 5\,\% angemessen:
+
+\begin{quote}
+\verb|\usepackage{mathpazo}|\\
+\verb|\linespread{1.05}|
+\end{quote}
+
+ 
+ 
+ 
+\subsubsection{Spezielle horizontale Abst"ande}\label{abst:horiz}
+ 
+Die Abst"ande zwischen W"ortern und S"atzen werden von \LaTeX\ 
+automatisch gesetzt.
+Sonstigen horizontalen Ab"-stand kann man mit dem Befehl
+\begin{verse}
+\verb|\hspace{|\textit{l"ange}\verb|}|
+\end{verse}
+einf"ugen.
+Wenn der Abstand auch am Beginn oder Ende einer Zeile
+erhalten bleiben soll, mu"s \verb|\hspace*| statt \verb|\hspace|
+geschrieben werden.
+Die L"angen"-angabe besteht im einfachsten Fall aus einer Zahl
+und einer Einheit.  Die wichtigsten Einheiten sind in
+Tabelle~\ref{units} an"-ge"-f"uhrt.
+\begin{table}[b]
+\caption{Einheiten f"ur L"angenangaben} \label{units}
+\oben{11cm}
+\begin{tabbing}
+\texttt{mm}\qquad \= Millimeter                               \\
+\texttt{cm} \> Zentimeter = 10\,mm                            \\
+\texttt{in} \> inch \(= 25.4\,\mathrm{mm} \)                  \\
+\texttt{pt} \> point \( =(1/72.27)\,\mathrm{in}
+                        \approx 0.351\,\mathrm{mm}\)          \\
+\texttt{bp} \> big point \( =(1/72)\,\mathrm{in}
+                            \approx 0.353\,\mathrm{mm} \)      \\
+%\texttt{dd} \> Didot-Punkt \( = (1238/1157)\,\mathrm{pt}
+%                              \approx 0.376\,\mathrm{mm} \)   \\
+% --- wegen unklarer Definition (0.375 ider 0.376mm) besser nicht benutzen!
+\texttt{em} \> Geviert (doppelte Breite einer Ziffer der aktuellen Schrift)\\
+\texttt{ex} \> H"ohe des Buchstabens x der aktuellen Schrift
+\end{tabbing}                    
+\unten
+\end{table}
+Die Befehle in Tabelle~\ref{hspace} sind Abk"urzungen zum Einf"ugen
+besonderer horizontaler Ab"-st"ande.
+\begin{table}[t]
+\caption{Befehle f"ur horizontale Abst"ande} \label{hspace}
+\oben{13cm}
+\begin{tabbing}
+\texttt{xenspace}\qquad \= \kill
+\verb|\,|       \> ein sehr kleiner Abstand (siehe auch Abschnitt~\ref{abstaende})\\
+\verb|\enspace| \> so breit wie eine Ziffer \\
+\verb|\quad|    \> so breit, wie ein Buchstabe hoch ist
+                   ("`wei"ses Quadrat"') \\
+\verb|\qquad|   \> doppelt so breit wie ein \verb|\quad| \\
+\verb|\hfill|   \> ein Abstand, der sich von 0 bis \(\infty\)
+                   ausdehnen kann.
+\end{tabbing}
+\unten
+\end{table}
+Der Befehl \verb|\hfill| kann dazu dienen, einen vorgegebenen
+Platz aus"-zu"-f"ullen.
+\exa
+\raggedright
+Schafft mir\hspace{1.5cm}Raum! \\
+\(\triangleleft\)\hfill \(\triangleright\)\\
+\exb
+\begin{verbatim}
+Schafft mir\hspace{1.5cm}Raum! \\
+\(\triangleleft\)\hfill 
+\(\triangleright\)
+\end{verbatim}
+\exc
+
+
+\subsubsection{Spezielle vertikale Abst"ande} \label{vabstaende}
+ 
+Die Abst"ande zwischen Ab"-s"atzen, Kapiteln usw.\ werden von
+\LaTeX\ automatisch bestimmt.
+In Spezial"-f"allen kann man zu"-s"atz"-lichen Ab"-stand
+\emph{zwischen zwei Ab"-s"atzen} mit dem Befehl
+\begin{verse}
+\verb|\vspace{|\textit{l"ange}\verb|}|
+\end{verse}
+bewirken.
+Dieser Befehl sollte immer zwischen zwei Leerzeilen angegeben
+werden.
+Wenn der Abstand auch am Beginn oder Ende einer Seite erhalten
+bleiben soll, mu"s \verb|\vspace*| statt \verb|\vspace|
+geschrieben werden.
+Die Befehle in Tabelle~\ref{vspace} sind Abk"urzungen f"ur
+bestimmte vertikale Ab"-st"ande.
+\begin{table}[t]
+\caption{Befehle f"ur vertikale Abst"ande} \label{vspace}
+\oben{13cm}
+\begin{tabbing}
+\texttt{xsmallskip}\qquad \= \kill
+\verb|\smallskip| \> etwa \(\nfrac{1}{4}\) Zeile \\
+\verb|\medskip|   \> etwa \(\nfrac{1}{2}\) Zeile \\
+\verb|\bigskip|   \> etwa 1 Zeile \\
+\verb|\vfill|     \> ein Abstand, der sich von 0 bis \(\infty\)
+                     ausdehnen kann
+\end{tabbing}
+\unten
+\end{table}
+Der Befehl \verb|\vfill| in Verbindung mit \verb|\newpage|
+kann dazu dienen, Text an den unteren Rand einer Seite zu setzen
+oder vertikal zu zentrieren.  Beispielsweise enth"alt der Quelltext
+f"ur die zweite Seite der vorliegenden Beschreibung:
+\begin{quote}
+\begin{verbatim}
+\vfill
+
+Dieses Dokument wurde mit \LaTeX{} gesetzt.
+...
+\newpage
+\end{verbatim}
+\end{quote}
+ 
+Zus"atzlichen Abstand zwischen zwei Zeilen \emph{innerhalb}
+eines Absatzes oder einer Tabelle erreicht man mit dem Befehl
+\verb|\\[|\textit{l"ange}\verb|]|.
+\exa
+Albano Cesara \\
+Lindenallee 10 \\[1.5ex]
+95632 Pestitz
+\exb
+\begin{verbatim}
+Albano Cesara \\
+Lindenallee 10 \\[1.5ex]
+95632 Pestitz
+\end{verbatim}
+\exc
+
+\smallskip
+ 
+ 
+\subsection{Briefe}\label{briefe}
+ 
+Mit der Dokumentklasse \texttt{letter} kann man zwischen
+\verb|\begin{document}| und \verb|\end{document}| einen oder
+mehrere Briefe schreiben. 
+Abbildung~\ref{brief} enth"alt ein Beispiel f"ur einen Brief.
+
+\begin{figure}[ht] %\small
+\oben{11cm}
+\begin{alltt}
+\verb+\documentclass[12pt,a4paper]{letter}+
+\verb+\usepackage[latin1]{inputenc}+
+\verb+\usepackage{german}+
+\verb+\address{EDV-Zentrum der TU Wien \\+
+\verb+  Abt. Digitalrechenanlage \\+
+\verb+  +Wiedner Hauptstra\ss{}e 8--10 \verb+\\+
+\verb+  A-1040 Wien}+
+\verb+\signature{Dr. Hubert Partl}+
+\verb+\begin{document}+
+\verb+\begin{letter}{Frau Mag. Elisabeth Schlegl \\+
+\verb+  +EDV-Zentrum der Karl-Franzens-Universit\"at \verb+\\+
+\verb+  Attemsgasse 25/II \\+
+\verb+  \textbf{A-8010 Graz}}+
+\verb+\opening{Liebe Frau Schlegl,}+
+herzlichen Dank f\"ur die Zusendung \dots
+
+\dots in etwa 2--3~Wochen fertig zu sein.
+\verb+\closing{+Mit freundlichen Gr\"u\ss{}en\verb+}+
+\verb+\end{letter}+
+\verb+\end{document}+
+\end{alltt}
+\unten
+\caption{Brief von H.\,P. an E.\,S.} \label{brief}
+\end{figure}
+
+\begin{sloppypar}
+Mit dem Befehl \verb|\address| definiert man die Adresse des Absenders.
+\verb|\begin{letter}{...}| beginnt einen Brief an den im
+Parameter angegebenen Empf"anger.
+\verb|\opening{...}| schreibt die Anrede 
+und \verb|\closing{...}| den abschlie"senden Gru"s, 
+an den automatisch die eingangs mit
+\verb|\signature| vereinbarte Unterschrift an"-ge"-f"ugt wird.
+\verb|\end{letter}| beendet den jeweiligen Brief.
+\end{sloppypar}
+
+Das von der Dokumentklasse \texttt{letter} bewirkte Layout der Briefe 
+orientiert sich an amerikanischen Gepflogenheiten.
+Mit vielen \LaTeX-Systemen ist die Klasse 
+\texttt{dinbrief} verf"ugbar; sie setzt die Briefe in einer
+Anordnung gem"a"s DIN~676, 
+die f"ur die Verwendung von A4-Bogen in Fensterkuverts geeignet ist.
+Der \local{} sollte Auskunft "uber diese oder andere Alternativen zu
+\texttt{letter} geben.
+
+\subsection{Literaturangaben}
+
+Mit der \texttt{thebibliography}-Umgebung kann man ein
+Literaturverzeichnis erzeugen.
+Darin beginnt jede Literaturangabe mit \verb|\bibitem|.
+Als Parameter wird ein Name vereinbart, unter dem die
+Literaturstelle im Text zitiert werden kann, und
+dann folgt der Text der Literaturangabe.
+Die Numerierung erfolgt automatisch.
+Der Parameter bei \verb|\begin{thebibliography}| gibt die
+maximale Breite dieser Nummern"-angabe an, also z.\,B.\ 
+\verb|{99}| f"ur maximal zweistellige Nummern.
+
+Im Text zitiert man die Literaturstelle dann mit dem Befehl \verb|\cite|
+und dem vereinbarten Namen als Argument.
+\exa
+Partl~\cite{pa} hat
+vorgeschlagen, da"s \dots
+ 
+\begin{thebibliography}{99}
+\bibitem{pa}
+H.~Partl: \textit{German \TeX,}
+TUG\-boat Vol.~9, No.~1 (1988)
+\end{thebibliography}
+\exb
+\begin{verbatim}
+Partl~\cite{pa} hat
+vorgeschlagen ...
+ 
+\begin{thebibliography}{99}
+\bibitem{pa}
+H.~Partl: \textit{German \TeX,}
+TUGboat Vol.~9, No.~1 (1988)
+\end{thebibliography}
+\end{verbatim}
+\exc
+
+ 
+\subsection{Zerbrechliche Befehle}
+ 
+Manche \LaTeX-Befehle "`verfrachten"' ihre Argumente an eine andere
+Stelle im Text; beispielsweise kann das Argument von \verb|\section|
+auch im Inhaltsverzeichnis und m"oglicherweise in der Kopfzeile auftauchen.  
+
+Bestimmte Befehle "`"uberstehen"' diesen Transport nicht, wenn sie
+ohne besondere Ma"snahmen in einem solchen "`beweglichen Argument"'
+auftreten.
+Derartige Befehle hei"sen "`zerbrechlich"'.  Damit sie dennoch innnerhalb
+von beweglichen Argumenten benutzt werden d"urfen, 
+mu"s man ihnen einfach den Befehl \verb|\protect| voranstellen.
+
+Zerbrechlich sind insbesondere alle Befehle, die ein optionales Argument
+kennen, also auch \verb|\\| (sic!),
+au"serdem die Befehle \verb|\(|, \verb|\)| und \verb|\footnote|.
+
+Bewegliche Argumente haben, neben den Gliederungsbefehlen,
+auch der Befehl \verb|\caption| und die Umgebung \texttt{letter}.
+
+
+\endinput

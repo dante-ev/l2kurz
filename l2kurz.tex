@@ -1,0 +1,354 @@
+% This is  l2kurz.tex - LaTeX2e Kurzbeschreibung v2.3
+% This was L2KURZ.TEX - LaTeX2e Kurzbeschreibung, Mainz 1994,1995
+% This was LKURZ.TEX - LaTeX Kurzbeschreibung, Uni Graz & TU Wien, 1987.
+% 2003-04-10 (WaS)
+%
+\newcommand{\lkver}{2.3}               % laufende Versionsnummer ...
+\newcommand{\lkdate}{10.\ April\ 2003} % ... und Datum
+
+\typeout{   LaTeX2e-Kurzbeschreibung}
+\typeout{   Copyright 1998--2003 W.Schmidt, J.Knappen, H.Partl, I.Hyna   }
+\typeout{   Copyright 1994, 1995 J.Knappen, H.Partl, E.Schlegl, I.Hyna   }
+\typeout{   Copyright 1987 H.Partl, E.Schlegl, I.Hyna                    }
+
+
+\documentclass[11pt,a4paper]{article} % ergaenze `twoside', wenn gewuenscht!
+\NeedsTeXFormat{LaTeX2e}[1998/06/01]  % wegen \mathring und Textsymbolen
+
+\usepackage{german,latexsym,alltt,
+            graphicx,textcomp,hyperref}
+
+\hypersetup{%
+  pdftitle={LaTeX2e-Kurzbeschreibung},
+  pdfauthor={Walter Schmidt et al.}}
+
+\makeatletter
+
+% Seitenlayout:
+%
+% Texthoehe 46 Zeilen + \topskip
+% (Rand ueber der Kopfzeile) : (Rand unter dem Text) = 1:2
+%
+\setlength{\textheight}{46\baselineskip}
+\addtolength{\textheight}{\topskip}
+\newlength{\vertmargin}
+\setlength{\vertmargin}{\paperheight}
+\addtolength{\vertmargin}{-\textheight}
+\addtolength{\vertmargin}{-\headsep}
+\addtolength{\vertmargin}{-\headheight}
+\setlength{\topmargin}{.333\vertmargin} % Raender oben/unten 1:2
+\addtolength{\topmargin}{-1in}
+%
+% Textbreite 5.2in, Text hor. zentriert
+%
+\setlength{\textwidth}{5.2in}
+\newlength{\hormargin}
+\setlength{\hormargin}{\paperwidth}
+\addtolength{\hormargin}{-\textwidth}
+\setlength{\oddsidemargin}{.5\hormargin}
+\setlength{\evensidemargin}{\oddsidemargin}
+\addtolength{\oddsidemargin}{-1in}
+\addtolength{\evensidemargin}{-1in}
+%
+% Seitenzahlen oben, aber keine Kopfzeile
+%
+\pagestyle{myheadings}
+\markboth{}{}
+
+% Make float placement easier
+\renewcommand{\textfraction}{.1}      
+\renewcommand{\floatpagefraction}{.7}
+
+\newcommand{\bs}{\symbol{92}} % Ein Backslash in Schreibmaschinenschrift;
+                              % nur mit OT1-Fonts zu verwenden!
+
+% LaTeXe-Symbol fuer cmss/sbc mit groesserem Absstand L-a und halbfettem Epsilon
+\DeclareRobustCommand{\sbLaTeXe}{{\fontseries{sbc}\selectfont\boldmath%
+        L\kern-.25em% -.36
+        {\sbox\z@ T%
+         \vbox to\ht\z@{\hbox{\check@mathfonts
+                              \fontsize\sf@size\z@
+                              \math@fontsfalse\selectfont
+                              A}%
+                        \vss}%
+        }%
+        \kern-.15em%
+        \TeX\kern.15em2$_{\textstyle\varepsilon}$}}
+        
+\makeatother
+
+\newcommand\exa{\nopagebreak \begin{flushleft}\smallskip \nopagebreak
+                \begin{minipage}[t]{6cm}\sloppy}
+\newcommand\exb{\end{minipage}\kern 1cm\begin{minipage}[t]{8cm}\sloppy }
+\newcommand\exc{\end{minipage}\kern -3cm \smallskip\end{flushleft}}
+ 
+\newcommand\oben[1]{\begin{center}\begin{minipage}{#1}\hrule\medskip}
+\newcommand\unten  {\hrule \end{minipage}\end{center}}
+
+\newenvironment{ttdescription}{%
+  \renewcommand{\descriptionlabel}[1]{%
+    \hspace{\labelsep}\texttt{##1}}%
+  \begin{description}%
+}{%
+  \end{description}%
+}
+
+\newcommand{\manual}{\emph{\LaTeX-Handbuch}~\cite{manual}}
+\newcommand{\local}{\emph{Local Guide}~\cite{local}}
+
+\newenvironment{symbols}{%
+   \begin{tabbing}
+   \hspace{1cm}\=\hspace{3.5cm}\=  \hspace{1cm}\=\hspace{3.5cm}\=
+   \hspace{1cm}\=\hspace{3.5cm}\=  \kill
+   }{%
+   \end{tabbing}}
+
+\newcommand{\nfrac}[2]{\leavevmode\kern.1em%
+  \raise.5ex\hbox{\scriptsize #1}%
+  \kern-.1em/\kern-.15em%
+  \lower.25ex\hbox{\scriptsize #2}}
+
+\nonfrenchspacing      % german.sty sets frenchspacing automatically.
+%  However, some examples are pointless with frenchspacing in action. 
+%  Besides, the larger space after a sentence make the text more readable.
+
+
+\begin{document}
+
+\begin{titlepage}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+{\Huge%
+\fontfamily{cmss}\fontseries{sbc}\selectfont
+\raggedright
+\sbLaTeXe-Kurzbeschreibung
+\rule{\textwidth}{0.75pt}
+\par
+}
+\begin{flushleft}
+  \normalsize
+  \fontfamily{cmss}\fontseries{sbc}\selectfont
+  Version \lkver\\
+  \lkdate\\[2ex]
+  Walter Schmidt\footnote{\texttt{<w-a-schmidt@arcor.de>}}\\
+  J"org Knappen\\
+  Hubert Partl%\footnote{Zentraler Informatikdienst der Universit"at f"ur Bodenkultur, Wien}
+    \\
+  Irene Hyna%\footnote{Bundesministerium f"ur Wissenschaft und Verkehr, Wien}
+  \\
+\end{flushleft}
+
+\vfill
+
+{\parindent=0cm
+\LaTeX{} ist ein Satzsystem, das f"ur viele Arten von
+Schrift"-st"u"cken verwendet werden kann, von einfachen Briefen bis zu
+kompletten B"uchern.  Besonders geeignet ist es f"ur 
+wissenschaftliche oder technische Dokumente. \LaTeX{} ist f"ur 
+praktisch alle verbreiteten Betriebssysteme verf"ugbar.
+ 
+Die vorliegende Kurzbeschreibung bezieht sich auf die Version
+\LaTeXe\ in der Fassung vom Juni~2001 und sollte f"ur den 
+Einstieg in \LaTeX{} ausreichen.  
+Eine voll"-st"andige Beschreibung ent"-h"alt das \manual{}
+in Verbindung mit der Online-Dokumentation.
+}
+\setcounter{footnote}{0}
+\end{titlepage}
+
+
+{\parindent=0cm\thispagestyle{empty}
+
+Copyright \copyright{} 1998--2003 W.~Schmidt, J.~Knappen, H.~Partl, I.~Hyna
+
+\bigskip
+
+{\selectlanguage{USenglish}
+  Permission is granted to copy, distribute and/or modify this document
+  under the terms of the GNU Free Documentation License, Version~1.2
+  or any later version published by the Free Software Foundation;
+  with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+  A copy of the license is included in the section entitled ``GNU
+  Free Documentation License''.
+}
+
+\bigskip
+
+Die in dieser Publikation erw"ahnten Software- und Hardware-Bezeichnungen sind
+in den meisten F"allen auch eingetragene Warenzeichen und unterliegen als
+solche den gesetzlichen Bestimmungen.
+
+\bigskip
+
+\vfill
+
+Dieses Dokument wurde mit \LaTeX{} gesetzt.
+Es ist als Quelltext und im PDF-Format online er\-h"alt\-lich:
+\begin{quote}
+\path{<ftp://dante.ctan.org/tex-archive/info/lshort/german/>}
+\end{quote}
+\bigskip
+
+Die Autoren bedanken sich bei
+Luzia Dietsche, 
+Michael Hofmann, 
+Peter Karp,
+Rolf \mbox{Niepraschk},
+Heiko Oberdiek,
+Bernd Raichle, 
+Rainer Sch"opf und
+Stefan Steffens
+f"ur Tips, Anmerkungen und  Korrekturen.
+
+}
+
+\newpage
+
+\setcounter{page}{1}
+\tableofcontents
+
+\newpage
+ 
+\input{l2k1}
+\clearpage
+
+\input{l2k2}
+\clearpage
+ 
+\input{l2k3} 
+\input{l2ksym}
+\clearpage
+ 
+\input{l2k4}
+\clearpage
+
+\input{l2k5}
+\clearpage
+
+\input{l2k6}
+\clearpage
+
+\input{l2ka}
+\clearpage
+
+\begin{thebibliography}{99} \hbadness10000 % wg. URLs ;-)
+ 
+\bibitem{manual}
+L.~Lamport: \textit{Das \LaTeX-Handbuch.}
+Addison-Wesley Deutschland (1995)%, ISBN~3-89319-826-1
+. Deutsche "Uber"-setzung von~\cite{manual-eng}.
+
+\bibitem{manual-eng}
+L.~Lamport: \textit{\LaTeX, A Document Preparation System.}
+Ad\-di\-son-Wesley, 2.~Aufl. (1994)%, ISBN~0-201-52983-1
+.
+ 
+\bibitem{wonne}
+M.~Goossens, F.~Mittelbach und A.~Samarin:
+\textit{Der \LaTeX-Begleiter.}
+Ad\-di\-son Wesley Longman, 2.~korr.\ Nachdruck (1996)%, ISBN~3-89319-646-3
+.  Deutsche "Uber"-setzung von~\cite{wonne-eng}.
+
+\bibitem{wonne-eng}
+M.~Goossens, F.~Mittelbach und A.~Samarin:
+\textit{The \LaTeX\ Companion.}
+Ad\-di\-son-Wesley (1994)%, ISBN~0-201-54199-8
+.  
+
+\bibitem{ch8}
+M.~Goossens, F.~Mittelbach und A.~Samarin:
+\textit{Higher Mathematics.} 
+Aktualisierte Fassung (1998) von Kapitel\ 8 aus \cite{wonne-eng}.\\
+\path{<ftp://dante.ctan.org/tex-archive/info/companion-rev/ch8.pdf>}
+
+
+\bibitem{grfcomp}
+M.~Goossens, S.~Rahtz und F.~Mittelbach:
+\textit{The \LaTeX\ Graphics Companion.}
+Addison Wesley Longman (1997)% ISBN~0-201-85469-4
+.
+
+\bibitem{local}
+Zu jedem installierten \LaTeX-System sollte ein
+\emph{\LaTeX\ Local Guide} vorhanden sein, in dem alle f"ur
+dieses System spezifischen Angaben -- z.\,B.~die f"ur den
+Aufruf der Programme notwendigen Befehle und die zur Ver"-f"ugung
+stehenden Dokumentklassen, Pakete und Schriften -- angef"uhrt sind.
+ 
+\bibitem{usrguide}
+\LaTeX3 Project Team (Hrsg.): 
+\textit{\LaTeXe\ for authors.} 
+Bestandteil der Online-Dokumentation von \LaTeX,
+Datei \texttt{usrguide.tex}.  
+Aktuelle "Anderungen und Erg"anzungen sowie die Unterschiede zum fr"uheren 
+\LaTeX~2.09 sind hier dokumentiert.
+
+\bibitem{fntguide}
+\LaTeX3 Project Team (Hrsg.): 
+\textit{\LaTeXe\ font selection.}
+Bestandteil der Online-Dokumentation von \LaTeX,
+Datei \texttt{fntguide.tex}.
+
+\bibitem{clsguide}
+\LaTeX3 Project Team (Hrsg.): 
+\textit{\LaTeXe\ for class and package writers.}
+Bestandteil der Online-Dokumentation von \LaTeX,
+Datei \texttt{clsguide.tex}.
+
+\bibitem{grfguide}
+D.~P.~Carlisle: \textit{Packages in the `graphics' bundle.}
+Bestandteil der Online-Dokumentation von \LaTeX,
+Datei \texttt{grfguide.ps}.
+
+\bibitem{postscript}
+W.~Schmidt: \textit{Using common PostScript fonts with \LaTeX.}
+Bestandteil der Online-Dokumentation von \LaTeX{}
+(seit Juni~2000), Datei \path{psnfss2e.pdf}. 
+
+\bibitem{lay}
+H.~Partl und A.~Kielhorn: \textit{Layout-"Anderungen mit \LaTeX.}
+EDV-""Zentrum der Technischen Universit"at Wien (1996).\\
+\path{<ftp://dante.ctan.org/tex-archive/macros/latex/contrib/supported/refman/>}
+
+\bibitem{lay2}
+D.~F.~Langmyhr: \textit{How to make your own document style in \LaTeXe.}
+In: \textit{Proceedings of the Eighth European \TeX{} Conference}
+(1994).
+
+\bibitem{typografie} A.~Reichert: \textit{Typografie -- Gestaltung einer 
+Beispielklasse.} (1999)\\
+\path{<ftp://dante.ctan.org/info/german/typografie/>}
+
+\bibitem{epslatex}
+K.~Reckdahl: \textit{Using Imported Graphics in \LaTeXe.} (1997)\\
+\path{<ftp://dante.ctan.org/tex-archive/info/epslatex.ps>}
+
+\bibitem{texbook}
+D.~E.~Knuth: \textit{Computers \& Typesetting, Vol.\ A: The \TeX{}~Book.}
+Addison-Wesley (1991)%, ISBN~0-201-13447-0
+.
+
+\bibitem{schwarz}
+N.~Schwarz: \textit{Einf"uhrung in \TeX -- incl.\ Version~3.0.}
+Oldenbourg, 3.~Aufl.\ (1991)%, ISBN 3-486-24349-7
+.
+ 
+\bibitem{germtug}
+H.~Partl: \textit{German \TeX.} TUG\-boat Vol.~9, No.~1 (1988).
+ 
+\bibitem{germdoc}
+B.~Raichle:
+\textit{Kurzbeschreibung -- \texttt{german.sty}.}\\
+\path{<ftp://dante.ctan.org/tex-archive/language/german/gerdoc.tex>}
+
+\bibitem{faq} 
+B.~Raichle, R.~Niepraschk und Th.~Hafner:
+\textit{Fragen und Antworten (FAQ) "uber das Textsatzsystem \TeX{} und 
+DANTE~e.V.} \\
+\path{<http://www.dante.de/faq/de-tex-faq/>}
+
+\end{thebibliography}
+\cleardoublepage
+
+\input{l2gfdl}
+ 
+\end{document}
