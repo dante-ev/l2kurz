@@ -54,8 +54,6 @@ gilt entsprechend nur für die aktuelle Seite.  Einige Befehle, wie etwa
 \verb|\chapter|, ändern den Stil der aktuellen Seite.  Diese Änderungen 
 kann man durch einen nachfolgenden \verb|\thispagestyle|-Befehl aufheben.
 
-\begin{sloppypar}%% `sloppypar'-Umgebung wegen vieler Befehle
-\hbadness=4600\relax %% `underfull hbox'-Fehlermeldung aus
 Im \manual\ ist angegeben, wie man das Aussehen der Kopf- und Fußzeilen
 außerdem mit dem Seitenstil 
 \verb|myheadings| und den Befehlen
@@ -63,7 +61,6 @@ außerdem mit dem Seitenstil
 \verb|\markright| und
 \verb|\pagenumbering|
 beeinflussen kann.
-\end{sloppypar}
 
 \subsection{Gleitobjekte} \label{floats}
 Große Bilder und lange Tabellen lassen sich nicht immer genau 
@@ -159,9 +156,6 @@ anderen Parameter benutzt werden.
 
 \subsubsection{Tabellen (table)}
 
-\begin{sloppypar}
-\hbadness=3000\relax %% `underfull hbox'-Fehlermeldung aus
-
 Damit Tabellen nicht auf einen Seitenwechsel fallen,
 können sie, analog zu Abbildungen, zwischen
 \verb|\begin{table}| und \verb|\end{table}| gesetzt werden.
@@ -171,7 +165,6 @@ wirken entsprechend.
 Hier sind beide möglichen Konventionen verbreitet: Die
 Bezeichnung wird entweder immer \emph{über} oder immer
 \emph{unter} die Tabelle gesetzt.
-\end{sloppypar}
 
 Auch hier gilt, dass in der \texttt{table}-Umgebung  beliebiger
 Text stehen darf; die Tabelle muss nicht zwangsläufig durch die

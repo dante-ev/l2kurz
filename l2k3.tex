@@ -42,15 +42,13 @@ Mit \(\heartsuit\)-lichen
 \end{verbatim}
 \exc
  
-%\begin{sloppypar}
-%\hbadness=2000\relax %% `underfull hbox'-Fehlermeldung aus
 Größere mathematische Formeln oder Gleichungen setzt man besser
 in eigene Zeilen. Wenn sie \emph{keine} Gleichungsnummer erhalten 
 sollen, stellt man sie dazu zwischen \verb|\begin{displaymath}| und
 \verb|\end{displaymath}| oder zwischen \verb|\[| und~\verb|\]|; 
 wenn sie eine Gleichungsnummer erhalten sollen, stellt man sie
 zwischen \verb|\begin{equation}| und \verb|\end{equation}|.
-%\end{sloppypar}
+
 \exa
 Seien \(a\) und \(b\) die Katheten
 und \(c\) die Hypotenuse,
@@ -151,13 +149,11 @@ Kapitel~\ref{symbols}.
  
 \bigskip
 
-\begin{sloppypar} 
-\hbadness=1550\relax %% `underfull hbox'-Fehlermeldung aus
 Kleine \textbf{griechische Buchstaben} werden als \verb|\alpha|,
 \verb|\beta|, \verb|\gamma|, \verb|\delta|, usw.\ eingegeben,
 große griechische Buchstaben als \verb|\mathrm{A}|,
 \verb|\mathrm{B}|, \verb|\Gamma|, \verb|\Delta|, usw.
-\end{sloppypar}
+
 \exa
 \(\lambda, \xi, \pi, \mu,
  \Phi, \Omega \)
@@ -513,7 +509,6 @@ x_{21} & x_{22} & \ldots \\
 \end{verbatim}
 \exc
 
-\begin{sloppypar}
 Für \textbf{mehrzeilige} Formeln oder Gleichungssysteme
 verwendet man die Umgebungen \texttt{eqnarray} und
 \texttt{eqnarray*} statt \texttt{equation}.
@@ -523,7 +518,6 @@ Gleichungsnummer, bei \texttt{eqnarray*} wird ebenso wie bei
 Für Gleichungssysteme, die \emph{eine} gemeinsame Nummer
 erhalten sollen, kann man eine \texttt{array}-Umgebung innerhalb
 der \texttt{equation}-Umgebung verwenden.
-\end{sloppypar}
 
 Die Umgebungen \texttt{eqnarray} und \texttt{eqnarray*}
 funktionieren wie eine 3-spaltige Tabelle der Form~\verb|{rcl}|,
