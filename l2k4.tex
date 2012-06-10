@@ -25,8 +25,8 @@ dann erscheint anstelle des Bildes nur ein Rahmen entsprechend
 der tatsächlichen Bildgröße mit dem Namen des Grafikfiles, 
 was die Bearbeitung beschleunigt und für Probeausdrucke nützlich ist.
 
-Weitere Informationen zum Enbinden von Bildern finden Sie in der 
-Online-Dokumentation \cite{grfguide}, im \textit{Graphics Companion}
+Weitere Informationen zum Einbinden von Bildern finden Sie in der
+Online"=Dokumentation \cite{grfguide}, im \textit{Graphics Companion}
 \cite{grfcomp} und in K.~Reckdahls empfehlenswertem  Tutorium \cite{epslatex}.
 
 
@@ -87,7 +87,7 @@ Bei Abbildungen ist es allgemein üblich, die Bezeichnung
 Mit \verb|\label| und \verb|\ref| kann man die Nummer der
 Abbildung im Text ansprechen, mit \verb|\pageref| ihre Seitenzahl.
 Der Befehl \verb:\label: muss dabei \emph{nach} dem \verb:\caption:-Befehl
-stehen, sonst stimmt die Numerierung nicht!
+stehen, sonst stimmt die Nummerierung nicht!
 
 Im folgenden Beispiel wird einfach mit dem Befehl \verb|\vspace|
 (siehe Abschnitt \ref{vabstaende})
@@ -114,40 +114,40 @@ Nebel} \label{weiss}
 Nebel} \label{weiss}
 \end{figure}
 
-\LaTeX\ kann eine Abbildung nach verschiedenen Kriterien plazieren:
+\LaTeX\ kann eine Abbildung nach verschiedenen Kriterien platzieren:
 \texttt{h} "`here"' (hier),
 \texttt{t} "`top"' (oben auf der Seite), \texttt{b} "`bottom"' (unten
 auf der Seite) oder \texttt{p} "`page"' (eigene Seite für
 Abbildungen).
 
 Die Parameter in den eckigen Klammern, die wahlweise angegeben
-werden können, dienen dazu, die Plazierung der Abbildung auf die
+werden können, dienen dazu, die Platzierung der Abbildung auf die
 angegebenen Orte \emph{einzuschränken}.  Durch Angabe von
 z.\,B.\ \texttt{tb}
-wird \LaTeX{} angewiesen, nur eine Plazierung oben oder unten auf der
+wird \LaTeX{} angewiesen, nur eine Platzierung oben oder unten auf der
 Seite zu versuchen, je nachdem,
 wo \emph{zuerst} eine passende Stelle gefunden wird.
 Werden keine Parameter (und keine eckigen
 Klammern!) angegeben, ist die Voreinstellung \texttt{tbp},
 also ohne~\texttt{h}.
 
-Eine Plazierungsbeschränkung \emph{nur} auf \texttt{[h]} ist unsinnig;
+Eine Platzierungsbeschränkung \emph{nur} auf \texttt{[h]} ist unsinnig;
 sie würde das "`Gleiten"' ja gerade verhindern.
 Wenn der Platz "`hier"' nicht ausreicht, 
 verschiebt \LaTeX{} dann die Abbildung mindestens 
 bis zum Anfang der nächsten Seite, so als hätte man \texttt{[ht]} angegeben.
 
-Eine Abbildung, die nicht plaziert werden konnte, wird von
+Eine Abbildung, die nicht platziert werden konnte, wird von
 \LaTeX\ immer weiter nach hinten verschoben (und schiebt alle
 weiteren Abbildungen vor sich her!), bis ein neues Kapitel
 beginnt, das Dokument zu Ende ist, oder der Befehl
 \verb|\clearpage| eingegeben wird.  
 
 
-Es gibt noch einen weiteren Plazierungsparameter, 
-\texttt{!}\ (bang), der \LaTeX{} anweist, 
+Es gibt noch einen weiteren Platzierungsparameter, 
+\texttt{!} (bang), der \LaTeX{} anweist,
 gewisse eingebaute Beschränkungen zu ignorieren, 
-z.\,B., dass bei der Plazierung gemäß \texttt{h}, \texttt{t} oder \texttt{b}
+z.\,B., dass bei der Platzierung gemäß \texttt{h}, \texttt{t} oder \texttt{b}
 ein Mindestanteil der Seite für normalen Text übrig bleiben muss.
 "`Bang"' muss immer zusammen mit mindestens einem der vier
 anderen Parameter benutzt werden.  
@@ -166,11 +166,11 @@ Hier sind beide möglichen Konventionen verbreitet: Die
 Bezeichnung wird entweder immer \emph{über} oder immer
 \emph{unter} die Tabelle gesetzt.
 
-Auch hier gilt, dass in der \texttt{table}-Umgebung  beliebiger
+Auch hier gilt, dass in der \texttt{table}"=Umgebung  beliebiger
 Text stehen darf; die Tabelle muss nicht zwangsläufig durch die
-\texttt{tabular}-Umgebung erzeugt worden sein.
+\texttt{tabular}"=Umgebung erzeugt worden sein.
 Der Unterschied zu \texttt{figure} besteht nur darin, 
 dass die Bezeichnung mit dem Wort "`Tabelle"' versehen wird,
-und dass die Tabellen unabhängig von den Abbildungen numeriert werden.
+und dass die Tabellen unabhängig von den Abbildungen nummeriert werden.
 
 \endinput
