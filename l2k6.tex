@@ -166,28 +166,28 @@ Abbildung~\ref{brief} enthält ein Beispiel für einen Brief.
 
 \begin{figure}[ht] %\small
 \oben{11cm}
-\begin{alltt}
-\verb+\documentclass[12pt,a4paper]{letter}+
-\verb+\usepackage[latin1]{inputenc}+
-\verb+\usepackage{german}+
-\verb+\address{EDV-Zentrum der TU Wien \\+
-\verb+  Abt. Digitalrechenanlage \\+
-\verb+  +Wiedner Hauptstra\ss{}e 8--10 \verb+\\+
-\verb+  A-1040 Wien}+
-\verb+\signature{Dr. Hubert Partl}+
-\verb+\begin{document}+
-\verb+\begin{letter}{Frau Mag. Elisabeth Schlegl \\+
-\verb+  +EDV-Zentrum der Karl-Franzens-Universit\"at \verb+\\+
-\verb+  Attemsgasse 25/II \\+
-\verb+  \textbf{A-8010 Graz}}+
-\verb+\opening{Liebe Frau Schlegl,}+
-herzlichen Dank f\"ur die Zusendung \dots
+\begin{verbatim}
+\documentclass[12pt,a4paper]{letter}
+\usepackage[latin1]{inputenc}
+\usepackage{german}
+\address{EDV-Zentrum der TU Wien \\
+  Abt. Digitalrechenanlage \\
+  Wiedner Hauptstraße 8--10 \\
+  A-1040 Wien}
+\signature{Dr. Hubert Partl}
+\begin{document}
+\begin{letter}{Frau Mag. Elisabeth Schlegl \\
+  EDV-Zentrum der Karl-Franzens-Universität \\
+  Attemsgasse 25/II \\
+  \textbf{A-8010 Graz}}
+\opening{Liebe Frau Schlegl,}
+herzlichen Dank für die Zusendung ...
 
-\dots in etwa 2--3~Wochen fertig zu sein.
-\verb+\closing{+Mit freundlichen Gr\"u\ss{}en\verb+}+
-\verb+\end{letter}+
-\verb+\end{document}+
-\end{alltt}
+... in etwa 2--3~Wochen fertig zu sein.
+\closing{Mit freundlichen Grüßen}
+\end{letter}
+\end{document}
+\end{verbatim}
 \unten
 \caption{Brief von H.\,P. an E.\,S.} \label{brief}
 \end{figure}

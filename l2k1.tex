@@ -315,32 +315,31 @@ Small is beautiful.
 % im folgenden Beispiel sollten Umlaute im Eingabefile auftreten!
 \begin{figure}[hbtp] %\small
 \oben{10cm}
-\begin{flushleft}\ttfamily
-\verb+\documentclass[11pt,a4paper]{article}+\\
-\verb+\usepackage[latin1]{inputenc}+\\
-\verb+\usepackage{ngerman}+\\
-\verb+\date{29. Februar 1998}+\\
-\verb+\author{H.~Partl}+\\
-\verb+\title{+"Uber kurz oder lang\verb+}+\\
-\ \\
-\verb+\begin{document}+\\
-\verb+\maketitle+\\
-\verb+\begin{abstract}+\\
-Beispiel f"ur einen wissenschaftlichen Artikel\\
-in deutscher Sprache.\\
-\verb+\end{abstract}+\\
-\verb+\tableofcontents+\\
-\ \\
-\verb+\section{Start}+\\
-\ \\
-Hier beginnt mein schönes Werk \dots\\
-\ \\
-\verb+\section{Ende}+\\
-\ \\
-\dots\ und hier endet es.\\
-\ \\
-\verb+\end{document}+\\[1\baselineskip]
-\end{flushleft}
+\begin{verbatim}
+\documentclass[11pt,a4paper,ngerman]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\date{29. Februar 1998}
+\author{H.~Partl}
+\title{Über kurz oder lang}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+Beispiel für einen wissenschaftlichen Artikel
+in deutscher Sprache.
+\end{abstract}
+\tableofcontents
+
+\section{Start}
+Hier beginnt mein schönes Werk ...
+
+\section{Ende}
+... und hier endet es.
+
+\end{document}
+\end{verbatim}
 \unten
 \caption{Aufbau eines Artikels} \label{dokument}
 \end{figure}
@@ -456,7 +455,7 @@ Eine Auswahl von Paketen findet sich in der Tabelle~\ref{pack}
 auf S.~\pageref{pack}.
 Das Eingabefile für diese Beschreibung enthält beispielsweise:
 \begin{verse}
-\verb|\usepackage{german,latexsym,alltt,|\\
+\verb|\usepackage{babel,latexsym|\\
 \verb|            graphicx,textcomp,hyperref}|
 \end{verse}
 
@@ -466,7 +465,7 @@ Das Eingabefile für diese Beschreibung enthält beispielsweise:
 \oben{11cm}
 \begin{ttdescription}%\small
 \setlength{\itemsep}{.5\itemsep plus1pt minus1pt}
-\item[alltt] Definiert eine Variante der \texttt{verbatim}-Umgebung
+% \item[alltt] Definiert eine Variante der \texttt{verbatim}-Umgebung
 \item[amsmath, amssymb] Mathematischer Formelsatz mit erweiterten Fähigkeiten,
   zusätzliche mathematische Schriften und Symbole; Beschreibung siehe
   \cite{ch8}.
