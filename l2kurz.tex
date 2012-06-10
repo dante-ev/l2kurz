@@ -15,14 +15,19 @@
 \documentclass[11pt,a4paper]{article} % ergaenze `twoside', wenn gewuenscht!
 \NeedsTeXFormat{LaTeX2e}[1998/06/01]  % wegen \mathring und Textsymbolen
 
+
+\usepackage[USenglish,ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
 \usepackage{%
    latexsym,
+   lmodern,
    alltt,
    graphicx,
    textcomp,
    hyperref}
 
-\usepackage[USenglish,ngerman]{babel}
 
 
 \hypersetup{%
@@ -137,26 +142,26 @@
   Version \lkver\\
   \lkdate\\[2ex]
   Walter Schmidt\footnote{\texttt{<w-a-schmidt@arcor.de>}}\\
-  J"org Knappen\\
-  Hubert Partl%\footnote{Zentraler Informatikdienst der Universit"at f"ur Bodenkultur, Wien}
+  Jörg Knappen\\
+  Hubert Partl%\footnote{Zentraler Informatikdienst der Universität für Bodenkultur, Wien}
     \\
-  Irene Hyna%\footnote{Bundesministerium f"ur Wissenschaft und Verkehr, Wien}
+  Irene Hyna%\footnote{Bundesministerium für Wissenschaft und Verkehr, Wien}
   \\
 \end{flushleft}
 
 \vfill
 
 {\parindent=0cm
-\LaTeX{} ist ein Satzsystem, das f"ur viele Arten von
-Schrift"-st"u"cken verwendet werden kann, von einfachen Briefen bis zu
-kompletten B"uchern.  Besonders geeignet ist es f"ur 
-wissenschaftliche oder technische Dokumente. \LaTeX{} ist f"ur 
-praktisch alle verbreiteten Betriebssysteme verf"ugbar.
+\LaTeX{} ist ein Satzsystem, das für viele Arten von
+Schriftstücken verwendet werden kann, von einfachen Briefen bis zu
+kompletten Büchern.  Besonders geeignet ist es für 
+wissenschaftliche oder technische Dokumente. \LaTeX{} ist für 
+praktisch alle verbreiteten Betriebssysteme verfügbar.
  
 Die vorliegende Kurzbeschreibung bezieht sich auf die Version
-\LaTeXe\ in der Fassung vom Juni~2001 und sollte f"ur den 
+\LaTeXe\ in der Fassung vom Juni~2001 und sollte für den 
 Einstieg in \LaTeX{} ausreichen.  
-Eine voll"-st"andige Beschreibung ent"-h"alt das \manual{}
+Eine vollständige Beschreibung enthält das \manual{}
 in Verbindung mit der Online-Dokumentation.
 }
 \setcounter{footnote}{0}
@@ -180,8 +185,8 @@ Copyright \copyright{} 1998--2003 W.~Schmidt, J.~Knappen, H.~Partl, I.~Hyna
 
 \bigskip
 
-Die in dieser Publikation erw"ahnten Software- und Hardware-Bezeichnungen sind
-in den meisten F"allen auch eingetragene Warenzeichen und unterliegen als
+Die in dieser Publikation erwähnten Software- und Hardware-Bezeichnungen sind
+in den meisten Fällen auch eingetragene Warenzeichen und unterliegen als
 solche den gesetzlichen Bestimmungen.
 
 \bigskip
@@ -189,7 +194,7 @@ solche den gesetzlichen Bestimmungen.
 \vfill
 
 Dieses Dokument wurde mit \LaTeX{} gesetzt.
-Es ist als Quelltext und im PDF-Format online er\-h"alt\-lich:
+Es ist als Quelltext und im PDF-Format online erhältlich:
 \begin{quote}
 \path{<ftp://dante.ctan.org/tex-archive/info/lshort/german/>}
 \end{quote}
@@ -202,9 +207,9 @@ Peter Karp,
 Rolf \mbox{Niepraschk},
 Heiko Oberdiek,
 Bernd Raichle, 
-Rainer Sch"opf und
+Rainer Schöpf und
 Stefan Steffens
-f"ur Tips, Anmerkungen und  Korrekturen.
+für Tips, Anmerkungen und  Korrekturen.
 
 }
 
@@ -242,7 +247,7 @@ f"ur Tips, Anmerkungen und  Korrekturen.
 \bibitem{manual}
 L.~Lamport: \textit{Das \LaTeX-Handbuch.}
 Addison-Wesley Deutschland (1995)%, ISBN~3-89319-826-1
-. Deutsche "Uber"-setzung von~\cite{manual-eng}.
+. Deutsche Übersetzung von~\cite{manual-eng}.
 
 \bibitem{manual-eng}
 L.~Lamport: \textit{\LaTeX, A Document Preparation System.}
@@ -253,7 +258,7 @@ Ad\-di\-son-Wesley, 2.~Aufl. (1994)%, ISBN~0-201-52983-1
 M.~Goossens, F.~Mittelbach und A.~Samarin:
 \textit{Der \LaTeX-Begleiter.}
 Ad\-di\-son Wesley Longman, 2.~korr.\ Nachdruck (1996)%, ISBN~3-89319-646-3
-.  Deutsche "Uber"-setzung von~\cite{wonne-eng}.
+.  Deutsche Übersetzung von~\cite{wonne-eng}.
 
 \bibitem{wonne-eng}
 M.~Goossens, F.~Mittelbach und A.~Samarin:
@@ -276,17 +281,17 @@ Addison Wesley Longman (1997)% ISBN~0-201-85469-4
 
 \bibitem{local}
 Zu jedem installierten \LaTeX-System sollte ein
-\emph{\LaTeX\ Local Guide} vorhanden sein, in dem alle f"ur
-dieses System spezifischen Angaben -- z.\,B.~die f"ur den
-Aufruf der Programme notwendigen Befehle und die zur Ver"-f"ugung
-stehenden Dokumentklassen, Pakete und Schriften -- angef"uhrt sind.
+\emph{\LaTeX\ Local Guide} vorhanden sein, in dem alle für
+dieses System spezifischen Angaben -- z.\,B.~die für den
+Aufruf der Programme notwendigen Befehle und die zur Verfügung
+stehenden Dokumentklassen, Pakete und Schriften -- angeführt sind.
  
 \bibitem{usrguide}
 \LaTeX3 Project Team (Hrsg.): 
 \textit{\LaTeXe\ for authors.} 
 Bestandteil der Online-Dokumentation von \LaTeX,
 Datei \texttt{usrguide.tex}.  
-Aktuelle "Anderungen und Erg"anzungen sowie die Unterschiede zum fr"uheren 
+Aktuelle Änderungen und Ergänzungen sowie die Unterschiede zum früheren 
 \LaTeX~2.09 sind hier dokumentiert.
 
 \bibitem{fntguide}
@@ -312,8 +317,8 @@ Bestandteil der Online-Dokumentation von \LaTeX{}
 (seit Juni~2000), Datei \path{psnfss2e.pdf}. 
 
 \bibitem{lay}
-H.~Partl und A.~Kielhorn: \textit{Layout-"Anderungen mit \LaTeX.}
-EDV-""Zentrum der Technischen Universit"at Wien (1996).\\
+H.~Partl und A.~Kielhorn: \textit{Layout-Änderungen mit \LaTeX.}
+EDV-""Zentrum der Technischen Universität Wien (1996).\\
 \path{<ftp://dante.ctan.org/tex-archive/macros/latex/contrib/supported/refman/>}
 
 \bibitem{lay2}
@@ -335,7 +340,7 @@ Addison-Wesley (1991)%, ISBN~0-201-13447-0
 .
 
 \bibitem{schwarz}
-N.~Schwarz: \textit{Einf"uhrung in \TeX -- incl.\ Version~3.0.}
+N.~Schwarz: \textit{Einführung in \TeX -- incl.\ Version~3.0.}
 Oldenbourg, 3.~Aufl.\ (1991)%, ISBN 3-486-24349-7
 .
  
@@ -349,7 +354,7 @@ B.~Raichle:
 
 \bibitem{faq} 
 B.~Raichle, R.~Niepraschk und Th.~Hafner:
-\textit{Fragen und Antworten (FAQ) "uber das Textsatzsystem \TeX{} und 
+\textit{Fragen und Antworten (FAQ) über das Textsatzsystem \TeX{} und 
 DANTE~e.V.} \\
 \path{<http://www.dante.de/faq/de-tex-faq/>}
 

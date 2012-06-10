@@ -8,11 +8,11 @@
  
 
 \subsection{Deutschsprachige Texte}\label{deutsch}
-\LaTeX{} wurde urspr"unglich f"ur den englischen Sprachraum entwickelt.
-F"ur Texte, die in einer anderen Sprache als (amerikanischem)
-Englisch verfa"st sind, mu"s deshalb ein zus"atzliches Paket 
+\LaTeX{} wurde ursprünglich für den englischen Sprachraum entwickelt.
+Für Texte, die in einer anderen Sprache als (amerikanischem)
+Englisch verfasst sind, muss deshalb ein zusätzliches Paket 
 (siehe Abschnitt~\ref{packages}) zur Sprachanpassung geladen werden.  
-F"ur deutschsprachige Texte ist das normalerweise das Paket \texttt{german} 
+Für deutschsprachige Texte ist das normalerweise das Paket \texttt{german} 
 oder \texttt{ngerman}:
 \begin{verse}
 \verb:\usepackage{german}:
@@ -21,11 +21,11 @@ oder
 \begin{verse}
 \verb:\usepackage{ngerman}:
 \end{verse}
-F"ur Texte in \emph{traditioneller} Rechtschreibung ist \texttt{german}
-zu benutzen, f"ur Texte in der \emph{neuen} deutschen Rechtschreibung
+Für Texte in \emph{traditioneller} Rechtschreibung ist \texttt{german}
+zu benutzen, für Texte in der \emph{neuen} deutschen Rechtschreibung
 \texttt{ngerman}.
-Der Grund f"ur diese Unterscheidung ist die unterschiedliche Silbentrennung.
-Eine ausf"uhrliche Beschreibung dieser Pakete findet man in \cite{germdoc}.  
+Der Grund für diese Unterscheidung ist die unterschiedliche Silbentrennung.
+Eine ausführliche Beschreibung dieser Pakete findet man in \cite{germdoc}.  
 Wenn im folgenden vom Paket \texttt{german} die Rede ist, 
 so bezieht sich das normalerweise auch auf \texttt{ngerman}.
 
@@ -43,23 +43,23 @@ so bezieht sich das normalerweise auch auf \texttt{ngerman}.
 \subsubsection{Blocksatz}
 
 Normaler Text wird im Blocksatz, d.\,h.~mit Randausgleich
-gesetzt.  \LaTeX\ f"uhrt den Zeilen- und Seiten\-umbruch
-automatisch durch.  Dabei wird f"ur jeden Absatz die
-best"-m"ogliche Aufteilung der W"orter auf die Zeilen bestimmt,
-und wenn notwendig werden W"orter automatisch abgeteilt.
+gesetzt.  \LaTeX\ führt den Zeilen- und Seitenumbruch
+automatisch durch.  Dabei wird für jeden Absatz die
+bestmögliche Aufteilung der Wörter auf die Zeilen bestimmt,
+und wenn notwendig werden Wörter automatisch abgeteilt.
 \exa
 \parindent=17pt\relax
 \hbadness=4600\relax %% `underfull hbox'-Fehlermeldung aus
-\noindent Das Ende von W"ortern und S"atzen wird durch Leerzeichen
+\noindent Das Ende von Wörtern und Sätzen wird durch Leerzeichen
 gekennzeichnet.  Hierbei spielt es keine Rolle, ob man ein oder
 100 Leerzeichen eingibt.
 \par
 Eine oder mehrere Leerzeilen
 kennzeichnen das Ende von
-Ab"-s"atzen.
+Absätzen.
 \exb
 \begin{alltt}
-Das Ende von W\"ortern und
+Das Ende von Wörtern und
 S\"atzen wird durch Leerzeichen 
 gekennzeichnet.
 Hierbei spielt es keine Rolle,
@@ -71,17 +71,17 @@ kennzeichnen das Ende von
 Abs\"atzen.
 \end{alltt}
 \exc
-Wie die Ab"-s"atze gesetzt werden, h"angt von der Dokumentklasse ab: 
+Wie die Absätze gesetzt werden, hängt von der Dokumentklasse ab: 
 Die Klassen 
 \texttt{article}, \texttt{report} und \texttt{book} kennzeichnen
-Ab"-s"atze durch Ein"-r"u"cken der ersten Zeile;
-die Klasse \texttt{letter} beispielsweise l"a"st stattdessen 
-zwischen den Abs"atzen einen kleinen vertikalen Abstand.
+Absätze durch Einrücken der ersten Zeile;
+die Klasse \texttt{letter} beispielsweise lässt stattdessen 
+zwischen den Absätzen einen kleinen vertikalen Abstand.
 
 Mit Hilfe der in Abschnitt~\ref{env} beschriebenen Umgebungen ist
-es m"oglich, spezielle Textteile jeweils anders zu setzen.
+es möglich, spezielle Textteile jeweils anders zu setzen.
  
-F"ur Ausnahmef"alle kann man den Umbruch au"serdem mit den
+Für Ausnahmefälle kann man den Umbruch außerdem mit den
 folgenden Befehlen beeinflussen:
 Der Befehl \verb|\\| oder \verb|\newline| bewirkt einen
 Zeilenwechsel ohne neuen Absatz, der Befehl~\verb|\\*| einen
@@ -93,45 +93,45 @@ Mit den Befehlen
 \verb|\pagebreak[|\textit{n}\verb|]|   und
 \verb|\nopagebreak[|\textit{n}\verb|]|
 kann man angeben, ob an bestimmten Stellen ein Zeilen- bzw.\ %
-Seitenwechsel eher g"unstig oder eher un"-g"unstig ist, wobei
-\textit{n} die St"arke der Beeinflussung angibt (1, 2, 3 oder 4).
+Seitenwechsel eher günstig oder eher ungünstig ist, wobei
+\textit{n} die Stärke der Beeinflussung angibt (1, 2, 3 oder 4).
 
-Mit dem \LaTeX-Befehl \verb:\enlargethispage{:\textit{L"ange}\verb:}:
-l"a"st sich eine gegebene Seite um einen festen Betrag
-ver"-l"angern oder ver"-k"urzen. Damit ist es m"og"-lich, noch
+Mit dem \LaTeX-Befehl \verb:\enlargethispage{:\textit{Länge}\verb:}:
+lässt sich eine gegebene Seite um einen festen Betrag
+verlängern oder verkürzen. Damit ist es möglich, noch
 eine Zeile mehr auf eine Seite zu bekommen. 
-(Zur Schreibweise von L"angenangaben siehe Abschnitt~\ref{abst:horiz}.)
+(Zur Schreibweise von Längenangaben siehe Abschnitt~\ref{abst:horiz}.)
  
-\LaTeX\ bem"uht sich, den Zeilenumbruch besonders sch"on zu
-machen.  Falls es keine den strengen Regeln ge"-n"ugende
-M"og"-lichkeit f"ur einen glatten rechten Rand findet, l"a"st es
+\LaTeX\ bemüht sich, den Zeilenumbruch besonders schön zu
+machen.  Falls es keine den strengen Regeln genügende
+Möglichkeit für einen glatten rechten Rand findet, lässt es
 eine Zeile zu lang und gibt eine entsprechende Fehlermeldung aus
 (\texttt{over\-full hbox}).
 Das tritt insbesondere dann auf, wenn keine geeignete Stelle
-f"ur die Silbentrennung gefunden wird.
+für die Silbentrennung gefunden wird.
 Innerhalb der \texttt{sloppypar}-Umgebung ist \LaTeX\ generell
-weniger streng in seinen Anspr"uchen und vermeidet solche
-"uber"-lange Zeilen, indem es die Wort"-ab"-st"ande st"arker --
-notfalls auch un\-sch"on~-- ver"-gr"o"sert.
+weniger streng in seinen Ansprüchen und vermeidet solche
+überlange Zeilen, indem es die Wortabstände stärker --
+notfalls auch unschön~-- vergrößert.
 In diesem Fall werden zwar Warnungen gemeldet (\texttt{under\-full
 hbox}), das Ergebnis ist aber meistens durchaus brauchbar.
  
  
 \subsubsection{Silbentrennung} \label{silb}
  
-Falls die automatische Silbentrennung in einzelnen F"allen nicht
+Falls die automatische Silbentrennung in einzelnen Fällen nicht
 das richtige Ergebnis liefert, kann man diese Ausnahmen mit den
 folgenden Befehlen richtigstellen.
 Das kann insbesondere bei zusammengesetzten oder fremdsprachigen
-W"ortern notwendig werden; au"serdem findet \LaTeX{} in W"ortern
-mit Umlauten oder akzentuierten Buchstaben nicht alle zul"assigen
+Wörtern notwendig werden; außerdem findet \LaTeX{} in Wörtern
+mit Umlauten oder akzentuierten Buchstaben nicht alle zulässigen
 Trennstellen.
  
-Der Befehl \verb|\hyphenation| bewirkt, da"s die darin
-an"-ge"-f"uhrten W"orter jedesmal an den und nur an den mit
-\verb|-| markierten Stellen abgeteilt werden k"onnen.
+Der Befehl \verb|\hyphenation| bewirkt, dass die darin
+angeführten Wörter jedesmal an den und nur an den mit
+\verb|-| markierten Stellen abgeteilt werden können.
 Er sollte im Vorspann stehen und eignet sich
-\emph{nur} f"ur W"orter, die keine Umlaute, scharfes~s,
+\emph{nur} für Wörter, die keine Umlaute, scharfes~s,
 Ziffern oder sonstige Sonderzeichen enthalten.
 \exa
 ~
@@ -142,21 +142,21 @@ Ziffern oder sonstige Sonderzeichen enthalten.
 \end{verbatim}
 \exc
  
-Der Befehl~\verb|\-| innerhalb eines Wortes bewirkt, da"s dieses
+Der Befehl~\verb|\-| innerhalb eines Wortes bewirkt, dass dieses
 Wort dieses eine Mal nur an den mit~\verb|\-|
 markierten Stellen 
 oder unmittelbar nach einem Bindestrich
 abgeteilt werden kann.
-Dieser Befehl eignet sich f"ur \emph{alle} W"orter, auch f"ur
+Dieser Befehl eignet sich für \emph{alle} Wörter, auch für
 solche, die Umlaute, scharfes~s, Ziffern oder sonstige
 Sonderzeichen enthalten.
 %(Mit dem Paket \texttt{german}(siehe \ref{deutsch}) steht eine
-%weitere M"og"-lichkeit zur Ver"-f"ugung, n"am"-lich der
+%weitere Möglichkeit zur Verfügung, nämlich der
 %Befehl~\verb:"-:. Dieser erlaubt auch die Trennung an nicht
 %explizit angegebenen Stellen im Wort.)
 \exa
-Ein\-gabe\-file, \LaTeX-Eingabe-\\
-file, H"a"s\-lich\-keit
+Eingabefile, \LaTeX-Eingabe-\\
+file, Hässlichkeit
 \exb
 \begin{flushleft}\ttfamily
 Ein\bs-gabe\bs-file,\\
@@ -166,7 +166,7 @@ H"a"s\bs-lich\bs-keit
 \exc
 
 
-Der Befehl \verb|\mbox{...}| bewirkt, da"s das Argument "uberhaupt nicht
+Der Befehl \verb|\mbox{...}| bewirkt, dass das Argument überhaupt nicht
 abgeteilt werden kann.
 \exa
 Die Telefonnummer ist nicht mehr
@@ -181,25 +181,25 @@ Die Telefonnummer ist nicht mehr
 Dateinamen an.
 \end{verbatim}
 \exc
-Innerhalb des von \verb|\mbox| eingeschlossenen Text k"onnen
-Wort"-ab"-st"ande f"ur den notwendigen Randausgleich bei
-Blocksatz nicht mehr ver"-"andert werden.  Ist dies nicht
-er"-w"unscht, sollte man besser einzelne W"orter oder Wort"-teile
-in \verb|\mbox| einschlie"sen und diese mit einer Tilde~\verb|~|,
+Innerhalb des von \verb|\mbox| eingeschlossenen Text können
+Wortabstände für den notwendigen Randausgleich bei
+Blocksatz nicht mehr verändert werden.  Ist dies nicht
+erwünscht, sollte man besser einzelne Wörter oder Wortteile
+in \verb|\mbox| einschließen und diese mit einer Tilde~\verb|~|,
 einem untrennbaren Wortzwischenraum (siehe
 Abschnitt~\ref{abstaende}), verbinden.
 
 
 Das Paket \texttt{german} macht noch einige weitere Befehle
-ver"-f"ug"-bar, die bestimmte Besonderheiten der deutschen Sprache
-ber"ucksichtigen.  Die wichtigsten von ihnen sind:
-\verb|"ck| f"ur "`ck"', das als "`\mbox{k-k}"' abgeteilt wird,
-\verb|"ff| f"ur "`"ff"', das als "`\mbox{ff-f}"' abgeteilt wird
-(und ebenso f"ur andere Konsonanten)
-und \verb|"~| f"ur einen Bindestrich, an dem kein Zeilenumbruch
+verfügbar, die bestimmte Besonderheiten der deutschen Sprache
+berücksichtigen.  Die wichtigsten von ihnen sind:
+\verb|"ck| für "`ck"', das als "`\mbox{k-k}"' abgeteilt wird,
+\verb|"ff| für "`"ff"', das als "`\mbox{ff-f}"' abgeteilt wird
+(und ebenso für andere Konsonanten)
+und \verb|"~| für einen Bindestrich, an dem kein Zeilenumbruch
 stattfinden~soll.
 \exa
-Dru"cker bzw. Druk-ker \\
+Drucker bzw. Druk-ker \\
 Ro"lladen bzw. Roll-laden \\
 x"~beliebig\\
 bergauf und "~ab
@@ -216,27 +216,27 @@ bergauf und "~ab
 \subsection{Wortabstand} \label{abstaende}
  
 Um einen glatten rechten Rand zu erreichen, variiert \LaTeX\ die
-Leerstellen zwischen den W"ortern etwas.
+Leerstellen zwischen den Wörtern etwas.
 Nach Punkten, Fragezeichen u.\,a., die einen Satz beenden, wird
-dabei ein etwas gr"o"serer Abstand erzeugt, was die Lesbarkeit
-des Textes er"-h"oht.
-\LaTeX\ nimmt an, da"s Punkte, die auf einen Gro"sbuchstaben
-folgen, eine Ab"-k"urzung bedeuten, und da"s alle anderen Punkte
+dabei ein etwas größerer Abstand erzeugt, was die Lesbarkeit
+des Textes erhöht.
+\LaTeX\ nimmt an, dass Punkte, die auf einen Großbuchstaben
+folgen, eine Abkürzung bedeuten, und dass alle anderen Punkte
 einen Satz beenden.
-Ausnahmen von diesen Regeln mu"s man \LaTeX\ mit den folgenden
+Ausnahmen von diesen Regeln muss man \LaTeX\ mit den folgenden
 Befehlen mitteilen:
 
-Ein Backslash (\verb:\:) vor einem Leerzeichen bedeutet, da"s diese
+Ein Backslash (\verb:\:) vor einem Leerzeichen bedeutet, dass diese
 Leerstelle nicht verbreitert werden darf.
 
 Eine \verb|~| (Tilde) bedeutet eine Leerstelle,
 an der kein Zeilenwechsel erfolgen darf.
 
-Mit \verb|\,| l"a"st sich ein kurzer Abstand erzeugen, wie er
-z.\,B.\ in Ab"-k"urzungen vorkommt oder zwischen Zahlenwert und Ma"seinheit.
+Mit \verb|\,| lässt sich ein kurzer Abstand erzeugen, wie er
+z.\,B.\ in Abkürzungen vorkommt oder zwischen Zahlenwert und Maßeinheit.
 
-Der Befehl~\verb|\@| vor einem Punkt bedeutet, da"s dieser Punkt
-einen Satz beendet, obwohl davor ein Gro"sbuchstabe steht.
+Der Befehl~\verb|\@| vor einem Punkt bedeutet, dass dieser Punkt
+einen Satz beendet, obwohl davor ein Großbuchstabe steht.
 \exa
 Das betrifft u.\,a.\ auch die \\
 wissenschaftl.\ Mitarbeiter. \\
@@ -254,33 +254,33 @@ Du nicht?
 \end{verbatim}
 \exc
  
-Au"serdem gibt es die M"oglichkeit, mit dem Befehl
+Außerdem gibt es die Möglichkeit, mit dem Befehl
 \verb|\frenchspacing|
-zu vereinbaren, da"s die Ab"-st"ande an Satz"-enden nicht anders
-behandelt werden sollen als die zwischen W"or"-tern.
+zu vereinbaren, dass die Abstände an Satzenden nicht anders
+behandelt werden sollen als die zwischen Wörtern.
 Diese Konvention ist im nicht-englischen Sprachraum verbreitet.
 In diesem Fall brauchen die Befehle \verb|\ | und~\verb|\@| nicht
 angegeben werden.
 Mit dem Paket \texttt{german} ist \verb:\frenchspacing:
-automatisch ge"-w"ahlt; das kann durch
+automatisch gewählt; das kann durch
 \verb:\nonfrenchspacing:
-wieder r"uckg"angig gemacht werden -- so wie durchg"angig im vorliegenden
+wieder rückgängig gemacht werden -- so wie durchgängig im vorliegenden
 Dokument!
 
  
 
 \subsection{Spezielle Zeichen} \label{spezial}
  
-\subsubsection{Anf"uhrungszeichen} \label{quotes}
+\subsubsection{Anführungszeichen} \label{quotes}
  
-F"ur Anf"uhrungszeichen ist \emph{nicht} das auf Schreibmaschinen
-"ubliche Zeichen (\verb|"|) zu verwenden.
-Im Buchdruck werden f"ur "offnende und schlie"sende
-An"-f"uh"-rungs"-zeichen jeweils verschiedene Zeichen bzw.\ %
+Für Anführungszeichen ist \emph{nicht} das auf Schreibmaschinen
+übliche Zeichen (\verb|"|) zu verwenden.
+Im Buchdruck werden für öffnende und schlißende
+Anführungszeichen jeweils verschiedene Zeichen bzw.\ %
 Zeichenkombinationen gesetzt.
-"Offnende An"-f"uhrungs"-zeichen, wie sie im amerikanischen Englisch 
-"ublich sind, er"-h"alt man durch Eingabe von zwei Grave-Akzenten, 
-schlie"sende durch zwei Apostrophe.
+öffnende Anführungszeichen, wie sie im amerikanischen Englisch 
+üblich sind, erhält man durch Eingabe von zwei Grave-Akzenten, 
+schließende durch zwei Apostrophe.
 \exa
 ``No,'' he said,
 ``I don't know!''
@@ -290,21 +290,21 @@ schlie"sende durch zwei Apostrophe.
 ``I don't know!''
 \end{verbatim}
 \exc
-"`Deutsche G"ansef"u"schen"' sehen anders aus als ``amerikanische
+"`Deutsche Gänsefüßchen"' sehen anders aus als ``amerikanische
 Quotes''.  
-% In Original-\LaTeX\ kann man versuchen, f"ur deutsche
-% An"-f"uhrungs"-zeichen unten (links) zwei Kommata und oben
+% In Original-\LaTeX\ kann man versuchen, für deutsche
+% Anführungszeichen unten (links) zwei Kommata und oben
 % (rechts) zwei Grave-Akzente einzugeben, das Ergebnis ist aber
-% nicht besonders sch"on.\footnote{Wenn die nach der Cork-Norm 
+% nicht besonders schön.\footnote{Wenn die nach der Cork-Norm 
 % kodierten Schriften verwendet werden, etwa mit Hilfe von 
 % \texttt{\string\usepackage[T1]$\{$fontenc$\}$},
-% ist die Eingabe durch zwei Kommata und zwei Graves m"oglich, die 
-% Warnung bez"uglich der Frage- und Ausrufezeichen bleibt aber richtig. 
+% ist die Eingabe durch zwei Kommata und zwei Graves möglich, die 
+% Warnung bezüglich der Frage- und Ausrufezeichen bleibt aber richtig. 
 % Deshalb sind Konventionen von \texttt{german.sty} auch dann zu 
 % bevorzugen.}
-% Statt \verb|!``| und \verb|?``| mu"s man \verb|!\/``| bzw.\ 
+% Statt \verb|!``| und \verb|?``| muss man \verb|!\/``| bzw.\ 
 % \verb|?\/``| schreiben, weil man sonst die spanischen
-% Sonderzeichen erhalten w"urde.
+% Sonderzeichen erhalten würde.
 % \exa
 % ,,Nein,`` sagte er,
 % ,,ich wei\ss{} nichts!\/``
@@ -315,34 +315,34 @@ Quotes''.
 % \end{verbatim}
 % \exc
 Bei Benutzung des Paketes \texttt{german} (siehe \ref{deutsch})
-stehen die folgenden Befehle f"ur 
-deutsche An"-f"uhrungs"-zeichen zur Ver"-f"ugung:
-\verb|"`| (Doublequote und Grave-Akzent) f"ur An"-f"uhrungs"-zeichen
+stehen die folgenden Befehle für 
+deutsche Anführungszeichen zur Verfügung:
+\verb|"`| (Doublequote und Grave-Akzent) für Anführungszeichen
 unten,
 und
-\verb|"'| (Doublequote und Apostroph) f"ur An"-f"uh"-rungszeichen oben.
+\verb|"'| (Doublequote und Apostroph) für Anführungszeichen oben.
 \exa
 "`Nein,"' sagte er,
-"`ich wei"s nichts!"'
+"`ich weiß nichts!"'
 \exb
 \begin{alltt}
 "`Nein,"' sagte er,
 "`ich wei\ss{} nichts!"'
 \end{alltt}
 \exc
-In den Zeichens"atzen mancher Rechner (z.\,B. Macintosh) sind die deutschen 
-Anf"uhrungszeichen enthalten.  Das Paket \texttt{inputenc} (siehe
+In den Zeichensätzen mancher Rechner (z.\,B. Macintosh) sind die deutschen 
+Anführungszeichen enthalten.  Das Paket \texttt{inputenc} (siehe
 Abschnitt~\ref{inputenc}) erlaubt dann, sie auch direkt einzugeben.
 
 
 \subsubsection{Binde- und Gedankenstriche}
  
-Im Schriftsatz werden unterschiedliche Striche f"ur Bindestrich,
+Im Schriftsatz werden unterschiedliche Striche für Bindestrich,
 Gedankenstrich und Minus-Zeichen verwendet.
 Die verschieden langen Striche werden in \LaTeX\ durch
 Kombinationen von Minus-Zeichen angegeben. Der ganz lange
 Gedankenstrich (\mbox{---}) wird im Deutschen nicht benutzt, im
-Englischen wird er ohne Leerzeichen ein"-ge"-f"ugt.
+Englischen wird er ohne Leerzeichen eingefügt.
 \exa
 O-Beine \\
 10--18~Uhr \\
@@ -368,7 +368,7 @@ yes---or no?
 Im Gegensatz zur Schreibmaschine, wo jeder Punkt und jedes Komma
 mit einem der Buchstabenbreite entsprechenden Abstand versehen
 ist, werden Punkte und Kommata im Buchdruck eng an das
-vorangehende Zeichen gesetzt. F"ur Fortsetzungspunkte (drei
+vorangehende Zeichen gesetzt. Für Fortsetzungspunkte (drei
 Punkte mit geeignetem Abstand) gibt es daher einen eigenen Befehl
 \verb|\ldots| oder~\verb|\dots|.
 \exa
@@ -383,16 +383,16 @@ Wien, Graz, \dots
  
 \subsubsection{Ligaturen}
  
-Im Buchdruck ist es "ublich, manche Buchstabenkombinationen
+Im Buchdruck ist es üblich, manche Buchstabenkombinationen
 anders zu setzen als die Einzelbuchstaben.
 \begin{verse}
 {\large fi fl AV Te \dots}\quad
 statt\quad {\large f\/i f\/l A\/V T\/e \dots}
 \end{verse}
-Mit R"ucksicht auf die Lesbarkeit des Textes sollten
+Mit Rücksicht auf die Lesbarkeit des Textes sollten
 diese  Ligaturen und Unterschneidungen (kerning) 
-unterdr"uckt werden, wenn die betreffenden Buchstabenkombinationen 
-nach Vorsilben oder bei zusammengesetzten W"ortern zwischen den
+unterdrückt werden, wenn die betreffenden Buchstabenkombinationen 
+nach Vorsilben oder bei zusammengesetzten Wörtern zwischen den
 Wortteilen auftreten.  Dazu dient der Befehl~\verb|\/|.
 \exa
 Nicht Auflage (Au-fl-age) \\
@@ -403,8 +403,8 @@ Nicht Auflage (Au-fl-age) \\
 sondern Auf\/lage (Auf-lage)
 \end{verbatim}
 \exc
-Mit dem Paket \texttt{german} steht zus"atzlich der
-Befehl~\verb:"|: zur Ver"-f"ugung, der gleichzeitig eine
+Mit dem Paket \texttt{german} steht zusätzlich der
+Befehl~\verb:"|: zur Verfügung, der gleichzeitig eine
 Trennhilfe darstellt.
 \exa
 Auf"|lage (Auf-lage)
@@ -417,8 +417,8 @@ Auf"|lage (Auf-lage)
 \subsubsection{Symbole, Akzente und besondere Buchstaben}\label{symbole}
 
 Einige der Zeichen, die bei der Eingabe eine Spezialbedeutung haben,
-k"onnen durch das Voranstellen des
-Zeichens \verb|\| (Back\-slash) ausgedruckt werden:
+können durch das Voranstellen des
+Zeichens \verb|\| (Backslash) ausgedruckt werden:
 \exa
 \$ \& \% \# \_ \{ \}
 \exb
@@ -426,7 +426,7 @@ Zeichens \verb|\| (Back\-slash) ausgedruckt werden:
 \$ \& \% \# \_ \{ \}
 \end{verbatim}
 \exc
-F"ur andere gibt es besondere Befehle.  Sie gelten nur f"ur normalen
+Für andere gibt es besondere Befehle.  Sie gelten nur für normalen
 Text; wie derartige Symbole innerhalb von mathematischen
 Formeln gesetzt werden, erfahren Sie im Kapitel~\ref{math}:
 \exa
@@ -447,29 +447,29 @@ Formeln gesetzt werden, erfahren Sie im Kapitel~\ref{math}:
 \end{verbatim}
 \exc
 
-\LaTeX\ erm"oglicht dar"uber hinaus die Verwendung von Akzenten 
+\LaTeX\ ermöglicht darüber hinaus die Verwendung von Akzenten 
 und speziellen Buchstaben aus zahlreichen verschiedenen Sprachen, 
 siehe die Tabellen~\ref{akzente}  und \ref{specials}.
 Akzente werden darin jeweils am Beispiel
-des Buchstabens~o gezeigt, k"onnen aber prinzipiell auf jeden
+des Buchstabens~o gezeigt, können aber prinzipiell auf jeden
 Buchstaben gesetzt werden.
-Wenn ein Akzent auf ein i oder~j gesetzt werden soll, mu"s der
+Wenn ein Akzent auf ein i oder~j gesetzt werden soll, muss der
 \mbox{i-Punkt} wegbleiben. Dies erreicht man mit den Befehlen
 \verb|\i| und~\verb|\j|.
-Es steht auch ein Befehl \verb|\textcircled| f"ur 
-eingekreiste Zeichen zur Verf"ugung.
+Es steht auch ein Befehl \verb|\textcircled| für 
+eingekreiste Zeichen zur Verfügung.
 \exa
 \umlauthigh % <-------
-H\^otel, na\"\i ve, sm\o rebr\o d.\\[1\baselineskip]
+Hôtel, na\"\i ve, smørebrød.\\[1\baselineskip]
 \umlautlow
-Die h\"a\ss{}liche Stra\ss{}e.\\[1\baselineskip]
-!`Se\~norita!\\
+Die hässliche Straße.\\[1\baselineskip]
+!`Señorita!\\
 \textcircled{x}
 \exb
 \begin{verbatim}
 H\^otel, na\"\i ve,
 sm\o rebr\o d.
-Die h\"a\ss{}liche
+Die h\"assliche
 Stra\ss{}e.
 !`Se\~norita!
 \textcircled{x}
@@ -506,43 +506,43 @@ Stra\ss{}e.
 
 
 Benutzt man das Paket \texttt{inputenc} mit der passenden Option
-f"ur das jeweilige Betriebssystem, siehe Abschnitt~\ref{inputenc},
+für das jeweilige Betriebssystem, siehe Abschnitt~\ref{inputenc},
 dann darf man diese Zeichen -- soweit sie im Zeichensatz des Betriebssystems
 existieren -- auch direkt in das Eingabefile schreiben.
 
 Mit dem Paket \texttt{german} %, siehe Abschnitt~\ref{deutsch}, 
-k"onnen
+können
 Umlaute auch durch einfaches Voranstellen eines Doublequotes geschrieben werden, 
-also z.\,B.\ \verb|"o| f"ur~"`"o"';
-f"ur scharfes~s darf man \verb|"s| schreiben (ohne Probleme mit
+also z.\,B.\ \verb|"o| für~"`ö"';
+für scharfes~s darf man \verb|"s| schreiben (ohne Probleme mit
 nachfolgenden Leerstellen):
 \exa
 \begin{sloppypar}\hbadness=1138 %% `underfull hbox'-Fehlermeldung aus 
-Die h"a"sliche Stra"se
-mu"s sch"oner werden.
+Die h"assliche Stra"se
+muss schöner werden.
 \end{sloppypar}
 \exb
 \begin{verbatim}
-Die h"a"sliche Stra"se
+Die h"assliche Stra"se
 mu"s sch"oner werden.
 \end{verbatim}
 \exc
-Diese Notation wurde eingef"uhrt, als die direkte Eingabe und
-Anzeige von Umlauten auf vielen Rechnersystemen noch nicht m"oglich war.
-Als Quasi-Standard zum plattform\-"uber\-greifenden Austausch von 
-\TeX- und \LaTeX"=Dokumenten ist sie aber nach wie vor n"utzlich und
-f"ur deutschsprachige Texte weit verbreitet; sie wird auch in einigen 
+Diese Notation wurde eingeführt, als die direkte Eingabe und
+Anzeige von Umlauten auf vielen Rechnersystemen noch nicht möglich war.
+Als Quasi-Standard zum plattformübergreifenden Austausch von 
+\TeX- und \LaTeX"=Dokumenten ist sie aber nach wie vor nützlich und
+für deutschsprachige Texte weit verbreitet; sie wird auch in einigen 
 Beispielen dieser Kurzbeschreibung benutzt.
  
 
 
-\subsection{Kapitel und "Uberschriften}
+\subsection{Kapitel und Überschriften}
  
 Der Beginn eines Kapitels bzw.\ Unterkapitels und seine
-"Uberschrift werden mit Befehlen der Form \verb|\section{...}|
-angegeben. Dabei mu"s die logische Hierarchie eingehalten werden.
+Überschrift werden mit Befehlen der Form \verb|\section{...}|
+angegeben. Dabei muss die logische Hierarchie eingehalten werden.
 
-\pagebreak[3] %% Ansonsten sehr unsch"oner Seitenumbruch
+\pagebreak[3] %% Ansonsten sehr unschöner Seitenumbruch
 \noindent Bei der Klasse \texttt{article}:
 \begin{quote}
 \verb|\section  \subsection  \subsubsection|
@@ -551,36 +551,36 @@ Bei den Klassen \texttt{report} und \texttt{book}:
 \begin{quote}
 \verb|\chapter  \section  \subsection  \subsubsection|
 \end{quote}
-Artikel k"onnen also relativ einfach als Kapitel in ein Buch
-eingebaut werden.  Die Ab"-st"ande zwischen den Kapiteln, die
-Numerierung und die Schrift"-gr"o"se der "Uberschrift werden von
+Artikel können also relativ einfach als Kapitel in ein Buch
+eingebaut werden.  Die Abstände zwischen den Kapiteln, die
+Numerierung und die Schriftgröße der Überschrift werden von
 \LaTeX\ automatisch bestimmt.
 
 
 
-Die "Uberschrift des gesamten Artikels bzw.\ die Titelseite des
-Schrift\-st"ucks wird mit dem Befehl \verb|\maketitle| gesetzt.
-Der Inhalt mu"s vorher mit den Befehlen \verb|\title|,
+Die Überschrift des gesamten Artikels bzw.\ die Titelseite des
+Schriftstücks wird mit dem Befehl \verb|\maketitle| gesetzt.
+Der Inhalt muss vorher mit den Befehlen \verb|\title|,
 \verb|\author| und \verb|\date| vereinbart werden (vgl.\ 
 Abbildung~\ref{dokument} auf Seite~\pageref{dokument}).
 
  
-Der Befehl \verb|\tableofcontents| bewirkt, da"s ein
+Der Befehl \verb|\tableofcontents| bewirkt, dass ein
 Inhaltsverzeichnis ausgedruckt wird.
-\LaTeX\ nimmt daf"ur immer die "Uberschriften und Seitennummern
+\LaTeX\ nimmt dafür immer die Überschriften und Seitennummern
 von der jeweils letzten vorherigen Verarbeitung des Eingabefiles.
 Bei einem neu erstellten oder um neue Kapitel erweiterten
-Schrift"-st"uck mu"s man das Programms \LaTeX\ also mindestens
-zweimal aufrufen, damit man die richtigen Angaben er"-h"alt.
+Schriftstück muss man das Programms \LaTeX\ also mindestens
+zweimal aufrufen, damit man die richtigen Angaben erhält.
  
 Es gibt auch Befehle der Form \verb|\section*{...}|, bei denen
 keine Numerierung und keine Eintragung ins Inhaltsverzeichnis
 erfolgen.
 
-Mit den Befehlen \verb|\label| und~\verb|\ref| ist es m"oglich,
+Mit den Befehlen \verb|\label| und~\verb|\ref| ist es möglich,
 die von \LaTeX\ automatisch vergebenen Kapitelnummern im Text
 anzusprechen.
-F"ur \verb|\ref{...}| setzt \LaTeX\ die
+Für \verb|\ref{...}| setzt \LaTeX\ die
 mit \verb|\label{...}| definierte Nummer ein.
 Auch hier wird immer die Nummer von der letzten vorherigen
 Verarbeitung des Eingabefiles genommen.
@@ -597,10 +597,10 @@ Der Beweis findet sich in Abschnitt~\ref{bew}.
 \end{quote}
  
  
-\subsection{Fu"snoten}
+\subsection{Fußnoten}
  
-Fu"snoten\footnote{Das 
-ist eine Fu"snote.} werden automatisch numeriert
+Fußnoten\footnote{Das 
+ist eine Fußnote.} werden automatisch numeriert
 und am unteren Ende der Seite ausgedruckt.  
 Innnerhalb von Gleitobjekten (siehe Abschnitt~\ref{floats}), 
 Tabellen (\ref{tabular}) oder der \texttt{tabbing}-Umgebung (\ref{tabbing})
@@ -619,14 +619,14 @@ Fu\ss{}note.\verb+}+ werden \dots
 \subsection{Hervorgehobener Text}
  
 In maschinengeschriebenen Texten werden hervorzuhebende Texte
-unterstrichen, im Buchdruck wird stattdessen ein auf"|f"alliger
+unterstrichen, im Buchdruck wird stattdessen ein auf"|fälliger
 Schriftschnitt verwendet.
 Der Befehl 
 \begin{quote}
 \verb|\emph{|\textit{text}\verb|}| 
 \end{quote}
-(emphasize) setzt seinen Parameter in einem auf"|f"alligen Stil.
-\LaTeX\ verwendet f"ur den hervorgehobenen Text \textit{kursive}
+(emphasize) setzt seinen Parameter in einem auf"|fälligen Stil.
+\LaTeX\ verwendet für den hervorgehobenen Text \textit{kursive}
 Schrift.
 
 \exa 
@@ -646,7 +646,7 @@ hervorgehoben, so setzt
 
 
 \subsection{Hochgestellter Text}
-Hochgestellten Text in passender Gr"o"se generiert folgender Befehl:
+Hochgestellten Text in passender Größe generiert folgender Befehl:
 \begin{quote}
 \verb|\textsuperscript{|\textit{text}\verb|}|
 \end{quote}
@@ -673,7 +673,7 @@ sogenannter Umgebungen (environments) in der Form
    \verb|\end{|\textit{name}\verb|}|
 \end{quote}
 Umgebungen sind \emph{Gruppen}.
-Sie k"onnen auch ineinander geschachtelt werden, dabei mu"s aber
+Sie können auch ineinander geschachtelt werden, dabei muss aber
 die richtige Reihenfolge beachtet werden:
 \begin{quote}
 \verb|\begin{aaa}|\\
@@ -684,12 +684,12 @@ die richtige Reihenfolge beachtet werden:
 
 \subsubsection{Zitate (quote, quotation, verse)}
  
-Die \texttt{quote}-Umgebung eignet sich f"ur k"urzere Zitate,
-hervorgehobene S"atze und Beispiele.
-Der Text wird links und rechts ein"-ge"-r"uckt.
+Die \texttt{quote}-Umgebung eignet sich für kürzere Zitate,
+hervorgehobene Sätze und Beispiele.
+Der Text wird links und rechts eingerückt.
 \exa
 Eine typographische Faustregel
-f"ur die Zeilen"-l"ange lautet:
+für die Zeilenlänge lautet:
 \begin{quote}
 \hbadness=2500\relax %% `underfull hbox'-Fehlermeldung aus
 Keine Zeile soll mehr als
@@ -701,7 +701,7 @@ verwendet.
 \exb 
 \begin{alltt}
 Eine typographische Faustregel
-f\"ur die Zeilenl\"ange lautet:
+f\"ur die Zeilenl"ange lautet:
 \verb+\begin{quote}+
 Keine Zeile soll mehr als
 ca.\bs{} 66~Buchstaben enthalten.
@@ -715,11 +715,11 @@ verwendet.
 Die \texttt{quotation}-Umgebung unterscheidet sich in den
 Standardklassen (vgl.\ Tabelle~\ref{docstyles} auf
 Seite~\pageref{docstyles}) von der \texttt{quote}-Umgebung
-dadurch, da"s Ab"-s"atze durch Ein"-z"uge gekennzeichnet werden.
-Sie ist daher f"ur l"angere Zitate, die aus mehreren Ab"-s"atzen
+dadurch, dass Absätze durch Einzüge gekennzeichnet werden.
+Sie ist daher für längere Zitate, die aus mehreren Absätzen
 bestehen, geeignet.
 
-Die \texttt{verse}-Umgebung eignet sich f"ur Gedichte und f"ur
+Die \texttt{verse}-Umgebung eignet sich für Gedichte und für
 Beispiele, bei denen die Zeilenaufteilung wesentlich ist.  Die
 Verse (Zeilen) werden durch~\verb|\\| getrennt, Strophen durch
 Leerzeilen.
@@ -727,11 +727,11 @@ Leerzeilen.
 
 \subsubsection{Listen (itemize, enumerate, description)}
  
-Die Umgebung \texttt{itemize} eignet sich f"ur einfache Listen
+Die Umgebung \texttt{itemize} eignet sich für einfache Listen
 (siehe Abbildung~\ref{item}).
-Die Umgebung \texttt{enumerate} eignet sich f"ur numerierte
-Auf"-z"ahlungen (siehe Abbildung~\ref{enum}).
-Die Umgebung \texttt{description} eignet sich f"ur Beschreibungen
+Die Umgebung \texttt{enumerate} eignet sich für numerierte
+Aufzählungen (siehe Abbildung~\ref{enum}).
+Die Umgebung \texttt{description} eignet sich für Beschreibungen
 (siehe Abbildung~\ref{desc}).
 
 \begin{figure}[!htbp]
@@ -747,7 +747,7 @@ verschachteln:
   \item Die maximale Schachtelungstiefe
   ist~4.
   \item
-  Bezeichnung und Ein\-r"u"ckung der Elemente
+  Bezeichnung und Einrückung der Elemente
   wechseln automatisch.
   \end{itemize}
 \item usw.
@@ -773,7 +773,7 @@ verschachteln:
 \end{verbatim}
 \exc
 \unten
-\caption{Beispiel f"ur \texttt{itemize}} \label{item}
+\caption{Beispiel für \texttt{itemize}} \label{item}
 \end{figure}
 
 
@@ -792,7 +792,7 @@ verschachteln:
   \begin{enumerate}
   \item Die maximale Schachtelungstiefe
   ist~4.
-  \item Bezeichnung und Ein\-r"u"ckung der Elemente
+  \item Bezeichnung und Einrückung der Elemente
   wechseln automatisch.
   \end{enumerate}
 \item usw.
@@ -820,7 +820,7 @@ verschachteln:
 \end{verbatim}
 \exc
 \unten
-\caption{Beispiel f"ur \texttt{enumerate}} \label{enum}
+\caption{Beispiel für \texttt{enumerate}} \label{enum}
 \end{figure}
  
 \begin{figure}[!htbp]  % <-------------           bang option of LaTeX2e 
@@ -831,13 +831,13 @@ Kleine Tierkunde:
 \begin{description}
 \item[Gelse:]
    ein kleines Tier, das
-   "ostlich des Semmering Touristen verjagt.
+   östlich des Semmering Touristen verjagt.
 \item[Gemse:]
-   ein gro"ses Tier, das
+   ein großes Tier, das
    westlich des Semmering von Touristen verjagt wird.
-\item[G"urteltier:]
-   ein mittelgro"ses Tier, das
-   hier nur wegen der L"ange seines Namens vorkommt.
+\item[Gürteltier:]
+   ein mittelgroßes Tier, das
+   hier nur wegen der Länge seines Namens vorkommt.
 \end{description}
 \exb
 \begin{alltt}
@@ -854,19 +854,19 @@ Kleine Tierkunde:
 \end{alltt}
 \exc
 \unten
-\caption{Beispiel f"ur \texttt{description}} \label{desc}
+\caption{Beispiel für \texttt{description}} \label{desc}
 \end{figure}
  
 {\hfuzz=2pt\relax % Overfull hbox (hyphen, therefore tolerable) 
                   % warning off
 \subsubsection
           [Flattersatz (flush\-left, flush\-right, center)]
-          {Linksb"undig, rechtsb"undig, zentriert
+          {Linksbündig, rechtsbündig, zentriert
                        (flush\-left, flush\-right, center)}
 }
 
 Die Umgebungen \texttt{flushleft} und \texttt{flushright}
-bewirken links- bzw.\ rechts\-b"undigen Satz ohne Randausgleich 
+bewirken links- bzw.\ rechtsbündigen Satz ohne Randausgleich 
 ("`Flattersatz"') und ohne Trennungen, 
 \texttt{center} setzt den Text in
 die Mitte der Zeile.
@@ -914,7 +914,7 @@ Im \\ Reich \\ der \\ Mitte
 \end{verbatim}
 \exc
 %\unten
-%\caption{Linksb"undig, rechtsb"undig und zentriert}
+%\caption{Linksbündig, rechtsbündig und zentriert}
 %\label{jandl}
 %\end{figure} 
 
@@ -925,13 +925,13 @@ Zwischen \verb|\begin{verbatim}| und \verb|\end{verbatim}|
 stehende Zeilen werden genauso ausgedruckt, wie sie eingegeben
 wurden, d.\,h.\ mit allen Leerzeichen und Zeilenwechseln und ohne
 Interpretation von Spezialzeichen und \LaTeX-Befehlen.  Dies
-eignet sich z.\,B.\ f"ur das Ausdrucken eines (kurzen)
+eignet sich z.\,B.\ für das Ausdrucken eines (kurzen)
 Computer-Programms.
 
-Innerhalb eines Absatzes k"onnen einzelne Zeichenkombinationen
-oder kurze Text"-st"u"cke ebenso "`w"ortlich"' ausgedruckt
+Innerhalb eines Absatzes können einzelne Zeichenkombinationen
+oder kurze Textstücke ebenso "`wörtlich"' ausgedruckt
 werden, indem man sie zwischen \verb.\verb|. und~\verb.|.
-einschlie"st.
+einschließt.
 Mit diesen Befehlen wurden z.\,B.\ alle \LaTeX-Befehle in der
 vorliegenden Beschreibung gesetzt.
 \exa
@@ -943,20 +943,20 @@ Der \verb|\dots|-Befehl \dots
 \exc
  
 Die \texttt{verbatim}-Umgebung und der Befehl~\verb|\verb|
-d"urfen \emph{nicht} innerhalb von Parametern von anderen Befehlen
-% und auch nicht innerhalb der \texttt{tabular}-""Umgebung %% ??(br)
+dürfen \emph{nicht} innerhalb von Parametern von anderen Befehlen
+% und auch nicht innerhalb der \texttt{tabular}-Umgebung %% ??(br)
 verwendet werden.
 
 
  
 \subsubsection{Tabulatoren (tabbing)} \label{tabbing}
  
-In der \texttt{tabbing}-Umgebung kann man Tabulatoren "ahnlich wie
+In der \texttt{tabbing}-Umgebung kann man Tabulatoren ähnlich wie
 an Schreibmaschinen setzen und verwenden.
 Der Befehl~\verb|\=| setzt eine Tabulatorposition,
-\verb|\kill| bedeutet, da"s die "`Musterzeile"' nicht ausgedruckt werden
+\verb|\kill| bedeutet, dass die "`Musterzeile"' nicht ausgedruckt werden
 soll,
-\verb|\>|~springt zur n"achsten Tabulatorposition,
+\verb|\>|~springt zur nächsten Tabulatorposition,
 und \verb|\\| trennt die Zeilen.
 %
 \par\vspace{0pt plus5\baselineskip}
@@ -971,7 +971,7 @@ Es \\
 war einmal \> und ist
  \> nicht mehr\\
 ein  \>  \> ausgestopfter\\
- \>  \> Teddyb"ar
+ \>  \> Teddybär
 \end{tabbing}
 \exb
 \begin{verbatim}
@@ -983,7 +983,7 @@ Es \\
 war einmal \> und ist
  \> nicht mehr\\
 ein  \>  \> ausgestopfter\\
- \>  \> Teddyb"ar
+ \>  \> Teddybär
 \end{tabbing}
 \end{verbatim}
 \exc
@@ -992,22 +992,22 @@ ein  \>  \> ausgestopfter\\
 \subsubsection{Tabellen (tabular)} \label{tabular}
  
 Die \texttt{tabular}-Umgebung dient zum Setzen von Tabellen, bei
-denen \LaTeX\ automatisch die be"-n"otigte Spaltenbreite
+denen \LaTeX\ automatisch die benötigte Spaltenbreite
 bestimmt, und bei der auch spezielle Eigenschaften wie
-Rechts"-b"undigkeit und Hilfslinien vereinbart werden k"onnen.
+Rechtsbündigkeit und Hilfslinien vereinbart werden können.
  
 Im Parameter des Befehls \verb|\begin{tabular}{...}| wird das
 Format der Tabelle angegeben.
 Dabei bedeutet
-\texttt{l}~eine Spalte mit links"-b"undigem Text,
-\texttt{r}~eine mit rechts"-b"undigem,
+\texttt{l}~eine Spalte mit linksbündigem Text,
+\texttt{r}~eine mit rechtsbündigem,
 \texttt{c}~eine mit zentriertem Text,
 \verb|p{|\textit{breite}\verb|}| eine Spalte der angegebenen
 Breite mit mehrzeiligem Text,
 \verb.|.~einen senkrechten Strich.
  
 Innerhalb der Tabelle bedeutet
-\verb|&|~den Sprung in die n"achste Tabellenspalte,
+\verb|&|~den Sprung in die nächste Tabellenspalte,
 \verb|\\|~trennt die Zeilen,
 \verb|\hline| (an Stelle einer Zeile) setzt einen waagrechten
 Strich.
@@ -1018,7 +1018,7 @@ Strich.
 \hline
 7C0 & hexadezimal \\
 3700 & oktal \\
-11111000000 & bin"ar \\
+11111000000 & binär \\
 \hline\hline
 1984 & dezimal \\
 \hline
@@ -1029,7 +1029,7 @@ Strich.
 \hline
 7C0 & hexadezimal \\
 3700 & oktal \\
-11111000000 & bin"ar \\
+11111000000 & binär \\
 \hline\hline
 1984 & dezimal \\
 \hline

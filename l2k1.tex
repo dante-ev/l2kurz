@@ -10,7 +10,7 @@
 \subsubsection{\TeX}
 
 \TeX\ (sprich "`Tech"', kann auch "`TeX"' geschrieben werden) ist
-ein Computer\-progamm von Donald E.~Knuth~\cite{texbook,schwarz}.
+ein Computerprogamm von Donald E.~Knuth~\cite{texbook,schwarz}.
 Es dient zum Setzen 
 % und Drucken 
 von Texten und mathematischen Formeln.
@@ -22,129 +22,129 @@ von Texten und mathematischen Formeln.
 Computerprogramm und wurde von Leslie Lamport~\cite{manual,wonne} 
 geschrieben.  Es vereinfacht den Umgang mit \TeX, indem es 
 entsprechend der logischen Struktur des Dokuments auf vorgefertigte
-Layout-Elemente zur"uckgreift.
+Layout-Elemente zurückgreift.
 
 \subsubsection{\LaTeXe}
 
 \LaTeXe\ (sprich "`\LaTeX\ zwei e"') ist die aktuelle Variante von
-\LaTeX\ seit dem 1.~Juni 1994.  (Die vorherige hie"s \LaTeX~2.09.)
+\LaTeX\ seit dem 1.~Juni 1994.  (Die vorherige hieß \LaTeX~2.09.)
 Wenn hier von \LaTeX\ gesprochen wird, so ist normalerweise dieses
 \LaTeXe{} gemeint.
 
 Neue Versionen
-von \LaTeXe{} (z.\,B. mit Fehlerberichtigungen oder Er\-g"an\-zun\-gen)
-erscheinen j"ahrlich im Juni; die vorliegende Beschreibung setzt 
+von \LaTeXe{} (z.\,B. mit Fehlerberichtigungen oder Ergänzungen)
+erscheinen jährlich im Juni; die vorliegende Beschreibung setzt 
 mindestens diejenige vom Juni 2001 voraus.  
 
 \subsection{Grundkonzept}
  
 \subsubsection{Autor, Designer und Setzer}
  
-F"ur eine Publikation "ubergab der Autor dem Verleger
+Für eine Publikation übergab der Autor dem Verleger
 traditionell  ein maschinengeschriebenes Manuskript.  Der
-Buch-Designer des Verlages entschied dann "uber das Layout des
-Schrift"-st"ucks (L"ange einer Zeile, Schriftart, Ab\-st"ande vor
+Buch-Designer des Verlages entschied dann über das Layout des
+Schriftstücks (Länge einer Zeile, Schriftart, Abstände vor
 und nach Kapiteln usw.\@) und schrieb dem Setzer die
-daf"ur notwendigen Anweisungen dazu.
+dafür notwendigen Anweisungen dazu.
 \LaTeX{} ist in diesem Sinne der Buch-Designer, 
 das Programm \TeX{} ist sein Setzer.
  
 Ein menschlicher Buch-Designer erkennt die Absichten des Autors
-(z.\,B.\ Kapitel-"Uberschriften, Zitate, Beispiele, Formeln
+(z.\,B.\ Kapitel-Überschriften, Zitate, Beispiele, Formeln
 \dots) meistens aufgrund seines Fachwissens aus dem Inhalt des
 Manuskripts.  \LaTeX{} dagegen ist "`nur"' ein Programm und
-ben"otigt daher zus"atzliche Informationen vom Autor, die die
+benötigt daher zusätzliche Informationen vom Autor, die die
 logische Struktur des Textes beschreiben.
 Diese Informationen werden in Form von sogenannten "`Befehlen"'
 innerhalb des Textes angegeben.
 Der Autor braucht sich also
-(weitgehend) nur um die logische Struktur seines Werkes zu k"ummern,
+(weitgehend) nur um die logische Struktur seines Werkes zu kümmern,
 nicht um die Details von Gestaltung und Satz.
  
 Im Gegensatz dazu steht der visuell orientierte Entwurf eines
-Schrift"-st"u"ckes mit Textverarbeitungs- oder \textsc{dtp}-Programmen wie z.\,B.\ 
+Schriftstückes mit Textverarbeitungs- oder \textsc{dtp}-Programmen wie z.\,B.\ 
 \textsc{Word}.
 In diesem Fall legt der Autor das Layout des Textes gleich bei der
 interaktiven Eingabe fest. Dabei sieht er am Bildschirm das, was
 auch auf der gedruckten Seite stehen wird. Solche Systeme, die das
-visuelle Entwerfen unter"-st"utzen, werden auch \textsc{wysiwyg}-Systeme
+visuelle Entwerfen unterstützen, werden auch \textsc{wysiwyg}-Systeme
 ("`what you see is what you get"') genannt.
  
-Bei \LaTeX{} sieht der Autor beim Schreiben des Eingabe"-files in
+Bei \LaTeX{} sieht der Autor beim Schreiben des Eingabefiles in
 der Regel noch nicht sofort, wie der Text nach dem Formatieren 
 aussehen wird. Er kann aber %durch Aufruf des entsprechenden Programms 
-jederzeit einen "`Probe-Ausdruck"' seines Schrift"-st"ucks auf dem
-Bildschirm machen und danach sein Eingabe"-file entsprechend 
+jederzeit einen "`Probe-Ausdruck"' seines Schriftstücks auf dem
+Bildschirm machen und danach sein Eingabefile entsprechend 
 korrigieren und die Arbeit fortsetzen.
  
  
 \subsubsection{Layout-Design}
  
-Typographisches Design ist ein Handwerk, das erlernt werden mu"s.
-Unge"-"ubte Autoren machen dabei oft gravierende Fehler.
-F"alsch"-licherweise glauben viele Laien, da"s Textdesign
-vor allem eine Frage der "Asthetik ist -- wenn das
-Schrift"-st"uck vom k"unstlerischen Standpunkt aus "`sch"on"'
+Typographisches Design ist ein Handwerk, das erlernt werden muss.
+Ungeübte Autoren machen dabei oft gravierende Fehler.
+Fälschlicherweise glauben viele Laien, dass Textdesign
+vor allem eine Frage der Ästhetik ist -- wenn das
+Schriftstück vom künstlerischen Standpunkt aus "`schön"'
 aussieht, dann ist es schon gut "`designed"'.
-Da Schrift"-st"u"cke jedoch gelesen und nicht in einem Museum
-auf"-ge"-h"angt werden, sind die leichtere Lesbarkeit und bessere
-Ver"-st"and"-lichkeit wichtiger als das sch"one Aussehen.
+Da Schriftstücke jedoch gelesen und nicht in einem Museum
+aufgehängt werden, sind die leichtere Lesbarkeit und bessere
+Verständlichkeit wichtiger als das schöne Aussehen.
  
 Beispiele:
-Die Schrift"-gr"o"se und Numerierung von "Uberschriften soll so
-ge"-w"ahlt werden, da"s die Struktur der Kapitel und Unterkapitel
+Die Schriftgröße und Numerierung von Überschriften soll so
+gewählt werden, dass die Struktur der Kapitel und Unterkapitel
 klar erkennbar ist.
-Die Zeilen"-l"ange soll so ge"-w"ahlt werden, da"s anstrengende
-Augenbewegungen des Lesers vermieden werden, nicht so, da"s der
-Text das Papier m"oglichst sch"on aus"-f"ullt.
+Die Zeilenlänge soll so gewählt werden, dass anstrengende
+Augenbewegungen des Lesers vermieden werden, nicht so, dass der
+Text das Papier möglichst schön ausfüllt.
  
 Mit interaktiven visuellen Entwurfssystemen ist es leicht,  
-Schrift"-st"u"cke zu erzeugen, die zwar "`gut"' aussehen,
+Schriftstücke zu erzeugen, die zwar "`gut"' aussehen,
 aber ihren Inhalt und dessen Aufbau nur mangelhaft wiedergeben.
 \LaTeX{} verhindert solche
 Fehler, indem es den Autor dazu zwingt, die logische
-Struktur des Textes anzugeben, und dann automatisch ein da"-f"ur
+Struktur des Textes anzugeben, und dann automatisch ein dafür
 geeignetes Layout verwendet.
 
-Daraus ergibt sich, da"s \LaTeX{} insbesondere f"ur  Dokumente geeignet 
+Daraus ergibt sich, dass \LaTeX{} insbesondere für  Dokumente geeignet 
 ist, wo vorgegebene Gestaltungsprinzipien auf sich wiederholende
 logische Textstrukturen angewandt werden sollen. 
-F"ur das -- notwendigerweise -- visuell orientierte Gestalten
+Für das -- notwendigerweise -- visuell orientierte Gestalten
 etwa eines Plakates ist \LaTeX{} hingegen 
 aufgrund seiner Arbeitsweise weniger geeignet.
 
 \subsubsection{Vor- und Nachteile}
 
-Gegen"uber anderen Textverarbeitungs- oder \textsc{dtp}-Programmen 
+Gegenüber anderen Textverarbeitungs- oder \textsc{dtp}-Programmen 
 zeichnet sich \LaTeX{}
 vor allem durch die folgenden Vorteile aus:
 \begin{itemize}
-\item Der Anwender mu"s nur wenige, leicht verst"andliche Befehle
-  angeben, die die logische Struktur des Schrift"-st"ucks
+\item Der Anwender muss nur wenige, leicht verständliche Befehle
+  angeben, die die logische Struktur des Schriftstücks
   betreffen, und braucht sich um die gestalterischen Details
-  (fast) nicht zu k"ummern.
+  (fast) nicht zu kümmern.
 \item Das Setzen von mathematischen Formeln ist besonders gut
-  unter"-st"utzt.
-\item Auch anspruchsvolle Strukturen wie Fu"snoten, Literaturverzeichnisse,
-  Tabellen u.\,v.\,a.\  k"on"-nen mit wenig Aufwand erzeugt werden.
+  unterstützt.
+\item Auch anspruchsvolle Strukturen wie Fußnoten, Literaturverzeichnisse,
+  Tabellen u.\,v.\,a.\  können mit wenig Aufwand erzeugt werden.
 % ---- schwammige Formulierung ;-)
 \item Routineaufgaben wie das Aktualisieren von Querverweisen
  oder das Erstellen des Inhaltsverzeichnisses 
  werden automatisch erledigt.
-\item Es stehen zahlreiche vordefinierte Layouts zur Ver"-f"ugung.
+\item Es stehen zahlreiche vordefinierte Layouts zur Verfügung.
 \item \LaTeX-Dokumente sind zwischen verschiedenen Installationen und
  Rechnerplattformen austauschbar.
 \item Im Gegensatz zu vielen \textsc{wysiwyg}-Programmen bearbeitet \LaTeX{} auch
-  lange oder komplizierte Dokumente zuverl"assig,
+  lange oder komplizierte Dokumente zuverlässig,
   und sein Ressourcenverbrauch (Speicher, Rechenleistung) ist vergleichsweise
-  m"a"sig.
+  mäßig.
 \end{itemize}
 Ein Nachteil soll freilich auch nicht verschwiegen werden:
 \begin{itemize}
-\item Innerhalb der von \LaTeX\ unter"-st"utzten Dokument-Layouts
-  k"on"-nen zwar einzelne Parameter leicht variiert werden,
+\item Innerhalb der von \LaTeX\ unterstützten Dokument"=Layouts
+  können zwar einzelne Parameter leicht variiert werden,
   grundlegende Abweichungen von den Vorgaben sind
-  aber nur mit gr"o"-"serem Aufwand m"og"-lich (Design einer
+  aber nur mit größerem Aufwand möglich (Design einer
   neuen Dokumentklasse, siehe~\cite{clsguide,lay,lay2,typografie}.)
 \end{itemize}
 
@@ -152,36 +152,36 @@ Ein Nachteil soll freilich auch nicht verschwiegen werden:
 Der typische Ablauf beim Arbeiten mit \LaTeX{} ist:
 \begin{enumerate}
   \item Ein Eingabefile schreiben, das den Text und die \LaTeX-Befehle 
-  enth"alt.
+  enthält.
   \item Dieses File mit \LaTeX{} bearbeiten; dabei wird eine Datei
-  erzeugt, die den gesetzten Text in einem ger"ateunabh"angigen Format
-  (\textsc{dvi}, \textsc{pdf} oder auch PostScript) enth"alt.
+  erzeugt, die den gesetzten Text in einem geräteunabhängigen Format
+  (\textsc{dvi}, \textsc{pdf} oder auch PostScript) enthält.
   \item Einen "`Probeausdruck"' davon auf dem Bildschirm anzeigen (Preview).
-  \item Wenn n"otig, die Eingabe korrigieren und zur"uck zu Schritt~2.
+  \item Wenn nötig, die Eingabe korrigieren und zurück zu Schritt~2.
   \item Die Ausgabedatei drucken.
 \end{enumerate}
-Zeitgem"a"se Betriebssysteme machen es m"oglich, da"s der Texteditor
+Zeitgemäße Betriebssysteme machen es möglich, dass der Texteditor
 und das Preview-Programm gleichzeitig in verschiedenen Fenstern 
-"`ge"offnet"' sind; beim Durchlaufen des obigen Zyklus brauchen sie 
+"`geöffnet"' sind; beim Durchlaufen des obigen Zyklus brauchen sie 
 also nicht immer wieder von neuem gestartet werden.  Nur die 
-wiederholte \LaTeX-Bearbeitung des Textes mu"s noch von Hand 
-angesto"sen werden und l"auft ebenfalls in einem eigenen Fenster ab.
+wiederholte \LaTeX-Bearbeitung des Textes muss noch von Hand 
+angestoßen werden und läuft ebenfalls in einem eigenen Fenster ab.
 % Danach sollte das Preview-Programm -- im 
-% Idealfall -- selbstt"atig das ver"anderte Ergebnis anzeigen; ansonsten 
-% kennt es normalerweise einen Men"upunkt oder eine Schaltfl"ache, um das 
-% ge"anderte Ausgabefile erneut zu laden und anzuzeigen.
+% Idealfall -- selbsttätig das veränderte Ergebnis anzeigen; ansonsten 
+% kennt es normalerweise einen Menüpunkt oder eine Schaltfläche, um das 
+% geänderte Ausgabefile erneut zu laden und anzuzeigen.
 
 Wie man auf die einzelnen Programme -- Editor, \LaTeX, Previewer,
 Druckertreiber -- in einer bestimmten
-Betriebs\-system\-umgebung zugreift, mu"s in einem \local{}
+Betriebssystemumgebung zugreift, muss in einem \local{}
 beschrieben sein.
 
 
 
 \section{Eingabefile}
-Das Eingabefile f"ur \LaTeX{} ist ein Textfile. Es wird mit einem
-Editor erstellt und ent"-h"alt sowohl den Text, der gedruckt
-werden soll, als auch die Befehle, aus denen \LaTeX\ er"-f"ahrt,
+Das Eingabefile für \LaTeX{} ist ein Textfile. Es wird mit einem
+Editor erstellt und enthält sowohl den Text, der gedruckt
+werden soll, als auch die Befehle, aus denen \LaTeX\ erfährt,
 wie der Text gesetzt werden soll.
 
 
@@ -191,9 +191,9 @@ wie der Text gesetzt werden soll.
 und das Zeilenende werden von \LaTeX{}
 einheitlich als Leerzeichen behandelt.  \emph{Mehrere}
 Leerzeichen werden wie \emph{ein} Leerzeichen behandelt.   
-Wenn man andere als die normalen Wort- und Zeilen"-ab"-st"ande
+Wenn man andere als die normalen Wort- und Zeilenabstände
 will, kann man dies also nicht durch die Eingabe von
-zu"-s"atzlichen Leerzeichen oder Leerzeilen erreichen, sondern
+zusätzlichen Leerzeichen oder Leerzeilen erreichen, sondern
 nur mit entprechenden \LaTeX-Befehlen.
 
 Eine Leerzeile zwischen Textzeilen bedeutet das Ende eines 
@@ -204,17 +204,17 @@ Leerzeile behandelt.
 \subsection{\LaTeX-Befehle und Gruppen}
  
 Die meisten \LaTeX-Befehle haben eines der beiden folgenden
-Formate: Entweder sie beginnen mit einem Back\-slash~(\verb|\|)
+Formate: Entweder sie beginnen mit einem Backslash~(\verb|\|)
 und haben dann einen nur aus Buchstaben bestehenden Namen, der
 durch ein oder mehrere Leerzeichen oder durch ein nachfolgendes
 Sonderzeichen oder eine Ziffer beendet wird; oder sie bestehen
-aus einem Back\-slash und genau einem Sonderzeichen oder einer
+aus einem Backslash und genau einem Sonderzeichen oder einer
 Ziffer.
-Gro"s- und Kleinbuchstaben haben auch in Befehlsnamen
+Groß- und Kleinbuchstaben haben auch in Befehlsnamen
 \emph{verschiedene} Bedeutung.
 Wenn man nach einem Befehlsnamen eine Leerstelle erhalten will,
-mu"s man~\verb|{}| zur Beendigung des Befehlsnamens oder einen
-eigenen Befehl f"ur die Leerstelle verwenden.
+muss man~\verb|{}| zur Beendigung des Befehlsnamens oder einen
+eigenen Befehl für die Leerstelle verwenden.
 \exa
   \renewcommand{\today}{35.~Mai 1998}  % to make sure that the
   % line breaks look good, regardless of the date of printing.
@@ -236,18 +236,18 @@ Richtig:
 \exc
  
 Manche Befehle haben Parameter, die zwischen geschwungenen
-Klammern angegeben werden m"ussen.
+Klammern angegeben werden müssen.
 Manche Befehle haben Parameter, die weggelassen oder zwischen
-eckigen Klammern angegeben werden k"onnen.
-Manche Befehle haben Varianten, die durch das Hin"-zu"-f"ugen
+eckigen Klammern angegeben werden können.
+Manche Befehle haben Varianten, die durch das Hinzufügen
 eines Sterns an den Befehlsnamen unterschieden werden.
 
-Geschwungene Klammern k"onnen auch dazu verwendet werden, Gruppen
+Geschwungene Klammern können auch dazu verwendet werden, Gruppen
 (groups) zu bilden.
 Die Wirkung von Befehlen, die innerhalb von Gruppen oder
 Umgebungen (environments) angegeben werden, endet immer mit dem
 Ende der Gruppe bzw.\ der Umgebung.  Im obigen Beispiel
-ist~\verb|{}| eine leere Gruppe, die au"ser der Beendigung des
+ist~\verb|{}| eine leere Gruppe, die außer der Beendigung des
 Befehlsnamens \texttt{today} keine Wirkung hat.
  
 \subsection{Kommentare}
@@ -255,7 +255,7 @@ Befehlsnamens \texttt{today} keine Wirkung hat.
 Alles, was hinter einem Prozentzeichen (\verb|%|)
 steht (bis zum Ende der Eingabezeile), wird von \LaTeX\ 
 ignoriert.
-Dies kann f"ur Notizen des Autors verwendet werden, die nicht
+Dies kann für Notizen des Autors verwendet werden, die nicht
 oder noch nicht ausgedruckt werden sollen.
 \exa
 Das ist ein % dummes
@@ -271,24 +271,24 @@ Beispiel.
  
 \subsection{Aufbau}
  
-Der erste Befehl in einem \LaTeX-Eingabefile mu"s der Befehl
+Der erste Befehl in einem \LaTeX-Eingabefile muss der Befehl
 \begin{quote}
 \verb|\documentclass|
 \end{quote}
 sein.
-Er legt fest, welche Art von Schriftst"uck "uberhaupt erzeugt werden soll
+Er legt fest, welche Art von Schriftstück überhaupt erzeugt werden soll
 (Bericht, Buch, Brief usw.).
-Danach k"onnen weitere Befehle folgen, die f"ur das gesamte
+Danach können weitere Befehle folgen, die für das gesamte
 Dokument gelten sollen.  Dieser Teil des Dokuments wird auch als 
-\emph{Vorspann} oder \emph{Pr"aambel} bezeichnet.  Mit dem Befehl
+\emph{Vorspann} oder \emph{Präambel} bezeichnet.  Mit dem Befehl
 \begin{quote}
 \verb|\begin{document}|
 \end{quote}
 endet der Vorspann, und es 
-beginnt das Setzen des Schrift"-st"ucks.
+beginnt das Setzen des Schriftstücks.
 Nun folgen der Text und alle \LaTeX-Befehle, die das Ausdrucken
-des Schrift"-st"ucks bewirken.
-Die Eingabe mu"s mit dem Befehl
+des Schriftstücks bewirken.
+Die Eingabe muss mit dem Befehl
 \begin{quote}
 \verb|\end{document}|
 \end{quote}
@@ -333,7 +333,7 @@ in deutscher Sprache.\\
 \ \\
 \verb+\section{Start}+\\
 \ \\
-Hier beginnt mein sch"ones Werk \dots\\
+Hier beginnt mein schönes Werk \dots\\
 \ \\
 \verb+\section{Ende}+\\
 \ \\
@@ -353,24 +353,24 @@ Die am Beginn des Eingabefiles  mit
 \verb|\documentclass[|\textit{optionen}\verb|]{|%
   \textit{klasse}\verb|}|
 \end{verse}
-definierte "`Klasse"' eines Dokumentes ent"-h"alt 
-Vereinbarungen "uber 
+definierte "`Klasse"' eines Dokumentes enthält 
+Vereinbarungen über 
 das Layout und die logischen Strukturen, z.\,B.\ die 
 Gliederungseinheiten (Kapitel etc.\@), 
-die f"ur alle Dokumente dieses Typs gemeinsam sind.
+die für alle Dokumente dieses Typs gemeinsam sind.
 
-Zwischen den geschwungenen Klammern \emph{mu"s} genau eine Dokumentklasse
+Zwischen den geschwungenen Klammern \emph{muss} genau eine Dokumentklasse
 angegeben werden.  Tabelle~\ref{docstyles} auf S.~\pageref{docstyles}
-f"uhrt Klassen auf,
+führt Klassen auf,
 die in jeder \LaTeX-Installation existieren sollten.  
-Im \local\ k"onnen weitere ver"-f"ug"-bare 
+Im \local\ können weitere verfügbare 
 Klassen angegeben sein.  
  
-Zwischen den eckigen Klammern \emph{k"onnen}, durch Kommata getrennt, 
-eine oder mehrere Optionen f"ur das Klassenlayout
+Zwischen den eckigen Klammern \emph{können}, durch Kommata getrennt, 
+eine oder mehrere Optionen für das Klassenlayout
 angegeben werden. Die wichtigsten Optionen sind in der 
-Tabelle~\ref{options} auf S.~\pageref{options} an"-ge"-f"uhrt.
-Das Eingabefile f"ur diese Beschreibung beginnt z.\,B.\ mit:
+Tabelle~\ref{options} auf S.~\pageref{options} angeführt.
+Das Eingabefile für diese Beschreibung beginnt z.\,B.\ mit:
 \begin{verse}
 \verb|\documentclass[11pt,a4paper]{article}|
 \end{verse}
@@ -379,27 +379,27 @@ Das Eingabefile f"ur diese Beschreibung beginnt z.\,B.\ mit:
 \caption{Dokumentklassen} \label{docstyles}
 \oben{11cm}
 \begin{ttdescription}%\small
-\item [article] f"ur Artikel in wissenschaftlichen Zeitschriften,
-  k"ur\-ze\-re Berichte u.\,v.\,a.
+\item [article] für Artikel in wissenschaftlichen Zeitschriften,
+  kürzere Berichte u.\,v.\,a.
  
-\item [report] f"ur l"angere Berichte, die aus mehreren Kapiteln
-  bestehen, Diplomarbeiten, Dissertationen u.\,"a.
+\item [report] für längere Berichte, die aus mehreren Kapiteln
+  bestehen, Diplomarbeiten, Dissertationen u.\,ä.
  
-\item [book] f"ur B"ucher
+\item [book] für Bücher
 
 \item[scrartcl, scrreprt, scrbook]\quad Die sog. KOMA-Klassen 
 sind Varianten der o.\,g. Klassen
-mit besserer Anpassung an DIN-Papierformate und "`euro\-p"aische"'
+mit besserer Anpassung an DIN-Papierformate und "`europäische"'
 Typographie. 
-(Nicht "uberall vorhanden, siehe \local.)
+(Nicht überall vorhanden, siehe \local.)
 
-% \item [proc] f"ur Konferenzb"ande (Proceedings)
+% \item [proc] für Konferenzbände (Proceedings)
 % ist nicht einmal im LaTeX-Handbich beschrieben!
 
-\item [letter] f"ur Briefe (siehe auch Abschnitt~\ref{briefe})
+\item [letter] für Briefe (siehe auch Abschnitt~\ref{briefe})
 
-\item [foils] f"ur Folien oder Pr"asentationen.
-(Nicht "uberall vorhanden, siehe \local.)
+\item [foils] für Folien oder Präsentationen.
+(Nicht überall vorhanden, siehe \local.)
   
 \end{ttdescription}
 \unten
@@ -410,31 +410,31 @@ Typographie.
   getrennt)} \label{options}
 \oben{11cm}
 \begin{ttdescription}%\small
-\item [10pt|11pt|12pt] w"ahlt die normale Schriftgr"o"se des Dokuments aus.
+\item [10pt|11pt|12pt] wählt die normale Schriftgröße des Dokuments aus.
   10\,pt hohe Schrift ist die Voreinstellung; diese Beschreibung benutzt 11\,pt.
 
-\item[a4paper] f"ur Papier im DIN\,A4-Format. Ohne diese
+\item[a4paper] für Papier im DIN\,A4-Format. Ohne diese
   Option nimmt \LaTeX\ amerikanisches Papierformat an.
  
-\item [fleqn] f"ur links"-b"undige statt zentrierte mathematische
+\item [fleqn] für linksbündige statt zentrierte mathematische
   Gleichungen
  
-\item [leqno] f"ur Gleichungsnummern links statt rechts von jeder
+\item [leqno] für Gleichungsnummern links statt rechts von jeder
   numerierten Gleichung
  
 \item [titlepage|notitlepage] legt fest, ob Titel und Zusammenfassung
   auf einer eigenen Seite erscheinen sollen.  \texttt{titlepage} ist
-  die Voreinstellung f"ur die Klassen \texttt{report} und \texttt{book}.
+  die Voreinstellung für die Klassen \texttt{report} und \texttt{book}.
  
-\item [onecolumn|twocolumn] f"ur ein- oder zweispaltigen Satz.
+\item [onecolumn|twocolumn] für ein- oder zweispaltigen Satz.
  Die Voreinstellung ist immer \texttt{onecolumn}.  
  Die Klassen \texttt{letter} und \texttt{slides} kennen \emph{keinen}
  zweispaltigen Satz.
  
-\item [oneside|twoside] legt fest, ob die Seiten f"ur ein- oder
+\item [oneside|twoside] legt fest, ob die Seiten für ein- oder
   zweiseitigen  Druck gestaltet werden sollen.  
-  \texttt{oneside} ist die Voreinstellung f"ur
-  alle Klassen au"ser \texttt{book}.
+  \texttt{oneside} ist die Voreinstellung für
+  alle Klassen außer \texttt{book}.
   
 \end{ttdescription}
 \unten
@@ -449,12 +449,12 @@ Mit dem Befehl
 \verb:\usepackage[:\textit{optionen}\verb:]{:%
   \textit{pakete}\verb:}:
 \end{verse}
-k"onnen im Vorspann erg"anzende Makropakete (packages) geladen werden,
+können im Vorspann ergänzende Makropakete (packages) geladen werden,
 die das Layout der Dokumentklasse
-modifizieren oder zus"atzliche Funktionalit"at bereitstellen.
+modifizieren oder zusätzliche Funktionalität bereitstellen.
 Eine Auswahl von Paketen findet sich in der Tabelle~\ref{pack} 
 auf S.~\pageref{pack}.
-Das Eingabefile f"ur diese Beschreibung enth"alt beispielsweise:
+Das Eingabefile für diese Beschreibung enthält beispielsweise:
 \begin{verse}
 \verb|\usepackage{german,latexsym,alltt,|\\
 \verb|            graphicx,textcomp,hyperref}|
@@ -467,43 +467,43 @@ Das Eingabefile f"ur diese Beschreibung enth"alt beispielsweise:
 \begin{ttdescription}%\small
 \setlength{\itemsep}{.5\itemsep plus1pt minus1pt}
 \item[alltt] Definiert eine Variante der \texttt{verbatim}-Umgebung
-\item[amsmath, amssymb] Mathematischer Formelsatz mit erweiterten F"ahigkeiten,
-  zus"atzliche mathematische Schriften und Symbole; Beschreibung siehe
+\item[amsmath, amssymb] Mathematischer Formelsatz mit erweiterten Fähigkeiten,
+  zusätzliche mathematische Schriften und Symbole; Beschreibung siehe
   \cite{ch8}.
 %\item[array] Verbesserte und erweiterte Versionen der Umgebungen
 %  \texttt{array}, \texttt{tabular} und \texttt{tabular*}.
-\item[babel] Anpassungen f"ur viele verschiedene Sprachen. Die
-  ge"-w"ahlten Sprachen werden als Optionen angegeben.
-\item[color] Unterst"utzung f"ur Farbausgabe;
+\item[babel] Anpassungen für viele verschiedene Sprachen. Die
+  gewählten Sprachen werden als Optionen angegeben.
+\item[color] Unterstützung für Farbausgabe;
   Beschreibung  siehe~\cite{grfguide} und~\cite{grfcomp}.
-\item[dcolumn] Unterst"utzt auf Dezimaltrennzeichen ausgerichtete
+\item[dcolumn] Unterstützt auf Dezimaltrennzeichen ausgerichtete
   Spalten in den Umgebungen \texttt{array} und \texttt{tabular}
 \item[fontenc] Erlaubt die Verwendung von Schriften mit
   unterschiedlicher Kodierung (Zeichenvorrat, Anordnung).
-\item[fancyhdr] Flexible Gestaltung von Kopf- und Fu"szeilen.
+\item[fancyhdr] Flexible Gestaltung von Kopf- und Fußzeilen.
 \item[geometry] Manipulation des Seitenlayouts.
-\item[german, ngerman] Anpassungen f"ur die deutsche Sprache in
+\item[german, ngerman] Anpassungen für die deutsche Sprache in
   traditioneller und neuer Rechtschreibung.
 \item[graphicx] Einbindung von extern erzeugten Graphiken.
-  Die umfangreichen M"og"-lichkeiten dieses Pakets werden 
+  Die umfangreichen Möglichkeiten dieses Pakets werden 
   in~\cite{grfguide} und~\cite{grfcomp} beschrieben.
-\item[hyperref] Erm"oglicht Hyperlinks zwischen Textstellen und zu
+\item[hyperref] Ermöglicht Hyperlinks zwischen Textstellen und zu
   externen Dokumenten; besonders sinnvoll einsetzbar, 
   wenn mit \TeX\ eine Ausgabedatei im \textsc{pdf}- oder \textsc{html}-Format 
   erzeugt wird.
-\item[inputenc] Deklaration der Zeichen"-kodierung im
-  Eingabe"-file.
+\item[inputenc] Deklaration der Zeichenkodierung im
+  Eingabefile.
 \item[latexsym] Erlaubt einige besondere Symbole wie~\(\Box\),
-  die mit \LaTeX~2.09 standardm"a"sig verf"ugbar waren.
+  die mit \LaTeX~2.09 standardmäßig verfügbar waren.
 \item[longtable]
-  f"ur Tabellen "uber mehrere Seiten mit automatischem Seiten"-umbruch.
-\item[makeidx] Unterst"utzt das Erstellen eines Index.
+  für Tabellen über mehrere Seiten mit automatischem Seitenumbruch.
+\item[makeidx] Unterstützt das Erstellen eines Index.
 \item[multicol] Mehrspaltiger Satz mit Kolumnenausgleich.
 %\item[showkeys] Druckt die Namen aller verwendeten \verb:\label:s,
 %  \verb:\ref:s und \verb:\pageref:s im Text aus.
-%\item[tabularx] f"ur Tabellen mit automatisch an den vorhandenen
-%  Platz angepa"ster Breite der Spalten.
-\item[textcomp] Bindet Schriften mit zus"atzlichen Textsymbolen ein.
+%\item[tabularx] für Tabellen mit automatisch an den vorhandenen
+%  Platz angepasster Breite der Spalten.
+\item[textcomp] Bindet Schriften mit zusätzlichen Textsymbolen ein.
 %\item[verbatim] Flexible Erweiterung der \texttt{verbatim}-Umgebung.
 \end{ttdescription}
 \unten
@@ -512,46 +512,46 @@ Das Eingabefile f"ur diese Beschreibung enth"alt beispielsweise:
 
 \subsection{Eingabezeichensatz}\label{inputenc}
 
-Bei jedem \LaTeX-System d"urfen mindestens die folgenden
+Bei jedem \LaTeX-System dürfen mindestens die folgenden
 Zeichen zur Eingabe von Text verwendet werden:
 \begin{quote}
   \ttfamily
   a\dots z A\dots Z 0\dots 9 \\
   . : ; , ? ! ` ' ( ) [ ] - / * @ + =
 \end{quote}
-Die folgenden Eingabezeichen haben f"ur \LaTeX{} eine Spezialbedeutung
+Die folgenden Eingabezeichen haben für \LaTeX{} eine Spezialbedeutung
 oder sind nur innerhalb von mathematischen Formeln erlaubt:
 \begin{quote}
 \verb.$ & % # _ { }  ~  ^  "  \  | < >.
 \end{quote}
-F"ur Zeichen, die "uber obige Liste hinausgehen, beispielsweise die Umlaute,
+Für Zeichen, die über obige Liste hinausgehen, beispielsweise die Umlaute,
 sind je nach Betriebssystem des verwendeten Computers 
 unterschiedliche Kodierungen in Gebrauch.  Damit auch diese Zeichen im 
-Eingabe\-file benutzt werden d"urfen,  mu"s man das Paket 
+Eingabefile benutzt werden dürfen,  muss man das Paket 
 \texttt{inputenc} laden und dabei die jeweilige Kodierung als 
 Option angeben: \verb:\usepackage[:\textit{codepage}\verb:]{inputenc}:.
-M"ogliche Angaben f"ur \textit{codepage} sind u.\,a.:
+Mögliche Angaben für \textit{codepage} sind u.\,a.:
 \begin{ttdescription}
-  \item[latin1] Latin-1 (ISO~8859-1), gebr"auchlich unter \textsc{Unix} und VMS
+  \item[latin1] Latin-1 (ISO~8859-1), gebräuchlich unter \textsc{Unix} und VMS
   \item[latin9] Latin-9 (ISO~8859-15), Erweiterung von Latin-1, u.\,a. mit Eurozeichen
-  \item[ansinew] Microsoft Codepage 1252 f"ur Windows
-  \item[cp850] IBM Codepage 850, "ublich unter OS/2
+  \item[ansinew] Microsoft Codepage 1252 für Windows
+  \item[cp850] IBM Codepage 850, üblich unter OS/2
   \item[applemac] \textsc{Macintosh}-Kodierung
 \end{ttdescription}
 Falls \LaTeX{} ein eingegebenes Zeichen nicht darstellen
-kann, was meist f"ur die sogenannten "`Pseudografik-Zeichen"' 
+kann, was meist für die sogenannten "`Pseudografik-Zeichen"' 
 gilt,  bekommt man eine entsprechende Fehlermeldung.
 Auch sind manche Zeichen nur im Text, andere nur in mathematischen 
 Formeln erlaubt.
 
-Man beachte, da"s der in der \emph{Ausgabe} darstellbare Zeichenvorrat 
-von \LaTeX{} nicht davon abh"angt, welche Zeichen als \emph{Eingabe} erlaubt 
+Man beachte, dass der in der \emph{Ausgabe} darstellbare Zeichenvorrat 
+von \LaTeX{} nicht davon abhängt, welche Zeichen als \emph{Eingabe} erlaubt 
 sind:
-F"ur jedes "uberhaupt darstellbare Zeichen -- also auch diejenigen, die
+Für jedes überhaupt darstellbare Zeichen -- also auch diejenigen, die
 nicht im Zeichensatz des jeweiligen Betriebssystems enthalten sind --
 gibt es einen 
-\LaTeX-Befehl oder eine Ersatzdarstellung, die ausschlie"slich mit 
-ASCII-Zeichen auskommt.  N"aheres dar"uber erfahren Sie
+\LaTeX-Befehl oder eine Ersatzdarstellung, die ausschließlich mit 
+ASCII-Zeichen auskommt.  Näheres darüber erfahren Sie
 in Abschnitt \ref{spezial}.
 
 

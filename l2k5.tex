@@ -3,49 +3,49 @@
 % 2001-04-10 (WaS)
 
 \section{Schriften}
-Normalerweise w"ahlt \LaTeX\ die Gr"o"se und den Stil der Schrift
+Normalerweise wählt \LaTeX\ die Größe und den Stil der Schrift
 aufgrund der Befehle aus, die die logische Struktur des Textes angeben:
-"Uber"-schriften, Fu"snoten, Hervorhebungen usw.
+Überschriften, Fußnoten, Hervorhebungen usw.
 Im folgenden werden Befehle und Makropakete beschrieben, mit denen
-die Schrift auch explizit beeinflu"st werden kann.
-Ausf"uhrlichere Erl"auterungen zum Umgang mit Schriften in \LaTeX{}
+die Schrift auch explizit beeinflusst werden kann.
+Ausführlichere Erläuterungen zum Umgang mit Schriften in \LaTeX{}
 findet man im \textit{\LaTeX-Begleiter} \cite{wonne}
 und in der Online-Dokumentation \cite{fntguide}.
 
 
 
-\subsection{Schriftgr"o"sen}
+\subsection{Schriftgrößen}
  
-Die in der Tabelle~\ref{sizes} an"-ge"-f"uhrten Befehlen 
-wechseln die Schriftgr"o"se.
-Sie spezifizieren die Gr"o"se relativ
+Die in der Tabelle~\ref{sizes} angeführten Befehlen 
+wechseln die Schriftgröße.
+Sie spezifizieren die Größe relativ
 zu der von \verb:\documentclass: festgelegten Grundschrift.
 Ihr Wirkung reicht bis zum Ende der aktuellen Gruppe oder Umgebung.
 
 
 \begin{table}[hb]
-\caption{Schriftgr"o"sen} \label{sizes}
+\caption{Schriftgrößen} \label{sizes}
 \oben{10cm}
 \begin{tabbing}
 \texttt{xfootnotesizexx}\= und dann der Text \kill
 \verb|\tiny|         \> \tiny        winzig kleine Schrift \\
 \verb|\scriptsize|   \> \scriptsize  sehr kleine Schrift (wie Indizes)\\
-\verb|\footnotesize| \> \footnotesize     kleine Schrift (wie Fu"snoten)\\
+\verb|\footnotesize| \> \footnotesize     kleine Schrift (wie Fußnoten)\\
 \verb|\small|        \> \small            kleine Schrift \\
 \verb|\normalsize|   \> \normalsize  normale Schrift \\
-\verb|\large|        \> \large       gro"se Schrift \\
-\verb|\Large|        \> \Large       gr"o"sere Schrift \\
-\verb|\LARGE|        \> \LARGE       sehr gro"se Schrift \\[3pt]
-\verb|\huge|         \> \huge        riesig gro"s \\[3pt]
+\verb|\large|        \> \large       große Schrift \\
+\verb|\Large|        \> \Large       größere Schrift \\
+\verb|\LARGE|        \> \LARGE       sehr große Schrift \\[3pt]
+\verb|\huge|         \> \huge        riesig groß \\[3pt]
 \verb|\Huge|         \> \Huge        gigantisch
 \end{tabbing}
 \unten
 \end{table}
  
-Die Gr"o"sen-Befehle ver"andern auch die Zeilen"-ab"-st"ande auf
+Die Größen-Befehle verändern auch die Zeilenabstände auf
 die jeweils passenden Werte -- aber nur, wenn die
-Leerzeile, die den Absatz be\-en\-det, innerhalb des
-G"ultigkeitsbereichs des Gr"o"sen-Befehls liegt:
+Leerzeile, die den Absatz beendet, innerhalb des
+Gültigkeitsbereichs des Größen-Befehls liegt:
 \exa
 {\Large zu enger\\
 Abstand}\par
@@ -64,10 +64,10 @@ Abstand\par}
 Abstand\par}
 \end{verbatim}
 \exc
-F"ur korrekte
-Zeilen"-ab"-st"ande darf die
-schlie"-"sende geschwungene Klammer also nicht zu fr"uh kommen,
-sondern erst nach einem Absatzende, das "ubrigens nicht nur als
+Für korrekte
+Zeilenabstände darf die
+schließende geschwungene Klammer also nicht zu früh kommen,
+sondern erst nach einem Absatzende, das übrigens nicht nur als
 Leerzeile, sondern auch als Befehl \verb|\par|  eingegeben werden 
 kann.
 
@@ -75,24 +75,24 @@ kann.
 \subsection{Schriftstil}
 Der Schriftstil wird in \LaTeX{} durch 3~Merkmale definiert:
 \begin{description}
-\item[Familie] Standardm"a"sig stehen 3~Familien zur Wahl:
+\item[Familie] Standardmäßig stehen 3~Familien zur Wahl:
   "`roman"' (Antiqua), "`sans serif"' (Serifenlose) und "`typewriter"'
   (Schreibmaschinenschrift).
-\item[Serie] Die Serie gibt St"arke und Laufweite der
+\item[Serie] Die Serie gibt Stärke und Laufweite der
   Schrift an: "`medium"' (normale Schrift), "`boldface extended"'
   (fett und breiter).
 \item[Form] Die Form der Buchstaben: "`upright"'
   (aufrecht), "`slanted"' (geneigt), "`italic"' (kursiv),
-  "`caps and small caps"' (Kapit"alchen).
+  "`caps and small caps"' (Kapitälchen).
 \end{description}
 Tabelle~\ref{fonts} zeigt die Befehle, mit denen diese Attribute 
-explizit beeinflu"st werden k"onnen.  
+explizit beeinflusst werden können.  
 Die Befehle der Form \verb|\text...| setzen nur ihr Argument im 
-gew"unschten  Stil.  Zu jedem dieser Befehle ist ein Gegenst"uck angegeben, 
+gewünschten  Stil.  Zu jedem dieser Befehle ist ein Gegenstück angegeben, 
 das von seinem Auf\/treten an bis zum Ende der laufenden Gruppe oder Umgebung 
 wirkt.
 
-Zu beachten ist, da"s W"orter in Schreibmaschinenschrift nicht automatisch
+Zu beachten ist, dass Wörter in Schreibmaschinenschrift nicht automatisch
 getrennt werden.\par
 
 \begin{table}[hbp]
@@ -108,27 +108,27 @@ getrennt werden.\par
 \verb|\textup|\{\textit{text}\}         \>\verb|\upshape|        \>\textup{aufrecht}\\
 \verb|\textsl|\{\textit{text}\}         \>\verb|\slshape|        \>\textsl{geneigt}\\
 \verb|\textit|\{\textit{text}\}         \>\verb|\itshape|        \>\textit{kursiv}\\
-\verb|\textsc|\{\textit{text}\}         \>\verb|\scshape|        \>\textsc{Kapit"alchen}\\[1ex]
+\verb|\textsc|\{\textit{text}\}         \>\verb|\scshape|        \>\textsc{Kapitälchen}\\[1ex]
 \verb|\textnormal|\{\textit{text}\}     \>\verb|\normalfont|     \>\textnormal{Die Grundschrift des Dokuments}
 \end{tabbing}
 \unten
 \end{table}
 
-Die Befehle f"ur Familie, Serie und Form k"onnen untereinander und mit den
-Gr"o"sen-Befehlen kombiniert werden;  allerdings mu"s nicht jede
-m"ogliche Kombination tats"achlich als reale Schrift (Font)
-zur Verf"ugung stehen.
+Die Befehle für Familie, Serie und Form können untereinander und mit den
+Größen-Befehlen kombiniert werden;  allerdings muss nicht jede
+mögliche Kombination tatsächlich als reale Schrift (Font)
+zur Verfügung stehen.
 \exa
 {\small Die kleinen
-\textbf{fetten} R"omer
+\textbf{fetten} Römer
 beherrschten }{\large das
-ganze gro"se \textit{Italien}.}
+ganze große \textit{Italien}.}
 \\[6ex]
 {\Large\sffamily\slshape plakativ}
 \exb
 \begin{verbatim}
 {\small Die kleinen
-\textbf{fetten} R"omer
+\textbf{fetten} Römer
 beherrschten }{\large das
 ganze gro"se \textit{Italien}.}
 {\Large\sffamily\slshape plakativ}
@@ -136,34 +136,34 @@ ganze gro"se \textit{Italien}.}
 \exc
 
 Je \emph{weniger} verschiedene Schriftarten man verwendet, desto
-lesbarer und sch"oner wird das Schrift"-st"uck!
+lesbarer und schöner wird das Schriftstück!
 
 
 \subsection{Andere Schriftfamilien}
-Mit den im vorigen Abschnitt eingef"uhrten Befehlen kann man nicht beeinflussen,
-welche Schriftfamilien tats"achlich als Antiqua, Serifenlose und
+Mit den im vorigen Abschnitt eingeführten Befehlen kann man nicht beeinflussen,
+welche Schriftfamilien tatsächlich als Antiqua, Serifenlose und
 Maschinenschrift benutzt werden.  \LaTeX{} verwendet als Voreinstellung
 die sog.\ Computer-Modern-Schriftfamilien (CM), siehe Tabelle~\ref{families};
-der Stil der mathematischen Zeichens"atze pa"st dabei zu CM~Roman.
+der Stil der mathematischen Zeichensätze passt dabei zu CM~Roman.
 
 Will man andere Schriften benutzen, dann ist der einfachste Weg 
 das Laden eines Pakets, das eine oder mehrere dieser Schriftfamilien 
 komplett ersetzt.
-Tabelle~\ref{families} f"uhrt einige derartige Pakete auf%,
-% die allerdings nicht in jeder \LaTeX-Installation verf"ugbar sein m"ussen
+Tabelle~\ref{families} führt einige derartige Pakete auf%,
+% die allerdings nicht in jeder \LaTeX-Installation verfügbar sein müssen
 .
 
-Die Dokumentation Ihres \TeX-Systems \cite{local} sollte dar"uber
-informieren, welche Schriften verf"ugbar sind
-und wie Sie weitere installieren und verwenden k"onnen.
+Die Dokumentation Ihres \TeX-Systems \cite{local} sollte darüber
+informieren, welche Schriften verfügbar sind
+und wie Sie weitere installieren und verwenden können.
 Insbsondere sollte eine Anzahl von verbreiteten PostScript-Schriften
 mit jedem aktuellen \LaTeX-System verwendbar sein \cite{postscript}.
 
 \begin{table}[htb]
-\caption[Pakete f"ur alternative Schriftfamilien]
-{Pakete f"ur alternative Schriftfamilien (Eine leere
-Tabellenspalte bedeutet, da"s das Paket die betreffende Schriftfamilie nicht 
-ver"andert; * kennzeichnet die jeweils als Grundschrift eingestellte Familie.)}
+\caption[Pakete für alternative Schriftfamilien]
+{Pakete für alternative Schriftfamilien (Eine leere
+Tabellenspalte bedeutet, dass das Paket die betreffende Schriftfamilie nicht 
+verändert; * kennzeichnet die jeweils als Grundschrift eingestellte Familie.)}
 \label{families}
 {\footnotesize
 \begin{center}
@@ -207,56 +207,56 @@ Paket            & Antiqua    & Serifenlose   & Schreibmaschine  & math.\ Formel
 \end{table}
 
 
-\subsection{Die "`europ"aischen"' Zeichens"atze}
-\LaTeX{} verwendet standardm"a"sig  Schriften mit einem Umfang von
+\subsection{Die "`europäischen"' Zeichensätze}
+\LaTeX{} verwendet standardmäßig  Schriften mit einem Umfang von
 128~Zeichen.  Umlaute oder akzentuierte Buchstaben sind darin nicht
 enthalten; sie werden jeweils aus dem Grundsymbol und dem Akzent
 zusammengesetzt.  
 
 Inzwischen stehen die meisten der mit \LaTeX\ verwendbaren Schriften
-auch mit einem erweiterten "`europ"aischen"' Zeichenvorrat bereit.
+auch mit einem erweiterten "`europäischen"' Zeichenvorrat bereit.
 Sie enthalten jetzt 256 Zeichen, welche fast
-alle europ"aischen Sprachen abdecken, d.\,h., jedes be\-n"o\-tig\-te
+alle europäischen Sprachen abdecken, d.\,h., jedes benötigte
 Zeichen ist vorgefertigt in ihnen enthalten.
 Das hat nicht nur eine
-h"ohere typographische Qualit"at zur Folge; aufgrund der inneren Arbeitsweise
-von \TeX{} entfallen damit auch die Einschr"ankungen im Zusammenhang mit
-der Silbentrennung, die im Abschnitt~\ref{silb} erw"ahnt wurden:
-W"orter mit Umlauten werden nun besser getrennt, und im Argument des
-Befehls \verb|\hyphenation| d"urfen auch Umlaute und das scharfe~s stehen.
+höhere typographische Qualität zur Folge; aufgrund der inneren Arbeitsweise
+von \TeX{} entfallen damit auch die Einschränkungen im Zusammenhang mit
+der Silbentrennung, die im Abschnitt~\ref{silb} erwähnt wurden:
+Wörter mit Umlauten werden nun besser getrennt, und im Argument des
+Befehls \verb|\hyphenation| dürfen auch Umlaute und das scharfe~s stehen.
 
 %% stimmt nur fuer EC
 %Weiterhin sind die Unterschneidungen im Vergleich zu den amerikanischen
-%\TeX-Originalschriften stark verbessert und nun auch auf h"aufige
+%\TeX-Originalschriften stark verbessert und nun auch auf häufige
 %Buchstabenpaarungen in nicht-englischen Sprachen optimiert.
 
 % <------- Formulierung ????
-Die europ"aischen Schriften bestehen aus zwei Teilen: Der T1-Zeichensatz
-enth"alt Buchstaben, ASCII-Zeichen sowie verschiedene Anf"uhrungszeichen
+Die europäischen Schriften bestehen aus zwei Teilen: Der T1-Zeichensatz
+enthält Buchstaben, ASCII-Zeichen sowie verschiedene Anführungszeichen
 und Striche, 
-w"ahrend ein erg"anzender TS1-Zeichensatz zu\-s"atz\-liche Textsymbole bereitstellt.
+während ein ergänzender TS1-Zeichensatz zusätzliche Textsymbole bereitstellt.
 % <------- Formulierung ????
 
-\LaTeX{} wird veranla"st, T1-Schriften zu verwenden,
-indem man das Paket \texttt{fontenc} mit der Option \texttt{T1} l"adt:
+\LaTeX{} wird veranlasst, T1-Schriften zu verwenden,
+indem man das Paket \texttt{fontenc} mit der Option \texttt{T1} lädt:
 \begin{quote}
   \verb|\usepackage[T1]{fontenc}|
 \end{quote}
-Das Paket \texttt{textcomp} erm"oglicht den Zugriff auf die Textsymbole:
+Das Paket \texttt{textcomp} ermöglicht den Zugriff auf die Textsymbole:
 \begin{quote}
   \verb|\usepackage{textcomp}|
 \end{quote}
-Welche zus"atzlichen Zeichen mit den T1-Schriften
-bereitgestellt werden, ist in \cite{usrguide} zusammengefa"st;
+Welche zusätzlichen Zeichen mit den T1-Schriften
+bereitgestellt werden, ist in \cite{usrguide} zusammengefasst;
 Anhang~\ref{textsymbols} der vorliegenden Kurzbeschreibung
-enth"alt eine Liste aller TS1-Textsymbole.  Einige der Textsymbole sind
-auch ohne das Paket \texttt{textcomp} verf"ugbar, siehe Abschnitt~\ref{symbole},
+enthält eine Liste aller TS1-Textsymbole.  Einige der Textsymbole sind
+auch ohne das Paket \texttt{textcomp} verfügbar, siehe Abschnitt~\ref{symbole},
 dann aber nicht immer in einem zur laufenden Schrift passenden Stil.
 
-Beachten Sie, da"s in Fonts, die nicht speziell f"ur die Verwendung 
+Beachten Sie, dass in Fonts, die nicht speziell für die Verwendung 
 mit \TeX\ entworfen wurden, 
 nur ein Teil der TS1-Textsymbole enthalten ist.
-Das betrifft vor allem die "`handels"ublichen"' PostScript-Schriften.
+Das betrifft vor allem die "`handelsüblichen"' PostScript-Schriften.
 
 \endinput
 
