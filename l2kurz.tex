@@ -77,6 +77,10 @@
 \newcommand\oben[1]{\begin{center}\begin{minipage}{#1}\hrule\medskip}
 \newcommand\unten  {\hrule \end{minipage}\end{center}}
 
+\newenvironment{lminipage}[1]{%
+ \begin{center}\begin{minipage}{#1}\noindent\hrule\medskip}%
+ {\par\unskip\noindnet\hrule \end{minipage}\end{center}}
+ 
 \newenvironment{ttdescription}{%
   \renewcommand{\descriptionlabel}[1]{%
     \hspace{\labelsep}\texttt{##1}}%
