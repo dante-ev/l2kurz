@@ -121,20 +121,20 @@ Ein etwas komplizierteres File ist in Abbildung~\ref{dokument}
 skizziert.
  
 \begin{figure}[hbp] %\small
-\oben{6cm}
+\begin{lminipage}{6cm}
 \begin{verbatim}
 \documentclass{article}
 \begin{document}
 Small is beautiful.
 \end{document}
 \end{verbatim}
-\unten
+\end{lminipage}
 \caption{Ein minimales \LaTeX-File} \label{mini}
 \end{figure}
 
 % im folgenden Beispiel sollten Umlaute im Eingabefile auftreten!
 \begin{figure}[hbtp] %\small
-\oben{10cm}
+\begin{lminipage}{10cm}
 \begin{verbatim}
 \documentclass[11pt,a4paper,ngerman]{article}
 \usepackage[utf8]{inputenc}
@@ -160,7 +160,7 @@ Hier beginnt mein schönes Werk ...
 
 \end{document}
 \end{verbatim}
-\unten
+\end{lminipage}
 \caption{Aufbau eines Artikels} \label{dokument}
 \end{figure}
  
@@ -196,7 +196,7 @@ Das Eingabefile für diese Beschreibung beginnt z.\,B.\ mit:
 
 \begin{table}[hbpt]
 \caption{Dokumentklassen} \label{docstyles}
-\oben{11cm}
+\begin{lminipage}{11cm}
 \begin{ttdescription}%\small
 \item [article] für Artikel in wissenschaftlichen Zeitschriften,
   kürzere Berichte u.\,v.\,a.
@@ -221,13 +221,13 @@ Typographie.
 (Nicht überall vorhanden, siehe \local.)
   
 \end{ttdescription}
-\unten
+\end{lminipage}
 \end{table}
 
 \begin{table}[hbpt]
 \caption[Klassenoptionen]{Klassenoptionen (Alternativen sind durch \texttt{|}
   getrennt)} \label{options}
-\oben{11cm}
+\begin{lminipage}{11cm}
 \begin{ttdescription}%\small
 \item [10pt|11pt|12pt] wählt die normale Schriftgröße des Dokuments aus.
   10\,pt hohe Schrift ist die Voreinstellung; diese Beschreibung benutzt 11\,pt.
@@ -256,7 +256,7 @@ Typographie.
   alle Klassen außer \texttt{book}.
   
 \end{ttdescription}
-\unten
+\end{lminipage}
 \end{table}
 
 
@@ -282,7 +282,7 @@ Das Eingabefile für diese Beschreibung enthält beispielsweise:
 
 \begin{table}[htbp]
 \caption{Pakete (eine Auswahl)}\label{pack}
-\oben{11cm}
+\begin{lminipage}{11cm}
 \begin{ttdescription}%\small
 \setlength{\itemsep}{.5\itemsep plus1pt minus1pt}
 % \item[alltt] Definiert eine Variante der \texttt{verbatim}-Umgebung
@@ -325,7 +325,7 @@ Das Eingabefile für diese Beschreibung enthält beispielsweise:
 \item[textcomp] Bindet Schriften mit zusätzlichen Textsymbolen ein.
 %\item[verbatim] Flexible Erweiterung der \texttt{verbatim}-Umgebung.
 \end{ttdescription}
-\unten
+\end{lminipage}
 \end{table}
 
 
