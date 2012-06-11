@@ -46,7 +46,7 @@ und einer Einheit.  Die wichtigsten Einheiten sind in
 Tabelle~\ref{units} angeführt.
 \begin{table}[b]
 \caption{Einheiten für Längenangaben} \label{units}
-\oben{11cm}
+\begin{lminipage}{11cm}
 \begin{tabbing}
 \texttt{mm}\qquad \= Millimeter                               \\
 \texttt{cm} \> Zentimeter = 10\,mm                            \\
@@ -61,13 +61,13 @@ Tabelle~\ref{units} angeführt.
 \texttt{em} \> Geviert (doppelte Breite einer Ziffer der aktuellen Schrift)\\
 \texttt{ex} \> Höhe des Buchstabens x der aktuellen Schrift
 \end{tabbing}                    
-\unten
+\end{lminipage}
 \end{table}
 Die Befehle in Tabelle~\ref{hspace} sind Abkürzungen zum Einfügen
 besonderer horizontaler Abstände.
 \begin{table}[t]
 \caption{Befehle für horizontale Abstände} \label{hspace}
-\oben{13cm}
+\begin{lminipage}{13cm}
 \begin{tabbing}
 \texttt{xenspace}\qquad \= \kill
 \verb|\,|       \> ein sehr kleiner Abstand (siehe auch Abschnitt~\ref{abstaende})\\
@@ -78,7 +78,7 @@ besonderer horizontaler Abstände.
 \verb|\hfill|   \> ein Abstand, der sich von 0 bis \(\infty\)
                    ausdehnen kann.
 \end{tabbing}
-\unten
+\end{lminipage}
 \end{table}
 Der Befehl \verb|\hfill| kann dazu dienen, einen vorgegebenen
 Platz auszufüllen.
@@ -114,7 +114,7 @@ Die Befehle in Tabelle~\ref{vspace} sind Abkürzungen für
 bestimmte vertikale Abstände.
 \begin{table}[t]
 \caption{Befehle für vertikale Abstände} \label{vspace}
-\oben{13cm}
+\begin{lminipage}{13cm}
 \begin{tabbing}
 \texttt{xsmallskip}\qquad \= \kill
 \verb|\smallskip| \> etwa \(\nfrac{1}{4}\) Zeile \\
@@ -123,7 +123,7 @@ bestimmte vertikale Abstände.
 \verb|\vfill|     \> ein Abstand, der sich von 0 bis \(\infty\)
                      ausdehnen kann
 \end{tabbing}
-\unten
+\end{lminipage}
 \end{table}
 Der Befehl \verb|\vfill| in Verbindung mit \verb|\newpage|
 kann dazu dienen, Text an den unteren Rand einer Seite zu setzen
@@ -165,7 +165,7 @@ mehrere Briefe schreiben.
 Abbildung~\ref{brief} enthält ein Beispiel für einen Brief.
 
 \begin{figure}[ht] %\small
-\oben{11cm}
+\begin{lminipage}{11cm}
 \begin{verbatim}
 \documentclass[12pt,a4paper]{letter}
 \usepackage[latin1]{inputenc}
@@ -188,7 +188,7 @@ herzlichen Dank für die Zusendung ...
 \end{letter}
 \end{document}
 \end{verbatim}
-\unten
+\end{lminipage}
 \caption{Brief von H.\,P. an E.\,S.} \label{brief}
 \end{figure}
 
