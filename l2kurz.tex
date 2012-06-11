@@ -28,7 +28,7 @@
  textheight=46\baselineskip,
  textwidth=5.2in,
  left=1cm,
- marginpar=4cm,
+ marginpar=5cm,
 }
 
 \usepackage[USenglish,ngerman]{babel}
@@ -83,9 +83,8 @@
                 \begin{minipage}[t]{6cm}\sloppy}
 \newcommand\exb{\end{minipage}\kern 1cm\begin{minipage}[t]{8cm}\sloppy }
 \newcommand\exc{\end{minipage}\kern -3cm \smallskip\end{flushleft}}
- 
-\newcommand\oben[1]{\begin{center}\begin{minipage}{#1}\hrule\medskip}
-\newcommand\unten  {\hrule \end{minipage}\end{center}}
+
+\newenvironment{beispiel}{\begin{verse}}{\end{verse}}
 
 \newenvironment{lminipage}[1]{%
  \begin{center}\begin{minipage}{#1}\noindent\hrule\medskip}%
@@ -182,7 +181,7 @@ Copyright \copyright{} 1998--2003 W.~Schmidt, J.~Knappen, H.~Partl, I.~Hyna
 
 \bigskip
 
-Die in dieser Publikation erwähnten Software- und Hardware-Bezeichnungen sind
+Die in dieser Publikation erwähnten Software- und Hardware"=Bezeichnungen sind
 in den meisten Fällen auch eingetragene Warenzeichen und unterliegen als
 solche den gesetzlichen Bestimmungen.
 
@@ -193,7 +192,7 @@ solche den gesetzlichen Bestimmungen.
 Dieses Dokument wurde mit \LaTeX{} gesetzt.
 Es ist als Quelltext und im PDF-Format online erhältlich:
 \begin{quote}
-\path{<ftp://dante.ctan.org/tex-archive/info/lshort/german/>}
+\url{http://mirror.ctan.org/info/lshort/german/}
 \end{quote}
 \bigskip
 
@@ -206,7 +205,7 @@ Heiko Oberdiek,
 Bernd Raichle, 
 Rainer Schöpf und
 Stefan Steffens
-für Tips, Anmerkungen und  Korrekturen.
+für Tipps, Anmerkungen und  Korrekturen.
 
 }
 

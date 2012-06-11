@@ -168,10 +168,10 @@ Hier beginnt mein schönes Werk ...
 \subsection{Dokumentklassen}\label{docsty}
  
 Die am Beginn des Eingabefiles  mit
-\begin{verse}
+\begin{beispiel}
 \verb|\documentclass[|\textit{optionen}\verb|]{|%
   \textit{klasse}\verb|}|
-\end{verse}
+\end{beispiel}
 definierte "`Klasse"' eines Dokumentes enthält 
 Vereinbarungen über 
 das Layout und die logischen Strukturen, z.\,B.\ die 
@@ -190,9 +190,9 @@ eine oder mehrere Optionen für das Klassenlayout
 angegeben werden. Die wichtigsten Optionen sind in der 
 Tabelle~\ref{options} auf S.~\pageref{options} angeführt.
 Das Eingabefile für diese Beschreibung beginnt z.\,B.\ mit:
-\begin{verse}
+\begin{beispiel}
 \verb|\documentclass[11pt,a4paper]{article}|
-\end{verse}\todo{MD: Vorschlag: memoir, scrlttr2, beamer und powerdot.
+\end{beispiel}\todo{MD: Vorschlag: memoir, scrlttr2, beamer und powerdot.
 Der Hinweis Local Guide ist m. E. nicht nötig (siehe Tabelle). PG: memoir würde ich nicht nehmen, zu Umfangreich, keine dt. Anl. Letter würde ich auch nicht nehmen, welcher Anfänger will was über Briefe wissen?}
 
 \begin{table}[hbpt]
@@ -265,20 +265,20 @@ Typographie.
 \subsection{Pakete}\label{packages}
  
 Mit dem Befehl
-\begin{verse}
+\begin{beispiel}
 \verb:\usepackage[:\textit{optionen}\verb:]{:%
   \textit{pakete}\verb:}:
-\end{verse}
+\end{beispiel}
 können im Vorspann ergänzende Makropakete (packages) geladen werden,
 die das Layout der Dokumentklasse
 modifizieren oder zusätzliche Funktionalität bereitstellen.
 Eine Auswahl von Paketen findet sich in der Tabelle~\ref{pack} 
 auf S.~\pageref{pack}.
 Das Eingabefile für diese Beschreibung enthält beispielsweise:
-\begin{verse}
+\begin{beispiel}
 \verb|\usepackage{babel,latexsym|\\
 \verb|            graphicx,textcomp,hyperref}|
-\end{verse}
+\end{beispiel}
 
 
 \begin{table}[htbp]
