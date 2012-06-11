@@ -56,14 +56,24 @@
   columns=fullflexible,%
   fontadjust=true,%
   basewidth=0.65em,%
-}
+%  extendedchars=false,
+  inputencoding=utf8,
+  upquote=true,
 %Mit Farbe:
-\lstset{%
  keywordstyle=\color{blue!70!black}\bfseries,
  texcsstyle=*\color{red!70!black}\bfseries,
  literate={\{}{\textcolor{red!70!black}{\{}}1
-                  {\}}{\textcolor{red!70!black}{\}}}1
+          {\}}{\textcolor{red!70!black}{\}}}1
+%Sonderzeichen / Umlaute in listings
+          {Ö}{{\"O}}1
+          {Ä}{{\"A}}1
+          {Ü}{{\"U}}1
+          {ß}{{\ss}}2
+          {ü}{{\"u}}1
+          {ä}{{\"a}}1
+          {ö}{{\"o}}1,
 }
+
 
 \usepackage[textsize=footnotesize]{todonotes}
 
