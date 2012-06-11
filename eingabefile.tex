@@ -45,26 +45,6 @@ Richtig:
  Am \today{} scheint die Sonne.
  Oder: Am \today\ schneit es.
 \end{LTXexample}
-
-\exa
-\renewcommand{\today}{35.~Mai 1998}  % to make sure that the
-  % line breaks look good, regardless of the date of printing.
-Heute ist der \today.
-Oder: Heute ist der \today .
-Falsch ist: Am \today regnet es.
-Richtig: Am \today{} scheint die Sonne.
-Oder: Am \today\ schneit es.
-\exb
-\begin{verbatim}
-Heute ist der \today.
-Oder: Heute ist der \today .
-Falsch ist:
- Am \today regnet es.
-Richtig:
- Am \today{} scheint die Sonne.
- Oder: Am \today\ schneit es.
-\end{verbatim}
-\exc
  
 Manche Befehle haben Parameter, die zwischen geschwungenen
 Klammern angegeben werden müssen.
@@ -88,17 +68,11 @@ steht (bis zum Ende der Eingabezeile), wird von \LaTeX\
 ignoriert.
 Dies kann für Notizen des Autors verwendet werden, die nicht
 oder noch nicht ausgedruckt werden sollen.
-\exa
+\begin{LTXexample}
 Das ist ein % dummes
 % Besser: ein lehrreiches <----
 Beispiel.
-\exb
-\begin{verbatim}
-Das ist ein % dummes
-% Besser: ein lehrreiches <----
-Beispiel.
-\end{verbatim}
-\exc
+\end{LTXexample}
  
 \subsection{Aufbau}
  
@@ -133,12 +107,12 @@ skizziert.
  
 \begin{figure}[hbp] %\small
 \begin{lminipage}{6cm}
-\begin{verbatim}
+\begin{lstlisting}
 \documentclass{article}
 \begin{document}
-Small is beautiful.
+ Small is beautiful.
 \end{document}
-\end{verbatim}
+\end{lstlisting}
 \end{lminipage}
 \caption{Ein minimales \LaTeX-File} \label{mini}
 \end{figure}

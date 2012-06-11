@@ -41,8 +41,29 @@
 
 \usepackage{showexpl}
 \usepackage{xcolor}
-\lstset{pos=i,language=[LaTeX]TeX,basicstyle=\ttfamily\small,%
-              hsep=1cm,width=6cm,rframe={},explpreset={numbers=none}}
+\lstset{%
+%Sprachdefinition
+  language=[LaTeX]TeX,
+%Definition fuer das Paket showexpl,
+  pos=i,
+  hsep=1cm,
+  width=6cm,
+  rframe={},
+ explpreset={numbers=none},
+%Definition für listings
+  basicstyle=\ttfamily\small,%
+  texcsstyle=*\bfseries,
+  columns=fullflexible,%
+  fontadjust=true,%
+  basewidth=0.65em,%
+}
+%Mit Farbe:
+\lstset{%
+ keywordstyle=\color{blue!70!black}\bfseries,
+ texcsstyle=*\color{red!70!black}\bfseries,
+ literate={\{}{\textcolor{red!70!black}{\{}}1
+                  {\}}{\textcolor{red!70!black}{\}}}1
+}
 
 \usepackage[textsize=footnotesize]{todonotes}
 
