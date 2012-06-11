@@ -35,6 +35,17 @@ Groß- und Kleinbuchstaben haben auch in Befehlsnamen
 Wenn man nach einem Befehlsnamen eine Leerstelle erhalten will,
 muss man~\verb|{}| zur Beendigung des Befehlsnamens oder einen
 eigenen Befehl für die Leerstelle verwenden.
+
+\begin{LTXexample}
+Heute ist der \today.
+Oder: Heute ist der \today .
+Falsch ist:
+ Am \today regnet es.
+Richtig:
+ Am \today{} scheint die Sonne.
+ Oder: Am \today\ schneit es.
+\end{LTXexample}
+
 \exa
 \renewcommand{\today}{35.~Mai 1998}  % to make sure that the
   % line breaks look good, regardless of the date of printing.
