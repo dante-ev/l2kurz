@@ -1,0 +1,378 @@
+\section{Eingabefile}
+Das Eingabefile für \LaTeX{} ist ein Textfile. Es wird mit einem
+Editor erstellt und enthält sowohl den Text, der gedruckt
+werden soll, als auch die Befehle, aus denen \LaTeX\ erfährt,
+wie der Text gesetzt werden soll.
+
+
+\subsection{Leerstellen}
+ 
+"`Unsichtbare"' Zeichen wie das Leerzeichen, Tabulatoren
+und das Zeilenende werden von \LaTeX{}
+einheitlich als Leerzeichen behandelt.  \emph{Mehrere}
+Leerzeichen werden wie \emph{ein} Leerzeichen behandelt.   
+Wenn man andere als die normalen Wort- und Zeilenabstände
+will, kann man dies also nicht durch die Eingabe von
+zusätzlichen Leerzeichen oder Leerzeilen erreichen, sondern
+nur mit entprechenden \LaTeX-Befehlen.
+
+Eine Leerzeile zwischen Textzeilen bedeutet das Ende eines 
+Absatzes.  \emph{Mehrere} Leerzeilen werden wie \emph{eine}
+Leerzeile behandelt.
+ 
+ 
+\subsection{\LaTeX-Befehle und Gruppen}
+ 
+Die meisten \LaTeX-Befehle haben eines der beiden folgenden
+Formate: Entweder sie beginnen mit einem Backslash~(\verb|\|)
+und haben dann einen nur aus Buchstaben bestehenden Namen, der
+durch ein oder mehrere Leerzeichen oder durch ein nachfolgendes
+Sonderzeichen oder eine Ziffer beendet wird; oder sie bestehen
+aus einem Backslash und genau einem Sonderzeichen oder einer
+Ziffer.
+Groß- und Kleinbuchstaben haben auch in Befehlsnamen
+\emph{verschiedene} Bedeutung.
+Wenn man nach einem Befehlsnamen eine Leerstelle erhalten will,
+muss man~\verb|{}| zur Beendigung des Befehlsnamens oder einen
+eigenen Befehl für die Leerstelle verwenden.
+\exa
+\renewcommand{\today}{35.~Mai 1998}  % to make sure that the
+  % line breaks look good, regardless of the date of printing.
+Heute ist der \today.
+Oder: Heute ist der \today .
+Falsch ist: Am \today regnet es.
+Richtig: Am \today{} scheint die Sonne.
+Oder: Am \today\ schneit es.
+\exb
+\begin{verbatim}
+Heute ist der \today.
+Oder: Heute ist der \today .
+Falsch ist:
+ Am \today regnet es.
+Richtig:
+ Am \today{} scheint die Sonne.
+ Oder: Am \today\ schneit es.
+\end{verbatim}
+\exc
+ 
+Manche Befehle haben Parameter, die zwischen geschwungenen
+Klammern angegeben werden müssen.
+Manche Befehle haben Parameter, die weggelassen oder zwischen
+eckigen Klammern angegeben werden können.
+Manche Befehle haben Varianten, die durch das Hinzufügen
+eines Sterns an den Befehlsnamen unterschieden werden.
+
+Geschwungene Klammern können auch dazu verwendet werden, Gruppen
+(groups) zu bilden.
+Die Wirkung von Befehlen, die innerhalb von Gruppen oder
+Umgebungen (environments) angegeben werden, endet immer mit dem
+Ende der Gruppe bzw.\ der Umgebung.  Im obigen Beispiel
+ist~\verb|{}| eine leere Gruppe, die außer der Beendigung des
+Befehlsnamens \texttt{today} keine Wirkung hat.
+ 
+\subsection{Kommentare}
+ 
+Alles, was hinter einem Prozentzeichen (\verb|%|)
+steht (bis zum Ende der Eingabezeile), wird von \LaTeX\ 
+ignoriert.
+Dies kann für Notizen des Autors verwendet werden, die nicht
+oder noch nicht ausgedruckt werden sollen.
+\exa
+Das ist ein % dummes
+% Besser: ein lehrreiches <----
+Beispiel.
+\exb
+\begin{verbatim}
+Das ist ein % dummes
+% Besser: ein lehrreiches <----
+Beispiel.
+\end{verbatim}
+\exc
+ 
+\subsection{Aufbau}
+ 
+Der erste Befehl in einem \LaTeX-Eingabefile muss der Befehl
+\begin{quote}
+\verb|\documentclass|
+\end{quote}
+sein.
+Er legt fest, welche Art von Schriftstück überhaupt erzeugt werden soll
+(Bericht, Buch, Brief usw.).
+Danach können weitere Befehle folgen, die für das gesamte
+Dokument gelten sollen.  Dieser Teil des Dokuments wird auch als 
+\emph{Vorspann} oder \emph{Präambel} bezeichnet.  Mit dem Befehl
+\begin{quote}
+\verb|\begin{document}|
+\end{quote}
+endet der Vorspann, und es 
+beginnt das Setzen des Schriftstücks.
+Nun folgen der Text und alle \LaTeX-Befehle, die das Ausdrucken
+des Schriftstücks bewirken.
+Die Eingabe muss mit dem Befehl
+\begin{quote}
+\verb|\end{document}|
+\end{quote}
+beendet werden.
+Falls nach diesem Befehl noch Eingaben folgen, werden sie von
+\LaTeX\ ignoriert.
+ 
+Abbildung~\ref{mini} zeigt ein \emph{minimales} \LaTeX-File.
+Ein etwas komplizierteres File ist in Abbildung~\ref{dokument}
+skizziert.
+ 
+\begin{figure}[hbp] %\small
+\oben{6cm}
+\begin{verbatim}
+\documentclass{article}
+\begin{document}
+Small is beautiful.
+\end{document}
+\end{verbatim}
+\unten
+\caption{Ein minimales \LaTeX-File} \label{mini}
+\end{figure}
+
+% im folgenden Beispiel sollten Umlaute im Eingabefile auftreten!
+\begin{figure}[hbtp] %\small
+\oben{10cm}
+\begin{verbatim}
+\documentclass[11pt,a4paper,ngerman]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\date{29. Februar 1998}
+\author{H.~Partl}
+\title{Über kurz oder lang}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+Beispiel für einen wissenschaftlichen Artikel
+in deutscher Sprache.
+\end{abstract}
+\tableofcontents
+
+\section{Start}
+Hier beginnt mein schönes Werk ...
+
+\section{Ende}
+... und hier endet es.
+
+\end{document}
+\end{verbatim}
+\unten
+\caption{Aufbau eines Artikels} \label{dokument}
+\end{figure}
+ 
+ 
+\subsection{Dokumentklassen}\label{docsty}
+ 
+Die am Beginn des Eingabefiles  mit
+\begin{verse}
+\verb|\documentclass[|\textit{optionen}\verb|]{|%
+  \textit{klasse}\verb|}|
+\end{verse}
+definierte "`Klasse"' eines Dokumentes enthält 
+Vereinbarungen über 
+das Layout und die logischen Strukturen, z.\,B.\ die 
+Gliederungseinheiten (Kapitel etc.\@), 
+die für alle Dokumente dieses Typs gemeinsam sind.
+
+Zwischen den geschwungenen Klammern \emph{muss} genau eine Dokumentklasse
+angegeben werden.  Tabelle~\ref{docstyles} auf S.~\pageref{docstyles}
+führt Klassen auf,
+die in jeder \LaTeX-Installation existieren sollten.  
+Im \local\ können weitere verfügbare 
+Klassen angegeben sein.  
+ 
+Zwischen den eckigen Klammern \emph{können}, durch Kommata getrennt, 
+eine oder mehrere Optionen für das Klassenlayout
+angegeben werden. Die wichtigsten Optionen sind in der 
+Tabelle~\ref{options} auf S.~\pageref{options} angeführt.
+Das Eingabefile für diese Beschreibung beginnt z.\,B.\ mit:
+\begin{verse}
+\verb|\documentclass[11pt,a4paper]{article}|
+\end{verse}
+
+\begin{table}[hbpt]
+\caption{Dokumentklassen} \label{docstyles}
+\oben{11cm}
+\begin{ttdescription}%\small
+\item [article] für Artikel in wissenschaftlichen Zeitschriften,
+  kürzere Berichte u.\,v.\,a.
+ 
+\item [report] für längere Berichte, die aus mehreren Kapiteln
+  bestehen, Diplomarbeiten, Dissertationen u.\,ä.
+ 
+\item [book] für Bücher
+
+\item[scrartcl, scrreprt, scrbook]\quad Die sog. KOMA-Klassen 
+sind Varianten der o.\,g. Klassen
+mit besserer Anpassung an DIN-Papierformate und "`europäische"'
+Typographie. 
+(Nicht überall vorhanden, siehe \local.)
+
+% \item [proc] für Konferenzbände (Proceedings)
+% ist nicht einmal im LaTeX-Handbich beschrieben!
+
+\item [letter] für Briefe (siehe auch Abschnitt~\ref{briefe})
+
+\item [foils] für Folien oder Präsentationen.
+(Nicht überall vorhanden, siehe \local.)
+  
+\end{ttdescription}
+\unten
+\end{table}
+
+\begin{table}[hbpt]
+\caption[Klassenoptionen]{Klassenoptionen (Alternativen sind durch \texttt{|}
+  getrennt)} \label{options}
+\oben{11cm}
+\begin{ttdescription}%\small
+\item [10pt|11pt|12pt] wählt die normale Schriftgröße des Dokuments aus.
+  10\,pt hohe Schrift ist die Voreinstellung; diese Beschreibung benutzt 11\,pt.
+
+\item[a4paper] für Papier im DIN\,A4-Format. Ohne diese
+  Option nimmt \LaTeX\ amerikanisches Papierformat an.
+ 
+\item [fleqn] für linksbündige statt zentrierte mathematische
+  Gleichungen
+ 
+\item [leqno] für Gleichungsnummern links statt rechts von jeder
+  nummerierten Gleichung
+ 
+\item [titlepage|notitlepage] legt fest, ob Titel und Zusammenfassung
+  auf einer eigenen Seite erscheinen sollen.  \texttt{titlepage} ist
+  die Voreinstellung für die Klassen \texttt{report} und \texttt{book}.
+ 
+\item [onecolumn|twocolumn] für ein- oder zweispaltigen Satz.
+ Die Voreinstellung ist immer \texttt{onecolumn}.  
+ Die Klassen \texttt{letter} und \texttt{slides} kennen \emph{keinen}
+ zweispaltigen Satz.
+ 
+\item [oneside|twoside] legt fest, ob die Seiten für ein- oder
+  zweiseitigen  Druck gestaltet werden sollen.  
+  \texttt{oneside} ist die Voreinstellung für
+  alle Klassen außer \texttt{book}.
+  
+\end{ttdescription}
+\unten
+\end{table}
+
+
+
+\subsection{Pakete}\label{packages}
+ 
+Mit dem Befehl
+\begin{verse}
+\verb:\usepackage[:\textit{optionen}\verb:]{:%
+  \textit{pakete}\verb:}:
+\end{verse}
+können im Vorspann ergänzende Makropakete (packages) geladen werden,
+die das Layout der Dokumentklasse
+modifizieren oder zusätzliche Funktionalität bereitstellen.
+Eine Auswahl von Paketen findet sich in der Tabelle~\ref{pack} 
+auf S.~\pageref{pack}.
+Das Eingabefile für diese Beschreibung enthält beispielsweise:
+\begin{verse}
+\verb|\usepackage{babel,latexsym|\\
+\verb|            graphicx,textcomp,hyperref}|
+\end{verse}
+
+
+\begin{table}[htbp]
+\caption{Pakete (eine Auswahl)}\label{pack}
+\oben{11cm}
+\begin{ttdescription}%\small
+\setlength{\itemsep}{.5\itemsep plus1pt minus1pt}
+% \item[alltt] Definiert eine Variante der \texttt{verbatim}-Umgebung
+\item[amsmath, amssymb] Mathematischer Formelsatz mit erweiterten Fähigkeiten,
+  zusätzliche mathematische Schriften und Symbole; Beschreibung siehe
+  \cite{ch8}.
+%\item[array] Verbesserte und erweiterte Versionen der Umgebungen
+%  \texttt{array}, \texttt{tabular} und \texttt{tabular*}.
+\item[babel] Anpassungen für viele verschiedene Sprachen. Die
+  gewählten Sprachen werden als Optionen angegeben.
+\item[color] Unterstützung für Farbausgabe;
+  Beschreibung  siehe~\cite{grfguide} und~\cite{grfcomp}.
+\item[dcolumn] Unterstützt auf Dezimaltrennzeichen ausgerichtete
+  Spalten in den Umgebungen \texttt{array} und \texttt{tabular}
+\item[fontenc] Erlaubt die Verwendung von Schriften mit
+  unterschiedlicher Kodierung (Zeichenvorrat, Anordnung).
+\item[fancyhdr] Flexible Gestaltung von Kopf- und Fußzeilen.
+\item[geometry] Manipulation des Seitenlayouts.
+\item[german, ngerman] Anpassungen für die deutsche Sprache in
+  traditioneller und neuer Rechtschreibung.
+\item[graphicx] Einbindung von extern erzeugten Graphiken.
+  Die umfangreichen Möglichkeiten dieses Pakets werden 
+  in~\cite{grfguide} und~\cite{grfcomp} beschrieben.
+\item[hyperref] Ermöglicht Hyperlinks zwischen Textstellen und zu
+  externen Dokumenten; besonders sinnvoll einsetzbar, 
+  wenn mit \TeX\ eine Ausgabedatei im \textsc{pdf}- oder \textsc{html}-Format 
+  erzeugt wird.
+\item[inputenc] Deklaration der Zeichenkodierung im
+  Eingabefile.
+\item[latexsym] Erlaubt einige besondere Symbole wie~\(\Box\),
+  die mit \LaTeX~2.09 standardmäßig verfügbar waren.
+\item[longtable]
+  für Tabellen über mehrere Seiten mit automatischem Seitenumbruch.
+\item[makeidx] Unterstützt das Erstellen eines Index.
+\item[multicol] Mehrspaltiger Satz mit Kolumnenausgleich.
+%\item[showkeys] Druckt die Namen aller verwendeten \verb:\label:s,
+%  \verb:\ref:s und \verb:\pageref:s im Text aus.
+%\item[tabularx] für Tabellen mit automatisch an den vorhandenen
+%  Platz angepasster Breite der Spalten.
+\item[textcomp] Bindet Schriften mit zusätzlichen Textsymbolen ein.
+%\item[verbatim] Flexible Erweiterung der \texttt{verbatim}-Umgebung.
+\end{ttdescription}
+\unten
+\end{table}
+
+
+\subsection{Eingabezeichensatz}\label{inputenc}
+
+Bei jedem \LaTeX-System dürfen mindestens die folgenden
+Zeichen zur Eingabe von Text verwendet werden:
+\begin{quote}
+  \ttfamily
+  a\dots z A\dots Z 0\dots 9 \\
+  . : ; , ? ! ` ' ( ) [ ] - / * @ + =
+\end{quote}
+Die folgenden Eingabezeichen haben für \LaTeX{} eine Spezialbedeutung
+oder sind nur innerhalb von mathematischen Formeln erlaubt:
+\begin{quote}
+\verb.$ & % # _ { }  ~  ^  "  \  | < >.
+\end{quote}
+Für Zeichen, die über obige Liste hinausgehen, beispielsweise die Umlaute,
+sind je nach Betriebssystem des verwendeten Computers 
+unterschiedliche Kodierungen in Gebrauch.  Damit auch diese Zeichen im 
+Eingabefile benutzt werden dürfen,  muss man das Paket 
+\texttt{inputenc} laden und dabei die jeweilige Kodierung als 
+Option angeben: \verb:\usepackage[:\textit{codepage}\verb:]{inputenc}:.
+Mögliche Angaben für \textit{codepage} sind u.\,a.:
+\begin{ttdescription}
+  \item[latin1] Latin-1 (ISO~8859-1), gebräuchlich unter \textsc{Unix} und VMS
+  \item[latin9] Latin-9 (ISO~8859-15), Erweiterung von Latin-1, u.\,a. mit Eurozeichen
+  \item[ansinew] Microsoft Codepage 1252 für Windows
+  \item[cp850] IBM Codepage 850, üblich unter OS/2
+  \item[applemac] \textsc{Macintosh}-Kodierung
+\end{ttdescription}
+Falls \LaTeX{} ein eingegebenes Zeichen nicht darstellen
+kann, was meist für die sogenannten "`Pseudografik-Zeichen"' 
+gilt,  bekommt man eine entsprechende Fehlermeldung.
+Auch sind manche Zeichen nur im Text, andere nur in mathematischen 
+Formeln erlaubt.
+
+Man beachte, dass der in der \emph{Ausgabe} darstellbare Zeichenvorrat 
+von \LaTeX{} nicht davon abhängt, welche Zeichen als \emph{Eingabe} erlaubt 
+sind:
+Für jedes überhaupt darstellbare Zeichen -- also auch diejenigen, die
+nicht im Zeichensatz des jeweiligen Betriebssystems enthalten sind --
+gibt es einen 
+\LaTeX-Befehl oder eine Ersatzdarstellung, die ausschließlich mit 
+ASCII-Zeichen auskommt.  Näheres darüber erfahren Sie
+in Abschnitt \ref{spezial}.
+
+
+
+\endinput
