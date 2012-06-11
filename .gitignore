@@ -1,5 +1,20 @@
+# .gitignore itself #
+#########################
+# .gitignore
+
+
+#OS generated temp files#
+#########################
+*.*~
+*~
+*.thumbs
+
+
+# source #
+#########################
 l2kurz.aux
 l2kurz.fdb_latexmk
 l2kurz.log
 l2kurz.out
 l2kurz.toc
+
