@@ -98,7 +98,8 @@
 \renewcommand{\floatpagefraction}{.7}
 
 \makeatletter
-% LaTeXe-Symbol fuer cmss/sbc mit groesserem Absstand L-a und halbfettem Epsilon
+% LaTeXe-Symbol fuer cmss/sbc mit groesserem Absstand L-a und 
+% halbfettem Epsilon
 \DeclareRobustCommand{\sbLaTeXe}{{\fontseries{sbc}\selectfont\boldmath%
         L\kern-.25em% -.36
         {\sbox\z@ T%
@@ -161,7 +162,7 @@
 \pagenumbering{arabic}
 \tableofcontents
 
-\newpage
+\clearpage
  
 \input{allgemeines}
 \input{eingabefile}
@@ -192,7 +193,7 @@
 \bibliography{l2kurz}
 
 \cleardoublepage
-
 \input{l2gfdl}
  
 \end{document}
+\endinput
