@@ -1,36 +1,3 @@
-% master: l2kurz.tex
-% L2K4.TEX - 4.Teil der LaTeX2e-Kurzbeschreibung v2.2
-% L2K4.TEX - 4.Teil der LaTeX2e-Kurzbeschreibung Mainz 1994, 1995
-% LK4.TEX  - 4.Teil der LaTeX-Kurzbeschreibung Graz-Wien 1987
-% last changes: 2001-06-10 (WaS)
-
-\section{Setzen von Bildern} \label{graphics}
-Lädt man im Vorspann des Dokuments das Paket \texttt{graphicx},
-dann kann man Bilder, die mit einem anderen Programm erzeugt wurden, 
-mit dem Befehl \verb|\includegraphics| in das Dokument einfügen.
-Der Dateiname ist als Argument des Befehls anzugeben.
-Welche Dateiformate verarbeitet werden können, hängt vom jeweiligen
-\TeX-System ab und muss in dessen Dokumentation beschrieben sein.
-
-\exa
-Hier \includegraphics{a} ist ein Bild.
-\exb
-\begin{verbatim}
-Hier \includegraphics{a} ist
-ein Bild
-\end{verbatim}
-\exc
-Wird das Paket \texttt{graphicx} mit der Option \texttt{[draft]} geladen,
-dann erscheint anstelle des Bildes nur ein Rahmen entsprechend
-der tatsächlichen Bildgröße mit dem Namen des Grafikfiles, 
-was die Bearbeitung beschleunigt und für Probeausdrucke nützlich ist.
-
-Weitere Informationen zum Einbinden von Bildern finden Sie in der
-Online"=Dokumentation \cite{grfguide}, im \textit{Graphics Companion}
-\cite{grfcomp} und in K.~Reckdahls empfehlenswertem  Tutorium \cite{epslatex}.
-
-
-
 \section{Seitenaufbau}
 
 \subsection{Kopf- und Fußzeilen} 
