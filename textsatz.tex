@@ -17,14 +17,14 @@ Für deutschsprachige Texte ist das normalerweise das Paket \texttt{babel}
 \verb:\usepackage{babel}:
 \end{verse}
 mit der Option \texttt{german} oder \texttt{ngerman} für die neue
-Rechtschreibreform zu laden.
+Rechtschreibreform zu laden. \todo{PG: vielleicht besser: das Beispiel mit ngerman machen und anschließend nur noch german erwähnen, dass das für die trad. Rechtschreibung benutzt werden soll.}
 Für Texte in \emph{traditioneller} Rechtschreibung ist \texttt{german}
 zu benutzen, für Texte in der \emph{neuen} deutschen Rechtschreibung
 \texttt{ngerman}.
 Der Grund für diese Unterscheidung ist die unterschiedliche Silbentrennung.
-Eine ausführliche Beschreibung dieser Pakete findet man in \cite{germdoc}.  
+Eine ausführliche Beschreibung dieser Pakete findet man in \cite{germdoc}\todo{PG: in doc. zu babel}.  
 Wenn im folgenden vom Paket \texttt{german} die Rede ist, 
-so bezieht sich das normalerweise auch auf \texttt{ngerman}.
+so bezieht sich das normalerweise auch auf \texttt{ngerman}\todo{PG: kann raus}.
 
 
 \subsection{Zeilen- und Seiten-Umbruch}
@@ -38,7 +38,7 @@ bestmögliche Aufteilung der Wörter auf die Zeilen bestimmt,
 und wenn notwendig werden Wörter automatisch abgeteilt.
 \exa
 \parindent=17pt\relax
-\hbadness=4600\relax %% `underfull hbox'-Fehlermeldung aus
+%\hbadness=4600\relax %% `underfull hbox'-Fehlermeldung aus
 \noindent Das Ende von Wörtern und Sätzen wird durch Leerzeichen
 gekennzeichnet.  Hierbei spielt es keine Rolle, ob man ein oder
 100 Leerzeichen eingibt.
@@ -101,7 +101,7 @@ für die Silbentrennung gefunden wird.
 Innerhalb der \texttt{sloppypar}-Umgebung ist \LaTeX\ generell
 weniger streng in seinen Ansprüchen und vermeidet solche
 überlange Zeilen, indem es die Wortabstände stärker --
-notfalls auch unschön~-- vergrößert.
+notfalls auch unschön~-- vergrößert\todo{PG: microtype erwähnen?}.
 In diesem Fall werden zwar Warnungen gemeldet (\texttt{under\-full
 hbox}), das Ergebnis ist aber meistens durchaus brauchbar.
  
@@ -114,14 +114,14 @@ folgenden Befehlen richtigstellen.
 Das kann insbesondere bei zusammengesetzten oder fremdsprachigen
 Wörtern notwendig werden; außerdem findet \LaTeX{} in Wörtern
 mit Umlauten oder akzentuierten Buchstaben nicht alle zulässigen
-Trennstellen.
+Trennstellen\todo{PG: Stimmt nicht ganz!}.
  
 Der Befehl \verb|\hyphenation| bewirkt, dass die darin
 angeführten Wörter jedesmal an den und nur an den mit
 \verb|-| markierten Stellen abgeteilt werden können.
 Er sollte im Vorspann stehen und eignet sich
 \emph{nur} für Wörter, die keine Umlaute, scharfes~s,
-Ziffern oder sonstige Sonderzeichen enthalten.
+Ziffern oder sonstige Sonderzeichen enthalten.\todo{PG: direkt kodierte Umlate sind in Ordnung}
 \exa
 ~
 \exb
@@ -138,7 +138,7 @@ oder unmittelbar nach einem Bindestrich
 abgeteilt werden kann.
 Dieser Befehl eignet sich für \emph{alle} Wörter, auch für
 solche, die Umlaute, scharfes~s, Ziffern oder sonstige
-Sonderzeichen enthalten.
+Sonderzeichen enthalten\todo{PG: auch das ist nicht mehr richtig}.
 %(Mit dem Paket \texttt{german}(siehe \ref{deutsch}) steht eine
 %weitere Möglichkeit zur Verfügung, nämlich der
 %Befehl~\verb:"-:. Dieser erlaubt auch die Trennung an nicht
@@ -150,7 +150,7 @@ file, Hässlichkeit
 \begin{verbatim}
 Ein\-gabe\-file,
 \LaTeX-Eingabe\-file,
-H"a"s\-lich\-keit
+Häss\-lich\-keit
 \end{verbatim}
 \exc
 
@@ -181,7 +181,7 @@ Abschnitt~\ref{abstaende}), verbinden.
 
 Das Paket \texttt{german} macht noch einige weitere Befehle
 verfügbar, die bestimmte Besonderheiten der deutschen Sprache
-berücksichtigen.  Die wichtigsten von ihnen sind:
+berücksichtigen\todo{PG: Überarbeiten, nicht uptodate}.  Die wichtigsten von ihnen sind:
 \verb|"ck| für "`ck"', das als "`\mbox{k-k}"' abgeteilt wird,
 \verb|"ff| für "`"ff"', das als "`\mbox{ff-f}"' abgeteilt wird
 (und ebenso für andere Konsonanten)
@@ -267,7 +267,7 @@ Für Anführungszeichen ist \emph{nicht} das auf Schreibmaschinen
 übliche Zeichen (\verb|"|) zu verwenden.
 Im Buchdruck werden für öffnende und schließende
 Anführungszeichen jeweils verschiedene Zeichen bzw.\ %
-Zeichenkombinationen gesetzt.
+Zeichenkombinationen gesetzt\todo{PG: csquotes erwähnen?}.
 öffnende Anführungszeichen, wie sie im amerikanischen Englisch 
 üblich sind, erhält man durch Eingabe von zwei Grave-Akzenten, 
 schließende durch zwei Apostrophe.
@@ -639,11 +639,11 @@ Hochgestellten Text in passender Größe generiert folgender Befehl:
 \verb|\textsuperscript{|\textit{text}\verb|}|
 \end{quote}
 \exa
-le 2\textsuperscript{i\`eme} r\'egime
+le 2\textsuperscript{ième} régime
 \exb
 \begin{verbatim}
-le 2\textsuperscript{i\`eme}
-r\'egime
+le 2\textsuperscript{ième}
+régime
 \end{verbatim}
 \exc
 
@@ -856,7 +856,7 @@ Die Umgebungen \texttt{flushleft} und \texttt{flushright}
 bewirken links- bzw.\ rechtsbündigen Satz ohne Randausgleich 
 ("`Flattersatz"') und ohne Trennungen, 
 \texttt{center} setzt den Text in
-die Mitte der Zeile.
+die Mitte der Zeile\todo{PG: ragged2e erwähnen? -> besserer Umbruch}.
 Die einzelnen Zeilen werden durch~\verb|\\| getrennt.
 Wenn man \verb|\\| nicht angibt, bestimmt \LaTeX\ automatisch die
 Zeilenaufteilung% (siehe Abbildung~\ref{jandl}) auf Seite~\pageref{jandl})
@@ -997,7 +997,7 @@ Innerhalb der Tabelle bedeutet
 \verb|&|~den Sprung in die nächste Tabellenspalte,
 \verb|\\|~trennt die Zeilen,
 \verb|\hline| (an Stelle einer Zeile) setzt einen waagrechten
-Strich.
+Strich\todo{PG: booktabs mit \cs{toprule},\cs{midrule} und \cs{bottomrule} erwähnen? - macht eine schönere Tabelle}.
  
           \vspace{0pt plus 1cm}
 \exa

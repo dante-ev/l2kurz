@@ -17,10 +17,18 @@
 
 % Seitenlayout:
 \usepackage{geometry}
+% \geometry{%
+%  textheight=46\baselineskip,
+%  textwidth=5.2in,
+%  outer=0.5\dimexpr297mm-5.2in-2in\relax,
+% }
+
+% für die Bearbeitung ist ein großer rechter Rand von Vorteil
 \geometry{%
  textheight=46\baselineskip,
  textwidth=5.2in,
- outer=0.5\dimexpr297mm-5.2in-2in\relax,
+ left=1cm,
+ marginpar=4cm,
 }
 
 \usepackage[USenglish,ngerman]{babel}
@@ -33,7 +41,7 @@
 
 
 
-\usepackage{todonotes}
+\usepackage[textsize=footnotesize]{todonotes}
 
 % Zum Schluss laden:
 \usepackage[pdfpagelabels,pageanchor=false]{hyperref}
@@ -70,7 +78,7 @@
         \TeX\kern.15em2$_{\textstyle\varepsilon}$}}
         
 \makeatother
-
+\newcommand{\cs}[1]{\texttt{\textbackslash #1}}
 \newcommand\exa{\nopagebreak \begin{flushleft}\smallskip \nopagebreak
                 \begin{minipage}[t]{6cm}\sloppy}
 \newcommand\exb{\end{minipage}\kern 1cm\begin{minipage}[t]{8cm}\sloppy }

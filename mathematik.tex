@@ -14,7 +14,7 @@ zwischen \verb|\begin{math}| und \verb|\end{math}|
 eingeschlossen.
 Als mathematische Texte gelten sowohl komplette mathematische
 Formeln als auch einzelne Variablennamen, die sich auf Formeln
-beziehen, griechische Buchstaben und diverse Sonderzeichen.
+beziehen, griechische Buchstaben und diverse Sonderzeichen.\todo{PG: die nachfolgenden Elemente sollten \$...\$ benutzen, die Variante mit \cs{(} und \cs{)} sind nicht robust}
 \exa
 Seien \(a\) und \(b\) die Katheten
 und \(c\) die Hypotenuse,
@@ -254,7 +254,7 @@ Seite~\pageref{mathakz} angeführten Befehle.
 Längere Tilden und Dacherln, die sich über mehrere (bis zu~3)
 Zeichen erstrecken können, erhält man mit \verb|\widetilde|
 bzw.\ \verb|\widehat|.
-Ableitungszeichen werden mit \verb|'| (Apostroph) eingegeben.
+Ableitungszeichen werden mit \verb|'| (Apostroph) eingegeben.\todo{PG: Hier würde ich statt displaymath auf \cs{[} und \cs{]} zurückgreifen, ist kürzer und besser lesbar (und wird in der Praxis vermutlich mehr benutzt?)}
 \exa
 \begin{displaymath}
 y=x^{2} \qquad
@@ -511,7 +511,7 @@ x_{21} & x_{22} & \ldots \\
 
 Für \textbf{mehrzeilige} Formeln oder Gleichungssysteme
 verwendet man die Umgebungen \texttt{eqnarray} und
-\texttt{eqnarray*} statt \texttt{equation}.
+\texttt{eqnarray*} statt \texttt{equation}. \todo{PG: eqnarray ist böse und sollte nicht verwendet werden. Besser: align. Zumindest habe ich das so in der letzten TUGboat gelesen.}
 Bei \texttt{eqnarray} erhält jede Zeile eine eigene
 Gleichungsnummer, bei \texttt{eqnarray*} wird ebenso wie bei
 \texttt{displaymath} \emph{keine} Nummer hinzugefügt.
