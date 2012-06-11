@@ -17,4 +17,5 @@ l2kurz.fdb_latexmk
 l2kurz.log
 l2kurz.out
 l2kurz.toc
-
+# bis zu einem "stabileren Zeitpunkt" lohnt es sich m.E. nicht das PDF im Repository zu haben
+l2kurz.pdf
