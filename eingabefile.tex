@@ -14,7 +14,7 @@ Leerzeichen werden wie \emph{ein} Leerzeichen behandelt.
 Wenn man andere als die normalen Wort- und Zeilenabstände
 will, kann man dies also nicht durch die Eingabe von
 zusätzlichen Leerzeichen oder Leerzeilen erreichen, sondern
-nur mit entprechenden \LaTeX-Befehlen.
+nur mit entsprechenden \LaTeX-Befehlen.
 
 Eine Leerzeile zwischen Textzeilen bedeutet das Ende eines 
 Absatzes.  \emph{Mehrere} Leerzeilen werden wie \emph{eine}
@@ -36,6 +36,9 @@ Wenn man nach einem Befehlsnamen eine Leerstelle erhalten will,
 muss man~\verb|{}| zur Beendigung des Befehlsnamens oder einen
 eigenen Befehl für die Leerstelle verwenden.
 
+% PG: würde ich drin lassen
+\renewcommand{\today}{35.~Mai 2012}  % to make sure that the
+% line breaks look good, regardless of the date of printing.
 \begin{LTXexample}
 Heute ist der \today.
 Oder: Heute ist der \today .
