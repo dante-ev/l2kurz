@@ -1,40 +1,34 @@
 \section{Eingabefile}
-Das Eingabefile für \LaTeX{} ist ein Textfile mit der Endung \verb+.tex+.
-Es wird mit einem Editor erstellt und enthält sowohl den Text, der gedruckt
-werden soll, als auch die Befehle, aus denen \LaTeX\ erfährt,
-wie der Text gesetzt werden soll.
+Das Eingabefile für \LaTeX{} ist ein Textfile mit der Endung \verb+.tex+. Es 
+wird mit einem Editor erstellt und enthält sowohl den Text, der gedruckt werden 
+soll, als auch die Befehle, aus denen \LaTeX\ erfährt, wie der Text gesetzt 
+werden soll.
 
 
 \subsection{Leerstellen}
  
-"`Unsichtbare"' Zeichen wie das Leerzeichen, Tabulatoren
-und das Zeilenende werden von \LaTeX{}
-einheitlich als Leerzeichen behandelt.  \emph{Mehrere}
-Leerzeichen werden wie \emph{ein} Leerzeichen behandelt.   
-Wenn man andere als die normalen Wort- und Zeilenabstände
-will, kann man dies also nicht durch die Eingabe von
-zusätzlichen Leerzeichen oder Leerzeilen erreichen, sondern
-nur mit entsprechenden \LaTeX-Befehlen.
+"`Unsichtbare"' Zeichen wie das Leerzeichen, Tabulatoren und das Zeilenende 
+werden von \LaTeX{} einheitlich als Leerzeichen behandelt. \emph{Mehrere}
+Leerzeichen werden wie \emph{ein} Leerzeichen behandelt. Wenn man andere als 
+die normalen Wort- und Zeilenabstände will, kann man dies also nicht durch die 
+Eingabe von zusätzlichen Leerzeichen oder Leerzeilen erreichen, sondern nur mit 
+entsprechenden \LaTeX-Befehlen.
 
-Eine Leerzeile zwischen Textzeilen bedeutet das Ende eines 
-Absatzes.  \emph{Mehrere} Leerzeilen werden wie \emph{eine}
-Leerzeile behandelt.
+Eine Leerzeile zwischen Textzeilen bedeutet das Ende eines Absatzes.
+\emph{Mehrere} Leerzeilen werden wie \emph{eine} Leerzeile behandelt.
  
  
 \subsection{\LaTeX-Befehle und Gruppen}
  
-Die meisten \LaTeX-Befehle haben eines der beiden folgenden
-Formate: Entweder sie beginnen mit einem Backslash~(\verb|\|)
-und haben dann einen nur aus Buchstaben bestehenden Namen, der
-durch ein oder mehrere Leerzeichen oder durch ein nachfolgendes
-Sonderzeichen oder eine Ziffer beendet wird; oder sie bestehen
-aus einem Backslash und genau einem Sonderzeichen oder einer
-Ziffer.
-Groß- und Kleinbuchstaben haben auch in Befehlsnamen
-\emph{verschiedene} Bedeutung.
-Wenn man nach einem Befehlsnamen eine Leerstelle erhalten will,
-muss man~\verb|{}| zur Beendigung des Befehlsnamens oder einen
-eigenen Befehl für die Leerstelle verwenden.
+Die meisten \LaTeX-Befehle haben eines der beiden folgenden Formate: Entweder 
+sie beginnen mit einem Backslash~(\verb|\|) und haben dann einen nur aus 
+Buchstaben bestehenden Namen, der durch ein oder mehrere Leerzeichen oder durch
+ein nachfolgendes Sonderzeichen oder eine Ziffer beendet wird; oder sie bestehen
+aus einem Backslash und genau einem Sonderzeichen oder einer Ziffer.
+Groß- und Kleinbuchstaben haben auch in Befehlsnamen \emph{verschiedene} 
+Bedeutung. Wenn man nach einem Befehlsnamen eine Leerstelle erhalten will, muss 
+man~\verb|{}| zur Beendigung des Befehlsnamens oder einen eigenen Befehl für die
+Leerstelle verwenden.
 
 % PG: würde ich drin lassen
 \renewcommand{\today}{35.~Mai 2012}  % to make sure that the
@@ -49,28 +43,22 @@ Richtig:
  Oder: Am \today\ schneit es.
 \end{LTXexample}
  
-Manche Befehle haben Parameter, die zwischen geschwungenen
-Klammern angegeben werden müssen.
-Manche Befehle haben Parameter, die weggelassen oder zwischen
-eckigen Klammern angegeben werden können.
-Manche Befehle haben Varianten, die durch das Hinzufügen
-eines Sterns an den Befehlsnamen unterschieden werden.
+Manche Befehle haben Parameter, die zwischen geschwungenen Klammern angegeben 
+werden müssen. Manche Befehle haben Parameter, die weggelassen oder zwischen
+eckigen Klammern angegeben werden können. Manche Befehle haben Varianten, die 
+durch das Hinzufügen eines Sterns an den Befehlsnamen unterschieden werden.
 
-Geschwungene Klammern können auch dazu verwendet werden, Gruppen
-(groups) zu bilden.
-Die Wirkung von Befehlen, die innerhalb von Gruppen oder
-Umgebungen (environments) angegeben werden, endet immer mit dem
-Ende der Gruppe bzw.\ der Umgebung.  Im obigen Beispiel
-ist~\verb|{}| eine leere Gruppe, die außer der Beendigung des
-Befehlsnamens \texttt{today} keine Wirkung hat.
+Geschwungene Klammern können auch dazu verwendet werden, Gruppen (\emph{groups})
+zu bilden. Die Wirkung von Befehlen, die innerhalb von Gruppen oder Umgebungen 
+(\emph{environments}) angegeben werden, endet immer mit dem Ende der Gruppe 
+bzw.\ der Umgebung.  Im obigen Beispiel ist~\verb|{}| eine leere Gruppe, die 
+außer der Beendigung des Befehlsnamens \texttt{today} keine Wirkung hat.
  
 \subsection{Kommentare}
  
-Alles, was hinter einem Prozentzeichen (\verb|%|)
-steht (bis zum Ende der Eingabezeile), wird von \LaTeX\ 
-ignoriert.
-Dies kann für Notizen des Autors verwendet werden, die nicht
-oder noch nicht ausgedruckt werden sollen.
+Alles, was hinter einem Prozentzeichen (\verb|%|) steht (bis zum Ende der 
+Eingabezeile), wird von \LaTeX{} ignoriert. Dies kann für Notizen des Autors 
+verwendet werden, die nicht oder noch nicht ausgedruckt werden sollen.
 \begin{LTXexample}
 Das ist ein % dummes
 % Besser: ein lehrreiches <----
@@ -83,30 +71,24 @@ Der erste Befehl in einem \LaTeX-Eingabefile muss der Befehl
 \begin{quote}
 \verb|\documentclass|
 \end{quote}
-sein.
-Er legt fest, welche Art von Schriftstück überhaupt erzeugt werden soll
-(Bericht, Buch, Brief usw.).
-Danach können weitere Befehle folgen, die für das gesamte
-Dokument gelten sollen.  Dieser Teil des Dokuments wird auch als 
+sein. Er legt fest, welche Art von Schriftstück überhaupt erzeugt werden soll
+(Bericht, Buch, Brief usw.). Danach können weitere Befehle folgen, die für das
+gesamte Dokument gelten sollen.  Dieser Teil des Dokuments wird auch als 
 \emph{Vorspann} oder \emph{Präambel} bezeichnet.  Mit dem Befehl
 \begin{quote}
 \verb|\begin{document}|
 \end{quote}
-endet der Vorspann, und es 
-beginnt das Setzen des Schriftstücks.
-Nun folgen der Text und alle \LaTeX-Befehle, die das Ausdrucken
-des Schriftstücks bewirken.
+endet der Vorspann, und es beginnt das Setzen des Schriftstücks. Nun folgen der 
+Text und alle \LaTeX-Befehle, die das Ausdrucken des Schriftstücks bewirken.
 Die Eingabe muss mit dem Befehl
 \begin{quote}
 \verb|\end{document}|
 \end{quote}
-beendet werden.
-Falls nach diesem Befehl noch Eingaben folgen, werden sie von
-\LaTeX\ ignoriert.
+beendet werden. Falls nach diesem Befehl noch Eingaben folgen, werden sie von
+\LaTeX{} ignoriert.
  
-Abbildung~\ref{mini} zeigt ein \emph{minimales} \LaTeX-File.
-Ein etwas komplizierteres File ist in Abbildung~\ref{dokument}
-skizziert.
+Abbildung~\ref{mini} zeigt ein \emph{minimales} \LaTeX-File. Ein etwas 
+komplizierteres File ist in Abbildung~\ref{dokument} skizziert.
  
 \begin{figure}[hbp] %\small
 \begin{lminipage}{6cm}
@@ -121,9 +103,9 @@ skizziert.
 \end{figure}
 
 % im folgenden Beispiel sollten Umlaute im Eingabefile auftreten!
-\begin{figure}[hbtp] %\small
+\begin{figure}[hbtp]
 \begin{lminipage}{10cm}
-\begin{verbatim}
+\begin{lstlisting}
 \documentclass[11pt,a4paper,ngerman]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -147,7 +129,7 @@ Hier beginnt mein schönes Werk ...
 ... und hier endet es.
 
 \end{document}
-\end{verbatim}
+\end{lstlisting}
 \end{lminipage}
 \caption{Aufbau eines Artikels} \label{dokument}
 \end{figure}
@@ -160,31 +142,31 @@ Die am Beginn des Eingabefiles  mit
 \verb|\documentclass[|\textit{optionen}\verb|]{|%
   \textit{klasse}\verb|}|
 \end{beispiel}
-definierte "`Klasse"' eines Dokumentes enthält 
-Vereinbarungen über 
-das Layout und die logischen Strukturen, z.\,B.\ die 
-Gliederungseinheiten (Kapitel etc.\@), 
+definierte "`Klasse"' eines Dokumentes enthält Vereinbarungen über das Layout 
+und die logischen Strukturen, z.\,B.\ die Gliederungseinheiten (Kapitel etc.\@), 
 die für alle Dokumente dieses Typs gemeinsam sind.
 
 Zwischen den geschwungenen Klammern \emph{muss} genau eine Dokumentklasse
-angegeben werden.  Tabelle~\ref{docstyles} auf S.~\pageref{docstyles}
-führt Klassen auf,
-die in jeder \LaTeX-Installation existieren sollten.  
-Im \local\ können weitere verfügbare 
-Klassen angegeben sein.  
+angegeben werden.  Tabelle~\ref{docstyles} auf S.~\pageref{docstyles} führt 
+Klassen auf, die in jeder \LaTeX-Installation existieren sollten. Im \local\ 
+können weitere verfügbare Klassen angegeben sein.  
  
-Zwischen den eckigen Klammern \emph{können}, durch Kommata getrennt, 
-eine oder mehrere Optionen für das Klassenlayout
-angegeben werden. Die wichtigsten Optionen sind in der 
-Tabelle~\ref{options} auf S.~\pageref{options} angeführt.
+Zwischen den eckigen Klammern \emph{können}, durch Kommata getrennt, eine oder 
+mehrere Optionen für das Klassenlayout angegeben werden. Die wichtigsten 
+Optionen sind in der Tabelle~\ref{options} auf S.~\pageref{options} angeführt.
 Das Eingabefile für diese Beschreibung beginnt z.\,B.\ mit:
 \begin{beispiel}
 \verb|\documentclass[11pt,a4paper]{article}|
-\end{beispiel}\todo{MD: Vorschlag: memoir, scrlttr2, beamer und powerdot.
-Der Hinweis Local Guide ist m. E. nicht nötig (siehe Tabelle). PG: memoir würde ich nicht nehmen, zu Umfangreich, keine dt. Anl. Letter würde ich auch nicht nehmen, welcher Anfänger will was über Briefe wissen?}
+\end{beispiel}
 
 \begin{table}[hbpt]
 \caption{Dokumentklassen} \label{docstyles}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\todo[inline]{MD: Vorschlag: memoir, scrlttr2, beamer und powerdot. Der Hinweis 
+Local Guide ist m. E. nicht nötig (siehe Tabelle).\newline PG: memoir würde ich 
+nicht  nehmen, zu Umfangreich, keine dt. Anl. Letter würde ich auch nicht nehmen, 
+welcher Anfänger will was über Briefe wissen?}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{lminipage}{11cm}
 \begin{ttdescription}%\small
 \item [article] für Artikel in wissenschaftlichen Zeitschriften,
@@ -257,22 +239,26 @@ Mit dem Befehl
 \verb:\usepackage[:\textit{optionen}\verb:]{:%
   \textit{pakete}\verb:}:
 \end{beispiel}
-können im Vorspann ergänzende Makropakete (packages) geladen werden,
-die das Layout der Dokumentklasse
-modifizieren oder zusätzliche Funktionalität bereitstellen.
-Eine Auswahl von Paketen findet sich in der Tabelle~\ref{pack} 
-auf S.~\pageref{pack}.
-Das Eingabefile für diese Beschreibung enthält beispielsweise:
+können im Vorspann ergänzende Makropakete (packages) geladen werden, die das 
+Layout der Dokumentklasse modifizieren oder zusätzliche Funktionalität 
+bereitstellen. Eine Auswahl von Paketen findet sich in der Tabelle~\ref{pack} 
+auf S.~\pageref{pack}. Das Eingabefile für diese Beschreibung enthält 
+beispielsweise:
 \begin{beispiel}
 \verb|\usepackage{babel,latexsym|\\
 \verb|            graphicx,textcomp,hyperref}|
 \end{beispiel}
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\todo{MD: stimmt nicht mehr.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{table}[htbp]
 \caption{Pakete (eine Auswahl)}\label{pack}
 \begin{lminipage}{11cm}
-\textbf{PG: m.E. können latexsym und dcolumn raus, dafür listings, csquotes, microtype und ...? rein. tabularx finde ich nicht schlecht.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\todo[inline]{PG: m.E. können latexsym und dcolumn raus, dafür listings, 
+              csquotes, microtype und ...? rein. tabularx finde ich nicht
+              schlecht.\newline MD: Um zeitgemäß zu bleiben, ist es sinnvoll}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{ttdescription}%\small
 \setlength{\itemsep}{.5\itemsep plus1pt minus1pt}
 % \item[alltt] Definiert eine Variante der \texttt{verbatim}-Umgebung
@@ -320,50 +306,48 @@ Das Eingabefile für diese Beschreibung enthält beispielsweise:
 
 \subsection{Eingabezeichensatz}\label{inputenc}
 
-Bei jedem \LaTeX-System dürfen mindestens die folgenden
-Zeichen zur Eingabe von Text verwendet werden:
+Bei jedem \LaTeX-System dürfen mindestens die folgenden Zeichen zur Eingabe von 
+Text verwendet werden:
 \begin{quote}
   \ttfamily
   a\dots z A\dots Z 0\dots 9 \\
   . : ; , ? ! ` ' ( ) [ ] - / * @ + =
 \end{quote}
-Die folgenden Eingabezeichen haben für \LaTeX{} eine Spezialbedeutung
-oder sind nur innerhalb von mathematischen Formeln erlaubt:
+Die folgenden Eingabezeichen haben für \LaTeX{} eine Spezialbedeutung oder sind 
+nur innerhalb von mathematischen Formeln erlaubt:
 \begin{quote}
 \verb.$ & % # _ { }  ~  ^  "  \  | < >.
 \end{quote}
-Für Zeichen, die über obige Liste hinausgehen, beispielsweise die Umlaute,
-sind je nach Betriebssystem des verwendeten Computers 
-unterschiedliche Kodierungen in Gebrauch.  Damit auch diese Zeichen im 
-Eingabefile benutzt werden dürfen,  muss man das Paket 
-\texttt{inputenc} laden und dabei die jeweilige Kodierung als 
+Für Zeichen, die über obige Liste hinausgehen, beispielsweise die Umlaute, sind 
+je nach Betriebssystem des verwendeten Computers unterschiedliche Kodierungen in
+Gebrauch.  Damit auch diese Zeichen im Eingabefile benutzt werden dürfen,  muss 
+man das Paket \texttt{inputenc} laden und dabei die jeweilige Kodierung als 
 Option angeben: \verb:\usepackage[:\textit{codepage}\verb:]{inputenc}:.
 Mögliche Angaben für \textit{codepage} sind u.\,a.:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \todo{MD: hier sollte auf selinput verwiesen werden. Der Nutzer braucht nicht
-auf Kodierung zu achten PG: gute Idee. Der ganze Quatsch mit den mit den codepages verwirrt nur die Anfänger}
+auf Kodierung zu achten \newline
+PG: gute Idee. Der ganze Quatsch mit den mit den codepages verwirrt nur 
+die Anfänger}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{ttdescription}
   \item[latin1] Latin-1 (ISO~8859-1), gebräuchlich unter \textsc{Unix} und VMS
-  \item[latin9] Latin-9 (ISO~8859-15), Erweiterung von Latin-1, u.\,a. mit Eurozeichen
+  \item[latin9] Latin-9 (ISO~8859-15), Erweiterung von Latin-1, u.\,a. mit 
+                Eurozeichen
   \item[ansinew] Microsoft Codepage 1252 für Windows
   \item[cp850] IBM Codepage 850, üblich unter OS/2
   \item[applemac] \textsc{Macintosh}-Kodierung
 \end{ttdescription}
-Falls \LaTeX{} ein eingegebenes Zeichen nicht darstellen
-kann, was meist für die sogenannten "`Pseudografik-Zeichen"' 
-gilt,  bekommt man eine entsprechende Fehlermeldung.
-Auch sind manche Zeichen nur im Text, andere nur in mathematischen 
-Formeln erlaubt.
+Falls \LaTeX{} ein eingegebenes Zeichen nicht darstellen kann, was meist für die
+sogenannten "`Pseudografik-Zeichen"' gilt,  bekommt man eine entsprechende 
+Fehlermeldung. Auch sind manche Zeichen nur im Text, andere nur in 
+mathematischen Formeln erlaubt.
 
-Man beachte, dass der in der \emph{Ausgabe} darstellbare Zeichenvorrat 
-von \LaTeX{} nicht davon abhängt, welche Zeichen als \emph{Eingabe} erlaubt 
-sind:
-Für jedes überhaupt darstellbare Zeichen -- also auch diejenigen, die
-nicht im Zeichensatz des jeweiligen Betriebssystems enthalten sind --
-gibt es einen 
-\LaTeX-Befehl oder eine Ersatzdarstellung, die ausschließlich mit 
-ASCII-Zeichen auskommt.  Näheres darüber erfahren Sie
-in Abschnitt \ref{spezial}.
-
-
+Man beachte, dass der in der \emph{Ausgabe} darstellbare Zeichenvorrat von 
+\LaTeX{} nicht davon abhängt, welche Zeichen als \emph{Eingabe} erlaubt sind:
+Für jedes überhaupt darstellbare Zeichen -- also auch diejenigen, die nicht im 
+Zeichensatz des jeweiligen Betriebssystems enthalten sind -- gibt es einen 
+\LaTeX-Befehl oder eine Ersatzdarstellung, die ausschließlich mit ASCII-Zeichen 
+auskommt.  Näheres darüber erfahren Sie in Abschnitt \ref{spezial}.
 
 \endinput
