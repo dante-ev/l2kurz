@@ -15,16 +15,22 @@
 \documentclass[11pt,a4paper]{article} % ergaenze `twoside', wenn gewuenscht!
 \NeedsTeXFormat{LaTeX2e}[1998/06/01]  % wegen \mathring und Textsymbolen
 
+% Seitenlayout:
+\usepackage{geometry}
+\geometry{%
+ textheight=46\baselineskip,
+ textwidth=5.2in,
+ outer=0.5\dimexpr297mm-5.2in-2in\relax,
+}
 
 \usepackage[USenglish,ngerman]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{latexsym}
+\usepackage{graphicx}
 
-\usepackage{%
-   latexsym,
-   lmodern,
-   graphicx,
-   textcomp}
 
 % Zum Schluss laden:
 \usepackage{hyperref}
@@ -33,33 +39,9 @@
   pdftitle={LaTeX2e-Kurzbeschreibung},
   pdfauthor={Walter Schmidt et al.}}
 
-\makeatletter
 
-% Seitenlayout:
-%
-% Texthoehe 46 Zeilen + \topskip
-% (Rand ueber der Kopfzeile) : (Rand unter dem Text) = 1:2
-%
-\setlength{\textheight}{46\baselineskip}
-\addtolength{\textheight}{\topskip}
-\newlength{\vertmargin}
-\setlength{\vertmargin}{\paperheight}
-\addtolength{\vertmargin}{-\textheight}
-\addtolength{\vertmargin}{-\headsep}
-\addtolength{\vertmargin}{-\headheight}
-\setlength{\topmargin}{.333\vertmargin} % Raender oben/unten 1:2
-\addtolength{\topmargin}{-1in}
-%
-% Textbreite 5.2in, Text hor. zentriert
-%
-\setlength{\textwidth}{5.2in}
-\newlength{\hormargin}
-\setlength{\hormargin}{\paperwidth}
-\addtolength{\hormargin}{-\textwidth}
-\setlength{\oddsidemargin}{.5\hormargin}
-\setlength{\evensidemargin}{\oddsidemargin}
-\addtolength{\oddsidemargin}{-1in}
-\addtolength{\evensidemargin}{-1in}
+
+
 %
 % Seitenzahlen oben, aber keine Kopfzeile
 %
@@ -70,6 +52,7 @@
 \renewcommand{\textfraction}{.1}      
 \renewcommand{\floatpagefraction}{.7}
 
+\makeatletter
 % LaTeXe-Symbol fuer cmss/sbc mit groesserem Absstand L-a und halbfettem Epsilon
 \DeclareRobustCommand{\sbLaTeXe}{{\fontseries{sbc}\selectfont\boldmath%
         L\kern-.25em% -.36
