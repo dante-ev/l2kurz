@@ -31,10 +31,12 @@
 \usepackage{latexsym}
 \usepackage{graphicx}
 
+
+
 \usepackage{todonotes}
 
 % Zum Schluss laden:
-\usepackage{hyperref}
+\usepackage[pdfpagelabels,pageanchor=false]{hyperref}
 
 \hypersetup{%
   pdftitle={LaTeX2e-Kurzbeschreibung},
@@ -107,6 +109,8 @@
 
 
 \begin{document}
+\pagenumbering{Roman}
+
 
 \nonfrenchspacing      % babel sets frenchspacing automatically.
 %  However, some examples are pointless with frenchspacing in action. 
@@ -198,9 +202,8 @@ für Tips, Anmerkungen und  Korrekturen.
 
 }
 
-\newpage
-
-\setcounter{page}{1}
+\clearpage
+\pagenumbering{arabic}
 \tableofcontents
 
 \newpage
@@ -228,124 +231,11 @@ für Tips, Anmerkungen und  Korrekturen.
 
 \input{anhang}
 \clearpage
+\phantomsection
+\addcontentsline{toc}{section}{\refname}
+\bibliographystyle{unsrtdin}
+\bibliography{l2kurz}
 
-\begin{thebibliography}{99} \hbadness10000 % wg. URLs ;-)
- 
-\bibitem{manual}
-L.~Lamport: \textit{Das \LaTeX-Handbuch.}
-Addison-Wesley Deutschland (1995)%, ISBN~3-89319-826-1
-. Deutsche Übersetzung von~\cite{manual-eng}.
-
-\bibitem{manual-eng}
-L.~Lamport: \textit{\LaTeX, A Document Preparation System.}
-Ad\-di\-son-Wesley, 2.~Aufl. (1994)%, ISBN~0-201-52983-1
-.
- 
-\bibitem{wonne}
-M.~Goossens, F.~Mittelbach und A.~Samarin:
-\textit{Der \LaTeX-Begleiter.}
-Ad\-di\-son Wesley Longman, 2.~korr.\ Nachdruck (1996)%, ISBN~3-89319-646-3
-.  Deutsche Übersetzung von~\cite{wonne-eng}.
-
-\bibitem{wonne-eng}
-M.~Goossens, F.~Mittelbach und A.~Samarin:
-\textit{The \LaTeX\ Companion.}
-Ad\-di\-son-Wesley (1994)%, ISBN~0-201-54199-8
-.  
-
-\bibitem{ch8}
-M.~Goossens, F.~Mittelbach und A.~Samarin:
-\textit{Higher Mathematics.} 
-Aktualisierte Fassung (1998) von Kapitel\ 8 aus \cite{wonne-eng}.\\
-\path{<ftp://dante.ctan.org/tex-archive/info/companion-rev/ch8.pdf>}
-
-
-\bibitem{grfcomp}
-M.~Goossens, S.~Rahtz und F.~Mittelbach:
-\textit{The \LaTeX\ Graphics Companion.}
-Addison Wesley Longman (1997)% ISBN~0-201-85469-4
-.
-
-\bibitem{local}
-Zu jedem installierten \LaTeX-System sollte ein
-\emph{\LaTeX\ Local Guide} vorhanden sein, in dem alle für
-dieses System spezifischen Angaben -- z.\,B.~die für den
-Aufruf der Programme notwendigen Befehle und die zur Verfügung
-stehenden Dokumentklassen, Pakete und Schriften -- angeführt sind.
- 
-\bibitem{usrguide}
-\LaTeX3 Project Team (Hrsg.): 
-\textit{\LaTeXe\ for authors.} 
-Bestandteil der Online-Dokumentation von \LaTeX,
-Datei \texttt{usrguide.tex}.  
-Aktuelle Änderungen und Ergänzungen sowie die Unterschiede zum früheren 
-\LaTeX~2.09 sind hier dokumentiert.
-
-\bibitem{fntguide}
-\LaTeX3 Project Team (Hrsg.): 
-\textit{\LaTeXe\ font selection.}
-Bestandteil der Online-Dokumentation von \LaTeX,
-Datei \texttt{fntguide.tex}.
-
-\bibitem{clsguide}
-\LaTeX3 Project Team (Hrsg.): 
-\textit{\LaTeXe\ for class and package writers.}
-Bestandteil der Online-Dokumentation von \LaTeX,
-Datei \texttt{clsguide.tex}.
-
-\bibitem{grfguide}
-D.~P.~Carlisle: \textit{Packages in the `graphics' bundle.}
-Bestandteil der Online-Dokumentation von \LaTeX,
-Datei \texttt{grfguide.ps}.
-
-\bibitem{postscript}
-W.~Schmidt: \textit{Using common PostScript fonts with \LaTeX.}
-Bestandteil der Online-Dokumentation von \LaTeX{}
-(seit Juni~2000), Datei \path{psnfss2e.pdf}. 
-
-\bibitem{lay}
-H.~Partl und A.~Kielhorn: \textit{Layout-Änderungen mit \LaTeX.}
-EDV-""Zentrum der Technischen Universität Wien (1996).\\
-\path{<ftp://dante.ctan.org/tex-archive/macros/latex/contrib/supported/refman/>}
-
-\bibitem{lay2}
-D.~F.~Langmyhr: \textit{How to make your own document style in \LaTeXe.}
-In: \textit{Proceedings of the Eighth European \TeX{} Conference}
-(1994).
-
-\bibitem{typografie} A.~Reichert: \textit{Typografie -- Gestaltung einer 
-Beispielklasse.} (1999)\\
-\path{<ftp://dante.ctan.org/info/german/typografie/>}
-
-\bibitem{epslatex}
-K.~Reckdahl: \textit{Using Imported Graphics in \LaTeXe.} (1997)\\
-\path{<ftp://dante.ctan.org/tex-archive/info/epslatex.ps>}
-
-\bibitem{texbook}
-D.~E.~Knuth: \textit{Computers \& Typesetting, Vol.\ A: The \TeX{}~Book.}
-Addison-Wesley (1991)%, ISBN~0-201-13447-0
-.
-
-\bibitem{schwarz}
-N.~Schwarz: \textit{Einführung in \TeX -- incl.\ Version~3.0.}
-Oldenbourg, 3.~Aufl.\ (1991)%, ISBN 3-486-24349-7
-.
- 
-\bibitem{germtug}
-H.~Partl: \textit{German \TeX.} TUG\-boat Vol.~9, No.~1 (1988).
- 
-\bibitem{germdoc}
-B.~Raichle:
-\textit{Kurzbeschreibung -- \texttt{german.sty}.}\\
-\path{<ftp://dante.ctan.org/tex-archive/language/german/gerdoc.tex>}
-
-\bibitem{faq} 
-B.~Raichle, R.~Niepraschk und Th.~Hafner:
-\textit{Fragen und Antworten (FAQ) über das Textsatzsystem \TeX{} und 
-DANTE~e.V.} \\
-\path{<http://www.dante.de/faq/de-tex-faq/>}
-
-\end{thebibliography}
 \cleardoublepage
 
 \input{l2gfdl}
