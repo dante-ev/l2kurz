@@ -723,7 +723,7 @@ Die Umgebung \texttt{description} eignet sich für Beschreibungen
 (siehe Abbildung~\ref{desc}).
 
 \begin{figure}[!htbp]
-\oben{\textwidth}
+\begin{lminipage}{\textwidth}
 \exa
 Listen:
 \begin{itemize}
@@ -760,13 +760,13 @@ verschachteln:
 \end{itemize}
 \end{verbatim}
 \exc
-\unten
+\end{lminipage}
 \caption{Beispiel für \texttt{itemize}} \label{item}
 \end{figure}
 
 
 \begin{figure}[!htbp]
-\oben{\textwidth}
+\begin{lminipage}{\textwidth}
 \exa
 Nummerierte Listen:
 \begin{enumerate}
@@ -807,13 +807,13 @@ verschachteln:
 \end{enumerate}
 \end{verbatim}
 \exc
-\unten
+\end{lminipage}
 \caption{Beispiel für \texttt{enumerate}} \label{enum}
 \end{figure}
  
 \begin{figure}[!htbp]  % <-------------           bang option of LaTeX2e 
 %\begin{figure}[htbp]
-\oben{\textwidth}
+\begin{lminipage}{\textwidth}
 \exa
 Kleine Tierkunde:
 \begin{description}
@@ -840,7 +840,7 @@ Kleine Tierkunde:
 \end{description}
 \end{verbatim}
 \exc
-\unten
+\end{lminipage}
 \caption{Beispiel für \texttt{description}} \label{desc}
 \end{figure}
  
@@ -862,7 +862,7 @@ Wenn man \verb|\\| nicht angibt, bestimmt \LaTeX\ automatisch die
 Zeilenaufteilung% (siehe Abbildung~\ref{jandl}) auf Seite~\pageref{jandl})
 .
 %\begin{figure}[!ht]
-%\oben{\textwidth} 
+%\begin{lminipage}{\textwidth} 
 \exa
 \begin{flushleft}
 links \\
@@ -900,7 +900,7 @@ Im \\ Reich \\ der \\ Mitte
 \end{center}
 \end{verbatim}
 \exc
-%\unten
+%\end{lminipage}
 %\caption{Linksbündig, rechtsbündig und zentriert}
 %\label{jandl}
 %\end{figure} 
