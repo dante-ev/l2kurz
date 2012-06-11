@@ -192,7 +192,8 @@ Tabelle~\ref{options} auf S.~\pageref{options} angeführt.
 Das Eingabefile für diese Beschreibung beginnt z.\,B.\ mit:
 \begin{verse}
 \verb|\documentclass[11pt,a4paper]{article}|
-\end{verse}
+\end{verse}\todo{MD: Vorschlag: memoir, scrlttr2, beamer und powerdot.
+Der Hinweis Local Guide ist m. E. nicht nötig (siehe Tabelle)}
 
 \begin{table}[hbpt]
 \caption{Dokumentklassen} \label{docstyles}
@@ -302,7 +303,7 @@ Das Eingabefile für diese Beschreibung enthält beispielsweise:
 \item[fancyhdr] Flexible Gestaltung von Kopf- und Fußzeilen.
 \item[geometry] Manipulation des Seitenlayouts.
 \item[german, ngerman] Anpassungen für die deutsche Sprache in
-  traditioneller und neuer Rechtschreibung.
+  traditioneller und neuer Rechtschreibung. \textbf{FALSCH}
 \item[graphicx] Einbindung von extern erzeugten Graphiken.
   Die umfangreichen Möglichkeiten dieses Pakets werden 
   in~\cite{grfguide} und~\cite{grfcomp} beschrieben.
@@ -350,6 +351,8 @@ Eingabefile benutzt werden dürfen,  muss man das Paket
 \texttt{inputenc} laden und dabei die jeweilige Kodierung als 
 Option angeben: \verb:\usepackage[:\textit{codepage}\verb:]{inputenc}:.
 Mögliche Angaben für \textit{codepage} sind u.\,a.:
+\todo{MD: hier sollte auf selinput verwiesen werden. Der Nutzer braucht nicht
+auf Kodierung zu achten}
 \begin{ttdescription}
   \item[latin1] Latin-1 (ISO~8859-1), gebräuchlich unter \textsc{Unix} und VMS
   \item[latin9] Latin-9 (ISO~8859-15), Erweiterung von Latin-1, u.\,a. mit Eurozeichen
