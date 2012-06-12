@@ -12,15 +12,13 @@ Der Dateiname ist als Argument des Befehls anzugeben.
 Welche Dateiformate verarbeitet werden können, hängt vom jeweiligen
 \TeX-System ab und muss in dessen Dokumentation beschrieben sein\todo{PG: wir können m.E. schon angeben: bei PDFTeX kann das PDF, PNG und JPEG sein}.
 
-\exa
+\begin{LTXexample}
 Hier \includegraphics{a} ist ein Bild.
-\exb
-\begin{verbatim}
-Hier \includegraphics{a} ist
-ein Bild
-\end{verbatim}
-\exc\todo{PG: hier ein schöneres Bild einbinden}
-Wird das Paket \texttt{graphicx} mit der Option \texttt{[draft]} geladen,
+\end{LTXexample}
+
+\todo[inline]{PG: hier ein schöneres Bild einbinden}
+
+\noindent Wird das Paket \texttt{graphicx} mit der Option \texttt{[draft]} geladen,
 dann erscheint anstelle des Bildes nur ein Rahmen entsprechend
 der tatsächlichen Bildgröße mit dem Namen des Grafikfiles, 
 was die Bearbeitung beschleunigt und für Probeausdrucke nützlich ist.
