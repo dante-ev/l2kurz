@@ -8,7 +8,7 @@ Das komplette Menü der Spezialitäten, die von \LaTeX\ serviert
 werden, ist im \manual\ und in der Online-Dokumentation beschrieben.
 Hier soll nur auf einige besondere "`Schmankerln"' hingewiesen
 werden.
-\todo[inline]{PG: vielleicht anstelle des Brief-Beispiels ein kleines TikZ Beispiel einbringen, so als Appetithäppchen? Das würde auch die Textlastigkeit von l2kurz etwas aufbrechen.}
+\todo[inline]{PG: vielleicht anstelle des Brief-Beispiels ein kleines TikZ Beispiel einbringen, so als Appetithäppchen? Das würde auch die Textlastigkeit von l2kurz etwas aufbrechen. \newline MD: Spricht den Leser auch eher an. }
  
 \subsection{Abstände}
 
@@ -20,7 +20,7 @@ als es in der Dokumentklasse vorgesehen ist, gibt es in
 und dann auf das gesamte Dokument wirkt.  Das kann beispielsweise
 dann notwendig werden, wenn eine Schrift benutzt wird, die eine größerer x-Höhe 
 hat als die voreingestellte Computer-Modern.  Für die Schrift "`Palatino"' etwa
-ist eine Vergrößerung des Zeilenabstandes um ca.\ 5\,\% angemessen:
+ist eine Vergrößerung des Zeilenabstandes um ca.\ 5\,\% angemessen:\todo{MD: Paket setspace}
 
 \begin{quote}
 \verb|\usepackage{mathpazo}|\\
@@ -36,6 +36,7 @@ Die Abstände zwischen Wörtern und Sätzen werden von \LaTeX\
 automatisch gesetzt.
 Sonstigen horizontalen Abstand kann man mit dem Befehl
 \begin{beispiel}
+\todo{MD: lieber die Sternvariante als Standard empfehlen}
 \verb|\hspace{|\textit{länge}\verb|}|
 \end{beispiel}
 einfügen.
@@ -81,7 +82,7 @@ besonderer horizontaler Abstände.
 \end{tabbing}
 \end{lminipage}
 \end{table}
-Der Befehl \verb|\hfill| kann dazu dienen, einen vorgegebenen
+Der Befehl \verb|\hfill|\todo{MD: Oder \texttt{\string\hspace*\{\string\fill\}} kann dazu dienen, einen vorgegebenen}
 Platz auszufüllen.
 \exa
 \raggedright
@@ -126,7 +127,7 @@ bestimmte vertikale Abstände.
 \end{tabbing}
 \end{lminipage}
 \end{table}
-Der Befehl \verb|\vfill| in Verbindung mit \verb|\newpage|
+Der Befehl \verb|\vfill| \todo{MD: siehe hspace} in Verbindung mit \verb|\newpage|
 kann dazu dienen, Text an den unteren Rand einer Seite zu setzen
 oder vertikal zu zentrieren.  Beispielsweise enthält der Quelltext
 für die zweite Seite der vorliegenden Beschreibung:
@@ -160,7 +161,7 @@ Lindenallee 10 \\[1.5ex]
  
 \subsection{Briefe}\label{briefe}
  
-\todo[inline]{PG: Briefe würde ich komplett rauslassen. Das macht doch eh kein Anfänger!}
+\todo[inline]{PG: Briefe würde ich komplett rauslassen. Das macht doch eh kein Anfänger!\newline MD: Meine Meinung}
 
 Mit der Dokumentklasse \texttt{letter} kann man zwischen
 \verb|\begin{document}| und \verb|\end{document}| einen oder
@@ -229,17 +230,8 @@ maximale Breite dieser Nummernangabe an, also z.\,B.\
 Im Text zitiert man die Literaturstelle dann mit dem Befehl \verb|\cite|
 und dem vereinbarten Namen als Argument.
 
-\exa
-Partl~\cite{pa} hat
-vorgeschlagen, dass \dots
- 
-\begin{thebibliography}{99}
-\bibitem{pa}
-H.~Partl: \textit{German \TeX,}
-TUG\-boat Vol.~9, No.~1 (1988)
-\end{thebibliography}
-\exb
-\begin{verbatim}
+
+\begin{LTXexample}
 Partl~\cite{pa} hat
 vorgeschlagen ...
  
@@ -248,13 +240,13 @@ vorgeschlagen ...
 H.~Partl: \textit{German \TeX,}
 TUGboat Vol.~9, No.~1 (1988)
 \end{thebibliography}
-\end{verbatim}
-\exc\todo{PG: ltxexample verschluckt das \cs{cite} :(}
+\end{LTXexample}
+\todo{PG: ltxexample verschluckt das \cs{cite} :(\\MD: Sehe ich gerade :-( -- Muss ich mir was einfallen lassen}
 
-\todo[inline]{PG: Üblicherweise wird dafür bibtex oder biblatex/biber benutzt. Ich denke mir, dass wir zumindest auf biblatex (da gibts 'ne Deutsche Übersetzung von) eingehen sollten bzw. erwähnen sollten.}
+\todo[inline]{PG: Üblicherweise wird dafür bibtex oder biblatex/biber benutzt. Ich denke mir, dass wir zumindest auf biblatex (da gibts 'ne Deutsche Übersetzung von) eingehen sollten bzw. erwähnen sollten. \newline Erweitert aber den Text ;-) }
  
 \subsection{Zerbrechliche Befehle}
-\todo[inline]{Ich finden den Abschnitt ganz gut, aber ein Beispiel wäre nicht schlecht. Vielleicht zeigen, dass eine Formel mit \cs{(}..\cs{)} nicht in Überschriften funktioniert oder vielleicht ein anderes \emph{griffiges} Beispiel? Mir fällt leider keines ein.}
+\todo[inline]{Ich finden den Abschnitt ganz gut, aber ein Beispiel wäre nicht schlecht. Vielleicht zeigen, dass eine Formel mit \cs{(}..\cs{)} nicht in Überschriften funktioniert oder vielleicht ein anderes \emph{griffiges} Beispiel? Mir fällt leider keines ein.\newline MD: Es hat nur auswirkungen, wenn man expandiert bzw. in eine Datei schreibt. Inhaltsverzeichnis ist dabei griffiger, als ein \string\edef }
  
 Manche \LaTeX-Befehle "`verfrachten"' ihre Argumente an eine andere
 Stelle im Text; beispielsweise kann das Argument von \verb|\section|

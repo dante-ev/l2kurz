@@ -2,7 +2,8 @@
 Das Eingabefile für \LaTeX{} ist ein Textfile mit der Endung \verb+.tex+. Es 
 wird mit einem Editor erstellt und enthält sowohl den Text, der gedruckt werden 
 soll, als auch die Befehle, aus denen \LaTeX\ erfährt, wie der Text gesetzt 
-werden soll.
+werden soll.\todo{MD: Sollte hier ein Hinweis auf Editoren gegeben werden?
+bspw: \href{http://tex.stackexchange.com/questions/339/latex-editors-ides}{LaTeX Editors/IDEs}}
 
 
 \subsection{Leerstellen}
@@ -24,7 +25,7 @@ Die meisten \LaTeX-Befehle haben eines der beiden folgenden Formate: Entweder
 sie beginnen mit einem Backslash~(\verb|\|) und haben dann einen nur aus 
 Buchstaben bestehenden Namen, der durch ein oder mehrere Leerzeichen oder durch
 ein nachfolgendes Sonderzeichen oder eine Ziffer beendet wird; oder sie bestehen
-aus einem Backslash und genau einem Sonderzeichen oder einer Ziffer.
+aus einem Backslash und genau einem Sonderzeichen oder einer \todo{MD: Ich finde Ziffer verwirrt irgendwie?}Ziffer.
 Groß- und Kleinbuchstaben haben auch in Befehlsnamen \emph{verschiedene} 
 Bedeutung. Wenn man nach einem Befehlsnamen eine Leerstelle erhalten will, muss 
 man~\verb|{}| zur Beendigung des Befehlsnamens oder einen eigenen Befehl für die
@@ -80,6 +81,7 @@ gesamte Dokument gelten sollen.  Dieser Teil des Dokuments wird auch als
 \end{quote}
 endet der Vorspann, und es beginnt das Setzen des Schriftstücks. Nun folgen der 
 Text und alle \LaTeX-Befehle, die das Ausdrucken des Schriftstücks bewirken.
+\todo{MD: Sollte hier ein Hinweis hin, dass Anweisungen im Header definiert werden sollten}
 Die Eingabe muss mit dem Befehl
 \begin{quote}
 \verb|\end{document}|
@@ -104,6 +106,7 @@ komplizierteres File ist in Abbildung~\ref{dokument} skizziert.
 
 % im folgenden Beispiel sollten Umlaute im Eingabefile auftreten!
 \begin{figure}[hbtp]
+\todo[inline]{MD: Wirklich als float definieren? Ich würde es schöner finden, wenn wir miniage weglassen.} 
 \begin{lminipage}{10cm}
 \begin{lstlisting}
 \documentclass[11pt,a4paper,ngerman]{article}
@@ -134,6 +137,8 @@ Hier beginnt mein schönes Werk ...
 \caption{Aufbau eines Artikels} \label{dokument}
 \end{figure}
  
+\todo[inline]{MD: Irgendwie fehlt mir in den nächsten Ausführungen der Hinweis auf
+Paketdokumentationen}
  
 \subsection{Dokumentklassen}\label{docsty}
  
@@ -149,7 +154,7 @@ die für alle Dokumente dieses Typs gemeinsam sind.
 Zwischen den geschwungenen Klammern \emph{muss} genau eine Dokumentklasse
 angegeben werden.  Tabelle~\ref{docstyles} auf S.~\pageref{docstyles} führt 
 Klassen auf, die in jeder \LaTeX-Installation existieren sollten. Im \local\ 
-können weitere verfügbare Klassen angegeben sein.  
+können weitere verfügbare Klassen angegeben sein.  \todo{MD: Klassen, die für den Einstieg empfehlenswert sind}
  
 Zwischen den eckigen Klammern \emph{können}, durch Kommata getrennt, eine oder 
 mehrere Optionen für das Klassenlayout angegeben werden. Die wichtigsten 
@@ -244,6 +249,7 @@ Layout der Dokumentklasse modifizieren oder zusätzliche Funktionalität
 bereitstellen. Eine Auswahl von Paketen findet sich in der Tabelle~\ref{pack} 
 auf S.~\pageref{pack}. Das Eingabefile für diese Beschreibung enthält 
 beispielsweise:
+\todo{MD: Ich halte nicht soviel von verschachteltem Laden. Die Optionenübergabe fehlt völlig}
 \begin{beispiel}
 \verb|\usepackage{babel,latexsym|\\
 \verb|            graphicx,textcomp,hyperref}|

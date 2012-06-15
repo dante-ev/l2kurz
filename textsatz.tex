@@ -65,7 +65,10 @@ Die Klassen
 \texttt{article}, \texttt{report} und \texttt{book} kennzeichnen
 Absätze durch Einrücken der ersten Zeile;
 die Klasse \texttt{letter} beispielsweise lässt stattdessen 
-zwischen den Absätzen einen kleinen vertikalen Abstand.
+zwischen den Absätzen einen kleinen vertikalen Abstand.%
+\todo{MD: letter wirklich erwähnen? Ist m.E. veraltet. Die Absatzkennzeichnung
+sollte allerdings explizit angesprochen werden.}
+
 
 Mit Hilfe der in Abschnitt~\ref{env} beschriebenen Umgebungen ist
 es möglich, spezielle Textteile jeweils anders zu setzen.
@@ -94,14 +97,15 @@ eine Zeile mehr auf eine Seite zu bekommen.
 \LaTeX\ bemüht sich, den Zeilenumbruch besonders schön zu
 machen.  Falls es keine den strengen Regeln genügende
 Möglichkeit für einen glatten rechten Rand findet, lässt es
-eine Zeile zu lang und gibt eine entsprechende Fehlermeldung aus
-(\texttt{over\-full hbox}).
+eine Zeile zu lang und gibt eine entsprechende Fehlermeldung 
+\todo{MD: Warnmeldung ist richtig. Wobei bis dato noch nicht auf Fehler/Warnungen eingegangen wurde}
+aus (\texttt{over\-full hbox}).
 Das tritt insbesondere dann auf, wenn keine geeignete Stelle
 für die Silbentrennung gefunden wird.
 Innerhalb der \texttt{sloppypar}-Umgebung ist \LaTeX\ generell
 weniger streng in seinen Ansprüchen und vermeidet solche
 überlange Zeilen, indem es die Wortabstände stärker --
-notfalls auch unschön~-- vergrößert\todo{PG: microtype erwähnen?}.
+notfalls auch unschön~-- vergrößert\todo{PG: microtype erwähnen?\\MD: Hilft, da es vorher in der Tabelle aufgeführt wurde.}.
 In diesem Fall werden zwar Warnungen gemeldet (\texttt{under\-full
 hbox}), das Ergebnis ist aber meistens durchaus brauchbar.
  
@@ -114,7 +118,7 @@ folgenden Befehlen richtigstellen.
 Das kann insbesondere bei zusammengesetzten oder fremdsprachigen
 Wörtern notwendig werden; außerdem findet \LaTeX{} in Wörtern
 mit Umlauten oder akzentuierten Buchstaben nicht alle zulässigen
-Trennstellen\todo{PG: Stimmt nicht ganz!}.
+Trennstellen\todo{PG: Stimmt nicht ganz! MD: War so, wenn \lstinline+\\"a+ verwendet wird.}.
  
 Der Befehl \verb|\hyphenation| bewirkt, dass die darin
 angeführten Wörter jedesmal an den und nur an den mit
@@ -138,7 +142,7 @@ oder unmittelbar nach einem Bindestrich
 abgeteilt werden kann.
 Dieser Befehl eignet sich für \emph{alle} Wörter, auch für
 solche, die Umlaute, scharfes~s, Ziffern oder sonstige
-Sonderzeichen enthalten\todo{PG: auch das ist nicht mehr richtig}.
+Sonderzeichen enthalten\todo{PG: auch das ist nicht mehr richtig\\MD: Richtig}.
 %(Mit dem Paket \texttt{german}(siehe \ref{deutsch}) steht eine
 %weitere Möglichkeit zur Verfügung, nämlich der
 %Befehl~\verb:"-:. Dieser erlaubt auch die Trennung an nicht
@@ -216,7 +220,7 @@ Leerstelle nicht verbreitert werden darf.
 Eine \verb|~| (Tilde) bedeutet eine Leerstelle,
 an der kein Zeilenwechsel erfolgen darf.
 
-Mit \verb|\,| lässt sich ein kurzer Abstand erzeugen, wie er
+Mit \verb|\,| lässt sich ein kurzer Abstand erzeugen, wie er\todo{MD: Genannt Spatium}
 z.\,B.\ in Abkürzungen vorkommt oder zwischen Zahlenwert und Maßeinheit.
 
 Der Befehl~\verb|\@| vor einem Punkt bedeutet, dass dieser Punkt
@@ -245,7 +249,7 @@ behandelt werden sollen als die zwischen Wörtern.
 Diese Konvention ist im nicht-englischen Sprachraum verbreitet.
 In diesem Fall brauchen die Befehle \verb|\ | und~\verb|\@| nicht
 angegeben werden.
-Mit dem Paket \texttt{german} ist \verb:\frenchspacing:
+Mit dem Paket \texttt{german} \todo{MD: überarbeiten} ist \verb:\frenchspacing:
 automatisch gewählt; das kann durch
 \verb:\nonfrenchspacing:
 wieder rückgängig gemacht werden -- so wie durchgängig im vorliegenden
@@ -261,19 +265,14 @@ Für Anführungszeichen ist \emph{nicht} das auf Schreibmaschinen
 übliche Zeichen (\verb|"|) zu verwenden.
 Im Buchdruck werden für öffnende und schließende
 Anführungszeichen jeweils verschiedene Zeichen bzw.\ %
-Zeichenkombinationen gesetzt\todo{PG: csquotes erwähnen?}.
+Zeichenkombinationen gesetzt\todo{PG: csquotes erwähnen?\\MD: unbedingt}.
 öffnende Anführungszeichen, wie sie im amerikanischen Englisch 
 üblich sind, erhält man durch Eingabe von zwei Grave-Akzenten, 
 schließende durch zwei Apostrophe.
-\exa
+\begin{LTXexample}
 ``No,'' he said,
 ``I don't know!''
-\exb
-\begin{verbatim}
-``No,'' he said,
-``I don't know!''
-\end{verbatim}
-\exc
+\end{LTXexample}
 "`Deutsche Gänsefüßchen"' sehen anders aus als ``amerikanische
 Quotes''.  
 % In Original-\LaTeX\ kann man versuchen, für deutsche
@@ -318,6 +317,7 @@ In den Zeichensätzen mancher Rechner (z.\,B. Macintosh) sind die deutschen
 Anführungszeichen enthalten.  Das Paket \texttt{inputenc} (siehe
 Abschnitt~\ref{inputenc}) erlaubt dann, sie auch direkt einzugeben.
 
+\todo{MD: Ich finde ein Hinweis auf \href{http://zvisionwelt.files.wordpress.com/2012/01/typokurz.pdf}{typokurz} wäre hilfreich}
 
 \subsubsection{Binde- und Gedankenstriche}
  
@@ -387,7 +387,7 @@ Nicht Auflage (Au-fl-age) \\
 sondern Auf\/lage (Auf-lage)
 \end{verbatim}
 \exc
-Mit dem Paket \texttt{german} steht zusätzlich der
+Mit dem Paket \texttt{german} steht zusätzlich der\todo{MD: überarbeiten}
 Befehl~\verb:"|: zur Verfügung, der gleichzeitig eine
 Trennhilfe darstellt.
 \exa
@@ -535,7 +535,7 @@ Artikel können also relativ einfach als Kapitel in ein Buch
 eingebaut werden.  Die Abstände zwischen den Kapiteln, die
 Nummerierung und die Schriftgröße der Überschrift werden von
 \LaTeX\ automatisch bestimmt.
-
+\todo{MD: Sollte \texttt{\string\part} ergänzt werden?}
 
 
 Die Überschrift des gesamten Artikels bzw.\ die Titelseite des
@@ -584,7 +584,7 @@ ist eine Fußnote.} werden automatisch nummeriert
 und am unteren Ende der Seite ausgedruckt.  
 Innnerhalb von Gleitobjekten (siehe Abschnitt~\ref{floats}), 
 Tabellen (\ref{tabular}) oder der \texttt{tabbing}-Umgebung (\ref{tabbing})
-ist der Befehl \verb|\footnote| nicht erlaubt.
+ist der Befehl \verb|\footnote| nicht erlaubt.\todo{MD: Aber es gibt Möglichkeiten}
 \exa
 ~
 \exb
@@ -706,7 +706,7 @@ Leerzeilen.
 
 
 \subsubsection{Listen (itemize, enumerate, description)}
- 
+ \todo{MD: Hier empfehle ich das Paket enumitem}
 Die Umgebung \texttt{itemize} eignet sich für einfache Listen
 (siehe Abbildung~\ref{item}).
 Die Umgebung \texttt{enumerate} eignet sich für nummerierte
@@ -848,7 +848,7 @@ Die Umgebungen \texttt{flushleft} und \texttt{flushright}
 bewirken links- bzw.\ rechtsbündigen Satz ohne Randausgleich 
 ("`Flattersatz"') und ohne Trennungen, 
 \texttt{center} setzt den Text in
-die Mitte der Zeile\todo{PG: ragged2e erwähnen? -> besserer Umbruch}.
+die Mitte der Zeile\todo{PG: ragged2e erwähnen? -> besserer Umbruch\\MD: Bin mir unschlüssig. Besonders erachte ich \textbackslash\textbackslash als falsch.}.
 Die einzelnen Zeilen werden durch~\verb|\\| getrennt.
 Wenn man \verb|\\| nicht angibt, bestimmt \LaTeX\ automatisch die
 Zeilenaufteilung% (siehe Abbildung~\ref{jandl}) auf Seite~\pageref{jandl})
@@ -899,7 +899,7 @@ Im \\ Reich \\ der \\ Mitte
 
 
 \subsubsection{Direkte Ausgabe (verbatim, verb)}
- 
+ \todo{MD: listings // minted???}
 Zwischen \verb|\begin{verbatim}| und \verb|\end{verbatim}|
 stehende Zeilen werden genauso ausgedruckt, wie sie eingegeben
 wurden, d.\,h.\ mit allen Leerzeichen und Zeilenwechseln und ohne
@@ -936,7 +936,7 @@ Der Befehl~\verb|\=| setzt eine Tabulatorposition,
 \verb|\kill| bedeutet, dass die "`Musterzeile"' nicht ausgedruckt werden
 soll,
 \verb|\>|~springt zur nächsten Tabulatorposition,
-und \verb|\\| trennt die Zeilen.
+und \verb|\\| trennt die Zeilen.\todo{MD: Sehr wichtig: Seitenumbruch möglich}
 %
 \par\vspace{0pt plus5\baselineskip}
 \pagebreak[3]\vspace{0pt plus-5\baselineskip}
@@ -972,7 +972,8 @@ ein  \>  \> ausgestopfter\\
  
 Die \texttt{tabular}-Umgebung dient zum Setzen von Tabellen, bei
 denen \LaTeX\ automatisch die benötigte Spaltenbreite
-bestimmt, und bei der auch spezielle Eigenschaften wie
+bestimmt\todo{MD: Erachte ich als falsch. Sollte genauer auf Spaltentypen eingegangen werden}
+, und bei der auch spezielle Eigenschaften wie
 Rechtsbündigkeit und Hilfslinien vereinbart werden können.
  
 Im Parameter des Befehls \verb|\begin{tabular}{...}| wird das
@@ -989,7 +990,7 @@ Innerhalb der Tabelle bedeutet
 \verb|&|~den Sprung in die nächste Tabellenspalte,
 \verb|\\|~trennt die Zeilen,
 \verb|\hline| (an Stelle einer Zeile) setzt einen waagrechten
-Strich\todo{PG: booktabs mit \cs{toprule},\cs{midrule} und \cs{bottomrule} erwähnen? - macht eine schönere Tabelle}.
+Strich\todo{PG: booktabs mit \cs{toprule},\cs{midrule} und \cs{bottomrule} erwähnen? - macht eine schönere Tabelle\\MD: Ein wenig Typographie gehört zur Einführung}.
  
           \vspace{0pt plus 1cm}
 \exa
