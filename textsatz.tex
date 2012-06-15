@@ -67,7 +67,7 @@ Absätze durch Einrücken der ersten Zeile;
 die Klasse \texttt{letter} beispielsweise lässt stattdessen 
 zwischen den Absätzen einen kleinen vertikalen Abstand.%
 \todo{MD: letter wirklich erwähnen? Ist m.E. veraltet. Die Absatzkennzeichnung
-sollte allerdings explizit angesprochen werden.}
+sollte allerdings explizit angesprochen werden.\\PG: letter kann raus, Absatzkennzeichnung erwähnen, ggf. das Paket parskip, mit dem man 'umschalten' kann.}
 
 
 Mit Hilfe der in Abschnitt~\ref{env} beschriebenen Umgebungen ist
@@ -98,7 +98,7 @@ eine Zeile mehr auf eine Seite zu bekommen.
 machen.  Falls es keine den strengen Regeln genügende
 Möglichkeit für einen glatten rechten Rand findet, lässt es
 eine Zeile zu lang und gibt eine entsprechende Fehlermeldung 
-\todo{MD: Warnmeldung ist richtig. Wobei bis dato noch nicht auf Fehler/Warnungen eingegangen wurde}
+\todo{MD: Warnmeldung ist richtig. Wobei bis dato noch nicht auf Fehler/Warnungen eingegangen wurde\\PG: korrekt. Auf Fehlermeldungen würde ich nicht unbedingt eingehen, um den Rahmen nicht zu sprengen. Wenn, dann im letzten Kapitel ganz hinten.}
 aus (\texttt{over\-full hbox}).
 Das tritt insbesondere dann auf, wenn keine geeignete Stelle
 für die Silbentrennung gefunden wird.
@@ -220,7 +220,7 @@ Leerstelle nicht verbreitert werden darf.
 Eine \verb|~| (Tilde) bedeutet eine Leerstelle,
 an der kein Zeilenwechsel erfolgen darf.
 
-Mit \verb|\,| lässt sich ein kurzer Abstand erzeugen, wie er\todo{MD: Genannt Spatium}
+Mit \verb|\,| lässt sich ein kurzer Abstand erzeugen, wie er\todo{MD: Genannt Spatium\\PG: ich finde der Hinweis auf typokurz reicht}
 z.\,B.\ in Abkürzungen vorkommt oder zwischen Zahlenwert und Maßeinheit.
 
 Der Befehl~\verb|\@| vor einem Punkt bedeutet, dass dieser Punkt
@@ -249,7 +249,7 @@ behandelt werden sollen als die zwischen Wörtern.
 Diese Konvention ist im nicht-englischen Sprachraum verbreitet.
 In diesem Fall brauchen die Befehle \verb|\ | und~\verb|\@| nicht
 angegeben werden.
-Mit dem Paket \texttt{german} \todo{MD: überarbeiten} ist \verb:\frenchspacing:
+Mit dem Paket \texttt{german} \todo{MD: überarbeiten\\PG: stimmt für babel aber auch} ist \verb:\frenchspacing:
 automatisch gewählt; das kann durch
 \verb:\nonfrenchspacing:
 wieder rückgängig gemacht werden -- so wie durchgängig im vorliegenden
@@ -317,7 +317,7 @@ In den Zeichensätzen mancher Rechner (z.\,B. Macintosh) sind die deutschen
 Anführungszeichen enthalten.  Das Paket \texttt{inputenc} (siehe
 Abschnitt~\ref{inputenc}) erlaubt dann, sie auch direkt einzugeben.
 
-\todo{MD: Ich finde ein Hinweis auf \href{http://zvisionwelt.files.wordpress.com/2012/01/typokurz.pdf}{typokurz} wäre hilfreich}
+\todo{MD: Ich finde ein Hinweis auf \href{http://zvisionwelt.files.wordpress.com/2012/01/typokurz.pdf}{typokurz} wäre hilfreich\\PG: Oh ja! sehr gut. Kann als Literatureintrag hin aber unbedingt in einem extra Satz hervorheben.}
 
 \subsubsection{Binde- und Gedankenstriche}
  
@@ -387,7 +387,7 @@ Nicht Auflage (Au-fl-age) \\
 sondern Auf\/lage (Auf-lage)
 \end{verbatim}
 \exc
-Mit dem Paket \texttt{german} steht zusätzlich der\todo{MD: überarbeiten}
+Mit dem Paket \texttt{german} steht zusätzlich der\todo{MD: überarbeiten \\PG: was soll deiner Meinung nach hier herein?}
 Befehl~\verb:"|: zur Verfügung, der gleichzeitig eine
 Trennhilfe darstellt.
 \exa
@@ -535,7 +535,7 @@ Artikel können also relativ einfach als Kapitel in ein Buch
 eingebaut werden.  Die Abstände zwischen den Kapiteln, die
 Nummerierung und die Schriftgröße der Überschrift werden von
 \LaTeX\ automatisch bestimmt.
-\todo{MD: Sollte \texttt{\string\part} ergänzt werden?}
+\todo{MD: Sollte \texttt{\string\part} ergänzt werden?\\PG: ja}
 
 
 Die Überschrift des gesamten Artikels bzw.\ die Titelseite des
@@ -584,7 +584,7 @@ ist eine Fußnote.} werden automatisch nummeriert
 und am unteren Ende der Seite ausgedruckt.  
 Innnerhalb von Gleitobjekten (siehe Abschnitt~\ref{floats}), 
 Tabellen (\ref{tabular}) oder der \texttt{tabbing}-Umgebung (\ref{tabbing})
-ist der Befehl \verb|\footnote| nicht erlaubt.\todo{MD: Aber es gibt Möglichkeiten}
+ist der Befehl \verb|\footnote| nicht erlaubt.\todo{MD: Aber es gibt Möglichkeiten\\PG: wir sollten uns mit dem Platz beschränken}
 \exa
 ~
 \exb
@@ -706,7 +706,7 @@ Leerzeilen.
 
 
 \subsubsection{Listen (itemize, enumerate, description)}
- \todo{MD: Hier empfehle ich das Paket enumitem}
+ \todo{MD: Hier empfehle ich das Paket enumitem\\PG: Gut. Aber mehr als ein Satz würde ich nicht dazu geben. ... Mit dem Paket enumitem können die Umgebungen den eigenen Bedürfnissen leicht angepasst werden. oder so}
 Die Umgebung \texttt{itemize} eignet sich für einfache Listen
 (siehe Abbildung~\ref{item}).
 Die Umgebung \texttt{enumerate} eignet sich für nummerierte
@@ -848,7 +848,7 @@ Die Umgebungen \texttt{flushleft} und \texttt{flushright}
 bewirken links- bzw.\ rechtsbündigen Satz ohne Randausgleich 
 ("`Flattersatz"') und ohne Trennungen, 
 \texttt{center} setzt den Text in
-die Mitte der Zeile\todo{PG: ragged2e erwähnen? -> besserer Umbruch\\MD: Bin mir unschlüssig. Besonders erachte ich \textbackslash\textbackslash als falsch.}.
+die Mitte der Zeile\todo{PG: ragged2e erwähnen? -> besserer Umbruch\\MD: Bin mir unschlüssig. Besonders erachte ich \textbackslash\textbackslash als falsch. \\PG: dem letzten stimme ich voll zu}.
 Die einzelnen Zeilen werden durch~\verb|\\| getrennt.
 Wenn man \verb|\\| nicht angibt, bestimmt \LaTeX\ automatisch die
 Zeilenaufteilung% (siehe Abbildung~\ref{jandl}) auf Seite~\pageref{jandl})
@@ -899,7 +899,7 @@ Im \\ Reich \\ der \\ Mitte
 
 
 \subsubsection{Direkte Ausgabe (verbatim, verb)}
- \todo{MD: listings // minted???}
+ \todo{MD: listings // minted???\\PG: minted kenne ich nicht, Listings erwähnen (Für Programmlistings gibt es auch das Paket listings, mit dem sich Schlüsselwörter, Kommentare und andere Elemente bequem hervorheben lassen. oder so)}
 Zwischen \verb|\begin{verbatim}| und \verb|\end{verbatim}|
 stehende Zeilen werden genauso ausgedruckt, wie sie eingegeben
 wurden, d.\,h.\ mit allen Leerzeichen und Zeilenwechseln und ohne
@@ -936,7 +936,7 @@ Der Befehl~\verb|\=| setzt eine Tabulatorposition,
 \verb|\kill| bedeutet, dass die "`Musterzeile"' nicht ausgedruckt werden
 soll,
 \verb|\>|~springt zur nächsten Tabulatorposition,
-und \verb|\\| trennt die Zeilen.\todo{MD: Sehr wichtig: Seitenumbruch möglich}
+und \verb|\\| trennt die Zeilen.\todo{MD: Sehr wichtig: Seitenumbruch möglich\\PG: wusste ich nicht. Gut.}
 %
 \par\vspace{0pt plus5\baselineskip}
 \pagebreak[3]\vspace{0pt plus-5\baselineskip}
@@ -972,7 +972,7 @@ ein  \>  \> ausgestopfter\\
  
 Die \texttt{tabular}-Umgebung dient zum Setzen von Tabellen, bei
 denen \LaTeX\ automatisch die benötigte Spaltenbreite
-bestimmt\todo{MD: Erachte ich als falsch. Sollte genauer auf Spaltentypen eingegangen werden}
+bestimmt\todo{MD: Erachte ich als falsch. Sollte genauer auf Spaltentypen eingegangen werden\\PG: zumindest im Vergleich mit der tabbing Umgebung ist das ja so. Aber es ist nicht ganz klar oder unglücklich formuliert. . vielleicht eher so: 'Tabellen lassen sich mit tabular erzeugen. Dort kann man mit einer Tabellenpräambel bestimmen, wie die Spalten dargestellt werden. (Der Inhalt passt sich der Breite an.)' }
 , und bei der auch spezielle Eigenschaften wie
 Rechtsbündigkeit und Hilfslinien vereinbart werden können.
  

@@ -20,7 +20,7 @@ als es in der Dokumentklasse vorgesehen ist, gibt es in
 und dann auf das gesamte Dokument wirkt.  Das kann beispielsweise
 dann notwendig werden, wenn eine Schrift benutzt wird, die eine größerer x-Höhe 
 hat als die voreingestellte Computer-Modern.  Für die Schrift "`Palatino"' etwa
-ist eine Vergrößerung des Zeilenabstandes um ca.\ 5\,\% angemessen:\todo{MD: Paket setspace}
+ist eine Vergrößerung des Zeilenabstandes um ca.\ 5\,\% angemessen:\todo{MD: Paket setspace\\PG: gut}
 
 \begin{quote}
 \verb|\usepackage{mathpazo}|\\
@@ -36,7 +36,7 @@ Die Abstände zwischen Wörtern und Sätzen werden von \LaTeX\
 automatisch gesetzt.
 Sonstigen horizontalen Abstand kann man mit dem Befehl
 \begin{beispiel}
-\todo{MD: lieber die Sternvariante als Standard empfehlen}
+\todo{MD: lieber die Sternvariante als Standard empfehlen\newline PG: OK, ich hab' davon keine Ahnung}
 \verb|\hspace{|\textit{länge}\verb|}|
 \end{beispiel}
 einfügen.
@@ -127,7 +127,7 @@ bestimmte vertikale Abstände.
 \end{tabbing}
 \end{lminipage}
 \end{table}
-Der Befehl \verb|\vfill| \todo{MD: siehe hspace} in Verbindung mit \verb|\newpage|
+Der Befehl \verb|\vfill| \todo{MD: siehe hspace\\PG: gut} in Verbindung mit \verb|\newpage|
 kann dazu dienen, Text an den unteren Rand einer Seite zu setzen
 oder vertikal zu zentrieren.  Beispielsweise enthält der Quelltext
 für die zweite Seite der vorliegenden Beschreibung:
@@ -243,10 +243,11 @@ TUGboat Vol.~9, No.~1 (1988)
 \end{LTXexample}
 \todo{PG: ltxexample verschluckt das \cs{cite} :(\\MD: Sehe ich gerade :-( -- Muss ich mir was einfallen lassen}
 
-\todo[inline]{PG: Üblicherweise wird dafür bibtex oder biblatex/biber benutzt. Ich denke mir, dass wir zumindest auf biblatex (da gibts 'ne Deutsche Übersetzung von) eingehen sollten bzw. erwähnen sollten. \newline Erweitert aber den Text ;-) }
+\todo[inline]{PG: Üblicherweise wird dafür bibtex oder biblatex/biber benutzt. Ich denke mir, dass wir zumindest auf biblatex (da gibts 'ne Deutsche Übersetzung von) eingehen sollten bzw. erwähnen sollten. \newline Erweitert aber den Text ;-)\newline PG: stimmt auch wieder. Es ist ja 'ne Kurzeinführung und kein Lehrbuch. Also erst mal drin lassen und dann können wir immer noch schauen?}
  
 \subsection{Zerbrechliche Befehle}
 \todo[inline]{Ich finden den Abschnitt ganz gut, aber ein Beispiel wäre nicht schlecht. Vielleicht zeigen, dass eine Formel mit \cs{(}..\cs{)} nicht in Überschriften funktioniert oder vielleicht ein anderes \emph{griffiges} Beispiel? Mir fällt leider keines ein.\newline MD: Es hat nur auswirkungen, wenn man expandiert bzw. in eine Datei schreibt. Inhaltsverzeichnis ist dabei griffiger, als ein \string\edef }
+\todo[inline]{PG: Wenn ich so sehe, was wir alles noch mit reinnehmen wollen, dann würde ich auf diesen Abschnitt auch verzichten.}
  
 Manche \LaTeX-Befehle "`verfrachten"' ihre Argumente an eine andere
 Stelle im Text; beispielsweise kann das Argument von \verb|\section|
