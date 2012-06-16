@@ -42,6 +42,17 @@
 \usepackage{array,longtable,tabularx,booktabs}
 \usepackage{enumitem}
 \usepackage{caption}
+\makeatletter
+\def\midrule{%
+ \noalign{\ifnum0=`}\fi
+ \penalty\@M%
+  \@aboverulesep=\aboverulesep
+  \global\@belowrulesep=\belowrulesep
+  \global\@thisruleclass=\@ne
+  \@ifnextchar[{\@BTrule}{\@BTrule[\lightrulewidth]}}
+
+\def\arraystretch{1.5}
+\makeatother
 
 \usepackage[normalem]{ulem}
 
