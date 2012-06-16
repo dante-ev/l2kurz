@@ -39,6 +39,13 @@
 \usepackage{latexsym}
 \usepackage{graphicx}
 
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{enumitem}
+
+\usepackage[normalem]{ulem}
+
 \usepackage{showexpl}
 \makeatletter
 \let\LTXexample\@undefined
@@ -93,10 +100,12 @@
   upquote=true,
 %Mit Farbe:
  keywordstyle=\color{blue!70!black}\bfseries,
- texcsstyle=*\color{red!70!black}\bfseries,
+ texcsstyle=*\color{blue!70!black}\bfseries,
  literate=
           {\{}{\textcolor{red!70!black}{\{}}1
           {\}}{\textcolor{red!70!black}{\}}}1
+          {]}{\textcolor{red!70!black}{]}}1
+          {[}{\textcolor{red!70!black}{[}}1
           {Ö}{{\"O}}1
           {Ä}{{\"A}}1
           {Ü}{{\"U}}1
@@ -104,8 +113,12 @@
           {ü}{{\"u}}1
           {ä}{{\"a}}1
           {ö}{{\"o}}1,
+  moretexcs={maketitle}
 }
 
+\lstnewenvironment{example}[1][]
+{\lstset{xleftmargin=2cm,xrightmargin=2cm,frame=lines,#1}}
+{}
 
 
 \usepackage[textsize=footnotesize]{todonotes}
