@@ -156,15 +156,16 @@ Das Eingabefile für diese Beschreibung beginnt z.\,B.\ mit:
  \documentclass[11pt,a4paper]{article}
 \end{lstlisting}
 
-\begin{table}[!hbpt]
-\small
-\caption{Dokumentklassen}
-\label{docstyles}
-\centering
-\renewcommand\arraystretch{1.5}
-\begin{tabularx}{.95\linewidth}%
-      {@{}>{\raggedright\arraybackslash\ttfamily}p{2.2cm}X@{}}
-\toprule
+
+\begin{longtable}[c]{@{}>{\raggedright\arraybackslash\ttfamily}p{2.2cm}%
+                         p{\dimexpr 0.95\linewidth-2.2cm-2\tabcolsep\relax}@{}}
+ \caption{Dokumentklassen}\label{docstyles} \\\toprule
+\endfirsthead
+ \caption[]{Dokumentklassen}\\\toprule
+\endhead
+ \multicolumn{2}{r}{\small Forsetzung nächste Seite}\\
+\endfoot
+\endlastfoot
  article & 
  für Artikel in wissenschaftlichen Zeitschriften,  kürzere Berichte u.\,v.\,a. 
 \\\midrule
@@ -188,20 +189,19 @@ Das Eingabefile für diese Beschreibung beginnt z.\,B.\ mit:
  für Präsentationen 
 \\
 \bottomrule
-\end{tabularx}
+\end{longtable}
 
-\end{table}
-%\vfill
 
-\begin{table}[hbpt]
-\small
-\centering
-\caption[Klassenoptionen]{Klassenoptionen für die Standardklassen}
-\label{options}
-\renewcommand\arraystretch{1.5}
-\begin{tabularx}{.95\linewidth}%
-      {@{}>{\raggedright\arraybackslash\ttfamily}p{2.2cm}X@{}}
-\toprule
+
+\begin{longtable}[c]{@{}>{\raggedright\arraybackslash\ttfamily}p{2.2cm}%
+                         p{\dimexpr 0.95\linewidth-2.2cm-2\tabcolsep\relax}@{}}
+ \caption[Klassenoptionen]{Klassenoptionen für die Standardklassen}\label{options} \\\toprule
+\endfirsthead
+ \caption[]{Klassenoptionen für die Standardklassen}\\\toprule
+\endhead
+ \multicolumn{2}{r}{\small Forsetzung nächste Seite}\\
+\endfoot
+\endlastfoot
  10pt 11pt  12pt & 
  wählt die normale Schriftgröße des Dokuments aus. 10\,pt hohe Schrift ist die 
  Voreinstellung; diese Beschreibung benutzt 11\,pt. 
@@ -230,8 +230,8 @@ Das Eingabefile für diese Beschreibung beginnt z.\,B.\ mit:
  sollen. \texttt{oneside} ist die Voreinstellung für alle Klassen außer 
  \texttt{book}.
 \\\bottomrule
-\end{tabularx}
-\end{table}
+\end{longtable}
+
 
 
 
