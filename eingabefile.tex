@@ -67,48 +67,42 @@ Beispiel.
 \end{LTXexample}
  
 \subsection{Aufbau}
- 
+ \todo[inline]{MD: Erste Überarbeitung begonnen}
 Der erste Befehl in einem \LaTeX-Eingabefile muss der Befehl
-\begin{quote}
-\verb|\documentclass|
-\end{quote}
+\begin{lstlisting}
+ \documentclass[]{}
+\end{lstlisting}
 sein. Er legt fest, welche Art von Schriftstück überhaupt erzeugt werden soll
-(Bericht, Buch, Brief usw.). Danach können weitere Befehle folgen, die für das
-gesamte Dokument gelten sollen.  Dieser Teil des Dokuments wird auch als 
+(Bericht, Buch, Brief usw.). Danach können weitere Befehle folgen bzw. deklariert werden,
+die für das gesamte Dokument gelten sollen.  Dieser Teil des Dokuments wird auch als 
 \emph{Vorspann} oder \emph{Präambel} bezeichnet.  Mit dem Befehl
-\begin{quote}
-\verb|\begin{document}|
-\end{quote}
+\begin{lstlisting}
+ \begin{document}
+\end{lstlisting}
 endet der Vorspann, und es beginnt das Setzen des Schriftstücks. Nun folgen der 
 Text und alle \LaTeX-Befehle, die das Ausdrucken des Schriftstücks bewirken.
 \todo{MD: Sollte hier ein Hinweis hin, dass Anweisungen im Header definiert werden sollten\\PG: steht doch oben?!?}
 Die Eingabe muss mit dem Befehl
-\begin{quote}
-\verb|\end{document}|
-\end{quote}
+\begin{lstlisting}
+ \end{document}
+\end{lstlisting}
 beendet werden. Falls nach diesem Befehl noch Eingaben folgen, werden sie von
 \LaTeX{} ignoriert.
  
-Abbildung~\ref{mini} zeigt ein \emph{minimales} \LaTeX-File. Ein etwas 
-komplizierteres File ist in Abbildung~\ref{dokument} skizziert.
+Listing~\ref{mini} zeigt ein \emph{minimales} \LaTeX-File. Ein etwas 
+komplizierteres File ist in Listing~\ref{dokument} skizziert.
  
-\begin{figure}[hbp] %\small
-\begin{lminipage}{6cm}
-\begin{lstlisting}
+\begin{example}[caption={Ein minimales \LaTeX-File},label={mini}]
 \documentclass{article}
 \begin{document}
  Small is beautiful.
 \end{document} 
-\end{lstlisting}
-\end{lminipage}
-\caption{Ein minimales \LaTeX-File} \label{mini}
-\end{figure}
+\end{example}
 
-% im folgenden Beispiel sollten Umlaute im Eingabefile auftreten!
-\begin{figure}[hbtp]
+
 \todo[inline]{MD: Wirklich als float definieren? Ich würde es schöner finden, wenn wir miniage weglassen. PG: Gute Idee, kein Float, keine Minipage, einfach das Listing} 
-\begin{lminipage}{10cm}
-\begin{lstlisting}
+
+\begin{example}[caption={Aufbau eines Artikels},label={dokument}]
 \documentclass[11pt,a4paper,ngerman]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -132,10 +126,7 @@ Hier beginnt mein schönes Werk ...
 ... und hier endet es.
 
 \end{document}
-\end{lstlisting}
-\end{lminipage}
-\caption{Aufbau eines Artikels} \label{dokument}
-\end{figure}
+\end{example}
  
 \todo[inline]{MD: Irgendwie fehlt mir in den nächsten Ausführungen der Hinweis auf
 Paketdokumentationen\\PG: finde ich nicht so dramatisch. Ggf. in dem Abschnitt über Hilfe kann texdoc erwähnt werden!?}
@@ -143,64 +134,47 @@ Paketdokumentationen\\PG: finde ich nicht so dramatisch. Ggf. in dem Abschnitt �
 \subsection{Dokumentklassen}\label{docsty}
  
 Die am Beginn des Eingabefiles  mit
-\begin{beispiel}
-\verb|\documentclass[|\textit{optionen}\verb|]{|%
-  \textit{klasse}\verb|}|
-\end{beispiel}
+\begin{lstlisting}
+ \documentclass[<optionen>]{<klasse>}
+\end{lstlisting}
 definierte "`Klasse"' eines Dokumentes enthält Vereinbarungen über das Layout 
 und die logischen Strukturen, z.\,B.\ die Gliederungseinheiten (Kapitel etc.\@), 
 die für alle Dokumente dieses Typs gemeinsam sind.
 
 Zwischen den geschwungenen Klammern \emph{muss} genau eine Dokumentklasse
 angegeben werden.  Tabelle~\ref{docstyles} auf S.~\pageref{docstyles} führt 
-Klassen auf, die in jeder \LaTeX-Installation existieren sollten. Im \local\ 
-können weitere verfügbare Klassen angegeben sein.  \todo{MD: Klassen, die für den Einstieg empfehlenswert sind\\PG: Liste kommt doch später}
+Klassen auf, die in jeder \LaTeX-Installation existieren sollten. 
+
+\sout{Im \local\ können weitere verfügbare Klassen angegeben sein. }\todo{MD: M.E. Raus damit}
  
 Zwischen den eckigen Klammern \emph{können}, durch Kommata getrennt, eine oder 
 mehrere Optionen für das Klassenlayout angegeben werden. Die wichtigsten 
 Optionen sind in der Tabelle~\ref{options} auf S.~\pageref{options} angeführt.
 Das Eingabefile für diese Beschreibung beginnt z.\,B.\ mit:
-\begin{beispiel}
-\verb|\documentclass[11pt,a4paper]{article}|
-\end{beispiel}
+\begin{lstlisting}
+ \documentclass[11pt,a4paper]{article}|
+\end{lstlisting}
 
 \begin{table}[hbpt]
 \caption{Dokumentklassen} \label{docstyles}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\todo[inline]{MD: Vorschlag: memoir, scrlttr2, beamer und powerdot. Der Hinweis 
-Local Guide ist m. E. nicht nötig (siehe Tabelle).\newline PG: memoir würde ich 
-nicht  nehmen, zu Umfangreich, keine dt. Anl. Letter würde ich auch nicht nehmen, 
-welcher Anfänger will was über Briefe wissen?}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{lminipage}{11cm}
-\begin{ttdescription}%\small
-\item [article] für Artikel in wissenschaftlichen Zeitschriften,
-  kürzere Berichte u.\,v.\,a.
- 
-\item [report] für längere Berichte, die aus mehreren Kapiteln
-  bestehen, Diplomarbeiten, Dissertationen u.\,ä.
- 
-\item [book] für Bücher
+\centering
+\renewcommand\arraystretch{1.5}
+\begin{tabularx}{.8\linewidth}{@{}>{\raggedright\arraybackslash\ttfamily}p{1.9cm}X@{}}
+\toprule
+ article & für Artikel in wissenschaftlichen Zeitschriften,  kürzere Berichte u.\,v.\,a. \\\midrule
+ report & für längere Berichte, die aus mehreren Kapiteln bestehen, Diplomarbeiten, Dissertationen u.\,ä. \\\midrule
+ book   &  für Bücher \\\midrule
+ scrartcl, scrreprt, scrbook & Die sog. KOMA-Klassen 
+sind Varianten der o.\,g. Klassen mit besserer Anpassung an DIN-Papierformate und "`europäische"' Typographie. (\cite{scrguide})\\\midrule
+beamer & für Präsentationen \\\midrule
+powerdot & für Präsentationen \\
+ \bottomrule
+\end{tabularx}
 
-\item[scrartcl, scrreprt, scrbook]\quad Die sog. KOMA-Klassen 
-sind Varianten der o.\,g. Klassen
-mit besserer Anpassung an DIN-Papierformate und "`europäische"'
-Typographie. 
-(Nicht überall vorhanden, siehe \local.)
-
-% \item [proc] für Konferenzbände (Proceedings)
-% ist nicht einmal im LaTeX-Handbich beschrieben!
-
-\item [letter] für Briefe (siehe auch Abschnitt~\ref{briefe})
-
-\item [foils] für Folien oder Präsentationen.
-(Nicht überall vorhanden, siehe \local.)
-  
-\end{ttdescription}
-\end{lminipage}
 \end{table}
 
 \begin{table}[hbpt]
+\todo[inline]{MD: noch nicht bearbeitet}
 \caption[Klassenoptionen]{Klassenoptionen (Alternativen sind durch \texttt{|}
   getrennt)} \label{options}
 \begin{lminipage}{11cm}
