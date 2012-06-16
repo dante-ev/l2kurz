@@ -19,5 +19,7 @@ l2kurz.out
 l2kurz.toc
 l2kurz.bbl
 l2kurz.blg
+l2kurz.synctex.gz
+l2kurz.tmp
 # bis zu einem "stabileren Zeitpunkt" lohnt es sich m.E. nicht das PDF im Repository zu haben
 l2kurz.pdf
