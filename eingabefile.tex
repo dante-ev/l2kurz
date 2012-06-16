@@ -70,7 +70,7 @@ Beispiel.
  \todo[inline]{MD: Erste Überarbeitung begonnen}
 Der erste Befehl in einem \LaTeX-Eingabefile muss der Befehl
 \begin{lstlisting}
- \documentclass[]{}
+ \documentclass
 \end{lstlisting}
 sein. Er legt fest, welche Art von Schriftstück überhaupt erzeugt werden soll
 (Bericht, Buch, Brief usw.). Danach können weitere Befehle folgen bzw. deklariert werden,
@@ -81,7 +81,6 @@ die für das gesamte Dokument gelten sollen.  Dieser Teil des Dokuments wird auc
 \end{lstlisting}
 endet der Vorspann, und es beginnt das Setzen des Schriftstücks. Nun folgen der 
 Text und alle \LaTeX-Befehle, die das Ausdrucken des Schriftstücks bewirken.
-\todo{MD: Sollte hier ein Hinweis hin, dass Anweisungen im Header definiert werden sollten\\PG: steht doch oben?!?}
 Die Eingabe muss mit dem Befehl
 \begin{lstlisting}
  \end{document}
@@ -98,9 +97,6 @@ komplizierteres File ist in Listing~\ref{dokument} skizziert.
  Small is beautiful.
 \end{document} 
 \end{example}
-
-
-\todo[inline]{MD: Wirklich als float definieren? Ich würde es schöner finden, wenn wir miniage weglassen. PG: Gute Idee, kein Float, keine Minipage, einfach das Listing} 
 
 \begin{example}[caption={Aufbau eines Artikels},label={dokument}]
 \documentclass[11pt,a4paper,ngerman]{article}
@@ -127,10 +123,7 @@ Hier beginnt mein schönes Werk ...
 
 \end{document}
 \end{example}
- 
-\todo[inline]{MD: Irgendwie fehlt mir in den nächsten Ausführungen der Hinweis auf
-Paketdokumentationen\\PG: finde ich nicht so dramatisch. Ggf. in dem Abschnitt über Hilfe kann texdoc erwähnt werden!?}
- 
+
 \subsection{Dokumentklassen}\label{docsty}
  
 Die am Beginn des Eingabefiles  mit
@@ -152,61 +145,60 @@ mehrere Optionen für das Klassenlayout angegeben werden. Die wichtigsten
 Optionen sind in der Tabelle~\ref{options} auf S.~\pageref{options} angeführt.
 Das Eingabefile für diese Beschreibung beginnt z.\,B.\ mit:
 \begin{lstlisting}
- \documentclass[11pt,a4paper]{article}|
+ \documentclass[11pt,a4paper]{article}
 \end{lstlisting}
 
-\begin{table}[hbpt]
+\begin{table}[!hbpt]
+\small
 \caption{Dokumentklassen} \label{docstyles}
 \centering
 \renewcommand\arraystretch{1.5}
-\begin{tabularx}{.8\linewidth}{@{}>{\raggedright\arraybackslash\ttfamily}p{1.9cm}X@{}}
+\begin{tabularx}{.95\linewidth}{@{}>{\raggedright\arraybackslash\ttfamily}p{2.2cm}X@{}}
 \toprule
  article & für Artikel in wissenschaftlichen Zeitschriften,  kürzere Berichte u.\,v.\,a. \\\midrule
  report & für längere Berichte, die aus mehreren Kapiteln bestehen, Diplomarbeiten, Dissertationen u.\,ä. \\\midrule
  book   &  für Bücher \\\midrule
  scrartcl, scrreprt, scrbook & Die sog. KOMA-Klassen 
-sind Varianten der o.\,g. Klassen mit besserer Anpassung an DIN-Papierformate und "`europäische"' Typographie. (\cite{scrguide})\\\midrule
+sind Varianten der o.\,g. Klassen mit besserer Anpassung an DIN-Papierformate und "`europäische"' Typographie. Entgegen den Standardklassen existiert eine deutsche und englische Dokumenation (siehe \cite{scrguide})\\\midrule
 beamer & für Präsentationen \\\midrule
 powerdot & für Präsentationen \\
  \bottomrule
 \end{tabularx}
 
 \end{table}
+%\vfill
 
 \begin{table}[hbpt]
-\todo[inline]{MD: noch nicht bearbeitet}
-\caption[Klassenoptionen]{Klassenoptionen (Alternativen sind durch \texttt{|}
-  getrennt)} \label{options}
-\begin{lminipage}{11cm}
-\begin{ttdescription}%\small
-\item [10pt|11pt|12pt] wählt die normale Schriftgröße des Dokuments aus.
-  10\,pt hohe Schrift ist die Voreinstellung; diese Beschreibung benutzt 11\,pt.
-
-\item[a4paper] für Papier im DIN\,A4-Format. Ohne diese
-  Option nimmt \LaTeX\ amerikanisches Papierformat an.
- 
-\item [fleqn] für linksbündige statt zentrierte mathematische
-  Gleichungen
- 
-\item [leqno] für Gleichungsnummern links statt rechts von jeder
-  nummerierten Gleichung
- 
-\item [titlepage|notitlepage] legt fest, ob Titel und Zusammenfassung
+\small
+\centering
+\caption[Klassenoptionen]{Klassenoptionen für die Standardklassen} \label{options}
+\renewcommand\arraystretch{1.5}
+\begin{tabularx}{.95\linewidth}{@{}>{\raggedright\arraybackslash\ttfamily}p{2.2cm}X@{}}
+\toprule
+10pt 11pt  12pt & wählt die normale Schriftgröße des Dokuments aus.
+  10\,pt hohe Schrift ist die Voreinstellung; diese Beschreibung benutzt 11\,pt. \\
+\midrule
+a4paper & für Papier im DIN\,A4-Format. Ohne diese
+  Option nimmt \LaTeX\ amerikanisches Papierformat an. \\
+\midrule
+ fleqn & für linksbündige statt zentrierte mathematische   Gleichungen \\
+\midrule
+ leqno & für Gleichungsnummern links statt rechts von jeder   nummerierten Gleichung \\ 
+\midrule
+ titlepage  notitlepage & legt fest, ob Titel und Zusammenfassung
   auf einer eigenen Seite erscheinen sollen.  \texttt{titlepage} ist
-  die Voreinstellung für die Klassen \texttt{report} und \texttt{book}.
- 
-\item [onecolumn|twocolumn] für ein- oder zweispaltigen Satz.
- Die Voreinstellung ist immer \texttt{onecolumn}.  
- Die Klassen \texttt{letter} und \texttt{slides} kennen \emph{keinen}
- zweispaltigen Satz.
- 
-\item [oneside|twoside] legt fest, ob die Seiten für ein- oder
+  die Voreinstellung für die Klassen \texttt{report} und \texttt{book}. \\
+\midrule
+ onecolumn   twocolumn & für ein- oder zweispaltigen Satz.  Die Voreinstellung ist immer \texttt{onecolumn}.  
+ Die Klassen \texttt{letter} und \texttt{slides} kennen \emph{keinen}  zweispaltigen Satz. \\
+\midrule
+ oneside   twoside & legt fest, ob die Seiten für ein- oder
   zweiseitigen  Druck gestaltet werden sollen.  
   \texttt{oneside} ist die Voreinstellung für
   alle Klassen außer \texttt{book}.
-  
-\end{ttdescription}
-\end{lminipage}
+  \\
+ \bottomrule
+\end{tabularx}
 \end{table}
 
 
@@ -214,74 +206,60 @@ powerdot & für Präsentationen \\
 \subsection{Pakete}\label{packages}
  
 Mit dem Befehl
-\begin{beispiel}
-\verb:\usepackage[:\textit{optionen}\verb:]{:%
-  \textit{pakete}\verb:}:
-\end{beispiel}
+\begin{lstlisting}
+ \usepackage[<optionen>]{<pakete>}
+\end{lstlisting}
 können im Vorspann ergänzende Makropakete (packages) geladen werden, die das 
 Layout der Dokumentklasse modifizieren oder zusätzliche Funktionalität 
 bereitstellen. Eine Auswahl von Paketen findet sich in der Tabelle~\ref{pack} 
-auf S.~\pageref{pack}. Das Eingabefile für diese Beschreibung enthält 
-beispielsweise:
-\todo{MD: Ich halte nicht soviel von verschachteltem Laden. Die Optionenübergabe fehlt völlig\\PG: finde ich nicht so dramatisch, aber können wir entweder rauslassen oder einen Kommentar hinzufügen im Sinne von ...'wenn keine Optionen übergeben werden (oder wenn die Optionen für alle Pakete gelten sollen), findet man auch manchmal die Kurzform... ' -- egal}
-\begin{beispiel}
-\verb|\usepackage{babel,latexsym|\\
-\verb|            graphicx,textcomp,hyperref}|
-\end{beispiel}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\todo{MD: stimmt nicht mehr.}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}[htbp]
-\caption{Pakete (eine Auswahl)}\label{pack}
-\begin{lminipage}{11cm}
+auf Seite~\pageref{pack}. Der Befehl \lstinline+\usepackage+ erlaubt das Laden
+mehrerer Pakete, wobei eine Optionenübergabe nicht möglich ist.
+\begin{lstlisting}
+ \usepackage{babel,caption,array,%
+             graphicx,textcomp,hyperref}
+\end{lstlisting}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \todo[inline]{PG: m.E. können latexsym und dcolumn raus, dafür listings, 
               csquotes, microtype und ...? rein. tabularx finde ich nicht
               schlecht.\newline MD: Um zeitgemäß zu bleiben, ist es sinnvoll}
+\todo[inline]{MD: Jetzt sollten wir uns auf Pakete einigen. Habe schon xcolor statt color und imakeidx statt makeidx genutzt. Ich denke wenn fancyhdr angebenen ist, sollte auch scrpage2 dabei sein.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{ttdescription}%\small
-\setlength{\itemsep}{.5\itemsep plus1pt minus1pt}
-% \item[alltt] Definiert eine Variante der \texttt{verbatim}-Umgebung
-\item[amsmath, amssymb] Mathematischer Formelsatz mit erweiterten Fähigkeiten,
+
+
+\begin{longtable}[c]{@{}>{\raggedright\arraybackslash\ttfamily}p{2.2cm}p{\dimexpr 0.95\linewidth-2.2cm-2\tabcolsep\relax}@{}}
+\caption{Pakete (eine Auswahl)}\label{pack} \\\toprule
+\endfirsthead
+\caption*{Pakete (eine Auswahl)}\\\toprule
+\endhead
+\multicolumn{2}{r}{\small Forsetzung nächste Seite}\\
+\endfoot
+\bottomrule
+\endlastfoot
+amsmath, amssymb & Mathematischer Formelsatz mit erweiterten Fähigkeiten,
   zusätzliche mathematische Schriften und Symbole; Beschreibung siehe
-  \cite{ch8}.
-%\item[array] Verbesserte und erweiterte Versionen der Umgebungen
-%  \texttt{array}, \texttt{tabular} und \texttt{tabular*}.
-\item[babel] Anpassungen für viele verschiedene Sprachen. Die
-  gewählten Sprachen werden als Optionen angegeben.
-\item[color] Unterstützung für Farbausgabe;
-  Beschreibung  siehe~\cite{grfguide} und~\cite{grfcomp}.
-\item[dcolumn] Unterstützt auf Dezimaltrennzeichen ausgerichtete
-  Spalten in den Umgebungen \texttt{array} und \texttt{tabular}
-\item[fontenc] Erlaubt die Verwendung von Schriften mit
-  unterschiedlicher Kodierung (Zeichenvorrat, Anordnung).
-\item[fancyhdr] Flexible Gestaltung von Kopf- und Fußzeilen.
-\item[geometry] Manipulation des Seitenlayouts.
-% (n)german rausgenommen
-\item[graphicx] Einbindung von extern erzeugten Graphiken.
-  Die umfangreichen Möglichkeiten dieses Pakets werden 
-  in~\cite{grfguide} und~\cite{grfcomp} beschrieben.
-\item[hyperref] Ermöglicht Hyperlinks zwischen Textstellen und zu
+  \cite{ch8}. \\\midrule
+array & Verbesserte und erweiterte Versionen der Umgebungen  \texttt{array}, \texttt{tabular} und \texttt{tabular*}.\\\midrule
+babel & Anpassungen für viele verschiedene Sprachen. Die  gewählten Sprachen werden als Optionen angegeben.\\\midrule
+xcolor & Unterstützung für Farbausgabe;  Beschreibung  siehe~\cite{grfguide} und~\cite{grfcomp}.\\\midrule
+fontenc & Erlaubt die Verwendung von Schriften mit  unterschiedlicher Kodierung (Zeichenvorrat, Anordnung).\\\midrule
+fancyhdr & Flexible Gestaltung von Kopf- und Fußzeilen.\\\midrule
+geometry & Manipulation des Seitenlayouts.\\\midrule
+graphicx & Einbindung von extern erzeugten Graphiken.  Die umfangreichen Möglichkeiten dieses Pakets werden 
+  in~\cite{grfguide} und~\cite{grfcomp} beschrieben. \\\midrule
+hyperref & Ermöglicht Hyperlinks zwischen Textstellen und zu
   externen Dokumenten; besonders sinnvoll einsetzbar, 
   wenn mit \TeX\ eine Ausgabedatei im \textsc{pdf}- oder \textsc{html}-Format 
-  erzeugt wird.
-\item[inputenc] Deklaration der Zeichenkodierung im
-  Eingabefile.
-\item[latexsym] Erlaubt einige besondere Symbole wie~\(\Box\),
-  die mit \LaTeX~2.09 standardmäßig verfügbar waren.
-\item[longtable]
-  für Tabellen über mehrere Seiten mit automatischem Seitenumbruch.
-\item[makeidx] Unterstützt das Erstellen eines Index.
-\item[multicol] Mehrspaltiger Satz mit Kolumnenausgleich.
-%\item[showkeys] Druckt die Namen aller verwendeten \verb:\label:s,
-%  \verb:\ref:s und \verb:\pageref:s im Text aus.
-%\item[tabularx] für Tabellen mit automatisch an den vorhandenen
-%  Platz angepasster Breite der Spalten.
-\item[textcomp] Bindet Schriften mit zusätzlichen Textsymbolen ein.
-%\item[verbatim] Flexible Erweiterung der \texttt{verbatim}-Umgebung.
-\end{ttdescription}
-\end{lminipage}
-\end{table}
+  erzeugt wird.\\\midrule
+selinput & Deklaration der Zeichenkodierung im
+  Eingabefile.\\\midrule
+longtable &   für Tabellen über mehrere Seiten mit automatischem Seitenumbruch.\\\midrule
+imakeidx & Unterstützt das Erstellen eines Index.\\\midrule
+multicol & Mehrspaltiger Satz mit Kolumnenausgleich.\\\midrule
+tabularx & für Tabellen mit automatisch an den vorhandenen Platz angepasster Breite der Spalten. \\\midrule
+textcomp & Bindet Schriften mit zusätzlichen Textsymbolen ein.\\\midrule
+listings & Flexible Erweiterung der \texttt{verbatim}-Umgebung.\\
+\end{longtable}
 
 
 \subsection{Eingabezeichensatz}\label{inputenc}
