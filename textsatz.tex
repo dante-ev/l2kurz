@@ -115,14 +115,11 @@ angeführten Wörter jedesmal an den und nur an den mit
 Er sollte im Vorspann stehen und eignet sich
 \emph{nur} für Wörter, die keine Umlaute, scharfes~s,
 Ziffern oder sonstige Sonderzeichen enthalten.\todo{PG: direkt kodierte Umlate sind in Ordnung}
-\exa
-~
-\exb
-\begin{verbatim}
+\begin{example}
 \hyphenation{ Eingabe-file
    Eingabe-files FORTRAN }
-\end{verbatim}
-\exc
+\end{example}
+
  
 Der Befehl~\lstinline|\-| innerhalb eines Wortes bewirkt, dass dieses
 Wort dieses eine Mal nur an den mit~\lstinline|\-|
@@ -183,6 +180,12 @@ bergauf und "~ab
 \end{verbatim}
 \exc
 
+\begin{LTXexample}
+Dru"cker
+Ro"lladen
+x"~beliebig
+bergauf und "~ab
+\end{LTXexample}
 
 \subsection{Wortabstand} \label{abstaende}
  
@@ -209,22 +212,16 @@ z.\,B.\ in Abkürzungen vorkommt oder zwischen Zahlenwert und Maßeinheit.
 
 Der Befehl~\lstinline|\@| vor einem Punkt bedeutet, dass dieser Punkt
 einen Satz beendet, obwohl davor ein Großbuchstabe steht.
-\exa
-Das betrifft u.\,a.\ auch die \\
-wissenschaftl.\ Mitarbeiter. \\
-Dr.~Partl wohnt im 1.~Stock. \\
-\dots\ 5\,cm breit. \\
-Ich brauche Vitamin~C\@. Du nicht?
-\exb
-\begin{verbatim}
+
+\begin{LTXexample}
 Das betrifft u.\,a.\ auch die \\
 wissenschaftl.\ Mitarbeiter. \\
 Dr.~Partl wohnt im 1.~Stock. \\
 \dots\ 5\,cm breit. \\
 Ich brauche Vitamin~C\@.
 Du nicht?
-\end{verbatim}
-\exc
+\end{LTXexample}
+
  
 Außerdem gibt es die Möglichkeit, mit dem Befehl
 \lstinline|\frenchspacing|
@@ -339,15 +336,12 @@ ist, werden Punkte und Kommata im Buchdruck eng an das
 vorangehende Zeichen gesetzt. Für Fortsetzungspunkte (drei
 Punkte mit geeignetem Abstand) gibt es daher einen eigenen Befehl
 \lstinline|\ldots| oder~\lstinline|\dots|.
-\exa
+
+\begin{LTXexample}
 Nicht so ... sondern so: \\
 Wien, Graz, \dots
-\exb
-\begin{verbatim}
-Nicht so ... sondern so: \\
-Wien, Graz, \dots
-\end{verbatim}
-\exc
+\end{LTXexample}
+
  
 \subsubsection{Ligaturen}
  
@@ -362,25 +356,19 @@ diese  Ligaturen und Unterschneidungen (kerning)
 unterdrückt werden, wenn die betreffenden Buchstabenkombinationen 
 nach Vorsilben oder bei zusammengesetzten Wörtern zwischen den
 Wortteilen auftreten.  Dazu dient der Befehl~\lstinline|\/|.
-\exa
+
+\begin{LTXexample}
 Nicht Auflage (Au-fl-age) \\
 sondern Auf\/lage (Auf-lage)
-\exb
-\begin{verbatim}
-Nicht Auflage (Au-fl-age) \\
-sondern Auf\/lage (Auf-lage)
-\end{verbatim}
-\exc
+\end{LTXexample}
+
 Mit dem Paket \texttt{german} steht zusätzlich der\todo{MD: überarbeiten \\PG: was soll deiner Meinung nach hier herein?}
 Befehl~\lstinline:"|: zur Verfügung, der gleichzeitig eine
 Trennhilfe darstellt.
-\exa
+
+\begin{LTXexample}
 Auf"|lage (Auf-lage)
-\exb
-\begin{verbatim}
-Auf"|lage (Auf-lage)
-\end{verbatim}
-\exc
+\end{LTXexample}
 
 \subsubsection{Symbole, Akzente und besondere Buchstaben}\label{symbole}
 
@@ -441,6 +429,15 @@ Stra\ss{}e.
 \textcircled{x}
 \end{verbatim}
 \exc
+
+
+\begin{LTXexample}
+H\^otel, na\"\i ve, sm\o rebr\o d. \\
+Die h\"assliche Stra\ss{}e.\\
+!`Se\~norita!\\
+\textcircled{x}
+\end{LTXexample}
+
 
 \begin{table}[tbp]
 \caption{Akzente und spezielle Buchstaben} \label{akzente}
