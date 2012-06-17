@@ -3,11 +3,11 @@
 \subsection{Kopf- und Fußzeilen} 
 Der Inhalt von Kopf- und  Fußzeilen kann mit dem Befehl
 \begin{beispiel}
-\verb|\pagestyle{|\textit{style}\verb|}|
+\lstinline|\pagestyle{|\textit{style}\lstinline|}|
 \end{beispiel}
 festgelegt werden:
  
-Mit \verb|\pagestyle{plain}| steht
+Mit \lstinline|\pagestyle{plain}| steht
 die Seitennummer zentriert in der Fußzeile; 
 das ist die Voreinstellung und braucht normalerweise nicht explizit 
 angegeben zu werden.
@@ -15,18 +15,18 @@ Mit dem Stil \texttt{headings} stehen Kapitel-Überschrift und
 Seitennummer in der Kopfzeile.
 Mit \texttt{empty} sind Kopf- und Fußzeile leer.  Der Befehl
 \begin{beispiel}
-\verb|\thispagestyle{|\textit{style}\verb|}|
+\lstinline|\thispagestyle{|\textit{style}\lstinline|}|
 \end{beispiel}
 gilt entsprechend nur für die aktuelle Seite.  Einige Befehle, wie etwa
-\verb|\chapter|, ändern den Stil der aktuellen Seite.  Diese Änderungen 
-kann man durch einen nachfolgenden \verb|\thispagestyle|-Befehl aufheben.
+\lstinline|\chapter|, ändern den Stil der aktuellen Seite.  Diese Änderungen 
+kann man durch einen nachfolgenden \lstinline|\thispagestyle|-Befehl aufheben.
 
 Im \manual\ ist angegeben, wie man das Aussehen der Kopf- und Fußzeilen
 außerdem mit dem Seitenstil 
-\verb|myheadings| und den Befehlen
-\verb|\markboth|,
-\verb|\markright| und
-\verb|\pagenumbering|
+\lstinline|myheadings| und den Befehlen
+\lstinline|\markboth|,
+\lstinline|\markright| und
+\lstinline|\pagenumbering|
 beeinflussen kann.
 
 \subsection{Gleitobjekte} \label{floats}
@@ -41,23 +41,23 @@ Umgebungen \texttt{figure} und \texttt{table}.
 Diese Umgebung ist für die Behandlung von Abbildungen gedacht.
 Tatsächlich spielt es aber keine Rolle, \emph{wie} diese erzeugt wurden:
 Alles, was zwischen
-\verb|\begin{figure}| und \verb|\end{figure}|
+\lstinline|\begin{figure}| und \lstinline|\end{figure}|
 steht, wird automatisch an eine Stelle
 gesetzt, wo es komplett hinpasst, ohne durch einen Seitenwechsel
 zerrissen zu werden.
 \todo[inline]{PG: mehrfache Durchläufe notwendig bei \cs{ref} und \cs{label}}
 
-Mit \verb|\caption{...}| setzt man die Bezeichnung der Abbildung.
+Mit \lstinline|\caption{...}| setzt man die Bezeichnung der Abbildung.
 Dabei ist nur der Text anzugeben, das Wort "`Abbildung"' und die
 fortlaufende Nummer werden von \LaTeX\ hinzugefügt.
 Bei Abbildungen ist es allgemein üblich, die Bezeichnung
 \emph{unter} das Bild zu setzen.
-Mit \verb|\label| und \verb|\ref| kann man die Nummer der
-Abbildung im Text ansprechen, mit \verb|\pageref| ihre Seitenzahl.
-Der Befehl \verb:\label: muss dabei \emph{nach} dem \verb:\caption:-Befehl
+Mit \lstinline|\label| und \lstinline|\ref| kann man die Nummer der
+Abbildung im Text ansprechen, mit \lstinline|\pageref| ihre Seitenzahl.
+Der Befehl \lstinline:\label: muss dabei \emph{nach} dem \lstinline:\caption:-Befehl
 stehen, sonst stimmt die Nummerierung nicht!
 
-Im folgenden Beispiel wird einfach mit dem Befehl \verb|\vspace|
+Im folgenden Beispiel wird einfach mit dem Befehl \lstinline|\vspace|
 (siehe Abschnitt \ref{vabstaende})
 leerer Raum für ein später einzusetzendes Bild gelassen\todo{PG: besseres Beispiel als ein so leerer weißer Fleck?}:
 \todo[inline]{PG: hier funktioniert die Umgebung LTXexample nicht, weil ein float definiert wird.}
@@ -110,7 +110,7 @@ Eine Abbildung, die nicht platziert werden konnte, wird von
 \LaTeX\ immer weiter nach hinten verschoben (und schiebt alle
 weiteren Abbildungen vor sich her!), bis ein neues Kapitel
 beginnt, das Dokument zu Ende ist, oder der Befehl
-\verb|\clearpage| eingegeben wird.  
+\lstinline|\clearpage| eingegeben wird.  
 
 
 Es gibt noch einen weiteren Platzierungsparameter, 
@@ -127,9 +127,9 @@ anderen Parameter benutzt werden.
 
 Damit Tabellen nicht auf einen Seitenwechsel fallen,
 können sie, analog zu Abbildungen, zwischen
-\verb|\begin{table}| und \verb|\end{table}| gesetzt werden.
+\lstinline|\begin{table}| und \lstinline|\end{table}| gesetzt werden.
 Die Befehle
-\verb|\caption|, \verb|\label|, \verb|\ref| und \verb|\pageref|
+\lstinline|\caption|, \lstinline|\label|, \lstinline|\ref| und \lstinline|\pageref|
 wirken entsprechend.
 Hier sind beide möglichen Konventionen verbreitet: Die
 Bezeichnung wird entweder immer \emph{über} oder immer

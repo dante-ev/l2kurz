@@ -9,8 +9,8 @@
 \subsection{Allgemeines}
  
 Mathematische Textteile innerhalb eines Absatzes werden zwischen
-\verb|\(| und~\verb|\)| oder zwischen \verb|$| und~\verb|$| oder
-zwischen \verb|\begin{math}| und \verb|\end{math}|
+\lstinline|\(| und~\lstinline|\)| oder zwischen \lstinline|$| und~\lstinline|$| oder
+zwischen \lstinline|\begin{math}| und \lstinline|\end{math}|
 eingeschlossen.
 Als mathematische Texte gelten sowohl komplette mathematische
 Formeln als auch einzelne Variablennamen, die sich auf Formeln
@@ -44,10 +44,10 @@ Mit \(\heartsuit\)-lichen
  
 Größere mathematische Formeln oder Gleichungen setzt man besser
 in eigene Zeilen. Wenn sie \emph{keine} Gleichungsnummer erhalten 
-sollen, stellt man sie dazu zwischen \verb|\begin{displaymath}| und
-\verb|\end{displaymath}| oder zwischen \verb|\[| und~\verb|\]|; 
+sollen, stellt man sie dazu zwischen \lstinline|\begin{displaymath}| und
+\lstinline|\end{displaymath}| oder zwischen \lstinline|\[| und~\lstinline|\]|; 
 wenn sie eine Gleichungsnummer erhalten sollen, stellt man sie
-zwischen \verb|\begin{equation}| und \verb|\end{equation}|.
+zwischen \lstinline|\begin{equation}| und \lstinline|\end{equation}|.
 
 \exa
 Seien \(a\) und \(b\) die Katheten
@@ -69,7 +69,7 @@ c = \sqrt{  a^{2}+b^{2}  }
 \end{verbatim}
 \exc
 
-Mit \verb|\label| und \verb|\ref| kann man die Gleichungsnummern
+Mit \lstinline|\label| und \lstinline|\ref| kann man die Gleichungsnummern
 im Text ansprechen.
 
 \exa
@@ -99,7 +99,7 @@ Text-Modus vor allem durch folgende Punkte:
 \item Leerstellen und Zeilenwechsel haben bei der Eingabe keine
   Bedeutung, alle Abstände werden nach der Logik der
   mathematischen Ausdrücke automatisch bestimmt oder müssen
-  durch spezielle Befehle wie \verb|\,| oder~\verb|\qquad|
+  durch spezielle Befehle wie \lstinline|\,| oder~\lstinline|\qquad|
   angegeben werden.
 \exa
 \begin{equation}
@@ -120,7 +120,7 @@ Text-Modus vor allem durch folgende Punkte:
   zusätzlichem Abstand).  Will man innerhalb eines
   mathematischen Textes normalen Text (in aufrechter Schrift, mit
   Wortabständen) setzen, muss man diesen in
-  \verb|\textnormal{...}| einschließen.
+  \lstinline|\textnormal{...}| einschließen.
 \exa
 \begin{equation}
 x^{2} \geq 0\qquad
@@ -149,10 +149,10 @@ Kapitel~\ref{symbols}.
  
 \bigskip
 
-Kleine \textbf{griechische Buchstaben} werden als \verb|\alpha|,
-\verb|\beta|, \verb|\gamma|, \verb|\delta|, usw.\ eingegeben,
-große griechische Buchstaben als \verb|\mathrm{A}|,
-\verb|\mathrm{B}|, \verb|\Gamma|, \verb|\Delta|, usw.
+Kleine \textbf{griechische Buchstaben} werden als \lstinline|\alpha|,
+\lstinline|\beta|, \lstinline|\gamma|, \lstinline|\delta|, usw.\ eingegeben,
+große griechische Buchstaben als \lstinline|\mathrm{A}|,
+\lstinline|\mathrm{B}|, \lstinline|\Gamma|, \lstinline|\Delta|, usw.
 
 \exa
 \(\lambda, \xi, \pi, \mu,
@@ -187,7 +187,7 @@ bietet \LaTeX\ eine Auswahl von mathematischen \textbf{Alphabeten} an:
 \(\mathcal{ABC}\)
 \end{verbatim}
 \exc
-Die kalligraphischen Buchstaben (\verb:\mathcal:) gibt es nur als
+Die kalligraphischen Buchstaben (\lstinline:\mathcal:) gibt es nur als
 Großbuchstaben. Mit dem Paket \texttt{amsymb} \cite{ch8} stehen
 auch Alphabete für Mengenzeichen und Frakturschrift zur Verfügung.
 Lokal können noch weitere installiert sein -- siehe \local.
@@ -195,8 +195,8 @@ Lokal können noch weitere installiert sein -- siehe \local.
 
 \bigskip
 
-\textbf{Exponenten und Indizes} können mit den Zeichen \verb|^|
-und \verb|_| hoch- bzw.\ tiefgestellt werden.
+\textbf{Exponenten und Indizes} können mit den Zeichen \lstinline|^|
+und \lstinline|_| hoch- bzw.\ tiefgestellt werden.
 \exa
 \(a_{1}\) \qquad
 \(x^{2}\) \qquad
@@ -211,8 +211,8 @@ und \verb|_| hoch- bzw.\ tiefgestellt werden.
 \end{verbatim}
 \exc
  
-Das \textbf{Wurzelzeichen} wird mit \verb|\sqrt|, \textit{n}-te
-Wurzeln werden mit \verb|\sqrt[|\textit{n}\verb|]| eingegeben.
+Das \textbf{Wurzelzeichen} wird mit \lstinline|\sqrt|, \textit{n}-te
+Wurzeln werden mit \lstinline|\sqrt[|\textit{n}\lstinline|]| eingegeben.
 Die Größe des Wurzelzeichens wird von \LaTeX\ automatisch
 gewählt.
 \exa
@@ -227,7 +227,7 @@ gewählt.
 \end{verbatim}
 \exc
  
-Die Befehle \verb|\overline| und \verb|\underline| bewirken
+Die Befehle \lstinline|\overline| und \lstinline|\underline| bewirken
 \textbf{waagrechte Striche} direkt über bzw.\ unter einem
 Ausdruck.
 \exa
@@ -238,7 +238,7 @@ Ausdruck.
 \end{verbatim}
 \exc
  
-Die Befehle \verb|\overbrace| und \verb|\underbrace| bewirken
+Die Befehle \lstinline|\overbrace| und \lstinline|\underbrace| bewirken
 \textbf{waagrechte Klammern} über bzw.\ unter einem Ausdruck.
 \exa
 \(\underbrace{a+b+\cdots+z}_{26}\)
@@ -252,9 +252,9 @@ Um mathematische \textbf{Akzente} wie Pfeile oder Schlangen auf
 Variablen zu setzen, gibt es die in Tabelle~\ref{mathakz} auf
 Seite~\pageref{mathakz} angeführten Befehle.
 Längere Tilden und Dacherln, die sich über mehrere (bis zu~3)
-Zeichen erstrecken können, erhält man mit \verb|\widetilde|
-bzw.\ \verb|\widehat|.
-Ableitungszeichen werden mit \verb|'| (Apostroph) eingegeben.\todo{PG: Hier würde ich statt displaymath auf \cs{[} und \cs{]} zurückgreifen, ist kürzer und besser lesbar (und wird in der Praxis vermutlich mehr benutzt?)}
+Zeichen erstrecken können, erhält man mit \lstinline|\widetilde|
+bzw.\ \lstinline|\widehat|.
+Ableitungszeichen werden mit \lstinline|'| (Apostroph) eingegeben.\todo{PG: Hier würde ich statt displaymath auf \cs{[} und \cs{]} zurückgreifen, ist kürzer und besser lesbar (und wird in der Praxis vermutlich mehr benutzt?)}
 \exa
 \begin{displaymath}
 y=x^{2} \qquad
@@ -283,8 +283,8 @@ Funktionen zur Verfügung:
 \arg      \coth   \dim   \inf   \liminf  \max     \sin   \tanh
 \end{verbatim}
 Für die Modulo-Funktion gibt es zwei verschiedene Befehle:
-\verb|\bmod| für den binären Operator \(a \bmod b\) und
-\verb|\pmod{...}| für die Angabe in der Form \(x\equiv a
+\lstinline|\bmod| für den binären Operator \(a \bmod b\) und
+\lstinline|\pmod{...}| für die Angabe in der Form \(x\equiv a
 \pmod{b}\).
  
 \exa
@@ -302,8 +302,8 @@ Für die Modulo-Funktion gibt es zwei verschiedene Befehle:
 \exc
  
 Ein \textbf{Bruch} (fraction) wird mit dem Befehl
-\verb|\frac{...}{...}| gesetzt.  Für einfache Brüche kann man
-aber auch den Operator~\verb|/| verwenden.
+\lstinline|\frac{...}{...}| gesetzt.  Für einfache Brüche kann man
+aber auch den Operator~\lstinline|/| verwenden.
 \exa
 \(1\frac{1}{2}\)~Stunden
 \begin{displaymath}
@@ -323,8 +323,8 @@ x^{ 1/2 }
 \exc
 
 \textbf{Binomial-Koeffizienten} können in der Form
-\verb|{...\choose...}| gesetzt werden.
-Mit dem Befehl~\verb|\atop| erhält man das Gleiche ohne
+\lstinline|{...\choose...}| gesetzt werden.
+Mit dem Befehl~\lstinline|\atop| erhält man das Gleiche ohne
 Klammern.
 \exa
 \begin{displaymath}
@@ -342,18 +342,18 @@ Klammern.
 
 \medskip
 
-Das \textbf{Integralzeichen} wird mit \verb|\int| eingegeben, das
-\textbf{Summenzeichen} mit \verb|\sum|.
-Die obere und untere Grenze wird mit \verb|^| bzw.~\verb|_| wie
+Das \textbf{Integralzeichen} wird mit \lstinline|\int| eingegeben, das
+\textbf{Summenzeichen} mit \lstinline|\sum|.
+Die obere und untere Grenze wird mit \lstinline|^| bzw.~\lstinline|_| wie
 beim \mbox{Hoch-}\slash Tiefstellen angegeben.
  
 Normalerweise werden die Grenzen neben das Integralzeichen
 gesetzt (um Platz zu sparen), durch Einfügen des Befehls
-\verb|\limits| wird erreicht, dass die Grenzen oberhalb und
+\lstinline|\limits| wird erreicht, dass die Grenzen oberhalb und
 unterhalb des Integralzeichens gesetzt werden.
  
 Beim Summenzeichen hingegen werden die Grenzen bei der Angabe von
-\verb|\nolimits| oder im laufenden Text neben das Summenzeichen
+\lstinline|\nolimits| oder im laufenden Text neben das Summenzeichen
 gesetzt, ansonsten aber unter- und oberhalb.
 \exa
 \begin{displaymath}
@@ -375,11 +375,11 @@ Für \textbf{Klammern} und andere Begrenzer gibt es in \TeX\
 viele verschiedene Symbole
 (z.\,B.~\([\;\langle\;\|\;\updownarrow\)).
 Runde und eckige Klammern können mit den entsprechenden Tasten
-eingegeben werden, geschwungene mit~\verb|\{|, die anderen mit
-speziellen Befehlen (z.\,B.~\verb|\updownarrow|).
+eingegeben werden, geschwungene mit~\lstinline|\{|, die anderen mit
+speziellen Befehlen (z.\,B.~\lstinline|\updownarrow|).
  
-Setzt man den Befehl \verb|\left| vor öffnende Klammern und den
-Befehl \verb|\right| vor schließende, so wird automatisch die
+Setzt man den Befehl \lstinline|\left| vor öffnende Klammern und den
+Befehl \lstinline|\right| vor schließende, so wird automatisch die
 richtige Größe gewählt.\todo{MD: in gleicher Zeile!\\PG: ja. Das merkt der Anwender aber auch, wenn er es falsch macht.}
 \exa
 \begin{displaymath}
@@ -397,11 +397,11 @@ richtige Größe gewählt.\todo{MD: in gleicher Zeile!\\PG: ja. Das merkt der An
  
 In manchen Fällen möchte man die Größe der Klammern lieber
 selbst festlegen, dazu sind die Befehle
-\verb|\bigl|,
-\verb|\Bigl|,
-\verb|\biggl| und
-\verb|\Biggl| anstelle von \verb|\left|
-und analog \verb|\bigr| etc.\ anstelle von \verb|\right|
+\lstinline|\bigl|,
+\lstinline|\Bigl|,
+\lstinline|\biggl| und
+\lstinline|\Biggl| anstelle von \lstinline|\left|
+und analog \lstinline|\bigr| etc.\ anstelle von \lstinline|\right|
 anzugeben.
 \exa
 \begin{displaymath}
@@ -417,13 +417,13 @@ anzugeben.
  
 Um in Formeln \textbf{3~Punkte} (z.\,B.\ für \(1,2,\ldots,n\))
 auszugeben, gibt es die Befehle
-\verb|\ldots| und \verb|\cdots|.
-\verb|\ldots| setzt die Punkte auf die Grundlinie (low),
-\verb|\cdots| setzt sie in die Mitte der Zeilenhöhe
+\lstinline|\ldots| und \lstinline|\cdots|.
+\lstinline|\ldots| setzt die Punkte auf die Grundlinie (low),
+\lstinline|\cdots| setzt sie in die Mitte der Zeilenhöhe
 (centered).
 Außerdem gibt es die Befehle
-\verb|\vdots| für vertikal und
-\verb|\ddots| für diagonal angeordnete Punkte.
+\lstinline|\vdots| für vertikal und
+\lstinline|\ddots| für diagonal angeordnete Punkte.
 \exa
 \begin{displaymath}
 x_{1},\ldots,x_{n} \qquad
@@ -444,10 +444,10 @@ x_{1}+\cdots+x_{n}
 Wenn man mit den von \TeX\ gewählten \textbf{Abständen}
 innerhalb von Formeln nicht zufrieden ist, kann man sie mit
 expliziten Befehlen verändern. Die wichtigsten sind
-\verb|\,| für einen sehr kleinen Abstand,
-\verb*|\ | für einen mittleren,
-\verb|\quad| und \verb|\qquad| für große Abstände sowie\todo{MD: \texttt{\string\quad=1em \string\qquad=2em} . Sollte erwähnt werden, denn so erkennt man die Schriftabhängigkeit\\PG: OK}
-\verb|\!| für die Verkleinerung eines Abstands.
+\lstinline|\,| für einen sehr kleinen Abstand,
+\lstinline|\ | für einen mittleren,
+\lstinline|\quad| und \lstinline|\qquad| für große Abstände sowie\todo{MD: \texttt{\string\quad=1em \string\qquad=2em} . Sollte erwähnt werden, denn so erkennt man die Schriftabhängigkeit\\PG: OK}
+\lstinline|\!| für die Verkleinerung eines Abstands.
 \exa
 \begin{displaymath}
 F_{n} = F_{n-1} + F_{n-2}
@@ -486,7 +486,7 @@ F_{n} = F_{n-1} + F_{n-2}
 Für \textbf{Matrizen} u.\,ä.\ gibt es die
 \texttt{array}-Umgebung, die ähnlich wie die
 \texttt{tabular}-Umgebung funktioniert.
-Der Befehl~\verb|\\| trennt die Zeilen.
+Der Befehl~\lstinline|\\| trennt die Zeilen.
 \exa
 \begin{displaymath}
 \mathbf{X} =
@@ -520,11 +520,11 @@ erhalten sollen, kann man eine \texttt{array}-Umgebung innerhalb
 der \texttt{equation}-Umgebung verwenden.
 
 Die Umgebungen \texttt{eqnarray} und \texttt{eqnarray*}
-funktionieren wie eine 3-spaltige Tabelle der Form~\verb|{rcl}|,
+funktionieren wie eine 3-spaltige Tabelle der Form~\lstinline|{rcl}|,
 wobei die mittlere Spalte für das Gleichheits- oder
 Ungleichheitszeichen verwendet wird, nach dem die Zeilen
 ausgerichtet werden sollen.
-Der Befehl~\verb|\\| trennt die Zeilen.
+Der Befehl~\lstinline|\\| trennt die Zeilen.
 \exa
 \begin{eqnarray}
 f(x) & = & \cos x       \\
@@ -586,9 +586,9 @@ Varianten:
 \end{eqnarray}
 \end{verbatim}
 \exc
-Der Befehl \verb|\nonumber| bewirkt, dass an diese Stelle keine
+Der Befehl \lstinline|\nonumber| bewirkt, dass an diese Stelle keine
 Gleichungsnummer gesetzt wird.
-Der Befehl \verb|\lefteqn| ermöglicht Ausnahmen von der
+Der Befehl \lstinline|\lefteqn| ermöglicht Ausnahmen von der
 Spaltenaufteilung innerhalb \texttt{eqnarray}. 
 Genauere Informationen enthält das \manual.
 

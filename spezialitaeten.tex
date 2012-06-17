@@ -16,15 +16,15 @@ werden.
 
 Um in einem Schriftstück größere Zeilenabstände zu verwenden,
 als es in der Dokumentklasse vorgesehen ist, gibt es in
-\LaTeX\ den Befehl \verb:\linespread:, der im Vorspann stehen sollte
+\LaTeX\ den Befehl \lstinline:\linespread:, der im Vorspann stehen sollte
 und dann auf das gesamte Dokument wirkt.  Das kann beispielsweise
 dann notwendig werden, wenn eine Schrift benutzt wird, die eine größerer x-Höhe 
 hat als die voreingestellte Computer-Modern.  Für die Schrift "`Palatino"' etwa
 ist eine Vergrößerung des Zeilenabstandes um ca.\ 5\,\% angemessen:\todo{MD: Paket setspace\\PG: gut}
 
 \begin{quote}
-\verb|\usepackage{mathpazo}|\\
-\verb|\linespread{1.05}|
+\lstinline|\usepackage{mathpazo}|\\
+\lstinline|\linespread{1.05}|
 \end{quote}
 
  
@@ -37,11 +37,11 @@ automatisch gesetzt.
 Sonstigen horizontalen Abstand kann man mit dem Befehl
 \begin{beispiel}
 \todo{MD: lieber die Sternvariante als Standard empfehlen\newline PG: OK, ich hab' davon keine Ahnung}
-\verb|\hspace{|\textit{länge}\verb|}|
+\lstinline|\hspace{|\textit{länge}\lstinline|}|
 \end{beispiel}
 einfügen.
 Wenn der Abstand auch am Beginn oder Ende einer Zeile
-erhalten bleiben soll, muss \verb|\hspace*| statt \verb|\hspace|
+erhalten bleiben soll, muss \lstinline|\hspace*| statt \lstinline|\hspace|
 geschrieben werden.
 Die Längenangabe besteht im einfachsten Fall aus einer Zahl
 und einer Einheit.  Die wichtigsten Einheiten sind in
@@ -72,17 +72,17 @@ besonderer horizontaler Abstände.
 \begin{lminipage}{13cm}
 \begin{tabbing}
 \texttt{xenspace}\qquad \= \kill
-\verb|\,|       \> ein sehr kleiner Abstand (siehe auch Abschnitt~\ref{abstaende})\\
-\verb|\enspace| \> so breit wie eine Ziffer \\
-\verb|\quad|    \> so breit, wie ein Buchstabe hoch ist
+\lstinline|\,|       \> ein sehr kleiner Abstand (siehe auch Abschnitt~\ref{abstaende})\\
+\lstinline|\enspace| \> so breit wie eine Ziffer \\
+\lstinline|\quad|    \> so breit, wie ein Buchstabe hoch ist
                    ("`weißes Quadrat"') \\
-\verb|\qquad|   \> doppelt so breit wie ein \verb|\quad| \\
-\verb|\hfill|   \> ein Abstand, der sich von 0 bis \(\infty\)
+\lstinline|\qquad|   \> doppelt so breit wie ein \lstinline|\quad| \\
+\lstinline|\hfill|   \> ein Abstand, der sich von 0 bis \(\infty\)
                    ausdehnen kann.
 \end{tabbing}
 \end{lminipage}
 \end{table}
-Der Befehl \verb|\hfill|\todo{MD: Oder \texttt{\string\hspace*\{\string\fill\}} kann dazu dienen, einen vorgegebenen}
+Der Befehl \lstinline|\hfill|\todo{MD: Oder \texttt{\string\hspace*\{\string\fill\}} kann dazu dienen, einen vorgegebenen}
 Platz auszufüllen.
 \exa
 \raggedright
@@ -104,13 +104,13 @@ Die Abstände zwischen Absätzen, Kapiteln usw.\ werden von
 In Spezialfällen kann man zusätzlichen Abstand
 \emph{zwischen zwei Absätzen} mit dem Befehl
 \begin{beispiel}
-\verb|\vspace{|\textit{länge}\verb|}|
+\lstinline|\vspace{|\textit{länge}\lstinline|}|
 \end{beispiel}
 bewirken.
 Dieser Befehl sollte immer zwischen zwei Leerzeilen angegeben
 werden.
 Wenn der Abstand auch am Beginn oder Ende einer Seite erhalten
-bleiben soll, muss \verb|\vspace*| statt \verb|\vspace|
+bleiben soll, muss \lstinline|\vspace*| statt \lstinline|\vspace|
 geschrieben werden.
 Die Befehle in Tabelle~\ref{vspace} sind Abkürzungen für
 bestimmte vertikale Abstände.
@@ -119,15 +119,15 @@ bestimmte vertikale Abstände.
 \begin{lminipage}{13cm}
 \begin{tabbing}
 \texttt{xsmallskip}\qquad \= \kill
-\verb|\smallskip| \> etwa \(\nfrac{1}{4}\) Zeile \\
-\verb|\medskip|   \> etwa \(\nfrac{1}{2}\) Zeile \\
-\verb|\bigskip|   \> etwa 1 Zeile \\
-\verb|\vfill|     \> ein Abstand, der sich von 0 bis \(\infty\)
+\lstinline|\smallskip| \> etwa \(\nfrac{1}{4}\) Zeile \\
+\lstinline|\medskip|   \> etwa \(\nfrac{1}{2}\) Zeile \\
+\lstinline|\bigskip|   \> etwa 1 Zeile \\
+\lstinline|\vfill|     \> ein Abstand, der sich von 0 bis \(\infty\)
                      ausdehnen kann
 \end{tabbing}
 \end{lminipage}
 \end{table}
-Der Befehl \verb|\vfill| \todo{MD: siehe hspace\\PG: gut} in Verbindung mit \verb|\newpage|
+Der Befehl \lstinline|\vfill| \todo{MD: siehe hspace\\PG: gut} in Verbindung mit \lstinline|\newpage|
 kann dazu dienen, Text an den unteren Rand einer Seite zu setzen
 oder vertikal zu zentrieren.  Beispielsweise enthält der Quelltext
 für die zweite Seite der vorliegenden Beschreibung:
@@ -143,7 +143,7 @@ Dieses Dokument wurde mit \LaTeX{} gesetzt.
  
 Zusätzlichen Abstand zwischen zwei Zeilen \emph{innerhalb}
 eines Absatzes oder einer Tabelle erreicht man mit dem Befehl
-\verb|\\[|\textit{länge}\verb|]|.
+\lstinline|\\[|\textit{länge}\lstinline|]|.
 \exa
 Albano Cesara \\
 Lindenallee 10 \\[1.5ex]
@@ -164,7 +164,7 @@ Lindenallee 10 \\[1.5ex]
 \todo[inline]{PG: Briefe würde ich komplett rauslassen. Das macht doch eh kein Anfänger!\newline MD: Meine Meinung}
 
 Mit der Dokumentklasse \texttt{letter} kann man zwischen
-\verb|\begin{document}| und \verb|\end{document}| einen oder
+\lstinline|\begin{document}| und \lstinline|\end{document}| einen oder
 mehrere Briefe schreiben.
 Abbildung~\ref{brief} enthält ein Beispiel für einen Brief.
 
@@ -196,14 +196,14 @@ herzlichen Dank für die Zusendung ...
 \caption{Brief von H.\,P. an E.\,S.} \label{brief}
 \end{figure}
 
-Mit dem Befehl \verb|\address| definiert man die Adresse des Absenders.
-\verb|\begin{letter}{...}| beginnt einen Brief an den im
+Mit dem Befehl \lstinline|\address| definiert man die Adresse des Absenders.
+\lstinline|\begin{letter}{...}| beginnt einen Brief an den im
 Parameter angegebenen Empfänger.
-\verb|\opening{...}| schreibt die Anrede 
-und \verb|\closing{...}| den abschließenden Gruß, 
+\lstinline|\opening{...}| schreibt die Anrede 
+und \lstinline|\closing{...}| den abschließenden Gruß, 
 an den automatisch die eingangs mit
-\verb|\signature| vereinbarte Unterschrift angefügt wird.
-\verb|\end{letter}| beendet den jeweiligen Brief.
+\lstinline|\signature| vereinbarte Unterschrift angefügt wird.
+\lstinline|\end{letter}| beendet den jeweiligen Brief.
 
 Das von der Dokumentklasse \texttt{letter} bewirkte Layout der Briefe 
 orientiert sich an amerikanischen Gepflogenheiten.
@@ -218,16 +218,16 @@ Der \local{} sollte Auskunft über diese oder andere Alternativen zu
 
 Mit der \texttt{thebibliography}-Umgebung kann man ein
 Literaturverzeichnis erzeugen.
-Darin beginnt jede Literaturangabe mit \verb|\bibitem|.
+Darin beginnt jede Literaturangabe mit \lstinline|\bibitem|.
 Als Parameter wird ein Name vereinbart, unter dem die
 Literaturstelle im Text zitiert werden kann, und
 dann folgt der Text der Literaturangabe.
 Die Nummerierung erfolgt automatisch.
-Der Parameter bei \verb|\begin{thebibliography}| gibt die
+Der Parameter bei \lstinline|\begin{thebibliography}| gibt die
 maximale Breite dieser Nummernangabe an, also z.\,B.\ 
-\verb|{99}| für maximal zweistellige Nummern.
+\lstinline|{99}| für maximal zweistellige Nummern.
 
-Im Text zitiert man die Literaturstelle dann mit dem Befehl \verb|\cite|
+Im Text zitiert man die Literaturstelle dann mit dem Befehl \lstinline|\cite|
 und dem vereinbarten Namen als Argument.
 
 
@@ -250,7 +250,7 @@ TUGboat Vol.~9, No.~1 (1988)
 \todo[inline]{PG: Wenn ich so sehe, was wir alles noch mit reinnehmen wollen, dann würde ich auf diesen Abschnitt auch verzichten.}
  
 Manche \LaTeX-Befehle "`verfrachten"' ihre Argumente an eine andere
-Stelle im Text; beispielsweise kann das Argument von \verb|\section|
+Stelle im Text; beispielsweise kann das Argument von \lstinline|\section|
 auch im Inhaltsverzeichnis und möglicherweise in der Kopfzeile auftauchen.  
 
 Bestimmte Befehle "`überstehen"' diesen Transport nicht, wenn sie
@@ -258,14 +258,14 @@ ohne besondere Maßnahmen in einem solchen "`beweglichen Argument"'
 auftreten.
 Derartige Befehle heißen "`zerbrechlich"'.  Damit sie dennoch innnerhalb
 von beweglichen Argumenten benutzt werden dürfen, 
-muss man ihnen einfach den Befehl \verb|\protect| voranstellen.
+muss man ihnen einfach den Befehl \lstinline|\protect| voranstellen.
 
 Zerbrechlich sind insbesondere alle Befehle, die ein optionales Argument
-kennen, also auch \verb|\\| (sic!),
-außerdem die Befehle \verb|\(|, \verb|\)| und \verb|\footnote|.
+kennen, also auch \lstinline|\\| (sic!),
+außerdem die Befehle \lstinline|\(|, \lstinline|\)| und \lstinline|\footnote|.
 
 Bewegliche Argumente haben, neben den Gliederungsbefehlen,
-auch der Befehl \verb|\caption| und die Umgebung \texttt{letter}.
+auch der Befehl \lstinline|\caption| und die Umgebung \texttt{letter}.
 
 
 \endinput

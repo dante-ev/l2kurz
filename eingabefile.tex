@@ -1,5 +1,5 @@
 \section{Eingabefile}
-Das Eingabefile für \LaTeX{} ist ein Textfile mit der Endung \verb+.tex+. Es 
+Das Eingabefile für \LaTeX{} ist ein Textfile mit der Endung \lstinline+.tex+. Es 
 wird mit einem Editor erstellt und enthält sowohl den Text, der gedruckt werden 
 soll, als auch die Befehle, aus denen \LaTeX\ erfährt, wie der Text gesetzt 
 werden soll.
@@ -26,7 +26,7 @@ Eine Leerzeile zwischen Textzeilen bedeutet das Ende eines Absatzes.
 \subsection{\LaTeX-Befehle und Gruppen}
  
 Die meisten \LaTeX-Befehle haben eines der beiden folgenden Formate: Entweder 
-sie beginnen mit einem Backslash~(\verb|\|) und haben dann einen nur aus 
+sie beginnen mit einem Backslash~(\lstinline|\|) und haben dann einen nur aus 
 Buchstaben bestehenden Namen, der durch ein oder mehrere Leerzeichen oder durch
 ein nachfolgendes Sonderzeichen oder eine Ziffer beendet wird; oder sie bestehen
 aus einem Backslash und genau einem Sonderzeichen oder einer 
@@ -34,7 +34,7 @@ aus einem Backslash und genau einem Sonderzeichen oder einer
      PG: ja, Ziffer können wir rausnehmen. Hier und im Satz davor.}
 Ziffer. Groß- und Kleinbuchstaben haben auch in Befehlsnamen \emph{verschiedene} 
 Bedeutung. Wenn man nach einem Befehlsnamen eine Leerstelle erhalten will, muss 
-man~\verb|{}| zur Beendigung des Befehlsnamens oder einen eigenen Befehl für die
+man~\lstinline|{}| zur Beendigung des Befehlsnamens oder einen eigenen Befehl für die
 Leerstelle verwenden.
 
 % PG: würde ich drin lassen
@@ -58,12 +58,12 @@ durch das Hinzufügen eines Sterns an den Befehlsnamen unterschieden werden.
 Geschwungene Klammern können auch dazu verwendet werden, Gruppen (\emph{groups})
 zu bilden. Die Wirkung von Befehlen, die innerhalb von Gruppen oder Umgebungen 
 (\emph{environments}) angegeben werden, endet immer mit dem Ende der Gruppe 
-bzw.\ der Umgebung.  Im obigen Beispiel ist~\verb|{}| eine leere Gruppe, die 
+bzw.\ der Umgebung.  Im obigen Beispiel ist~\lstinline|{}| eine leere Gruppe, die 
 außer der Beendigung des Befehlsnamens \texttt{today} keine Wirkung hat.
  
 \subsection{Kommentare}
  
-Alles, was hinter einem Prozentzeichen (\verb|%|) steht (bis zum Ende der 
+Alles, was hinter einem Prozentzeichen (\lstinline|%|) steht (bis zum Ende der 
 Eingabezeile), wird von \LaTeX{} ignoriert. Dies kann für Notizen des Autors 
 verwendet werden, die nicht oder noch nicht ausgedruckt werden sollen.
 \begin{LTXexample}
@@ -341,7 +341,7 @@ Text verwendet werden:
 Die folgenden Eingabezeichen haben für \LaTeX{} eine Spezialbedeutung oder sind 
 nur innerhalb von mathematischen Formeln erlaubt:
 \begin{quote}
-\verb.$ & % # _ { }  ~  ^  "  \  | < >.
+\lstinline.$ & % # _ { }  ~  ^  "  \  | < >.
 \end{quote}
 Für Zeichen, die über obige Liste hinausgehen, beispielsweise die Umlaute, sind 
 je nach Betriebssystem des verwendeten Computers unterschiedliche Kodierungen in

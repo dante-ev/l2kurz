@@ -19,7 +19,7 @@ und in der Online-Dokumentation \cite{fntguide}\todo{PG: wenigstens XeTeX und Lu
 Die in der Tabelle~\ref{sizes} angeführten Befehlen 
 wechseln die Schriftgröße.
 Sie spezifizieren die Größe relativ
-zu der von \verb:\documentclass: festgelegten Grundschrift.
+zu der von \lstinline:\documentclass: festgelegten Grundschrift.
 Ihr Wirkung reicht bis zum Ende der aktuellen Gruppe oder Umgebung.
 
 
@@ -28,16 +28,16 @@ Ihr Wirkung reicht bis zum Ende der aktuellen Gruppe oder Umgebung.
 \begin{lminipage}{10cm}
 \begin{tabbing}
 \texttt{xfootnotesizexx}\= und dann der Text \kill
-\verb|\tiny|         \> \tiny        winzig kleine Schrift \\
-\verb|\scriptsize|   \> \scriptsize  sehr kleine Schrift (wie Indizes)\\
-\verb|\footnotesize| \> \footnotesize     kleine Schrift (wie Fußnoten)\\
-\verb|\small|        \> \small            kleine Schrift \\
-\verb|\normalsize|   \> \normalsize  normale Schrift \\
-\verb|\large|        \> \large       große Schrift \\
-\verb|\Large|        \> \Large       größere Schrift \\
-\verb|\LARGE|        \> \LARGE       sehr große Schrift \\[3pt]
-\verb|\huge|         \> \huge        riesig groß \\[3pt]
-\verb|\Huge|         \> \Huge        gigantisch
+\lstinline|\tiny|         \> \tiny        winzig kleine Schrift \\
+\lstinline|\scriptsize|   \> \scriptsize  sehr kleine Schrift (wie Indizes)\\
+\lstinline|\footnotesize| \> \footnotesize     kleine Schrift (wie Fußnoten)\\
+\lstinline|\small|        \> \small            kleine Schrift \\
+\lstinline|\normalsize|   \> \normalsize  normale Schrift \\
+\lstinline|\large|        \> \large       große Schrift \\
+\lstinline|\Large|        \> \Large       größere Schrift \\
+\lstinline|\LARGE|        \> \LARGE       sehr große Schrift \\[3pt]
+\lstinline|\huge|         \> \huge        riesig groß \\[3pt]
+\lstinline|\Huge|         \> \Huge        gigantisch
 \end{tabbing}
 \end{lminipage}
 \end{table}
@@ -68,7 +68,7 @@ Für korrekte
 Zeilenabstände darf die
 schließende geschwungene Klammer also nicht zu früh kommen,
 sondern erst nach einem Absatzende, das übrigens nicht nur als
-Leerzeile, sondern auch als Befehl \verb|\par|  eingegeben werden 
+Leerzeile, sondern auch als Befehl \lstinline|\par|  eingegeben werden 
 kann.
 
 
@@ -87,7 +87,7 @@ Der Schriftstil wird in \LaTeX{} durch 3~Merkmale definiert:
 \end{description}
 Tabelle~\ref{fonts} zeigt die Befehle, mit denen diese Attribute 
 explizit beeinflusst werden können.  
-Die Befehle der Form \verb|\text...| setzen nur ihr Argument im 
+Die Befehle der Form \lstinline|\text...| setzen nur ihr Argument im 
 gewünschten  Stil.  Zu jedem dieser Befehle ist ein Gegenstück angegeben, 
 das von seinem Auf\/treten an bis zum Ende der laufenden Gruppe oder Umgebung 
 wirkt.
@@ -99,17 +99,17 @@ getrennt werden.\par
 \caption{Schriftstile} \label{fonts}
 \begin{lminipage}{10cm}
 \begin{tabbing}\small
-\verb|\textnormal|\{\textit{text}\}\qquad\=\verb|\normalfont|\qquad\=\kill
-\verb|\textrm|\{\textit{text}\}         \>\verb|\rmfamily|       \>\textrm{Antiqua}\\
-\verb|\textsf|\{\textit{text}\}         \>\verb|\sffamily|       \>\textsf{Serifenlose}\\
-\verb|\texttt|\{\textit{text}\}         \>\verb|\ttfamily|       \>\texttt{Maschinenschrift}\\[1ex]
-\verb|\textmd|\{\textit{text}\}         \>\verb|\mdseries|       \>\textmd{normal}\\
-\verb|\textbf|\{\textit{text}\}         \>\verb|\bfseries|       \>\textbf{fett, breiter laufend}\\[1ex]
-\verb|\textup|\{\textit{text}\}         \>\verb|\upshape|        \>\textup{aufrecht}\\
-\verb|\textsl|\{\textit{text}\}         \>\verb|\slshape|        \>\textsl{geneigt}\\
-\verb|\textit|\{\textit{text}\}         \>\verb|\itshape|        \>\textit{kursiv}\\
-\verb|\textsc|\{\textit{text}\}         \>\verb|\scshape|        \>\textsc{Kapitälchen}\\[1ex]
-\verb|\textnormal|\{\textit{text}\}     \>\verb|\normalfont|     \>\textnormal{Die Grundschrift des Dokuments}
+\lstinline|\textnormal|\{\textit{text}\}\qquad\=\lstinline|\normalfont|\qquad\=\kill
+\lstinline|\textrm|\{\textit{text}\}         \>\lstinline|\rmfamily|       \>\textrm{Antiqua}\\
+\lstinline|\textsf|\{\textit{text}\}         \>\lstinline|\sffamily|       \>\textsf{Serifenlose}\\
+\lstinline|\texttt|\{\textit{text}\}         \>\lstinline|\ttfamily|       \>\texttt{Maschinenschrift}\\[1ex]
+\lstinline|\textmd|\{\textit{text}\}         \>\lstinline|\mdseries|       \>\textmd{normal}\\
+\lstinline|\textbf|\{\textit{text}\}         \>\lstinline|\bfseries|       \>\textbf{fett, breiter laufend}\\[1ex]
+\lstinline|\textup|\{\textit{text}\}         \>\lstinline|\upshape|        \>\textup{aufrecht}\\
+\lstinline|\textsl|\{\textit{text}\}         \>\lstinline|\slshape|        \>\textsl{geneigt}\\
+\lstinline|\textit|\{\textit{text}\}         \>\lstinline|\itshape|        \>\textit{kursiv}\\
+\lstinline|\textsc|\{\textit{text}\}         \>\lstinline|\scshape|        \>\textsc{Kapitälchen}\\[1ex]
+\lstinline|\textnormal|\{\textit{text}\}     \>\lstinline|\normalfont|     \>\textnormal{Die Grundschrift des Dokuments}
 \end{tabbing}
 \end{lminipage}
 \end{table}
@@ -225,7 +225,7 @@ höhere typographische Qualität zur Folge; aufgrund der inneren Arbeitsweise
 von \TeX{} entfallen damit auch die Einschränkungen im Zusammenhang mit
 der Silbentrennung, die im Abschnitt~\ref{silb} erwähnt wurden:
 Wörter mit Umlauten werden nun besser getrennt, und im Argument des
-Befehls \verb|\hyphenation| dürfen auch Umlaute und das scharfe~s stehen.
+Befehls \lstinline|\hyphenation| dürfen auch Umlaute und das scharfe~s stehen.
 
 %% stimmt nur fuer EC
 %Weiterhin sind die Unterschneidungen im Vergleich zu den amerikanischen
@@ -242,11 +242,11 @@ während ein ergänzender TS1-Zeichensatz zusätzliche Textsymbole bereitstellt.
 \LaTeX{} wird veranlasst, T1-Schriften zu verwenden,
 indem man das Paket \texttt{fontenc} mit der Option \texttt{T1} lädt:
 \begin{quote}
-  \verb|\usepackage[T1]{fontenc}|
+  \lstinline|\usepackage[T1]{fontenc}|
 \end{quote}
 Das Paket \texttt{textcomp} ermöglicht den Zugriff auf die Textsymbole:
 \begin{quote}
-  \verb|\usepackage{textcomp}|
+  \lstinline|\usepackage{textcomp}|
 \end{quote}
 Welche zusätzlichen Zeichen mit den T1-Schriften
 bereitgestellt werden, ist in \cite{usrguide} zusammengefasst;
