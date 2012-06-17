@@ -715,25 +715,7 @@ Die Umgebung \texttt{description} eignet sich für Beschreibungen
 (siehe Abbildung~\ref{desc}).
 
 \begin{figure}[!htbp]
-\begin{lminipage}{\textwidth}
-\exa
-Listen:
-\begin{itemize}
-\item Bei \texttt{itemize} werden
-die Elemente durch Punkte und andere Symbole gekennzeichnet. 
-\item Listen kann man auch
-verschachteln:
-  \begin{itemize}
-  \item Die maximale Schachtelungstiefe
-  ist~4.
-  \item
-  Bezeichnung und Einrückung der Elemente
-  wechseln automatisch.
-  \end{itemize}
-\item usw.
-\end{itemize}
-\exb
-\begin{verbatim}
+\begin{LTXexample}
 Listen:
 \begin{itemize}
  
@@ -750,35 +732,13 @@ verschachteln:
 \item usw.
  
 \end{itemize}
-\end{verbatim}
-\exc
-\end{lminipage}
+\end{LTXexample}
 \caption{Beispiel für \texttt{itemize}} \label{item}
 \end{figure}
 
 
 \begin{figure}[!htbp]
-\begin{lminipage}{\textwidth}
-\exa
-Nummerierte Listen:
-\begin{enumerate}
-\hbadness=4500\relax %% `underfull hbox'-Fehlermeldung aus
-\item Bei \texttt{enumerate} werden
-die Elemente mit Ziffern oder Buchstaben nummeriert.
-\item Die Nummerierung erfolgt
-automatisch.
-\item Listen kann man auch
-verschachteln:
-  \begin{enumerate}
-  \item Die maximale Schachtelungstiefe
-  ist~4.
-  \item Bezeichnung und Einrückung der Elemente
-  wechseln automatisch.
-  \end{enumerate}
-\item usw.
-\end{enumerate}
-\exb
-\begin{verbatim}
+\begin{LTXexample}
 Nummerierte Listen:
 \begin{enumerate}
  
@@ -797,44 +757,26 @@ verschachteln:
 \item usw.
  
 \end{enumerate}
-\end{verbatim}
-\exc
-\end{lminipage}
+\end{LTXexample}
 \caption{Beispiel für \texttt{enumerate}} \label{enum}
 \end{figure}
  
 \begin{figure}[!htbp]  % <-------------           bang option of LaTeX2e 
-%\begin{figure}[htbp]
-\begin{lminipage}{\textwidth}
-\exa
-Kleine Tierkunde:
-\begin{description}
-\item[Gelse:]
-   ein kleines Tier, das
-   östlich des Semmering Touristen verjagt.
-\item[Gemse:]
-   ein großes Tier, das
-   westlich des Semmering von Touristen verjagt wird.
-\item[Gürteltier:]
-   ein mittelgroßes Tier, das
-   hier nur wegen der Länge seines Namens vorkommt.
-\end{description}
-\exb
-\begin{verbatim}
+\begin{LTXexample}
 Kleine Tierkunde:
 \begin{description}
 \item[Gelse:]
    ein kleines Tier, das ...
 \item[Gemse:]
-   ein großes Tier, das ...
+   ein gro\ss es Tier, das ...
 \item[Gürteltier:]
-   ein mittelgroßes Tier, das ...
+   ein mittelgro\ss es Tier, das ...
 \end{description}
-\end{verbatim}
-\exc
-\end{lminipage}
+\end{LTXexample}
+\todo[inline]{MD: Der Buchstabe ß kann scheinbar von LTXexample nicht verarbeitet werden }
 \caption{Beispiel für \texttt{description}} \label{desc}
 \end{figure}
+
  
 {\hfuzz=2pt\relax % Overfull hbox (hyphen, therefore tolerable) 
                   % warning off
@@ -848,50 +790,41 @@ Die Umgebungen \texttt{flushleft} und \texttt{flushright}
 bewirken links- bzw.\ rechtsbündigen Satz ohne Randausgleich 
 ("`Flattersatz"') und ohne Trennungen, 
 \texttt{center} setzt den Text in
-die Mitte der Zeile\todo{PG: ragged2e erwähnen? -> besserer Umbruch\\MD: Bin mir unschlüssig. Besonders erachte ich \textbackslash\textbackslash als falsch. \\PG: dem letzten stimme ich voll zu}.
-Die einzelnen Zeilen werden durch~\verb|\\| getrennt.
-Wenn man \verb|\\| nicht angibt, bestimmt \LaTeX\ automatisch die
+die Mitte der Zeile. Einen Zeilenumbruch kann wie bereits im Vorfelde 
+erwähnt durch eine Leerzeile im Code realisiert werden. Hierbei
+werden die Voreinstellungen für Absatzeinrückungen bzw.\ Absatzabstand
+ignoriert. In Ausnahmefällen ist Zeilenwechsel mittels \lstinline+\\+ zulässig,
+um bspw.\ den Umbruch mittels des optionalen Argumentes von \lstinline+\\+
+zu ändern.
+
+\todo{PG: ragged2e erwähnen? -> besserer Umbruch\\MD: Bin mir unschlüssig. Besonders erachte ich \textbackslash\textbackslash als falsch. \\PG: dem letzten stimme ich voll zu}.
+\sout{Die einzelnen Zeilen werden durch~\string\ \string\ getrennt.
+Wenn man \string\ \string\ nicht angibt, bestimmt \LaTeX\ automatisch die
 Zeilenaufteilung% (siehe Abbildung~\ref{jandl}) auf Seite~\pageref{jandl})
+}
 .
 %\begin{figure}[!ht]
 %\begin{lminipage}{\textwidth} 
-\exa
+\begin{LTXexample}
 \begin{flushleft}
-links \\
+links \\[.5cm]
 Backbord
 \end{flushleft}
-\exb
-\begin{verbatim}
-\begin{flushleft}
-links \\
-Backbord
-\end{flushleft}
-\end{verbatim}
-\exc
-\exa
+\end{LTXexample}
+
+\begin{LTXexample}
 \begin{flushright}
-rechts  \\
+rechts  \\[-0.2cm]
 Steuerbord
 \end{flushright}
-\exb
-\begin{verbatim}
-\begin{flushright}
-rechts  \\
-Steuerbord
-\end{flushright}
-\end{verbatim}
-\exc
-\exa
+\end{LTXexample}
+
+\begin{LTXexample}
 \begin{center}
 Im \\ Reich \\ der \\ Mitte
 \end{center}
-\exb
-\begin{verbatim}
-\begin{center}
-Im \\ Reich \\ der \\ Mitte
-\end{center}
-\end{verbatim}
-\exc
+\end{LTXexample}
+
 %\end{lminipage}
 %\caption{Linksbündig, rechtsbündig und zentriert}
 %\label{jandl}
@@ -913,13 +846,10 @@ werden, indem man sie zwischen \verb.\verb|. und~\verb.|.
 einschließt.
 Mit diesen Befehlen wurden z.\,B.\ alle \LaTeX-Befehle in der
 vorliegenden Beschreibung gesetzt.
-\exa
+
+\begin{LTXexample}
 Der \verb|\dots|-Befehl \dots
-\exb
-\begin{verbatim}
-Der \verb|\dots|-Befehl \dots
-\end{verbatim}
-\exc
+\end{LTXexample}
  
 Die \texttt{verbatim}-Umgebung und der Befehl~\verb|\verb|
 dürfen \emph{nicht} innerhalb von Parametern von anderen Befehlen
@@ -936,10 +866,12 @@ Der Befehl~\verb|\=| setzt eine Tabulatorposition,
 \verb|\kill| bedeutet, dass die "`Musterzeile"' nicht ausgedruckt werden
 soll,
 \verb|\>|~springt zur nächsten Tabulatorposition,
-und \verb|\\| trennt die Zeilen.\todo{MD: Sehr wichtig: Seitenumbruch möglich\\PG: wusste ich nicht. Gut.}
-%
-\par\vspace{0pt plus5\baselineskip}
-\pagebreak[3]\vspace{0pt plus-5\baselineskip}
+und \verb|\\| trennt die Zeilen. Entgegen der im nächsten Abschnitt 
+vorgestellten Umgebungen \texttt{array} und \texttt{tabular} erlaubt
+die \texttt{tabbing}-Umgebung einen Seitenumbruch.
+
+\todo{MD: Sehr wichtig: Seitenumbruch möglich\\PG: wusste ich nicht. Gut.}
+
 %
 \exa
 \begin{tabbing}
@@ -988,7 +920,7 @@ Breite mit mehrzeiligem Text,
  
 Innerhalb der Tabelle bedeutet
 \verb|&|~den Sprung in die nächste Tabellenspalte,
-\verb|\\|~trennt die Zeilen,
+\verb|\\|~oder~\verb|\tabularnewline|~trennt die Zeilen,
 \verb|\hline| (an Stelle einer Zeile) setzt einen waagrechten
 Strich\todo{PG: booktabs mit \cs{toprule},\cs{midrule} und \cs{bottomrule} erwähnen? - macht eine schönere Tabelle\\MD: Ein wenig Typographie gehört zur Einführung}.
  
