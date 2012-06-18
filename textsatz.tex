@@ -1,3 +1,5 @@
+%!TEX root = l2kurz.tex
+
 % master: l2kurz.tex
 % L2K2.TEX - 2.Teil der LaTeX2e-Kurzbeschreibung v2.2
 % L2K2.TEX - 2.Teil der LaTeX2e-Kurzbeschreibung Mainz 1994, 1995
@@ -295,10 +297,12 @@ und
 \end{verbatim}
 \exc
 In den Zeichensätzen mancher Rechner (z.\,B. Macintosh) sind die deutschen 
-Anführungszeichen enthalten.  Das Paket \texttt{inputenc} (siehe
+Anführungszeichen enthalten.  Das Paket \texttt{selinput} (siehe
 Abschnitt~\ref{inputenc}) erlaubt dann, sie auch direkt einzugeben.
 
-\todo{MD: Ich finde ein Hinweis auf \href{http://zvisionwelt.files.wordpress.com/2012/01/typokurz.pdf}{typokurz} wäre hilfreich\\PG: Oh ja! sehr gut. Kann als Literatureintrag hin aber unbedingt in einem extra Satz hervorheben.}
+\todo[inline,color=done]{PG: eingefügt}
+Eine gute Einführung in die Typographieregeln für Textsatz findet sich in der PDF"=Datei \emph{typokurz} von Christoph Bier\cite{typokurz}.
+% \todo{MD: Ich finde ein Hinweis auf \href{http://zvisionwelt.files.wordpress.com/2012/01/typokurz.pdf}{typokurz} wäre hilfreich\\PG: Oh ja! sehr gut. Kann als Literatureintrag hin aber unbedingt in einem extra Satz hervorheben.}
 
 \subsubsection{Binde- und Gedankenstriche}
  
@@ -414,21 +418,21 @@ Wenn ein Akzent auf ein i oder~j gesetzt werden soll, muss der
 \lstinline|\i| und~\lstinline|\j|.
 Es steht auch ein Befehl \lstinline|\textcircled| für 
 eingekreiste Zeichen zur Verfügung.
-\exa
-Hôtel, na\"\i ve, smørebrød.\\[1\baselineskip]
-Die hässliche Straße.\\[1\baselineskip]
-!`Señorita!\\
-\textcircled{x}
-\exb
-\begin{verbatim}
-H\^otel, na\"\i ve,
-sm\o rebr\o d.
-Die h\"assliche
-Stra\ss{}e.
-!`Se\~norita!
-\textcircled{x}
-\end{verbatim}
-\exc
+% \exa
+% Hôtel, na\"\i ve, smørebrød.\\[1\baselineskip]
+% Die hässliche Straße.\\[1\baselineskip]
+% !`Señorita!\\
+% \textcircled{x}
+% \exb
+% \begin{verbatim}
+% H\^otel, na\"\i ve,
+% sm\o rebr\o d.
+% Die h\"assliche
+% Stra\ss{}e.
+% !`Se\~norita!
+% \textcircled{x}
+% \end{verbatim}
+% \exc
 
 
 \begin{LTXexample}
@@ -468,17 +472,15 @@ Die h\"assliche Stra\ss{}e.\\
 \end{table}
 
 
-Benutzt man das Paket \texttt{inputenc} mit der passenden Option
-für das jeweilige Betriebssystem, siehe Abschnitt~\ref{inputenc},
+Benutzt man das Paket \texttt{selinput}, siehe Abschnitt~\vref{inputenc},
 dann darf man diese Zeichen -- soweit sie im Zeichensatz des Betriebssystems
 existieren -- auch direkt in das Eingabefile schreiben.
 
-Mit dem Paket \texttt{german} %, siehe Abschnitt~\ref{deutsch}, 
+Mit dem Paket \texttt{babel} und der Option \texttt{ngerman} bzw \texttt{german}
 können
-Umlaute auch durch einfaches Voranstellen eines Doublequotes geschrieben werden, 
+Umlaute auch durch einfaches Voranstellen eines doppelten Anführungszeichen (\verb|"|) geschrieben werden, 
 also z.\,B.\ \lstinline|"o| für~"`ö"';
-für scharfes~s darf man \lstinline|"s| schreiben (ohne Probleme mit
-nachfolgenden Leerstellen):
+für scharfes~s darf man \lstinline|"s| schreiben:
 \exa
 Die h"assliche Stra"se
 muss schöner werden.
@@ -491,12 +493,8 @@ mu"s sch"oner werden.
 Diese Notation wurde eingeführt, als die direkte Eingabe und
 Anzeige von Umlauten auf vielen Rechnersystemen noch nicht möglich war.
 Als Quasi-Standard zum plattformübergreifenden Austausch von 
-\TeX- und \LaTeX"=Dokumenten ist sie aber nach wie vor nützlich und
-für deutschsprachige Texte weit verbreitet; sie wird auch in einigen 
-Beispielen dieser Kurzbeschreibung benutzt.
+\TeX- und \LaTeX"=Dokumenten ist sie aber nach wie vor nützlich.
  
-
-
 \subsection{Kapitel und Überschriften}
  
 Der Beginn eines Kapitels bzw.\ Unterkapitels und seine
@@ -506,17 +504,18 @@ angegeben. Dabei muss die logische Hierarchie eingehalten werden.
 \pagebreak[3] %% Ansonsten sehr unschöner Seitenumbruch
 \noindent Bei der Klasse \texttt{article}:
 \begin{quote}
-\lstinline|\section  \subsection  \subsubsection|
+\lstinline|\part \section  \subsection  \subsubsection|
 \end{quote}
 Bei den Klassen \texttt{report} und \texttt{book}:
 \begin{quote}
-\lstinline|\chapter  \section  \subsection  \subsubsection|
+\lstinline|\part \chapter  \section  \subsection  \subsubsection|
 \end{quote}
 Artikel können also relativ einfach als Kapitel in ein Buch
 eingebaut werden.  Die Abstände zwischen den Kapiteln, die
 Nummerierung und die Schriftgröße der Überschrift werden von
 \LaTeX\ automatisch bestimmt.
-\todo{MD: Sollte \texttt{\string\part} ergänzt werden?\\PG: ja}
+
+%\todo{MD: Sollte \texttt{\string\part} ergänzt werden?\\PG: ja}
 
 
 Die Überschrift des gesamten Artikels bzw.\ die Titelseite des
@@ -563,7 +562,7 @@ Der Beweis findet sich in Abschnitt~\ref{bew}.
 Fußnoten\footnote{Das 
 ist eine Fußnote.} werden automatisch nummeriert
 und am unteren Ende der Seite ausgedruckt.  
-Innnerhalb von Gleitobjekten (siehe Abschnitt~\ref{floats}), 
+Innerhalb von Gleitobjekten (siehe Abschnitt~\ref{floats}), 
 Tabellen (\ref{tabular}) oder der \texttt{tabbing}-Umgebung (\ref{tabbing})
 ist der Befehl \lstinline|\footnote| nicht erlaubt.\todo{MD: Aber es gibt Möglichkeiten\\PG: wir sollten uns mit dem Platz beschränken}
 \exa
@@ -583,9 +582,9 @@ In maschinengeschriebenen Texten werden hervorzuhebende Texte
 unterstrichen, im Buchdruck wird stattdessen ein auf"|fälliger
 Schriftschnitt verwendet.
 Der Befehl 
-\begin{quote}
+\begin{beispiel}
 \lstinline|\emph{|\textit{text}\lstinline|}| 
-\end{quote}
+\end{beispiel}
 (emphasize) setzt seinen Parameter in einem auf"|fälligen Stil.
 \LaTeX\ verwendet für den hervorgehobenen Text \textit{kursive}
 Schrift.
@@ -687,13 +686,13 @@ Leerzeilen.
 
 
 \subsubsection{Listen (itemize, enumerate, description)}
- \todo{MD: Hier empfehle ich das Paket enumitem\\PG: Gut. Aber mehr als ein Satz würde ich nicht dazu geben. ... Mit dem Paket enumitem können die Umgebungen den eigenen Bedürfnissen leicht angepasst werden. oder so}
+ % \todo{MD: Hier empfehle ich das Paket enumitem\\PG: Gut. Aber mehr als ein Satz würde ich nicht dazu geben. ... Mit dem Paket enumitem können die Umgebungen den eigenen Bedürfnissen leicht angepasst werden. oder so}
 Die Umgebung \texttt{itemize} eignet sich für einfache Listen
-(siehe Abbildung~\ref{item}).
+(siehe Abbildung~\vref{item}).
 Die Umgebung \texttt{enumerate} eignet sich für nummerierte
 Aufzählungen (siehe Abbildung~\ref{enum}).
 Die Umgebung \texttt{description} eignet sich für Beschreibungen
-(siehe Abbildung~\ref{desc}).
+(siehe Abbildung~\ref{desc}). \todo[color=done]{PG: eingefügt}Mit dem Paket \texttt{enumitem} können die Umgebungen leicht den eigenen Bedürfnissen angepasst werden.
 
 \begin{figure}[!htbp]
 \begin{LTXexample}
@@ -759,61 +758,77 @@ Kleine Tierkunde:
 \end{figure}
 
  
-{\hfuzz=2pt\relax % Overfull hbox (hyphen, therefore tolerable) 
-                  % warning off
 \subsubsection
           [Flattersatz (flush\-left, flush\-right, center)]
           {Linksbündig, rechtsbündig, zentriert
                        (flush\-left, flush\-right, center)}
-}
 
-Die Umgebungen \texttt{flushleft} und \texttt{flushright}
-bewirken links- bzw.\ rechtsbündigen Satz ohne Randausgleich 
-("`Flattersatz"') und ohne Trennungen, 
-\texttt{center} setzt den Text in
-die Mitte der Zeile. Einen Zeilenumbruch kann wie bereits im Vorfelde 
-erwähnt durch eine Leerzeile im Code realisiert werden. Hierbei
-werden die Voreinstellungen für Absatzeinrückungen bzw.\ Absatzabstand
-ignoriert. In Ausnahmefällen ist Zeilenwechsel mittels \lstinline+\\+ zulässig,
-um bspw.\ den Umbruch mittels des optionalen Argumentes von \lstinline+\\+
-zu ändern.
+\todo[inline,color=done]{PG: überarbeitet - bitte kontrollieren}
 
-\todo{PG: ragged2e erwähnen? -> besserer Umbruch\\MD: Bin mir unschlüssig. Besonders erachte ich \textbackslash\textbackslash als falsch. \\PG: dem letzten stimme ich voll zu}.
-\sout{Die einzelnen Zeilen werden durch~\string\ \string\ getrennt.
-Wenn man \string\ \string\ nicht angibt, bestimmt \LaTeX\ automatisch die
-Zeilenaufteilung% (siehe Abbildung~\ref{jandl}) auf Seite~\pageref{jandl})
-}
-.
-%\begin{figure}[!ht]
-%\begin{lminipage}{\textwidth} 
-\begin{LTXexample}
-\begin{flushleft}
-links \\[.5cm]
-Backbord
-\end{flushleft}
-\end{LTXexample}
+Die Umgebungen \texttt{Center}, \texttt{FlushLeft} und \texttt{FlushRight} aus
+dem Paket \texttt{ragged2e} bewirken zentrierten, links"~, und rechtsbündigen
+Satz. Die Varianten dieser Umgebungen (\texttt{center}, \texttt{flushleft} und
+\texttt{flushright}), die ohne ein Zusatzpaket zur Verfügung stehen, bewirken
+im Prinzip dasselbe, nur schaltet \LaTeX\ die Trennung fast vollständig aus.
+Somit ergeben die letztgenannten Umgebungen einen sehr unruhigen Satz.
 
 \begin{LTXexample}
-\begin{flushright}
-rechts  \\[-0.2cm]
-Steuerbord
-\end{flushright}
+% \usepackage{ragged2e}
+\begin{FlushLeft}
+Dies hier ist ein Blindtext zum
+Testen von Textausgaben. Wer 
+diesen Text liest, ist selbst 
+schuld. Der Text gibt lediglich
+den Grauwert der Schrift an.
+\end{FlushLeft}
 \end{LTXexample}
 
-\begin{LTXexample}
-\begin{center}
-Im \\ Reich \\ der \\ Mitte
-\end{center}
-\end{LTXexample}
+% Die Umgebungen \texttt{flushleft} und \texttt{flushright}
+% bewirken links- bzw.\ rechtsbündigen Satz ohne Randausgleich 
+% ("`Flattersatz"') und ohne Trennungen, 
+% \texttt{center} setzt den Text in
+% die Mitte der Zeile. Einen Zeilenumbruch kann wie bereits im Vorfelde 
+% erwähnt durch eine Leerzeile im Code realisiert werden. Hierbei
+% werden die Voreinstellungen für Absatzeinrückungen bzw.\ Absatzabstand
+% ignoriert. In Ausnahmefällen ist Zeilenwechsel mittels \lstinline+\\+ zulässig,
+% um bspw.\ den Umbruch mittels des optionalen Argumentes von \lstinline+\\+
+% zu ändern.
 
-%\end{lminipage}
-%\caption{Linksbündig, rechtsbündig und zentriert}
-%\label{jandl}
-%\end{figure} 
+% \todo{PG: ragged2e erwähnen? -> besserer Umbruch\\MD: Bin mir unschlüssig. Besonders erachte ich \textbackslash\textbackslash als falsch. \\PG: dem letzten stimme ich voll zu}.
+% \sout{Die einzelnen Zeilen werden durch~\string\ \string\ getrennt.
+% Wenn man \string\ \string\ nicht angibt, bestimmt \LaTeX\ automatisch die
+% Zeilenaufteilung% (siehe Abbildung~\ref{jandl}) auf Seite~\pageref{jandl})
+% }
+% .
+% %\begin{figure}[!ht]
+% %\begin{lminipage}{\textwidth} 
+% \begin{LTXexample}
+% \begin{flushleft}
+% links \\[.5cm]
+% Backbord
+% \end{flushleft}
+% \end{LTXexample}
+
+% \begin{LTXexample}
+% \begin{flushright}
+% rechts  \\[-0.2cm]
+% Steuerbord
+% \end{flushright}
+% \end{LTXexample}
+
+% \begin{LTXexample}
+% \begin{center}
+% Im \\ Reich \\ der \\ Mitte
+% \end{center}
+% \end{LTXexample}
+
+% %\end{lminipage}
+% %\caption{Linksbündig, rechtsbündig und zentriert}
+% %\label{jandl}
+% %\end{figure} 
 
 
 \subsubsection{Direkte Ausgabe (verbatim, verb)}
- \todo{MD: listings // minted???\\PG: minted kenne ich nicht, Listings erwähnen (Für Programmlistings gibt es auch das Paket listings, mit dem sich Schlüsselwörter, Kommentare und andere Elemente bequem hervorheben lassen. oder so)}
 Zwischen \lstinline|\begin{verbatim}| und \lstinline|\end{verbatim}|
 stehende Zeilen werden genauso ausgedruckt, wie sie eingegeben
 wurden, d.\,h.\ mit allen Leerzeichen und Zeilenwechseln und ohne
@@ -823,7 +838,7 @@ Computer-Programms.
 
 Innerhalb eines Absatzes können einzelne Zeichenkombinationen
 oder kurze Textstücke ebenso "`wörtlich"' ausgedruckt
-werden, indem man sie zwischen \lstinline.\lstinline|. und~\lstinline.|.
+werden, indem man sie zwischen \lstinline.\lstinline|. und~\lstinline.|.\todo{PG: naja, lstinline gilt ja nur im Prinzip für Programmcode. Hier würde ich schon verb verwenden und auf \cs{lstinline} verweisen /erwähnen}
 einschließt.
 Mit diesen Befehlen wurden z.\,B.\ alle \LaTeX-Befehle in der
 vorliegenden Beschreibung gesetzt.
@@ -850,8 +865,6 @@ soll,
 und \lstinline|\\| trennt die Zeilen. Entgegen der im nächsten Abschnitt 
 vorgestellten Umgebungen \texttt{array} und \texttt{tabular} erlaubt
 die \texttt{tabbing}-Umgebung einen Seitenumbruch.
-
-\todo{MD: Sehr wichtig: Seitenumbruch möglich\\PG: wusste ich nicht. Gut.}
 
 %
 \exa
@@ -883,11 +896,13 @@ ein  \>  \> ausgestopfter\\
 
 \subsubsection{Tabellen (tabular)} \label{tabular}
  
-Die \texttt{tabular}-Umgebung dient zum Setzen von Tabellen, bei
-denen \LaTeX\ automatisch die benötigte Spaltenbreite
-bestimmt\todo{MD: Erachte ich als falsch. Sollte genauer auf Spaltentypen eingegangen werden\\PG: zumindest im Vergleich mit der tabbing Umgebung ist das ja so. Aber es ist nicht ganz klar oder unglücklich formuliert. . vielleicht eher so: 'Tabellen lassen sich mit tabular erzeugen. Dort kann man mit einer Tabellenpräambel bestimmen, wie die Spalten dargestellt werden. (Der Inhalt passt sich der Breite an.)' }
-, und bei der auch spezielle Eigenschaften wie
-Rechtsbündigkeit und Hilfslinien vereinbart werden können.
+Tabellen lassen sich mit der \texttt{tabular}-Umgebung erzeugen. Dort kann man mit einer Tabellenpräambel bestimmen, wie die Spalten dargestellt werden. Die Spaltenbreite passt sich automatisch dem Inhalt der Tabelle an und muss nicht (außer bei p-Spalten) angegeben werden.
+
+% Die \texttt{tabular}-Umgebung dient zum Setzen von Tabellen, bei
+% denen \LaTeX\ automatisch die benötigte Spaltenbreite
+% bestimmt\todo{MD: Erachte ich als falsch. Sollte genauer auf Spaltentypen eingegangen werden\\PG: zumindest im Vergleich mit der tabbing Umgebung ist das ja so. Aber es ist nicht ganz klar oder unglücklich formuliert. . vielleicht eher so: 'Tabellen lassen sich mit tabular erzeugen. Dort kann man mit einer Tabellenpräambel bestimmen, wie die Spalten dargestellt werden. (Der Inhalt passt sich der Breite an.)' }
+% , und bei der auch spezielle Eigenschaften wie
+% Rechtsbündigkeit und Hilfslinien vereinbart werden können.
  
 Im Parameter des Befehls \lstinline|\begin{tabular}{...}| wird das
 Format der Tabelle angegeben.
@@ -903,31 +918,38 @@ Innerhalb der Tabelle bedeutet
 \lstinline|&|~den Sprung in die nächste Tabellenspalte,
 \lstinline|\\|~oder~\lstinline|\tabularnewline|~trennt die Zeilen,
 \lstinline|\hline| (an Stelle einer Zeile) setzt einen waagrechten
-Strich\todo{PG: booktabs mit \cs{toprule},\cs{midrule} und \cs{bottomrule} erwähnen? - macht eine schönere Tabelle\\MD: Ein wenig Typographie gehört zur Einführung}.
- 
-          \vspace{0pt plus 1cm}
+Strich. Anstelle von \lstinline|\hline| bietet das Paket \texttt{booktabs} unterschiedliche Strichstärken, um den Tabellenkopf vom Tabellenkörper deutlicher zu trennen: \lstinline|\toprule|, \lstinline|\midrule|  und \lstinline|\bottomrule|. 
+%\todo{PG: booktabs mit \cs{toprule},\cs{midrule} und \cs{bottomrule} erwähnen? - macht eine schönere Tabelle\\MD: Ein wenig Typographie gehört zur Einführung}.
+
+\begingroup
+\def\arraystretch{1.1} 
+\vspace{0pt plus 1cm}
 \exa
-\begin{tabular}[t]{|rl|}
-\hline
+% \usepackage{booktabs}
+\begin{tabular}[t]{rl}
+\toprule
+Wert & Zahlensystem \\
+\midrule
 7C0 & hexadezimal \\
 3700 & oktal \\
 11111000000 & binär \\
-\hline\hline
 1984 & dezimal \\
-\hline
+\bottomrule
 \end{tabular}
 \exb
 \begin{verbatim}
-\begin{tabular}{|rl|}
-\hline
+% \usepackage{booktabs}
+\begin{tabular}[t]{rl}
+\toprule
+Wert & Zahlensystem \\
+\midrule
 7C0 & hexadezimal \\
 3700 & oktal \\
 11111000000 & binär \\
-\hline\hline
 1984 & dezimal \\
-\hline
-\end{tabular}
+\bottomrule
 \end{verbatim}
 \exc
+\endgroup
  
 \endinput
