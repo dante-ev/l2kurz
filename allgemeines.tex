@@ -1,3 +1,4 @@
+%!TEX root = l2kurz.tex
 % master: l2kurz.tex
 % l2k1.tex - 1.Teil der LaTeX2e-Kurzbeschreibung v2.3
 % 2003-04-10 (WaS)
@@ -18,6 +19,7 @@ ein xl2kurz werden? Was noch ergänzt werden sollte:
  
 
 \section{Allgemeines}
+\label{sec:allgemeines}
  
 \subsection{The Name of the Game}
  
@@ -38,17 +40,20 @@ geschrieben.  Es vereinfacht den Umgang mit \TeX, indem es
 entsprechend der logischen Struktur des Dokuments auf vorgefertigte
 Layout-Elemente zurückgreift.
 
-\subsubsection{\LaTeXe}
+% \subsubsection{\LaTeXe}
 
-\LaTeXe\ (sprich "`\LaTeX\ zwei e"') ist die aktuelle Variante von
-\LaTeX\ seit dem 1.~Juni 1994.  (Die vorherige hieß \LaTeX~2.09.)
-Wenn hier von \LaTeX\ gesprochen wird, so ist normalerweise dieses
-\LaTeXe{} gemeint.\todo{PG: interessiert das heute noch jemanden? GGf. Verweis auf latex3}
+% \LaTeXe\ (sprich "`\LaTeX\ zwei e"') ist die aktuelle Variante von
+% \LaTeX\ seit dem 1.~Juni 1994.  (Die vorherige hieß \LaTeX~2.09.)
+% Wenn hier von \LaTeX\ gesprochen wird, so ist normalerweise dieses
+% \LaTeXe{} gemeint.\todo{PG: interessiert das heute noch jemanden? GGf. Verweis auf latex3}
 
-Neue Versionen
-von \LaTeXe{} (z.\,B. mit Fehlerberichtigungen oder Ergänzungen)
-erscheinen jährlich im Juni\todo{PG: stimmt das noch?\\MD: Ist nicht mehr gültig. Dafür gibt es jetzt nur die Bug-Database.}; die vorliegende Beschreibung setzt 
-mindestens diejenige vom Juni 2001 voraus.  
+% Neue Versionen
+% von \LaTeXe{} (z.\,B. mit Fehlerberichtigungen oder Ergänzungen)
+% erscheinen jährlich im Juni\todo{PG: stimmt das noch?\\MD: Ist nicht mehr gültig. Dafür gibt es jetzt nur die Bug-Database.}; die vorliegende Beschreibung setzt 
+% mindestens diejenige vom Juni 2001 voraus.  
+
+\LaTeXe{} ist die aktuelle Version und mit dem Fokus auf Stabilität werden derzeit nur noch Fehler behoben. Eine Weiterentwicklung findet im \LaTeX{}3"=Projekt statt, einige Zusatzmodule (\emph{Pakete}) für \LaTeX{} benutzen schon die neue Version, für den Benutzer ist dies jedoch in der Regel unsichtbar.
+
 
 \subsection{Grundkonzept}
  
@@ -155,12 +160,13 @@ vor allem durch die folgenden Vorteile aus:
 \end{itemize}
 Ein Nachteil soll freilich auch nicht verschwiegen werden:
 \begin{itemize}
-\item Innerhalb der von \LaTeX\ unterstützten Dokument"=Layouts
-  können zwar einzelne Parameter leicht variiert werden,
-  grundlegende Abweichungen von den Vorgaben sind
-  aber nur mit größerem Aufwand möglich (Design einer
-  neuen Dokumentklasse, siehe~\cite{clsguide,lay,lay2,typografie}.)
-\todo{MD: Ich denke, dass war früher so. Heutzutage gibt es für fast alles Pakete. PG: stimmt. Aber wir brauchen noch einen Nachteil. Vielleicht können sagen, dass halt die Interaktion nicht so da ist wie bei Word, InDesign und co.}
+% \item Innerhalb der von \LaTeX\ unterstützten Dokument"=Layouts
+%   können zwar einzelne Parameter leicht variiert werden,
+%   grundlegende Abweichungen von den Vorgaben sind
+%   aber nur mit größerem Aufwand möglich (Design einer
+%   neuen Dokumentklasse, siehe~\cite{clsguide,lay,lay2,typografie}.)
+% \todo{MD: Ich denke, dass war früher so. Heutzutage gibt es für fast alles Pakete. PG: stimmt. Aber wir brauchen noch einen Nachteil. Vielleicht können sagen, dass halt die Interaktion nicht so da ist wie bei Word, InDesign und co.}
+\item Dadurch, dass der Text erst von \LaTeX\ nach PDF gewandelt wird, unterscheidet sich der Arbeitsablauf von \LaTeX\ stark von den üblichen Textverarbeitungen bzw. DTP-Programmen. Das erfordert ein Umdenken und eine gewisse Einarbeitung.
 \end{itemize}
 
 \subsubsection{Der Arbeitsablauf}
@@ -186,11 +192,16 @@ angestoßen werden und läuft ebenfalls in einem eigenen Fenster ab.
 % kennt es normalerweise einen Menüpunkt oder eine Schaltfläche, um das 
 % geänderte Ausgabefile erneut zu laden und anzuzeigen.
 
-Wie man auf die einzelnen Programme -- Editor, \LaTeX, Previewer,
-Druckertreiber -- in einer bestimmten
-Betriebssystemumgebung zugreift, muss in einem \local{}
-beschrieben sein.
-\todo{PG: Die Verweise auf den local guide nerven ein wenig, die sollte m.E. raus.\\MD: Richtig}
-\todo{MD: Hier sollte auf die Kompilierung selbst eingegangen werden. PG: OK.}
+% Wie man auf die einzelnen Programme -- Editor, \LaTeX, Previewer,
+% Druckertreiber -- in einer bestimmten 
+% Betriebssystemumgebung zugreift, muss in einem \local{}
+% beschrieben sein.
+% \todo{PG: Die Verweise auf den local guide nerven ein wenig, die sollte m.E. raus.\\MD: Richtig}
+% \todo{MD: Hier sollte auf die  Kompilierung selbst eingegangen werden. PG: OK.}
 
+Wenn der Texteditor keine Schnittstelle anbietet, um \LaTeX{} direkt aus einem Menüpunkt heraus aufzurufen, dann ist der übliche Weg über die Kommandozeile bzw. Eingabeaufforderung. Dort wird dann das Kommando \texttt{pdflatex} aufgerufen und als Parameter wird der Name der Datei angegeben, unter der das Dokument auf der Festplatte gespeichert ist.
+\begin{beispiel}
+  \texttt{pdflatex masterarbeit.tex}
+\end{beispiel}
+Das Ergebnis des Aufrufs ist eine PDF-Datei, die wie die Eingabedatei heißt, nur mit der Endung \texttt{.pdf}. \LaTeX\ gibt einige Meldungen auf der Konsole aus, die beispielsweise Auskunft über die Anzahl der Seiten des Dokuments geben.
 

@@ -1,13 +1,11 @@
+%!TEX root = l2kurz.tex
+
+
 \section{Eingabefile}
 Das Eingabefile für \LaTeX{} ist ein Textfile mit der Endung \lstinline+.tex+. Es 
 wird mit einem Editor erstellt und enthält sowohl den Text, der gedruckt werden 
 soll, als auch die Befehle, aus denen \LaTeX\ erfährt, wie der Text gesetzt 
-werden soll.
-
-\todo{MD: Sollte hier ein Hinweis auf Editoren gegeben werden?
-bspw: \href{http://tex.stackexchange.com/questions/339/latex-editors-ides}%
-{LaTeX Editors/IDEs}\\PG: ich würde erwähnen, dass es spezielle Editoren dafür
- gibt, z.B. (einen erwähnen, wie beispielsweise TeXmaker)}
+werden soll.\todo[color=done]{PG: eingefügt} Als Editor bietet sich ein spezieller \LaTeX-Editor an wie beispielsweise TeXmaker (\url{www.xm1math.net/texmaker}). Diese Editoren bieten neben Syntaxhervorhebung und "=überprüfung auch vordefinierte Arbeitsabläufe, so dass der Benutzer sich auf die Erstellung des Texts konzentrieren kann. Es ist aber auch möglich und gängige Praxis, \emph{normale} Texteditoren wie emacs, vim oder notepad++ zu benutzen
 
 
 \subsection{Leerstellen}
@@ -28,11 +26,8 @@ Eine Leerzeile zwischen Textzeilen bedeutet das Ende eines Absatzes.
 Die meisten \LaTeX-Befehle haben eines der beiden folgenden Formate: Entweder 
 sie beginnen mit einem Backslash~(\lstinline|\|) und haben dann einen nur aus 
 Buchstaben bestehenden Namen, der durch ein oder mehrere Leerzeichen oder durch
-ein nachfolgendes Sonderzeichen oder eine Ziffer beendet wird; oder sie bestehen
-aus einem Backslash und genau einem Sonderzeichen oder einer 
-\todo{MD: Ich finde Ziffer verwirrt irgendwie?\\
-     PG: ja, Ziffer können wir rausnehmen. Hier und im Satz davor.}
-Ziffer. Groß- und Kleinbuchstaben haben auch in Befehlsnamen \emph{verschiedene} 
+ein nachfolgendes Sonderzeichen beendet wird; oder sie bestehen
+aus einem Backslash und genau einem Sonderzeichen.\todo[color=done]{PG: Ziffer rausgenommen} Groß- und Kleinbuchstaben haben auch in Befehlsnamen \emph{verschiedene} 
 Bedeutung. Wenn man nach einem Befehlsnamen eine Leerstelle erhalten will, muss 
 man~\lstinline|{}| zur Beendigung des Befehlsnamens oder einen eigenen Befehl für die
 Leerstelle verwenden.
@@ -116,10 +111,6 @@ komplizierteres File ist in Listing~\ref{dokument} skizziert.
 
 \begin{document}
 \maketitle
-\begin{abstract}
-Beispiel für einen wissenschaftlichen Artikel
-in deutscher Sprache.
-\end{abstract}
 \tableofcontents
 
 \section{Start}
@@ -130,6 +121,7 @@ Hier beginnt mein schönes Werk ...
 
 \end{document}
 \end{example}
+\todo{PG: ich habe mal den abstract rausgenommen, der ist nicht zwingend notwendig in einer Kurzanleitung}
 
 \subsection{Dokumentklassen}\label{docsty}
  
@@ -142,15 +134,12 @@ und die logischen Strukturen, z.\,B.\ die Gliederungseinheiten (Kapitel etc.\@),
 die für alle Dokumente dieses Typs gemeinsam sind.
 
 Zwischen den geschwungenen Klammern \emph{muss} genau eine Dokumentklasse
-angegeben werden.  Tabelle~\ref{docstyles} auf S.~\pageref{docstyles} führt 
-Klassen auf, die in jeder \LaTeX-Installation existieren sollten. 
+angegeben werden.  Tabelle~\vref{docstyles} führt 
+Klassen auf, die in jeder \LaTeX-Installation existieren. 
 
-\sout{Im \local\ können weitere verfügbare Klassen angegeben sein.}
-\todo{MD: M.E. Raus damit}
- 
 Zwischen den eckigen Klammern \emph{können}, durch Kommata getrennt, eine oder 
 mehrere Optionen für das Klassenlayout angegeben werden. Die wichtigsten 
-Optionen sind in der Tabelle~\ref{options} auf S.~\pageref{options} angeführt.
+Optionen sind in der Tabelle~\vref{options} angeführt.
 Das Eingabefile für diese Beschreibung beginnt z.\,B.\ mit:
 \begin{lstlisting}
  \documentclass[11pt,a4paper]{article}
@@ -168,24 +157,21 @@ Das Eingabefile für diese Beschreibung beginnt z.\,B.\ mit:
 \endlastfoot
  article & 
  für Artikel in wissenschaftlichen Zeitschriften,  kürzere Berichte u.\,v.\,a. 
-\\\midrule
+\\
  report & 
  für längere Berichte, die aus mehreren Kapiteln bestehen, Diplomarbeiten, 
  Dissertationen u.\,ä. 
-\\\midrule
+\\
  book   &  
  für Bücher 
-\\\midrule
+\\
  scrartcl, scrreprt, scrbook & 
  Die sog. KOMA-Klassen sind Varianten der o.\,g. Klassen mit besserer Anpassung 
  an DIN-Papierformate und "`europäische"' Typographie. Zudem erlauben sie 
  mittels Optionen die Anpassung des Layouts. Entgegen den Standardklassen 
  existiert eine deutsche und englische Dokumenation (siehe \cite{scrguide})
-\\\midrule
+\\
  beamer &
- für Präsentationen 
-\\\midrule
- powerdot &
  für Präsentationen 
 \\
 \bottomrule
@@ -205,26 +191,26 @@ Das Eingabefile für diese Beschreibung beginnt z.\,B.\ mit:
  10pt 11pt  12pt & 
  wählt die normale Schriftgröße des Dokuments aus. 10\,pt hohe Schrift ist die 
  Voreinstellung; diese Beschreibung benutzt 11\,pt. 
-\\\midrule
+\\
  a4paper & 
  für Papier im DIN\,A4-Format. Ohne diese Option nehmen die Standardklassen das 
  amerikanisches Papierformat. 
-\\\midrule
+\\
  fleqn & 
  für linksbündige statt zentrierte mathematische Gleichungen 
-\\\midrule
+\\
  leqno &
  für Gleichungsnummern links statt rechts von jeder   nummerierten Gleichung 
-\\\midrule
+\\
  titlepage  notitlepage & 
  legt fest, ob Titel und Zusammenfassung auf einer eigenen Seite erscheinen 
  sollen.  \texttt{titlepage} ist die Voreinstellung für die Klassen 
  \texttt{report} und \texttt{book}. 
-\\\midrule
+\\
  onecolumn   twocolumn & 
  für ein- oder zweispaltigen Satz.  Die Voreinstellung ist immer 
  \texttt{onecolumn}.  
-\\\midrule
+\\
  oneside   twoside & 
  legt fest, ob die Seiten für ein- oder zweiseitigen  Druck gestaltet werden 
  sollen. \texttt{oneside} ist die Voreinstellung für alle Klassen außer 
@@ -239,25 +225,21 @@ Das Eingabefile für diese Beschreibung beginnt z.\,B.\ mit:
  
 Mit dem Befehl
 \begin{lstlisting}
- \usepackage[<optionen>]{<pakete>}
+ \usepackage[<optionen>]{<paket>}
 \end{lstlisting}
 können im Vorspann ergänzende Makropakete (packages) geladen werden, die das 
 Layout der Dokumentklasse modifizieren oder zusätzliche Funktionalität 
-bereitstellen. Eine Auswahl von Paketen findet sich in der Tabelle~\ref{pack} 
-auf Seite~\pageref{pack}. Der Befehl \lstinline+\usepackage+ erlaubt das Laden
-mehrerer Pakete, wobei eine Optionenübergabe nicht möglich ist.
-\begin{lstlisting}
- \usepackage{babel,caption,array,%
-             graphicx,textcomp,hyperref}
-\end{lstlisting}
+bereitstellen. Eine Auswahl von Paketen findet sich in der Tabelle~\vref{pack}. Der Befehl \lstinline+\usepackage+ erlaubt das Laden
+mehrerer Pakete, wobei eine Optionenübergabe nicht möglich ist, bzw. die Optionen für alle Pakete gelten.
+\todo[inline,color=done]{PG: Listing mit den hier benutzten Pakten rausgenommen}
+% \begin{lstlisting}
+%  \usepackage{babel,caption,array,%
+%              graphicx,textcomp,hyperref}
+% \end{lstlisting}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\todo[inline]{PG: m.E. können latexsym und dcolumn raus, dafür listings, 
-              csquotes, microtype und ...? rein. tabularx finde ich nicht
-              schlecht.\newline MD: Um zeitgemäß zu bleiben, ist es sinnvoll}
-\todo[inline]{MD: Jetzt sollten wir uns auf Pakete einigen. Habe schon xcolor 
-              statt color und imakeidx statt makeidx genutzt. Ich denke wenn 
-              fancyhdr angebenen ist, sollte auch scrpage2 dabei sein.}
+\todo[inline]{PG: alphabetisch sortieren? csquotes + andere dokumentieren}
+\todo[inline,color=done]{fancyhdr habe ich rausgenommen, wir müssen uns beschränken}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -267,65 +249,65 @@ mehrerer Pakete, wobei eine Optionenübergabe nicht möglich ist.
 \endfirsthead
  \caption[]{Pakete (eine Auswahl)}\\\toprule
 \endhead
- \multicolumn{2}{r}{\small Forsetzung nächste Seite}\\
+ \multicolumn{2}{r}{\small Fortsetzung nächste Seite}\\
 \endfoot
 \endlastfoot
  amsmath, amssymb & 
  Mathematischer Formelsatz mit erweiterten Fähigkeiten, zusätzliche 
  mathematische Schriften und Symbole; Beschreibung siehe \cite{ch8}. 
-\\\midrule
+\\
  array & 
  Verbesserte und erweiterte Versionen der Umgebungen  \texttt{array}, 
  \texttt{tabular} und \texttt{tabular*}.
-\\\midrule
+\\
  babel & 
  Anpassungen für viele verschiedene Sprachen. Die  gewählten Sprachen werden 
  als Optionen angegeben.
-\\\midrule
+\\
  xcolor & 
  Unterstützung für Farbausgabe;  Beschreibung  siehe~\cite{grfguide} 
  und~\cite{grfcomp}.
-\\\midrule
+\\
  fontenc & 
  Erlaubt die Verwendung von Schriften mit  unterschiedlicher Kodierung
  (Zeichenvorrat, Anordnung).
-\\\midrule
- fancyhdr & 
- Flexible Gestaltung von Kopf- und Fußzeilen.
-\\\midrule
+\\
  geometry & 
- Manipulation des Seitenlayouts.
-\\\midrule
+ Manipulation des Seitenlayouts.\\ 
  graphicx & 
  Einbindung von extern erzeugten Graphiken. Die umfangreichen Möglichkeiten 
  dieses Pakets werden in~\cite{grfguide} und~\cite{grfcomp} beschrieben. 
-\\\midrule
+\\
  hyperref & 
  Ermöglicht Hyperlinks zwischen Textstellen und zu externen Dokumenten; 
  besonders sinnvoll einsetzbar, wenn mit \TeX\ eine Ausgabedatei im 
  \textsc{pdf}- oder \textsc{html}-Format erzeugt wird.
-\\\midrule
+\\
  selinput & 
  Deklaration der Zeichenkodierung im Eingabefile.
-\\\midrule
+\\
  longtable &
  für Tabellen über mehrere Seiten mit automatischem Seitenumbruch.
-\\\midrule
+\\
  imakeidx & 
  Unterstützt das Erstellen eines Index.
-\\\midrule
+\\
  multicol & 
  Mehrspaltiger Satz mit Kolumnenausgleich.
-\\\midrule
+\\
  tabularx & 
  für Tabellen mit automatisch an den vorhandenen Platz angepasster Breite der 
  Spalten.
-\\\midrule
+\\
  textcomp & 
  Bindet Schriften mit zusätzlichen Textsymbolen ein.
- \\\midrule
+ \\
  listings & Flexible Erweiterung der \texttt{verbatim}-Umgebung.
-\\\bottomrule
+\\
+SIunits   & \dots \\
+microtype & \dots \\
+csquotes  & \dots \\
+\bottomrule
 \end{longtable}
 
 
@@ -341,10 +323,10 @@ Text verwendet werden:
 Die folgenden Eingabezeichen haben für \LaTeX{} eine Spezialbedeutung oder sind 
 nur innerhalb von mathematischen Formeln erlaubt:
 \begin{quote}
-\lstinline.$ & % # _ { }  ~  ^  "  \  | < >.
+\verb.$ & % # _ { }  ~  ^  "  \  | < >.
 \end{quote}
 Für Zeichen, die über obige Liste hinausgehen, beispielsweise die Umlaute, sind 
-je nach Betriebssystem des verwendeten Computers unterschiedliche Kodierungen in
+unterschiedliche Kodierungen in
 Gebrauch. Die Kodierung ist hierbei vom Betriebssystem sowie vom Editor 
 abhängig. Um Umlaute direkt zu nutzen ohne auf spezielle Kodierung einzugehen
 bietet sich das Paket \texttt{selinput} an. Es ermittelt während des 
@@ -356,31 +338,10 @@ das Paket wie folgt in der Präambel eingebunden werden:
   adieresis={ä},
   germandbls={ß},
  }
- \usepackage[T1]{fontenc}%Umlaute als einzelnes Zeichen
+ % Wörter mit Umlauten werden getrennt:
+ \usepackage[T1]{fontenc}
 \end{example}
 
-\noindent\colorbox{gray}{%
-\parbox{\dimexpr\linewidth-2\fboxsep\relax}{%
-\todo[inline]{MD: Alter Text}
-Damit auch diese Zeichen im Eingabefile benutzt werden dürfen,  muss 
-man das Paket \texttt{inputenc} laden und dabei die jeweilige Kodierung als 
-Option angeben: \texttt{\string\usepackage[\textit{codepage}]\{inputenc\}}.
-Mögliche Angaben für \textit{codepage} sind u.\,a.:
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\todo[inline]{MD: hier sollte auf selinput verwiesen werden. Der Nutzer braucht nicht
-auf Kodierung zu achten \newline
-PG: gute Idee. Der ganze Quatsch mit den mit den codepages verwirrt nur 
-die Anfänger}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{ttdescription}
-  \item[latin1] Latin-1 (ISO~8859-1), gebräuchlich unter \textsc{Unix} und VMS
-  \item[latin9] Latin-9 (ISO~8859-15), Erweiterung von Latin-1, u.\,a. mit 
-                Eurozeichen
-  \item[ansinew] Microsoft Codepage 1252 für Windows
-  \item[cp850] IBM Codepage 850, üblich unter OS/2
-  \item[applemac] \textsc{Macintosh}-Kodierung
-\end{ttdescription}%
-}}
 
 Falls \LaTeX{} ein eingegebenes Zeichen nicht darstellen kann, was meist für die
 sogenannten "`Pseudografik-Zeichen"' gilt,  bekommt man eine entsprechende 
