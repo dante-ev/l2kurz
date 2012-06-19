@@ -1,3 +1,5 @@
+%!TEX root = l2kurz.tex
+
 % master: l2kurz.tex
 % l2k6.tex - 6.Teil der LaTeX2e-Kurzbeschreibung v2.3
 % 2003-04-10 (WaS)
@@ -8,7 +10,6 @@ Das komplette Menü der Spezialitäten, die von \LaTeX\ serviert
 werden, ist im \manual\ und in der Online-Dokumentation beschrieben.
 Hier soll nur auf einige besondere "`Schmankerln"' hingewiesen
 werden.
-\todo[inline]{PG: vielleicht anstelle des Brief-Beispiels ein kleines TikZ Beispiel einbringen, so als Appetithäppchen? Das würde auch die Textlastigkeit von l2kurz etwas aufbrechen. \newline MD: Spricht den Leser auch eher an. }
  
 \subsection{Abstände}
 
@@ -157,62 +158,12 @@ Lindenallee 10 \\[1.5ex]
 \exc
 
 \smallskip
+
+\subsection{\LaTeX-Zeichenprogramme}
+
+\todo[inline]{PG: hier eine kurze Erwähnung von TikZ und anschließend ein Bild, ohne große Erklärung? Hast du ein griffiges Beispiel oder sollen wir auf tex.sx nach einem fragen? Mehr als eine Seite würde ich auf keinen Fall damit verbrauchen, lieber mit einer Aufzählung, welche Vorteile sowas hat (Schriftart/Farben wie im Dokument, Grafik und Quelle sind beieinander, oftmals genauer als Zeichenprogramme, Verbindungen mit dem Text möglich) - aber auch hier Nachteil: Einarbeitung}
+
  
- 
-\subsection{Briefe}\label{briefe}
- 
-\todo[inline]{PG: Briefe würde ich komplett rauslassen. Das macht doch eh kein Anfänger!\newline MD: Meine Meinung}
-
-Mit der Dokumentklasse \texttt{letter} kann man zwischen
-\lstinline|\begin{document}| und \lstinline|\end{document}| einen oder
-mehrere Briefe schreiben.
-Abbildung~\ref{brief} enthält ein Beispiel für einen Brief.
-
-\begin{figure}[ht] %\small
-\begin{lminipage}{11cm}
-\begin{verbatim}
-\documentclass[12pt,a4paper]{letter}
-\usepackage[latin1]{inputenc}
-\usepackage{german}
-\address{EDV-Zentrum der TU Wien \\
-  Abt. Digitalrechenanlage \\
-  Wiedner Hauptstraße 8--10 \\
-  A-1040 Wien}
-\signature{Dr. Hubert Partl}
-\begin{document}
-\begin{letter}{Frau Mag. Elisabeth Schlegl \\
-  EDV-Zentrum der Karl-Franzens-Universität \\
-  Attemsgasse 25/II \\
-  \textbf{A-8010 Graz}}
-\opening{Liebe Frau Schlegl,}
-herzlichen Dank für die Zusendung ...
-
-... in etwa 2--3~Wochen fertig zu sein.
-\closing{Mit freundlichen Grüßen}
-\end{letter}
-\end{document}
-\end{verbatim}
-\end{lminipage}
-\caption{Brief von H.\,P. an E.\,S.} \label{brief}
-\end{figure}
-
-Mit dem Befehl \lstinline|\address| definiert man die Adresse des Absenders.
-\lstinline|\begin{letter}{...}| beginnt einen Brief an den im
-Parameter angegebenen Empfänger.
-\lstinline|\opening{...}| schreibt die Anrede 
-und \lstinline|\closing{...}| den abschließenden Gruß, 
-an den automatisch die eingangs mit
-\lstinline|\signature| vereinbarte Unterschrift angefügt wird.
-\lstinline|\end{letter}| beendet den jeweiligen Brief.
-
-Das von der Dokumentklasse \texttt{letter} bewirkte Layout der Briefe 
-orientiert sich an amerikanischen Gepflogenheiten.
-Mit vielen \LaTeX-Systemen ist die Klasse 
-\texttt{dinbrief} verfügbar; sie setzt die Briefe in einer
-Anordnung gemäß DIN~676, 
-die für die Verwendung von A4-Bogen in Fensterkuverts geeignet ist.
-Der \local{} sollte Auskunft über diese oder andere Alternativen zu
-\texttt{letter} geben.
 
 \subsection{Literaturangaben}
 
@@ -241,10 +192,13 @@ H.~Partl: \textit{German \TeX,}
 TUGboat Vol.~9, No.~1 (1988)
 \end{thebibliography}
 \end{LTXexample}
-\todo{PG: ltxexample verschluckt das \cs{cite} :(\\MD: Sehe ich gerade :-( -- Muss ich mir was einfallen lassen}
+\todo[inline]{PG: ltxexample verschluckt das \cs{cite} :(\\MD: Sehe ich gerade :-( -- Muss ich mir was einfallen lassen}
 
-\todo[inline]{PG: Üblicherweise wird dafür bibtex oder biblatex/biber benutzt. Ich denke mir, dass wir zumindest auf biblatex (da gibts 'ne Deutsche Übersetzung von) eingehen sollten bzw. erwähnen sollten. \newline Erweitert aber den Text ;-)\newline PG: stimmt auch wieder. Es ist ja 'ne Kurzeinführung und kein Lehrbuch. Also erst mal drin lassen und dann können wir immer noch schauen?}
- 
+\todo[inline,color=done]{PG: diesen Abschnitt habe ich mal eingefügt, kann aber auch wieder raus, wenn er unpassend ist.}
+
+Werden viele Literatureinträge zitiert, bieten sich zwei verschiedene Hilfsmittel für \LaTeX{} an. Die klassische Variante \emph{Bib\TeX} ist sehr weit verbreitet, hat aber Schwächen insbesondere bei dem Umgang mit Umlauten. Daher wurde in den letzten Jahren das \LaTeX{} Makropaket \emph{biblatex} entwickelt, das auf das Programm \emph{biber} aufsetzt, um Literatureinträge zu sortieren und für die Literaturverzeichnisse aufzubereiten. Die einzelnen Literatureinträge werden in der Regel in einer Textdatenbank gepflegt und mit \emph{biblatex} anhand der benutzten \lstinline|\cite|"=Befehle ausgegeben. Für die komfortable Verwaltung von Literaturdatenbanken gibt viele Programme wie beispielsweise JabRef (frei) oder Endnote (kommerziell).
+
+% \todo[inline]{PG: Üblicherweise wird dafür bibtex oder biblatex/biber benutzt. Ich denke mir, dass wir zumindest auf biblatex (da gibts 'ne Deutsche Übersetzung von) eingehen sollten bzw. erwähnen sollten. \newline Erweitert aber den Text ;-)\newline PG: stimmt auch wieder. Es ist ja 'ne Kurzeinführung und kein Lehrbuch. Also erst mal drin lassen und dann können wir immer noch schauen?}
 \subsection{Zerbrechliche Befehle}
 \todo[inline]{Ich finden den Abschnitt ganz gut, aber ein Beispiel wäre nicht schlecht. Vielleicht zeigen, dass eine Formel mit \cs{(}..\cs{)} nicht in Überschriften funktioniert oder vielleicht ein anderes \emph{griffiges} Beispiel? Mir fällt leider keines ein.\newline MD: Es hat nur auswirkungen, wenn man expandiert bzw. in eine Datei schreibt. Inhaltsverzeichnis ist dabei griffiger, als ein \string\edef }
 \todo[inline]{PG: Wenn ich so sehe, was wir alles noch mit reinnehmen wollen, dann würde ich auf diesen Abschnitt auch verzichten.}
@@ -256,16 +210,17 @@ auch im Inhaltsverzeichnis und möglicherweise in der Kopfzeile auftauchen.
 Bestimmte Befehle "`überstehen"' diesen Transport nicht, wenn sie
 ohne besondere Maßnahmen in einem solchen "`beweglichen Argument"'
 auftreten.
-Derartige Befehle heißen "`zerbrechlich"'.  Damit sie dennoch innnerhalb
+Derartige Befehle heißen "`zerbrechlich"'.  Damit sie dennoch innerhalb
 von beweglichen Argumenten benutzt werden dürfen, 
 muss man ihnen einfach den Befehl \lstinline|\protect| voranstellen.
 
 Zerbrechlich sind insbesondere alle Befehle, die ein optionales Argument
-kennen, also auch \lstinline|\\| (sic!),
+kennen, also auch \lstinline|\\|,
 außerdem die Befehle \lstinline|\(|, \lstinline|\)| und \lstinline|\footnote|.
 
 Bewegliche Argumente haben, neben den Gliederungsbefehlen,
 auch der Befehl \lstinline|\caption| und die Umgebung \texttt{letter}.
 
+\todo[inline]{PG: Kapitel \emph{Fehlermeldungen und Warnungen}, \emph{Hilfe, ich weiß nicht weiter} einfügen?}
 
 \endinput

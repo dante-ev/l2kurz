@@ -1,3 +1,5 @@
+%!TEX root = l2kurz.tex
+
 % master: l2kurz.tex
 % l2k5.tex - 5.Teil der LaTeX2e-Kurzbeschreibung v2.3
 % 2001-04-10 (WaS)
@@ -159,7 +161,9 @@ und wie Sie weitere installieren und verwenden können.
 Insbsondere sollte eine Anzahl von verbreiteten PostScript-Schriften
 mit jedem aktuellen \LaTeX-System verwendbar sein \cite{postscript}.
 
-\todo[inline]{PG: die Tabelle bekommt sicherlich keinen Schönheitspreis. Lieber mit \cs{toprule},\cs{midrule} und \cs{bottomrule} machen. Außerdem könnten wir die Liste vielleicht auf einen aktuelleren Stand bringen? Siehe \url{http://tex.stackexchange.com/questions/59403}\\MD: JA}
+% \todo[inline]{PG: die Tabelle bekommt sicherlich keinen Schönheitspreis. Lieber mit \cs{toprule},\cs{midrule} und \cs{bottomrule} machen. Außerdem könnten wir die Liste vielleicht auf einen aktuelleren Stand bringen? Siehe \url{http://tex.stackexchange.com/questions/59403}\\MD: JA}
+\todo[inline,color=done]{PG: Tabelle etwas angepasst, kannste ja noch gerne ändern}
+
 
 \begin{table}[htb]
 \caption[Pakete für alternative Schriftfamilien]
@@ -168,43 +172,44 @@ Tabellenspalte bedeutet, dass das Paket die betreffende Schriftfamilie nicht
 verändert; * kennzeichnet die jeweils als Grundschrift eingestellte Familie.)}
 \label{families}
 {\footnotesize
-\begin{center}
 \medskip
 \renewcommand{\arraystretch}{1.5}
-\begin{tabular}{|l|p{2.cm}p{2.2cm}p{2.4cm}p{2.2cm}|}
-\hline
-Paket            & Antiqua    & Serifenlose   & Schreibmaschine  & math.\ Formeln\\\hline\hline
-(keines)         & CM Roman * & CM Sans Serif & CM Typewriter    & $\approx$ CM Roman\\\hline
-\texttt{ccfonts} & Concrete *
-                 &
-                 &
-                 & $\approx$ Concrete\\\hline
-\texttt{cmbright}&
-                 & CM Bright *
-                 & {\raggedright CM\ Typewriter\\ Light}
-                 & $\approx$ CM Bright\\\hline
-% \texttt{pandora} & {\raggedright Pandora\\ Roman *} 
-%                  & {\raggedright Pandora \\ Sans Serif} 
+\newcolumntype{x}{>{\RaggedRight\hspace{0pt}}X}
+\begin{tabularx}{\textwidth}{@{}lxxxx@{}}
+\toprule
+Paket            & Antiqua    & Serifenlose   & Schreibmaschine  & math.\ Formeln\tabularnewline\midrule
+(keines)         & CM Roman * & CM Sans Serif & CM Typewriter    & $\approx$ CM Roman\tabularnewline
+% \texttt{ccfonts} & Concrete *
 %                  &
-%                  & \\\hline
-\texttt{mathptmx}& Times *
-                 &
-                 &
-                 & $\approx$ Times\\\hline
-\texttt{mathpazo}& Palatino *
-                 &
-                 &
-                 & $\approx$ Palatino\\\hline
-\texttt{helvet}  & 
-                 & Helvetica
-                 &
-                 & \\\hline
+%                  &
+%                  & $\approx$ Concrete\\
+% \texttt{cmbright}&
+%                  & CM Bright *
+%                  & {\raggedright CM\ Typewriter\\ Light}
+%                  & $\approx$ CM Bright\\
 \texttt{courier} &
                  &
                  & Courier 
-                 & \\\hline
-\end{tabular}
-\end{center}
+                 & \tabularnewline
+\texttt{droid}   & Droid Serif~*  & Droid Sans    & Droid Sans Mono &                  \tabularnewline
+\texttt{fourier} & Utopia Regular~*    &               &                 & Fourier          \tabularnewline
+\texttt{helvet}  & 
+                 & Helvetica
+                 &
+                 & \tabularnewline
+\texttt{inconsolata} &                 &                & Inconsolata    &                  \tabularnewline
+\texttt{libertine} & Linux Libertine~* & Linux Biolinum &                &                  \tabularnewline
+\texttt{lmodern} & LM Roman *          & LM Sans Serif & LM Typewriter & $\approx$ LM Roman \tabularnewline
+\texttt{mathptmx}& Times *
+                 &
+                 &
+                 & $\approx$ Times\tabularnewline
+\texttt{mathpazo}& Palatino *
+                 &
+                 &
+                 & $\approx$ Palatino\tabularnewline
+\bottomrule                
+\end{tabularx}
 }
 \end{table}
 
