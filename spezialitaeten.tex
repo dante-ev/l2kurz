@@ -196,7 +196,27 @@ TUGboat Vol.~9, No.~1 (1988)
 
 \todo[inline,color=done]{PG: diesen Abschnitt habe ich mal eingefügt, kann aber auch wieder raus, wenn er unpassend ist.}
 
-Werden viele Literatureinträge zitiert, bieten sich zwei verschiedene Hilfsmittel für \LaTeX{} an. Die klassische Variante \emph{Bib\TeX} ist sehr weit verbreitet, hat aber Schwächen insbesondere bei dem Umgang mit Umlauten. Daher wurde in den letzten Jahren das \LaTeX{} Makropaket \emph{biblatex} entwickelt, das auf das Programm \emph{biber} aufsetzt, um Literatureinträge zu sortieren und für die Literaturverzeichnisse aufzubereiten. Die einzelnen Literatureinträge werden in der Regel in einer Textdatenbank gepflegt und mit \emph{biblatex} anhand der benutzten \lstinline|\cite|"=Befehle ausgegeben. Für die komfortable Verwaltung von Literaturdatenbanken gibt viele Programme wie beispielsweise JabRef (frei) oder Endnote (kommerziell).
+\todo[inline,]{MD: Absätze überarbeitet.}
+
+Werden viele Literatureinträge zitiert bzw. verwendet, bietet sich die Nutzung
+einer Datenbank an. Der Name Datenbank soll in diesem Zusammenhang eine
+Datei mit der Endung \lstinline|bib| bedeutet. Die Datenbank besitzt ihre eigene Syntax,
+um die benötigten Literatureinträge zu verwalten. Für die komfortable Verwaltung
+von Literaturdatenbanken existieren viele Programme wie beispielsweise JabRef (frei) oder
+Endnote (kommerziell).
+
+Für die Verarbeitung dieser Literaturdatenbanken bieten sich zwei verschiedene 
+Hilfsmittel für \LaTeX{} an. Die klassische Variante ist \emph{Bib\TeX} in Verbindung
+mit einem Literaturverzeichnisstil. Die Anpassung an die eigenen Bedürfnisse
+gestalltet sich mehr als schwierig. Daher wurde in den letzten Jahren das \LaTeX{} 
+Makropaket \emph{biblatex} entwickelt, das neben \emph{Bib\TeX}  das mächtigere
+Programm \emph{biber} nutzt. Das Makropaket \emph{biblatex} erlaubt die Manipulation
+des Literaturverzeichnisses auf \LaTeX"=Ebene. Auf CTAN ist eine deutsche Übersetzung
+verfügbar\cite{biblatex-de}.
+
+
+
+%%Werden viele Literatureinträge zitiert, bieten sich zwei verschiedene Hilfsmittel für \LaTeX{} an. Die klassische Variante \emph{Bib\TeX} ist sehr weit verbreitet, hat aber Schwächen insbesondere bei dem Umgang mit Umlauten. Daher wurde in den letzten Jahren das \LaTeX{} Makropaket \emph{biblatex} entwickelt, das auf das Programm \emph{biber} aufsetzt, um Literatureinträge zu sortieren und für die Literaturverzeichnisse aufzubereiten. Die einzelnen Literatureinträge werden in der Regel in einer Textdatenbank gepflegt und mit \emph{biblatex} anhand der benutzten \lstinline|\cite|"=Befehle ausgegeben. Für die komfortable Verwaltung von Literaturdatenbanken gibt viele Programme wie beispielsweise JabRef (frei) oder Endnote (kommerziell).
 
 % \todo[inline]{PG: Üblicherweise wird dafür bibtex oder biblatex/biber benutzt. Ich denke mir, dass wir zumindest auf biblatex (da gibts 'ne Deutsche Übersetzung von) eingehen sollten bzw. erwähnen sollten. \newline Erweitert aber den Text ;-)\newline PG: stimmt auch wieder. Es ist ja 'ne Kurzeinführung und kein Lehrbuch. Also erst mal drin lassen und dann können wir immer noch schauen?}
 \subsection{Zerbrechliche Befehle}
