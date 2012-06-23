@@ -181,8 +181,8 @@ maximale Breite dieser Nummernangabe an, also z.\,B.\
 Im Text zitiert man die Literaturstelle dann mit dem Befehl \lstinline|\cite|
 und dem vereinbarten Namen als Argument.
 
-
-\begin{LTXexample}
+\let\origcite\cite
+\begin{LTXexample}[preset=\let\cite\origcite]
 Partl~\cite{pa} hat
 vorgeschlagen ...
  
@@ -192,7 +192,7 @@ H.~Partl: \textit{German \TeX,}
 TUGboat Vol.~9, No.~1 (1988)
 \end{thebibliography}
 \end{LTXexample}
-\todo[inline]{PG: ltxexample verschluckt das \cs{cite} :(\\MD: Sehe ich gerade :-( -- Muss ich mir was einfallen lassen}
+\todo[inline,color=done]{PG: ltxexample verschluckt das \cs{cite} :(\\MD: Sehe ich gerade :-( -- Muss ich mir was einfallen lassen\\MD: DONE}
 
 \todo[inline,color=done]{PG: diesen Abschnitt habe ich mal eingefügt, kann aber auch wieder raus, wenn er unpassend ist.}
 
