@@ -7,8 +7,25 @@
 % last changes: 2001-06-10
 
 \section{Setzen von mathematischen Formeln} \label{math}
- 
+
+\todo[inline]{MD: Ich habe angefangen, dies zu überarbeiten}
+
 \subsection{Allgemeines}
+
+\LaTeX{} verfügt über einen eigenen Mathemodus, der sich in einigen
+Punkten sehr stark vom Textmodus unterscheidet. Auf die Unterschiede
+wird im späteren Verlauf eingegangen. Der Mathematikmodus selbst
+kann in zwei Bereiche unterteilte werden, \todo{MD: Satz gefällt mir nicht}
+den abgesetzten und den integrierten Modus.
+
+Die Füller der Möglichkeiten ist u.\,a.\ in der Onlindocumentation \emph{mathmode}
+zusammemgefasst und soll hier als Referenz dienen \cite{mathmode}.
+
+Obwohl \LaTeX{} ohne Zusatzpakete eine Fülle von Möglichkeiten liefert,
+hat sich das Paket \texttt{amsmath} etabliert. Es erweitert die Standardmöglichkeiten
+um eine Vielzahl von Makros und Umgebungen. Im weiteren Verlauf wird daher auch
+vorausgesetzt, dass das Paket geladen ist. Neben der Dokumenation selbst, sind im genannten
+\emph{mathmode} die Möglichkeiten und Vorteile des Paktes gezeigt.
  
 Mathematische Textteile innerhalb eines Absatzes werden zwischen
 \lstinline|\(| und~\lstinline|\)| oder zwischen \lstinline|$| und~\lstinline|$| oder
@@ -17,32 +34,20 @@ eingeschlossen.
 Als mathematische Texte gelten sowohl komplette mathematische
 Formeln als auch einzelne Variablennamen, die sich auf Formeln
 beziehen, griechische Buchstaben und diverse Sonderzeichen.\todo{PG: die nachfolgenden Elemente sollten \$...\$ benutzen, die Variante mit \cs{(} und \cs{)} sind nicht robust}
-\exa
-Seien \(a\) und \(b\) die Katheten
-und \(c\) die Hypotenuse,
-dann gilt \(c^{2}=a^{2}+b^{2}\)
+\begin{LTXexample}
+Seien $a$ und $b$die Katheten
+und $c$ die Hypotenuse,
+dann gilt $c^{2}=a^{2}+b^{2}$
 (Satz des Pythagoras).
-\exb
-\begin{verbatim}
-Seien \(a\) und \(b\) die Katheten
-und \(c\) die Hypotenuse,
-dann gilt \(c^{2}=a^{2}+b^{2}\)
-(Satz des Pythagoras).
-\end{verbatim}
-\exc
-\exa
+\end{LTXexample}
+
+\begin{LTXexample}
 \TeX\ spricht man wie
- \(\tau\epsilon\chi\) aus.\\[6pt]
-Mit \(\heartsuit\)-lichen
- Grüßen
-\exb
-\begin{verbatim}
-\TeX\ spricht man wie
- \(\tau\epsilon\chi\) aus.\\
-Mit \(\heartsuit\)-lichen
- Grüßen
-\end{verbatim}
-\exc
+ $\tau\epsilon\chi$ aus.\\
+Mit $\heartsuit$-lichen
+ Grü\ss en
+\end{LTXexample}
+
  
 Größere mathematische Formeln oder Gleichungen setzt man besser
 in eigene Zeilen. Wenn sie \emph{keine} Gleichungsnummer erhalten 
@@ -51,45 +56,29 @@ sollen, stellt man sie dazu zwischen \lstinline|\begin{displaymath}| und
 wenn sie eine Gleichungsnummer erhalten sollen, stellt man sie
 zwischen \lstinline|\begin{equation}| und \lstinline|\end{equation}|.
 
-\exa
-Seien \(a\) und \(b\) die Katheten
-und \(c\) die Hypotenuse,
+\begin{LTXexample}
+Seien $a$ und $b$ die Katheten
+und $c$ die Hypotenuse,
 dann gilt
 \begin{equation}
 c = \sqrt{  a^{2}+b^{2}  }
 \end{equation}
 (Satz des Pythagoras).
-\exb
-\begin{verbatim}
-Seien \(a\) und \(b\) die Katheten
-und \(c\) die Hypotenuse,
-dann gilt
-\begin{equation}
-c = \sqrt{  a^{2}+b^{2}  }
-\end{equation}
-(Satz des Pythagoras).
-\end{verbatim}
-\exc
+\end{LTXexample}
+
 
 Mit \lstinline|\label| und \lstinline|\ref| kann man die Gleichungsnummern
 im Text ansprechen.
 
-\exa
+\let\origlabel\label
+\begin{LTXexample}[preset=\let\label\origlabel]
 \begin{equation} \label{eps}
 \varepsilon > 0
 \end{equation}
  
 Aus (\ref{eps}) folgt \dots
-\exb
-\begin{verbatim}
-\begin{equation} \label{eps}
-\varepsilon > 0
-\end{equation}
- 
-Aus (\ref{eps}) folgt \dots
-\end{verbatim}
-\exc
- 
+\end{LTXexample}
+
  
  
 Das Setzen im mathematischen Modus unterscheidet sich vom
@@ -103,19 +92,14 @@ Text-Modus vor allem durch folgende Punkte:
   mathematischen Ausdrücke automatisch bestimmt oder müssen
   durch spezielle Befehle wie \lstinline|\,| oder~\lstinline|\qquad|
   angegeben werden.
-\exa
+
+\begin{LTXexample}
 \begin{equation}
 \forall x \in \mathbf{R}:
 \qquad x^{2} \geq 0
 \end{equation}
-\exb
-\begin{verbatim}
-\begin{equation}
-\forall x \in \mathbf{R}:
-\qquad x^{2} \geq 0
-\end{equation}
-\end{verbatim}
-\exc
+\end{LTXexample}
+
  
 \item Jeder einzelne Buchstabe wird als Name einer Variablen
   betrachtet und entsprechend gesetzt (kursiv mit
@@ -123,21 +107,15 @@ Text-Modus vor allem durch folgende Punkte:
   mathematischen Textes normalen Text (in aufrechter Schrift, mit
   Wortabständen) setzen, muss man diesen in
   \lstinline|\textnormal{...}| einschließen.
-\exa
-\begin{equation}
-x^{2} \geq 0\qquad
-\textnormal{für alle }
-x \in \mathbf{R}
-\end{equation}
-\exb
-\begin{verbatim}
+
+\begin{LTXexample}
 \begin{equation}
 x^{2} \geq 0\qquad
 \textnormal{f"ur alle }
 x \in \mathbf{R}
 \end{equation}
-\end{verbatim}
-\exc
+\end{LTXexample}
+
  
  
 \end{enumerate}
@@ -156,39 +134,28 @@ Kleine \textbf{griechische Buchstaben} werden als \lstinline|\alpha|,
 große griechische Buchstaben als \lstinline|\mathrm{A}|,
 \lstinline|\mathrm{B}|, \lstinline|\Gamma|, \lstinline|\Delta|, usw.
 
-\exa
-\(\lambda, \xi, \pi, \mu,
- \Phi, \Omega \)
-\exb
-\begin{verbatim}
-\(\lambda, \xi, \pi, \mu,
- \Phi, \Omega \)
-\end{verbatim}
-\exc
+\begin{LTXexample}
+$\lambda, \xi, \pi, \mu,
+ \Phi, \Omega $
+\end{LTXexample}
+
  
 Weiters gibt es eine Fülle von \textbf{mathematischen Symbolen}:
-von \(\in\) über \(\Rightarrow\) bis~\(\infty\) (siehe
+von $\in$ über $\Rightarrow$ bis~$\infty$ (siehe
 Anhang~\vref{symbols}).
  
 \bigskip
 
 Neben der voreingestellten Kursivschrift für die Variablen
 bietet \LaTeX\ eine Auswahl von mathematischen \textbf{Alphabeten} an:
-\exa
-\(\mathrm{ABCabc}\) \\
-\(\mathbf{ABCabc}\) \\
-\(\mathsf{ABCabc}\) \\
-\(\mathtt{ABCabc}\) \\
-\(\mathcal{ABC}\)
-\exb
-\begin{verbatim}
-\(\mathrm{ABCabc}\)
-\(\mathbf{ABCabc}\)
-\(\mathsf{ABCabc}\)
-\(\mathtt{ABCabc}\)
-\(\mathcal{ABC}\)
-\end{verbatim}
-\exc
+\begin{LTXexample}
+$\mathrm{ABCabc}$ \\
+$\mathbf{ABCabc}$ \\
+$\mathsf{ABCabc}$ \\
+$\mathtt{ABCabc}$ \\
+$\mathcal{ABC}$
+\end{LTXexample}
+
 Die kalligraphischen Buchstaben (\lstinline:\mathcal:) gibt es nur als
 Großbuchstaben. Mit dem Paket \texttt{amsymb} \cite{ch8} stehen
 auch Alphabete für Mengenzeichen und Frakturschrift zur Verfügung.
@@ -199,56 +166,41 @@ Lokal können noch weitere installiert sein.
 
 \textbf{Exponenten und Indizes} können mit den Zeichen \lstinline|^|
 und \lstinline|_| hoch- bzw.\ tiefgestellt werden.
-\exa
-\(a_{1}\) \qquad
-\(x^{2}\) \qquad
-\(e^{-\alpha t}\) \qquad
-\(a^{3}_{ij}\)
-\exb
-\begin{verbatim}
-\(a_{1}\) \qquad
-\(x^{2}\) \qquad
-\(e^{-\alpha t}\) \qquad
-\(a^{3}_{ij}\)
-\end{verbatim}
-\exc
+
+\begin{LTXexample}
+\[
+a_{1} \qquad x^{2} \qquad
+ e^{-\alpha t} \qquad a^{3}_{ij}
+\]
+\end{LTXexample}
+
  
 Das \textbf{Wurzelzeichen} wird mit \lstinline|\sqrt|, \textit{n}-te
 Wurzeln werden mit \lstinline|\sqrt[|\textit{n}\lstinline|]| eingegeben.
 Die Größe des Wurzelzeichens wird von \LaTeX\ automatisch
 gewählt.
-\exa
-\(\sqrt{x}\) \qquad
-\(\sqrt{ x^{2}+\sqrt{y} }\)
-\qquad \(\sqrt[3]{2}\)
-\exb
-\begin{verbatim}
-\(\sqrt{x}\) \qquad
-\(\sqrt{ x^{2}+\sqrt{y} }\)
-\qquad \(\sqrt[3]{2}\)
-\end{verbatim}
-\exc
+
+\begin{LTXexample}
+\[
+\sqrt{x} \qquad  \sqrt{ x^{2}+\sqrt{y} }
+   \qquad \sqrt[3]{2}
+\]
+\end{LTXexample}
  
 Die Befehle \lstinline|\overline| und \lstinline|\underline| bewirken
 \textbf{waagrechte Striche} direkt über bzw.\ unter einem
 Ausdruck.
-\exa
-\(\overline{m+n}\)
-\exb
-\begin{verbatim}
-\(\overline{m+n}\)
-\end{verbatim}
-\exc
+\begin{LTXexample}
+$\overline{m+n}$
+\end{LTXexample}
  
 Die Befehle \lstinline|\overbrace| und \lstinline|\underbrace| bewirken
 \textbf{waagrechte Klammern} über bzw.\ unter einem Ausdruck.
-\exa
-\(\underbrace{a+b+\cdots+z}_{26}\)
-\exb
-\begin{verbatim}
-\(\underbrace{a+b+\cdots+z}_{26}\)
-\end{verbatim}
-\exc
+
+\begin{LTXexample}
+$\underbrace{a+b+\cdots+z}_{26}$
+\end{LTXexample}
+
  
 Um mathematische \textbf{Akzente} wie Pfeile oder Schlangen auf
 Variablen zu setzen, gibt es die in Tabelle~\ref{mathakz} auf
@@ -257,90 +209,69 @@ Längere Tilden und Dacherln, die sich über mehrere (bis zu~3)
 Zeichen erstrecken können, erhält man mit \lstinline|\widetilde|
 bzw.\ \lstinline|\widehat|.
 Ableitungszeichen werden mit \lstinline|'| (Apostroph) eingegeben.\todo{PG: Hier würde ich statt displaymath auf \cs{[} und \cs{]} zurückgreifen, ist kürzer und besser lesbar (und wird in der Praxis vermutlich mehr benutzt?)}
-\exa
+
+\begin{LTXexample}
 \begin{displaymath}
 y=x^{2} \qquad
 y'=2x   \qquad
 y''=2
 \end{displaymath}
-\exb
-\begin{verbatim}
-\begin{displaymath}
-y=x^{2} \qquad
-y'=2x   \qquad
-y''=2
-\end{displaymath}
-\end{verbatim}
-\exc
+\end{LTXexample}
+
  
 Mathematische \textbf{Funktionen} werden in der Literatur
 üblicherweise nicht kursiv (wie die Namen von Variablen),
 sondern in "`normaler"' Schrift dargestellt.
 \LaTeX\ stellt die folgenden Befehle für mathematische
 Funktionen zur Verfügung:
-\begin{verbatim}
-\arccos   \cos    \csc   \exp   \ker     \limsup  \min   \sinh
-\arcsin   \cosh   \deg   \gcd   \lg      \ln      \Pr    \sup
-\arctan   \cot    \det   \hom   \lim     \log     \sec   \tan
-\arg      \coth   \dim   \inf   \liminf  \max     \sin   \tanh
-\end{verbatim}
+
+\begin{LTXexample}[pos=b]
+\begin{tabular}{@{}*{8}{>{$}c<{$}}@{}}
+\arccos & \cos  & \csc & \exp & \ker    & \limsup & \min & \sinh \\
+\arcsin & \cosh & \deg & \gcd & \lg     & \ln     & \Pr  & \sup  \\
+\arctan & \cot  & \det & \hom & \lim    & \log    & \sec & \tan  \\
+\arg    & \coth & \dim & \inf & \liminf & \max    & \sin & \tanh \\
+\end{tabular}
+\end{LTXexample}
+
 Für die Modulo-Funktion gibt es zwei verschiedene Befehle:
 \lstinline|\bmod| für den binären Operator \(a \bmod b\) und
 \lstinline|\pmod{...}| für die Angabe in der Form \(x\equiv a
 \pmod{b}\).
  
-\exa
+\begin{LTXexample}
 \begin{displaymath}
 \lim_{x \to 0} \frac{\sin x}{x}
 =1
 \end{displaymath}
-\exb
-\begin{verbatim}
-\begin{displaymath}
-\lim_{x \to 0} \frac{\sin x}{x}
-=1
-\end{displaymath}
-\end{verbatim}
-\exc
+\end{LTXexample}
  
 Ein \textbf{Bruch} (fraction) wird mit dem Befehl
 \lstinline|\frac{...}{...}| gesetzt.  Für einfache Brüche kann man
 aber auch den Operator~\lstinline|/| verwenden.
-\exa
+
+\begin{LTXexample}
 \(1\frac{1}{2}\)~Stunden
 \begin{displaymath}
 \frac{ x^{2} }{ k+1 } \qquad
 x^{ \frac{2}{k+1} } \qquad
 x^{ 1/2 }
 \end{displaymath}
-\exb
-\begin{verbatim}
-\(1\frac{1}{2}\)~Stunden
-\begin{displaymath}
-\frac{ x^{2} }{ k+1 } \qquad
-x^{ \frac{2}{k+1} } \qquad
-x^{ 1/2 }
-\end{displaymath}
-\end{verbatim}
-\exc
+\end{LTXexample}
+
 
 \textbf{Binomial-Koeffizienten} können in der Form
 \lstinline|{...\choose...}| gesetzt werden.
 Mit dem Befehl~\lstinline|\atop| erhält man das Gleiche ohne
 Klammern.
-\exa
+
+\begin{LTXexample}
 \begin{displaymath}
 { n \choose k } \qquad
 { x\atop y+2 }
 \end{displaymath}
-\exb
-\begin{verbatim}
-\begin{displaymath}
-{ n \choose k } \qquad
-{ x\atop y+2 }
-\end{displaymath}
-\end{verbatim}
-\exc
+\end{LTXexample}
+
 
 \medskip
 
@@ -357,21 +288,14 @@ unterhalb des Integralzeichens gesetzt werden.
 Beim Summenzeichen hingegen werden die Grenzen bei der Angabe von
 \lstinline|\nolimits| oder im laufenden Text neben das Summenzeichen
 gesetzt, ansonsten aber unter- und oberhalb.
-\exa
+
+\begin{LTXexample}
 \begin{displaymath}
 \sum_{i=1}^{n} \qquad
 \int_{0}^{\frac{\pi}{2}} \qquad
 \int \limits_{-\infty}^{+\infty}
 \end{displaymath}
-\exb
-\begin{verbatim}
-\begin{displaymath}
-\sum_{i=1}^{n} \qquad
-\int_{0}^{\frac{\pi}{2}} \qquad
-\int \limits_{-\infty}^{+\infty}
-\end{displaymath}
-\end{verbatim}
-\exc
+\end{LTXexample}
  
 Für \textbf{Klammern} und andere Begrenzer gibt es in \TeX\ 
 viele verschiedene Symbole
@@ -383,19 +307,14 @@ speziellen Befehlen (z.\,B.~\lstinline|\updownarrow|).
 Setzt man den Befehl \lstinline|\left| vor öffnende Klammern und den
 Befehl \lstinline|\right| vor schließende, so wird automatisch die
 richtige Größe gewählt.\todo{MD: in gleicher Zeile!\\PG: ja. Das merkt der Anwender aber auch, wenn er es falsch macht.}
-\exa
+
+\begin{LTXexample}
 \begin{displaymath}
 1 + \left( \frac{1}{ 1-x^{2} }
     \right) ^3
 \end{displaymath}
-\exb
-\begin{verbatim}
-\begin{displaymath}
-1 + \left( \frac{1}{ 1-x^{2} }
-    \right) ^3
-\end{displaymath}
-\end{verbatim}
-\exc
+\end{LTXexample}
+
  
 In manchen Fällen möchte man die Größe der Klammern lieber
 selbst festlegen, dazu sind die Befehle
@@ -405,17 +324,12 @@ selbst festlegen, dazu sind die Befehle
 \lstinline|\Biggl| anstelle von \lstinline|\left|
 und analog \lstinline|\bigr| etc.\ anstelle von \lstinline|\right|
 anzugeben.
-\exa
+
+\begin{LTXexample}
 \begin{displaymath}
 \Bigl( (x+1) (x-1) \Bigr) ^{2}
 \end{displaymath}
-\exb
-\begin{verbatim}
-\begin{displaymath}
-\Bigl( (x+1) (x-1) \Bigr) ^{2}
-\end{displaymath}
-\end{verbatim}
-\exc
+\end{LTXexample}
  
 Um in Formeln \textbf{3~Punkte} (z.\,B.\ für \(1,2,\ldots,n\))
 auszugeben, gibt es die Befehle
@@ -426,19 +340,13 @@ auszugeben, gibt es die Befehle
 Außerdem gibt es die Befehle
 \lstinline|\vdots| für vertikal und
 \lstinline|\ddots| für diagonal angeordnete Punkte.
-\exa
+
+\begin{LTXexample}
 \begin{displaymath}
 x_{1},\ldots,x_{n} \qquad
 x_{1}+\cdots+x_{n}
 \end{displaymath}
-\exb
-\begin{verbatim}
-\begin{displaymath}
-x_{1},\ldots,x_{n} \qquad
-x_{1}+\cdots+x_{n}
-\end{displaymath}
-\end{verbatim}
-\exc
+\end{LTXexample}
 
 
 \subsection{Nebeneinander Setzen}
@@ -450,28 +358,16 @@ expliziten Befehlen verändern. Die wichtigsten sind
 \lstinline|\ | für einen mittleren,
 \lstinline|\quad| und \lstinline|\qquad| für große Abstände sowie\todo{MD: \texttt{\string\quad=1em \string\qquad=2em} . Sollte erwähnt werden, denn so erkennt man die Schriftabhängigkeit\\PG: OK}
 \lstinline|\!| für die Verkleinerung eines Abstands.
-\exa
+
+\begin{LTXexample}
 \begin{displaymath}
 F_{n} = F_{n-1} + F_{n-2}
  \qquad n \ge 2
 \end{displaymath}
-\exb
-\begin{verbatim}
-\begin{displaymath}
-F_{n} = F_{n-1} + F_{n-2}
- \qquad n \ge 2
-\end{displaymath}
-\end{verbatim}
-\exc
- 
-\exa
-\begin{displaymath}
-\int\!\!\!\int_{D} \mathrm{d}x\,\mathrm{d}y
-\quad \textnormal{statt} \quad
-\int\int_{D} \mathrm{d}x \mathrm{d}y
-\end{displaymath}
-\exb
-\begin{verbatim}
+\end{LTXexample}
+
+
+\begin{LTXexample}
 \begin{displaymath}
 \int\!\!\!\int_{D} 
 \mathrm{d}x\,\mathrm{d}y
@@ -479,8 +375,8 @@ F_{n} = F_{n-1} + F_{n-2}
 \int\int_{D} 
 \mathrm{d}x \mathrm{d}y
 \end{displaymath}
-\end{verbatim}
-\exc
+\end{LTXexample}
+
 
 
 \subsection{Übereinander Setzen}
@@ -489,7 +385,8 @@ Für \textbf{Matrizen} u.\,ä.\ gibt es die
 \texttt{array}-Umgebung, die ähnlich wie die
 \texttt{tabular}-Umgebung funktioniert.
 Der Befehl~\lstinline|\\| trennt die Zeilen.
-\exa
+
+\begin{LTXexample}
 \begin{displaymath}
 \mathbf{X} =
 \left( \begin{array}{ccc}
@@ -498,18 +395,8 @@ x_{21} & x_{22} & \ldots \\
 \vdots & \vdots & \ddots
 \end{array} \right)
 \end{displaymath}
-\exb
-\begin{verbatim}
-\begin{displaymath}
-\mathbf{X} =
-\left( \begin{array}{ccc}
-x_{11} & x_{12} & \ldots \\
-x_{21} & x_{22} & \ldots \\
-\vdots & \vdots & \ddots
-\end{array} \right)
-\end{displaymath}
-\end{verbatim}
-\exc
+\end{LTXexample}
+
 
 Für \textbf{mehrzeilige} Formeln oder Gleichungssysteme
 verwendet man die Umgebungen \texttt{eqnarray} und
@@ -527,23 +414,16 @@ wobei die mittlere Spalte für das Gleichheits- oder
 Ungleichheitszeichen verwendet wird, nach dem die Zeilen
 ausgerichtet werden sollen.
 Der Befehl~\lstinline|\\| trennt die Zeilen.
-\exa
+
+\begin{LTXexample}
 \begin{eqnarray}
 f(x) & = & \cos x       \\
 f'(x) & = & -\sin x     \\
 \int_{0}^{x} f(y)\,\mathrm{d}y &
  = & \sin x
 \end{eqnarray}
-\exb
-\begin{verbatim}
-\begin{eqnarray}
-f(x) & = & \cos x       \\
-f'(x) & = & -\sin x     \\
-\int_{0}^{x} f(y)\,\mathrm{d}y &
- = & \sin x
-\end{eqnarray}
-\end{verbatim}
-\exc
+\end{LTXexample}
+
  
 \textbf{Zu lange Gleichungen} werden von \LaTeX\ \textit{nicht}
 automatisch abgeteilt.
@@ -551,34 +431,18 @@ Der Autor muss bestimmen, an welcher Stelle abgeteilt und wie
 weit eingerückt werden soll.
 Meistens verwendet man dafür eine der beiden folgenden
 Varianten:
-\exa
-\begin{eqnarray}
-\sin x & = & x -\frac{x^{3}}{3!}
-     +\frac{x^{5}}{5!} - {} % empty group for correct spacing
-                            % around the `-'
-                    \nonumber\\
- & &{} -\frac{x^{7}}{7!} + \cdots % ditto
-\end{eqnarray}
-\exb
-\begin{verbatim}
+
+\begin{LTXexample}
 \begin{eqnarray}
 \sin x & = & x -\frac{x^{3}}{3!}
      +\frac{x^{5}}{5!} - {} 
                     \nonumber\\
  & &{} -\frac{x^{7}}{7!} + \cdots
 \end{eqnarray}
-\end{verbatim}
-\exc
-\exa
-\begin{eqnarray}
-\lefteqn{ \cos x = 1
-     -\frac{x^{2}}{2!} + {} }
-                    \nonumber\\
- & & {} +\frac{x^{4}}{4!}
-     -\frac{x^{6}}{6!} + \cdots
-\end{eqnarray}
-\exb
-\begin{verbatim}
+\end{LTXexample}
+
+
+\begin{LTXexample}
 \begin{eqnarray}
 \lefteqn{ \cos x = 1
      -\frac{x^{2}}{2!} +{} }
@@ -586,8 +450,8 @@ Varianten:
  & &{} +\frac{x^{4}}{4!}
      -\frac{x^{6}}{6!} + \cdots
 \end{eqnarray}
-\end{verbatim}
-\exc
+\end{LTXexample}
+
 Der Befehl \lstinline|\nonumber| bewirkt, dass an diese Stelle keine
 Gleichungsnummer gesetzt wird.
 Der Befehl \lstinline|\lefteqn| ermöglicht Ausnahmen von der
