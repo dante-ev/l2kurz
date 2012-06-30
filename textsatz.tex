@@ -46,15 +46,9 @@ kennzeichnen das Ende von
 Absätzen.
 \end{LTXexample}
 
-Wie die Absätze gesetzt werden, hängt von der Dokumentklasse ab: 
-Die Klassen 
-\texttt{article}, \texttt{report} und \texttt{book} kennzeichnen
-Absätze durch Einrücken der ersten Zeile;
-die Klasse \texttt{letter} beispielsweise lässt stattdessen 
-zwischen den Absätzen einen kleinen vertikalen Abstand.%
-\todo{MD: letter wirklich erwähnen? Ist m.E. veraltet. Die Absatzkennzeichnung
-sollte allerdings explizit angesprochen werden.\\PG: letter kann raus, Absatzkennzeichnung erwähnen, ggf. das Paket parskip, mit dem man 'umschalten' kann.}
-
+Üblicherweise werden in \LaTeX{} Absätze mit Einrückungen gekennzeichnet. Mit
+dem Paket \texttt{parskip} kann man die Absatzeinrückung ausschalten und
+Absätze mit Abstand dazwischen kenntlich machen.
 
 Mit Hilfe der in Abschnitt~\ref{env} beschriebenen Umgebungen ist
 es möglich, spezielle Textteile jeweils anders zu setzen.
@@ -80,60 +74,54 @@ verlängern oder verkürzen. Damit ist es möglich, noch
 eine Zeile mehr auf eine Seite zu bekommen. 
 (Zur Schreibweise von Längenangaben siehe Abschnitt~\ref{abst:horiz}.)
  
-\LaTeX\ bemüht sich, den Zeilenumbruch besonders schön zu
-machen.  Falls es keine den strengen Regeln genügende
-Möglichkeit für einen glatten rechten Rand findet, lässt es
-eine Zeile zu lang und gibt eine entsprechende Fehlermeldung 
-\todo{MD: Warnmeldung ist richtig. Wobei bis dato noch nicht auf Fehler/Warnungen eingegangen wurde\\PG: korrekt. Auf Fehlermeldungen würde ich nicht unbedingt eingehen, um den Rahmen nicht zu sprengen. Wenn, dann im letzten Kapitel ganz hinten.}
-aus (\texttt{over\-full hbox}).
-Das tritt insbesondere dann auf, wenn keine geeignete Stelle
-für die Silbentrennung gefunden wird.
-Innerhalb der \texttt{sloppypar}-Umgebung ist \LaTeX\ generell
-weniger streng in seinen Ansprüchen und vermeidet solche
-überlange Zeilen, indem es die Wortabstände stärker --
-notfalls auch unschön~-- vergrößert\todo{PG: microtype erwähnen?\\MD: Hilft, da es vorher in der Tabelle aufgeführt wurde.}.
-In diesem Fall werden zwar Warnungen gemeldet (\texttt{under\-full
-hbox}), das Ergebnis ist aber meistens durchaus brauchbar.
- 
+%PG: microtype erwähnt
+
+\LaTeX\ bemüht sich, den Zeilenumbruch besonders schön zu machen.  Falls es
+keine den strengen Regeln genügende Möglichkeit für einen glatten rechten Rand
+findet, lässt es eine Zeile zu lang und gibt eine entsprechende Warnmeldung
+aus (\texttt{over\-full hbox}). Das tritt insbesondere dann auf, wenn keine
+geeignete Stelle für die Silbentrennung gefunden wird. Innerhalb der
+\texttt{sloppypar}-Umgebung ist \LaTeX\ generell weniger streng in seinen
+Ansprüchen und vermeidet solche überlange Zeilen, indem es die Wortabstände
+stärker -- notfalls auch unschön~-- vergrößert. In diesem Fall werden zwar
+Warnungen gemeldet (\texttt{under\-full hbox}), das Ergebnis ist aber meistens
+durchaus brauchbar. Eine weitere Möglichkeit um \textit{schönere}  Absätze zu
+erzeugen ist das Paket \texttt{microtype} für PDF\TeX{} und neuere Programme.
+Es verändert einerseits die Breite der Buchstaben in einem so geringen Maß,
+dass das dem Leser nicht auf"|fällt. Weiterhin erlaubt es gewisse Zeichen
+etwas über den rechten Rand hinaus zu ragen (Trennstrich, Punkt, Komma,
+\dots), so dass \LaTeX{} bessere Umbruchpunkte findet.
+
+
  
 \subsubsection{Silbentrennung} \label{silb}
  
 Falls die automatische Silbentrennung in einzelnen Fällen nicht
 das richtige Ergebnis liefert, kann man diese Ausnahmen mit den
 folgenden Befehlen richtigstellen.
-Das kann insbesondere bei zusammengesetzten oder fremdsprachigen
-Wörtern notwendig werden; außerdem findet \LaTeX{} in Wörtern
-mit Umlauten oder akzentuierten Buchstaben nicht alle zulässigen
-Trennstellen\todo{PG: Stimmt nicht ganz! MD: War so, wenn \lstinline+\\"a+ verwendet wird.}.
  
 Der Befehl \lstinline|\hyphenation| bewirkt, dass die darin
-angeführten Wörter jedesmal an den und nur an den mit
+angeführten Wörter jedes Mal an den und nur an den mit
 \lstinline|-| markierten Stellen abgeteilt werden können.
 Er sollte im Vorspann stehen und eignet sich
-\emph{nur} für Wörter, die keine Umlaute, scharfes~s,
-Ziffern oder sonstige Sonderzeichen enthalten.\todo{PG: direkt kodierte Umlate sind in Ordnung}
+\emph{nur} für Wörter, die keine indirekt kodierten Umlaute wie \lstinline|"a| enthalten.
+
 \begin{example}
 \hyphenation{ Eingabe-file
    Eingabe-files FORTRAN }
 \end{example}
 
- 
-Der Befehl~\lstinline|\-| innerhalb eines Wortes bewirkt, dass dieses
-Wort dieses eine Mal nur an den mit~\lstinline|\-|
-markierten Stellen 
-oder unmittelbar nach einem Bindestrich
-abgeteilt werden kann.
-Dieser Befehl eignet sich für \emph{alle} Wörter, auch für
-solche, die Umlaute, scharfes~s, Ziffern oder sonstige
-Sonderzeichen enthalten\todo{PG: auch das ist nicht mehr richtig\\MD: Richtig}.
-%(Mit dem Paket \texttt{german}(siehe \ref{deutsch}) steht eine
-%weitere Möglichkeit zur Verfügung, nämlich der
-%Befehl~\lstinline:"-:. Dieser erlaubt auch die Trennung an nicht
-%explizit angegebenen Stellen im Wort.)
+Der Befehl~\lstinline|\-| innerhalb eines Wortes bewirkt, dass dieses Wort
+dieses eine Mal nur an den mit~\lstinline|\-| markierten Stellen  oder
+unmittelbar nach einem Bindestrich abgeteilt werden kann. Mit dem Paket
+\texttt{babel}\cite{babel} steht der Befehl~\lstinline:"-: zur
+Verfügung, der auch Trennungen an anderen (nicht markierten) Stellen im Wort
+erlaubt.
+
 \begin{LTXexample}
-Ein\-gabe\-file,
-\LaTeX-Eingabe\-file,
-Häss\-lich\-keit
+Ein"-gabe"-file,
+\LaTeX"=Eingabe"-file,
+Häss"-lich"-keit
 \end{LTXexample}
 
 Der Befehl \lstinline|\mbox| bewirkt, dass das Argument überhaupt nicht
@@ -154,86 +142,49 @@ in \lstinline|\mbox| einschließen und diese mit einer Tilde~\lstinline|~|,
 einem untrennbaren Wortzwischenraum (siehe
 Abschnitt~\ref{abstaende}), verbinden.
 
+% PG: c-k Trennungen etc. rausgenommen, nicht mehr notwendig
 
-Das Paket \texttt{german} macht noch einige weitere Befehle
+Das Paket \texttt{babel}\cite{babel} macht noch einige weitere Befehle
 verfügbar, die bestimmte Besonderheiten der deutschen Sprache
-berücksichtigen\todo{PG: Überarbeiten, nicht uptodate}.  Die wichtigsten von ihnen sind:
-\lstinline|"ck| für "`ck"', das als "`\mbox{k-k}"' abgeteilt wird,
-\lstinline|"ff| für "`"ff"', das als "`\mbox{ff-f}"' abgeteilt wird
-(und ebenso für andere Konsonanten)
-und \lstinline|"~| für einen Bindestrich, an dem kein Zeilenumbruch
-stattfinden~soll.
-\exa
-Drucker bzw. Druk-ker \\
-Ro"lladen bzw. Roll-laden \\
-x"~beliebig\\
-bergauf und "~ab
-\exb
-\begin{verbatim}
-Dru"cker
-Ro"lladen
-x"~beliebig
-bergauf und "~ab
-\end{verbatim}
-\exc
+berücksichtigen.  Die wichtigsten von ihnen sind:
+\lstinline|"~| für einen Bindestrich, an dem nicht umbrochen werden darf, 
+\lstinline|"=| für einen Trennstrich, an dem ein Umbruch stattfinden darf, beispielsweise bei zusammengesetzten Hauptwörtern
+und \lstinline,"|, um eine Ligatur aufzulösen, die \LaTeX{} normalerweise erzeugen würde.
+
+\todo[inline]{PG: Das hätte ich gerne in mehreren Zeilen!}
 
 \begin{LTXexample}
-Dru"cker
-Ro"lladen
 x"~beliebig
 bergauf und "~ab
+Breisgau"=Hochschwarzwald
+Dritte Auf"|lage
 \end{LTXexample}
 
+% Ich habe den ganzen Abschnitt über  nonfrenchspacing
+% rausgenomen, da das mit ngerman/babel sowieso nicht der Fall ist. Und wer 
+% es schafft, mit babel nonfrenchspacing anzuschalten, der kann sich den Rest
+% auch anlesen. Es ist eine _kurz_anleitung
+
+
 \subsection{Wortabstand} \label{abstaende}
+
+In einigen Fällen kann man sich nicht auf die Automatik von \LaTeX{} verlassen: manchmal wird ein Umbruchpunkt eingefügt, an dem keiner sein soll und manchmal möchte man den Abstand zwischen zwei Wörtern (oder Buchstaben) verändern. Dafür werden unter anderem folgende Befehle bereit gestellt:
+
+Eine \lstinline|~| (Tilde) bedeutet eine Leerstelle, an der kein Zeilenwechsel
+erfolgen darf.
+
+Mit \lstinline|\,| lässt sich ein kurzer Abstand erzeugen, wie er z.\,B.\ in
+Abkürzungen vorkommt oder zwischen Zahlenwert und Maßeinheit.
+
  
-Um einen glatten rechten Rand zu erreichen, variiert \LaTeX\ die
-Leerstellen zwischen den Wörtern etwas.
-Nach Punkten, Fragezeichen u.\,a., die einen Satz beenden, wird
-dabei ein etwas größerer Abstand erzeugt, was die Lesbarkeit
-des Textes erhöht.
-\LaTeX\ nimmt an, dass Punkte, die auf einen Großbuchstaben
-folgen, eine Abkürzung bedeuten, und dass alle anderen Punkte
-einen Satz beenden.
-Ausnahmen von diesen Regeln muss man \LaTeX\ mit den folgenden
-Befehlen mitteilen:
-
-% Todo: bessere Beschreibung (schaltet nur den extra Leerraum nach einem Satzende bei \nonfrenchspacing aus)
-Ein Backslash (\lstinline:\:) vor einem Leerzeichen bedeutet, dass diese
-Leerstelle nicht verbreitert werden darf.
-
-Eine \lstinline|~| (Tilde) bedeutet eine Leerstelle,
-an der kein Zeilenwechsel erfolgen darf.
-
-Mit \lstinline|\,| lässt sich ein kurzer Abstand erzeugen, wie er\todo{MD: Genannt Spatium\\PG: ich finde der Hinweis auf typokurz reicht}
-z.\,B.\ in Abkürzungen vorkommt oder zwischen Zahlenwert und Maßeinheit.
-
-Der Befehl~\lstinline|\@| vor einem Punkt bedeutet, dass dieser Punkt
-einen Satz beendet, obwohl davor ein Großbuchstabe steht.
-
 \begin{LTXexample}
 Das betrifft u.\,a.\ auch die \\
 wissenschaftl.\ Mitarbeiter. \\
 Dr.~Partl wohnt im 1.~Stock. \\
-\dots\ 5\,cm breit. \\
-Ich brauche Vitamin~C\@.
-Du nicht?
+\dots\ 5\,cm breit.
 \end{LTXexample}
 
- 
-Außerdem gibt es die Möglichkeit, mit dem Befehl
-\lstinline|\frenchspacing|
-zu vereinbaren, dass die Abstände an Satzenden nicht anders
-behandelt werden sollen als die zwischen Wörtern.
-Diese Konvention ist im nicht-englischen Sprachraum verbreitet.
-In diesem Fall brauchen die Befehle \lstinline|\ | und~\lstinline|\@| nicht
-angegeben werden.
-Mit dem Paket \texttt{german} \todo{MD: überarbeiten\\PG: stimmt für babel aber auch} ist \lstinline:\frenchspacing:
-automatisch gewählt; das kann durch
-\lstinline:\nonfrenchspacing:
-wieder rückgängig gemacht werden -- so wie durchgängig im vorliegenden
-Dokument!
-
- 
+% Abschnitt über frenchspacing raus. Das hier ist l2kurz!
 
 \subsection{Spezielle Zeichen} \label{spezial}
  
@@ -243,8 +194,8 @@ Für Anführungszeichen ist \emph{nicht} das auf Schreibmaschinen
 übliche Zeichen (\lstinline|"|) zu verwenden.
 Im Buchdruck werden für öffnende und schließende
 Anführungszeichen jeweils verschiedene Zeichen bzw.\ %
-Zeichenkombinationen gesetzt\todo{PG: csquotes erwähnen?\\MD: unbedingt}.
-öffnende Anführungszeichen, wie sie im amerikanischen Englisch 
+Zeichenkombinationen gesetzt.
+Öffnende Anführungszeichen, wie sie im amerikanischen Englisch 
 üblich sind, erhält man durch Eingabe von zwei Grave-Akzenten, 
 schließende durch zwei Apostrophe.
 \begin{LTXexample}
@@ -253,29 +204,9 @@ schließende durch zwei Apostrophe.
 \end{LTXexample}
 "`Deutsche Gänsefüßchen"' sehen anders aus als ``amerikanische
 Quotes''.  
-% In Original-\LaTeX\ kann man versuchen, für deutsche
-% Anführungszeichen unten (links) zwei Kommata und oben
-% (rechts) zwei Grave-Akzente einzugeben, das Ergebnis ist aber
-% nicht besonders schön.\footnote{Wenn die nach der Cork-Norm 
-% kodierten Schriften verwendet werden, etwa mit Hilfe von 
-% \texttt{\string\usepackage[T1]$\{$fontenc$\}$},
-% ist die Eingabe durch zwei Kommata und zwei Graves möglich, die 
-% Warnung bezüglich der Frage- und Ausrufezeichen bleibt aber richtig. 
-% Deshalb sind Konventionen von \texttt{german.sty} auch dann zu 
-% bevorzugen.}
-% Statt \lstinline|!``| und \lstinline|?``| muss man \lstinline|!\/``| bzw.\ 
-% \lstinline|?\/``| schreiben, weil man sonst die spanischen
-% Sonderzeichen erhalten würde.
-% \exa
-% ,,Nein,`` sagte er,
-% ,,ich wei\ss{} nichts!\/``
-% \exb
-% \begin{verbatim}
-% ,,Nein,`` sagte er,
-% ,,ich wei\ss{} nichts!\/``
-% \end{verbatim}
-% \exc
-Bei Benutzung des Paketes \texttt{german} (siehe \ref{deutsch})
+
+
+Bei Benutzung des Paketes \texttt{babel} (siehe \ref{deutsch})
 stehen die folgenden Befehle für 
 deutsche Anführungszeichen zur Verfügung:
 \lstinline|"`| (Doublequote und Grave-Akzent) für Anführungszeichen
@@ -295,9 +226,16 @@ In den Zeichensätzen mancher Rechner (z.\,B. Macintosh) sind die deutschen
 Anführungszeichen enthalten.  Das Paket \texttt{selinput} (siehe
 Abschnitt~\ref{inputenc}) erlaubt dann, sie auch direkt einzugeben.
 
-\todo[inline,color=done]{PG: eingefügt}
+Das Paket \texttt{csquotes} erlaubt die indirekte Eingabe von Anführungszeichen, die automatisch korrekt geschachtelt werden. Zitate werden mit \lstinline|\enquote{|\textit{Text}\lstinline|}| ausgezeichnet:
+
+\begin{LTXexample}
+Er sagte \enquote{Da schrie ich
+\enquote{Hallo}}
+\end{LTXexample}
+
+Benutzt man durchgängig diese Form der Zitate, kann man mit einer Paketoption zu \texttt{csquotes} die Art der Anführungszeichen leicht für das gesamte Dokument verändern.
+
 Eine gute Einführung in die Typographieregeln für Textsatz findet sich in der PDF"=Datei \emph{typokurz} von Christoph Bier\cite{typokurz}.
-% \todo{MD: Ich finde ein Hinweis auf \href{http://zvisionwelt.files.wordpress.com/2012/01/typokurz.pdf}{typokurz} wäre hilfreich\\PG: Oh ja! sehr gut. Kann als Literatureintrag hin aber unbedingt in einem extra Satz hervorheben.}
 
 \subsubsection{Binde- und Gedankenstriche}
  
@@ -467,7 +405,7 @@ Die h\"assliche Stra\ss{}e.\\
 \end{table}
 
 
-Benutzt man das Paket \texttt{selinput}, siehe Abschnitt~\vref{inputenc},
+Benutzt man das Paket \texttt{selinput} (siehe Abschnitt~\vref{inputenc}),
 dann darf man diese Zeichen -- soweit sie im Zeichensatz des Betriebssystems
 existieren -- auch direkt in das Eingabefile schreiben.
 
@@ -554,22 +492,19 @@ Der Beweis findet sich in Abschnitt~\ref{bew}.
  
 \subsection{Fußnoten}
  
-Fußnoten\footnote{Das 
-ist eine Fußnote.} werden automatisch nummeriert
-und am unteren Ende der Seite ausgedruckt.  
-Innerhalb von Gleitobjekten (siehe Abschnitt~\ref{floats}), 
-Tabellen (\ref{tabular}) oder der \texttt{tabbing}-Umgebung (\ref{tabbing})
-ist der Befehl \lstinline|\footnote| nicht erlaubt.\todo{MD: Aber es gibt Möglichkeiten\\PG: wir sollten uns mit dem Platz beschränken}
-\exa
-~
-\exb
-\begin{verbatim}
-Fußnoten\footnote{Das ist eine
-Fußnote.} werden \dots
-\end{verbatim}
-\exc
- 
- 
+Fußnoten\footnote{Das  ist eine Fußnote.} werden automatisch nummeriert und am
+unteren Ende der Seite ausgedruckt.   Innerhalb von Gleitobjekten (siehe
+Abschnitt~\ref{floats}),  Tabellen (\ref{tabular}) oder der
+\texttt{tabbing}-Umgebung (\ref{tabbing}) ist der Befehl \lstinline|\footnote|
+nicht erlaubt. Im \LaTeX{} Begleiter\cite{wonne} werden Möglichkeiten aufgezählt, diese
+Einschränkung zu umgehen.
+
+\begin{beispiel}
+\begin{lstlisting}
+Fußnoten\footnote{Das ist eine Fußnote.} werden \dots
+\end{lstlisting}	
+\end{beispiel}
+
  
 \subsection{Hervorgehobener Text}
  
@@ -681,13 +616,12 @@ Leerzeilen.
 
 
 \subsubsection{Listen (itemize, enumerate, description)}
- % \todo{MD: Hier empfehle ich das Paket enumitem\\PG: Gut. Aber mehr als ein Satz würde ich nicht dazu geben. ... Mit dem Paket enumitem können die Umgebungen den eigenen Bedürfnissen leicht angepasst werden. oder so}
 Die Umgebung \texttt{itemize} eignet sich für einfache Listen
 (siehe Abbildung~\vref{item}).
 Die Umgebung \texttt{enumerate} eignet sich für nummerierte
 Aufzählungen (siehe Abbildung~\vref{enum}).
 Die Umgebung \texttt{description} eignet sich für Beschreibungen
-(siehe Abbildung~\vref{desc}). \todo[color=done]{PG: eingefügt}Mit dem Paket \texttt{enumitem} können die Umgebungen leicht den eigenen Bedürfnissen angepasst werden.
+(siehe Abbildung~\vref{desc}). Mit dem Paket \texttt{enumitem} können die Umgebungen leicht den eigenen Bedürfnissen angepasst werden.
 
 \begin{figure}[!htbp]
 \begin{LTXexample}
@@ -758,8 +692,6 @@ Kleine Tierkunde:
           {Linksbündig, rechtsbündig, zentriert
                        (flush\-left, flush\-right, center)}
 
-\todo[inline,color=done]{PG: überarbeitet - bitte kontrollieren}
-
 Die Umgebungen \texttt{Center}, \texttt{FlushLeft} und \texttt{FlushRight} aus
 dem Paket \texttt{ragged2e} bewirken zentrierten, links"~, und rechtsbündigen
 Satz. Die Varianten dieser Umgebungen (\texttt{center}, \texttt{flushleft} und
@@ -778,50 +710,6 @@ den Grauwert der Schrift an.
 \end{FlushLeft}
 \end{LTXexample}
 
-% Die Umgebungen \texttt{flushleft} und \texttt{flushright}
-% bewirken links- bzw.\ rechtsbündigen Satz ohne Randausgleich 
-% ("`Flattersatz"') und ohne Trennungen, 
-% \texttt{center} setzt den Text in
-% die Mitte der Zeile. Einen Zeilenumbruch kann wie bereits im Vorfelde 
-% erwähnt durch eine Leerzeile im Code realisiert werden. Hierbei
-% werden die Voreinstellungen für Absatzeinrückungen bzw.\ Absatzabstand
-% ignoriert. In Ausnahmefällen ist Zeilenwechsel mittels \lstinline+\\+ zulässig,
-% um bspw.\ den Umbruch mittels des optionalen Argumentes von \lstinline+\\+
-% zu ändern.
-
-% \todo{PG: ragged2e erwähnen? -> besserer Umbruch\\MD: Bin mir unschlüssig. Besonders erachte ich \textbackslash\textbackslash als falsch. \\PG: dem letzten stimme ich voll zu}.
-% \sout{Die einzelnen Zeilen werden durch~\string\ \string\ getrennt.
-% Wenn man \string\ \string\ nicht angibt, bestimmt \LaTeX\ automatisch die
-% Zeilenaufteilung% (siehe Abbildung~\ref{jandl}) auf Seite~\pageref{jandl})
-% }
-% .
-% %\begin{figure}[!ht]
-% %\begin{lminipage}{\textwidth} 
-% \begin{LTXexample}
-% \begin{flushleft}
-% links \\[.5cm]
-% Backbord
-% \end{flushleft}
-% \end{LTXexample}
-
-% \begin{LTXexample}
-% \begin{flushright}
-% rechts  \\[-0.2cm]
-% Steuerbord
-% \end{flushright}
-% \end{LTXexample}
-
-% \begin{LTXexample}
-% \begin{center}
-% Im \\ Reich \\ der \\ Mitte
-% \end{center}
-% \end{LTXexample}
-
-% %\end{lminipage}
-% %\caption{Linksbündig, rechtsbündig und zentriert}
-% %\label{jandl}
-% %\end{figure} 
-
 
 \subsubsection{Direkte Ausgabe (verbatim, verb)}
 Zwischen \lstinline|\begin{verbatim}| und \lstinline|\end{verbatim}|
@@ -831,18 +719,15 @@ Interpretation von Spezialzeichen und \LaTeX-Befehlen.  Dies
 eignet sich z.\,B.\ für das Ausdrucken eines (kurzen)
 Computer-Programms.
 
-Innerhalb eines Absatzes können einzelne Zeichenkombinationen
-oder kurze Textstücke ebenso "`wörtlich"' ausgedruckt
-werden, indem man sie zwischen \lstinline.\lstinline|. und~\lstinline.|.\todo{PG: naja, lstinline gilt ja nur im Prinzip für Programmcode. Hier würde ich schon verb verwenden und auf \cs{lstinline} verweisen /erwähnen}
-einschließt.
-Mit diesen Befehlen wurden z.\,B.\ alle \LaTeX-Befehle in der
-vorliegenden Beschreibung gesetzt.
+Innerhalb eines Absatzes können einzelne Zeichenkombinationen oder kurze
+Textstücke ebenso "`wörtlich"' ausgedruckt werden, indem man sie zwischen
+\lstinline.\verb|. und~\verb.|. einschließt. 
 
 \begin{LTXexample}
 Der \lstinline|\dots|-Befehl \dots
 \end{LTXexample}
  
-Die \texttt{verbatim}-Umgebung und der Befehl~\lstinline|\lstinline|
+Die \texttt{verbatim}-Umgebung und der Befehl~\lstinline|\verb|
 dürfen \emph{nicht} innerhalb von Parametern von anderen Befehlen
 % und auch nicht innerhalb der \texttt{tabular}-Umgebung %% ??(br)
 verwendet werden.
