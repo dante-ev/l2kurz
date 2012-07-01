@@ -8,18 +8,23 @@
 
 
 \section{Setzen von Bildern} \label{graphics}
-Lädt man im Vorspann des Dokuments das Paket \texttt{graphicx},
-dann kann man Bilder, die mit einem anderen Programm erzeugt wurden, 
-mit dem Befehl \lstinline|\includegraphics| in das Dokument einfügen.
-Der Dateiname ist als Argument des Befehls anzugeben.
-Welche Dateiformate verarbeitet werden können, hängt vom jeweiligen
-\TeX-System ab und muss in dessen Dokumentation beschrieben sein\todo{PG: wir können m.E. schon angeben: bei PDFTeX kann das PDF, PNG und JPEG sein}.
+
+Lädt man im Vorspann des Dokuments das Paket \texttt{graphicx}, dann kann man
+Bilder, die mit einem anderen Programm erzeugt wurden,  mit dem Befehl
+\lstinline|\includegraphics| in das Dokument einfügen. Der Dateiname ist als
+Argument des Befehls anzugeben. Welche Dateiformate verarbeitet werden können,
+hängt vom jeweiligen \TeX-System ab. Das häufig benutzte PDF\TeX{} kann
+Grafiken in den Formaten PDF, PNG JPEG und JBIG2 verarbeiten.
+
+% http://openclipart.org/detail/104863/ocean-theme-papercut-by-last-dino
+% Public Domain (CC0)
+% http://creativecommons.org/publicdomain/zero/1.0/
 
 \begin{LTXexample}
-Hier \includegraphics{a} ist ein Bild.
+Hier \includegraphics
+       [width=3cm]{ozean}
+ist ein Bild.
 \end{LTXexample}
-
-\todo[inline]{PG: hier ein schöneres Bild einbinden}
 
 \noindent Wird das Paket \texttt{graphicx} mit der Option \texttt{[draft]} geladen,
 dann erscheint anstelle des Bildes nur ein Rahmen entsprechend
