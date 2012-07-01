@@ -1,11 +1,19 @@
 %!TEX root = l2kurz.tex
+% Siehe https://github.com/texdoc/l2kurz
 
 
 \section{Eingabefile}
-Das Eingabefile für \LaTeX{} ist ein Textfile mit der Endung \lstinline+.tex+. Es 
-wird mit einem Editor erstellt und enthält sowohl den Text, der gedruckt werden 
-soll, als auch die Befehle, aus denen \LaTeX\ erfährt, wie der Text gesetzt 
-werden soll.\todo[color=done]{PG: eingefügt} Als Editor bietet sich ein spezieller \LaTeX-Editor an wie beispielsweise TeXmaker (\url{www.xm1math.net/texmaker}). Diese Editoren bieten neben Syntaxhervorhebung und "=überprüfung auch vordefinierte Arbeitsabläufe, so dass der Benutzer sich auf die Erstellung des Texts konzentrieren kann. Es ist aber auch möglich und gängige Praxis, \emph{normale} Texteditoren wie emacs, vim oder notepad++ zu benutzen
+
+Das Eingabefile für \LaTeX{} ist ein Textfile mit der Endung \lstinline+.tex+.
+Es  wird mit einem Editor erstellt und enthält sowohl den Text, der gedruckt
+werden  soll, als auch die Befehle, aus denen \LaTeX\ erfährt, wie der Text
+gesetzt  werden soll. Als Editor bietet sich ein spezieller \LaTeX-Editor an
+wie beispielsweise Texmaker (\href{http://www.xm1math.net/texmaker}{\nolinkurl
+{www.xm1math.net/texmaker}}). Diese Editoren bieten neben Syntaxhervorhebung
+und "=überprüfung auch vordefinierte Arbeitsabläufe, so dass der Benutzer sich
+auf die Erstellung des Texts konzentrieren kann. Es ist aber auch möglich und
+gängige Praxis, \emph{normale} Texteditoren wie emacs, vim oder notepad++ zu
+benutzen.
 
 
 \subsection{Leerstellen}
@@ -23,14 +31,15 @@ Eine Leerzeile zwischen Textzeilen bedeutet das Ende eines Absatzes.
  
 \subsection{\LaTeX-Befehle und Gruppen}
  
-Die meisten \LaTeX-Befehle haben eines der beiden folgenden Formate: Entweder 
-sie beginnen mit einem Backslash~(\lstinline|\|) und haben dann einen nur aus 
-Buchstaben bestehenden Namen, der durch ein oder mehrere Leerzeichen oder durch
-ein nachfolgendes Sonderzeichen beendet wird; oder sie bestehen
-aus einem Backslash und genau einem Sonderzeichen.\todo[color=done]{PG: Ziffer rausgenommen} Groß- und Kleinbuchstaben haben auch in Befehlsnamen \emph{verschiedene} 
-Bedeutung. Wenn man nach einem Befehlsnamen eine Leerstelle erhalten will, muss 
-man~\lstinline|{}| zur Beendigung des Befehlsnamens oder einen eigenen Befehl für die
-Leerstelle verwenden.
+Die meisten \LaTeX-Befehle haben eines der beiden folgenden Formate: Entweder
+sie beginnen mit einem Backslash~(\lstinline|\|) und haben dann einen nur aus
+Buchstaben bestehenden Namen, der durch ein oder mehrere Leerzeichen oder
+durch ein nachfolgendes Sonderzeichen beendet wird; oder sie bestehen aus
+einem Backslash und genau einem Sonderzeichen. Groß- und Kleinbuchstaben haben
+auch in Befehlsnamen \emph{verschiedene}  Bedeutung. Wenn man nach einem
+Befehlsnamen eine Leerstelle erhalten will, muss  man~\lstinline|{}| zur
+Beendigung des Befehlsnamens oder einen eigenen Befehl für die Leerstelle
+verwenden.
 
 % PG: würde ich drin lassen
 \renewcommand{\today}{35.~Mai 2012}  % to make sure that the
@@ -121,7 +130,7 @@ Hier beginnt mein schönes Werk ...
 
 \end{document}
 \end{example}
-\todo{PG: ich habe mal den abstract rausgenommen, der ist nicht zwingend notwendig in einer Kurzanleitung}
+
 
 \subsection{Dokumentklassen}\label{docsty}
  
@@ -231,17 +240,7 @@ können im Vorspann ergänzende Makropakete (packages) geladen werden, die das
 Layout der Dokumentklasse modifizieren oder zusätzliche Funktionalität 
 bereitstellen. Eine Auswahl von Paketen findet sich in der Tabelle~\vref{pack}. Der Befehl \lstinline+\usepackage+ erlaubt das Laden
 mehrerer Pakete, wobei eine Optionenübergabe nicht möglich ist, bzw. die Optionen für alle Pakete gelten.
-\todo[inline,color=done]{PG: Listing mit den hier benutzten Pakten rausgenommen}
-% \begin{lstlisting}
-%  \usepackage{babel,caption,array,%
-%              graphicx,textcomp,hyperref}
-% \end{lstlisting}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\todo[inline]{PG: alphabetisch sortieren? csquotes + andere dokumentieren}
-\todo[inline,color=done]{fancyhdr habe ich rausgenommen, wir müssen uns beschränken}
-\todo[inline,color=done]{MD: Alphabetische Sortierung -- Typisch Deutsch}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \begin{longtable}[c]{@{}>{\raggedright\arraybackslash\ttfamily}p{2.2cm}%
@@ -265,7 +264,7 @@ mehrerer Pakete, wobei eine Optionenübergabe nicht möglich ist, bzw. die Optio
  Anpassungen für viele verschiedene Sprachen. Die  gewählten Sprachen werden 
  als Optionen angegeben.
 \\
-csquotes  & \dots \\
+csquotes  & Mächtiges Paket zum korrekten Setzen (fremdsprachlicher) Anführungszeichen \\
  fontenc & 
  Erlaubt die Verwendung von Schriften mit  unterschiedlicher Kodierung
  (Zeichenvorrat, Anordnung).
@@ -289,14 +288,14 @@ csquotes  & \dots \\
  longtable &
  für Tabellen über mehrere Seiten mit automatischem Seitenumbruch.
 \\
-microtype & \dots \\
+microtype & Verändert den Absatzumbruch leicht, um bessere Zeilenumbrüche zu erzeugen; optischer Randausgleich. \\
  multicol & 
  Mehrspaltiger Satz mit Kolumnenausgleich.
 \\
  selinput & 
  Deklaration der Zeichenkodierung im Eingabefile.
 \\
-siunitx   & \dots \\
+siunitx   & Formatierung von Zahlen und physikalischen Einheiten  \\
  tabularx & 
  für Tabellen mit automatisch an den vorhandenen Platz angepasster Breite der 
  Spalten.
@@ -343,6 +342,13 @@ das Paket wie folgt in der Präambel eingebunden werden:
  \usepackage[T1]{fontenc}
 \end{example}
 
+Neben dem Paket \texttt{selinput} existiert auch das Paket \texttt{inputenc}.
+Hier gibt man die zu verwendende Kodierung als Paketoption vor, diese muss man
+jedoch dafür in Erfahrung bringen, was nicht immer einfach ist.
+
+\begin{beispiel}
+	\lstinline+\usepackage[utf8]{inputenc}+
+\end{beispiel}
 
 Falls \LaTeX{} ein eingegebenes Zeichen nicht darstellen kann, was meist für die
 sogenannten "`Pseudografik-Zeichen"' gilt,  bekommt man eine entsprechende 
