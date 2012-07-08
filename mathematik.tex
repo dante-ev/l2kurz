@@ -211,11 +211,9 @@ bzw.\ \lstinline|\widehat|.
 Ableitungszeichen werden mit \lstinline|'| (Apostroph) eingegeben.\todo{PG: Hier würde ich statt displaymath auf \cs{[} und \cs{]} zurückgreifen, ist kürzer und besser lesbar (und wird in der Praxis vermutlich mehr benutzt?)}
 
 \begin{LTXexample}
-\begin{displaymath}
-y=x^{2} \qquad
-y'=2x   \qquad
-y''=2
-\end{displaymath}
+\[
+y=x^{2} \qquad y'=2x   \qquad y''=2
+\]
 \end{LTXexample}
 
  
@@ -240,10 +238,10 @@ Für die Modulo-Funktion gibt es zwei verschiedene Befehle:
 \pmod{b}\).
  
 \begin{LTXexample}
-\begin{displaymath}
+\[
 \lim_{x \to 0} \frac{\sin x}{x}
 =1
-\end{displaymath}
+\]
 \end{LTXexample}
  
 Ein \textbf{Bruch} (fraction) wird mit dem Befehl
@@ -251,12 +249,12 @@ Ein \textbf{Bruch} (fraction) wird mit dem Befehl
 aber auch den Operator~\lstinline|/| verwenden.
 
 \begin{LTXexample}
-\(1\frac{1}{2}\)~Stunden
-\begin{displaymath}
+$1\frac{1}{2}$~Stunden
+\[
 \frac{ x^{2} }{ k+1 } \qquad
 x^{ \frac{2}{k+1} } \qquad
 x^{ 1/2 }
-\end{displaymath}
+\]
 \end{LTXexample}
 
 
@@ -266,10 +264,10 @@ Mit dem Befehl~\lstinline|\atop| erhält man das Gleiche ohne
 Klammern.
 
 \begin{LTXexample}
-\begin{displaymath}
+\[
 { n \choose k } \qquad
 { x\atop y+2 }
-\end{displaymath}
+\]
 \end{LTXexample}
 
 
@@ -290,11 +288,11 @@ Beim Summenzeichen hingegen werden die Grenzen bei der Angabe von
 gesetzt, ansonsten aber unter- und oberhalb.
 
 \begin{LTXexample}
-\begin{displaymath}
+\[
 \sum_{i=1}^{n} \qquad
 \int_{0}^{\frac{\pi}{2}} \qquad
 \int \limits_{-\infty}^{+\infty}
-\end{displaymath}
+\]
 \end{LTXexample}
  
 Für \textbf{Klammern} und andere Begrenzer gibt es in \TeX\ 
@@ -309,10 +307,10 @@ Befehl \lstinline|\right| vor schließende, so wird automatisch die
 richtige Größe gewählt.\todo{MD: in gleicher Zeile!\\PG: ja. Das merkt der Anwender aber auch, wenn er es falsch macht.}
 
 \begin{LTXexample}
-\begin{displaymath}
+\[
 1 + \left( \frac{1}{ 1-x^{2} }
     \right) ^3
-\end{displaymath}
+\]
 \end{LTXexample}
 
  
@@ -326,9 +324,9 @@ und analog \lstinline|\bigr| etc.\ anstelle von \lstinline|\right|
 anzugeben.
 
 \begin{LTXexample}
-\begin{displaymath}
+\[
 \Bigl( (x+1) (x-1) \Bigr) ^{2}
-\end{displaymath}
+\]
 \end{LTXexample}
  
 Um in Formeln \textbf{3~Punkte} (z.\,B.\ für \(1,2,\ldots,n\))
@@ -342,10 +340,10 @@ Außerdem gibt es die Befehle
 \lstinline|\ddots| für diagonal angeordnete Punkte.
 
 \begin{LTXexample}
-\begin{displaymath}
+\[
 x_{1},\ldots,x_{n} \qquad
 x_{1}+\cdots+x_{n}
-\end{displaymath}
+\]
 \end{LTXexample}
 
 
@@ -360,21 +358,21 @@ expliziten Befehlen verändern. Die wichtigsten sind
 \lstinline|\!| für die Verkleinerung eines Abstands.
 
 \begin{LTXexample}
-\begin{displaymath}
+\[
 F_{n} = F_{n-1} + F_{n-2}
  \qquad n \ge 2
-\end{displaymath}
+\]
 \end{LTXexample}
 
 
 \begin{LTXexample}
-\begin{displaymath}
+\[
 \int\!\!\!\int_{D} 
 \mathrm{d}x\,\mathrm{d}y
 \quad \textnormal{statt} \quad
 \int\int_{D} 
 \mathrm{d}x \mathrm{d}y
-\end{displaymath}
+\]
 \end{LTXexample}
 
 
@@ -387,75 +385,77 @@ Für \textbf{Matrizen} u.\,ä.\ gibt es die
 Der Befehl~\lstinline|\\| trennt die Zeilen.
 
 \begin{LTXexample}
-\begin{displaymath}
+\[
 \mathbf{X} =
 \left( \begin{array}{ccc}
 x_{11} & x_{12} & \ldots \\
 x_{21} & x_{22} & \ldots \\
 \vdots & \vdots & \ddots
 \end{array} \right)
-\end{displaymath}
+\]
 \end{LTXexample}
 
+\todo{PG: eqnarray ist böse und sollte nicht verwendet werden. Besser: align. Zumindest habe ich das so in der letzten TUGboat gelesen.\\MD: Der komplette Abschnitt muss überarbeitet werden}
 
-Für \textbf{mehrzeilige} Formeln oder Gleichungssysteme
-verwendet man die Umgebungen \texttt{eqnarray} und
-\texttt{eqnarray*} statt \texttt{equation}. \todo{PG: eqnarray ist böse und sollte nicht verwendet werden. Besser: align. Zumindest habe ich das so in der letzten TUGboat gelesen.\\MD: Der komplette Abschnitt muss überarbeitet werden}
-Bei \texttt{eqnarray} erhält jede Zeile eine eigene
-Gleichungsnummer, bei \texttt{eqnarray*} wird ebenso wie bei
-\texttt{displaymath} \emph{keine} Nummer hinzugefügt.
+\todo[inline]{MD: Absatz neu}
+Für \textbf{mehrzeilige} Formeln oder Gleichungssysteme bietet \LaTeX die
+interne Umgebung \texttt{eqnarray} an. Auf Grund verschiedenster Defizite
+dieser Umgebung sei an dieser Stelle nur gesagt, dass diese Umgebung nicht
+genutzt werden soll. Ein Standardpaket, welches für mathematische Zwecke
+sowieso geladen werden sollte, ist das Paket \texttt{amsmath} (siehe Abschnitte
+\ref{packages}). Um keine Verwirrung zu stiften, wird im folgenden allein mit dem
+Paket \texttt{amsmath} und der entsprechenden Standardumgebung \texttt{align}
+gearbeitet. Das Paket bietet weit aus mehr Möglichkeiten und besonders verschiedenste
+Umgebungen an, welche im Mathmode von Herbert Voß \cite{mathmode} 
+hervorragend beschrieben werden.
+
+Bei \texttt{align} erhält jede Zeile eine eigene
+Gleichungsnummer, bei \texttt{align} wird ebenso wie bei
+\lstinline|\[...\]| \emph{keine} Nummer hinzugefügt.
+
 Für Gleichungssysteme, die \emph{eine} gemeinsame Nummer
-erhalten sollen, kann man eine \texttt{array}-Umgebung innerhalb
-der \texttt{equation}-Umgebung verwenden.
+erhalten sollen, kann bspw. auf die \texttt{array}-Umgebung oder die durch \texttt{amsmath}
+bereitgestellte Umgebung \texttt{gather} zurückgegriffen werden.
 
-Die Umgebungen \texttt{eqnarray} und \texttt{eqnarray*}
-funktionieren wie eine 3-spaltige Tabelle der Form~\lstinline|{rcl}|,
-wobei die mittlere Spalte für das Gleichheits- oder
-Ungleichheitszeichen verwendet wird, nach dem die Zeilen
-ausgerichtet werden sollen.
+Die Umgebungen \texttt{align} arbeitet nach dem Prinzip einer Tabelle, wobei \texttt{\&} als
+Ausrichtungssymbol verwendet wird. Entgegen einer Tabelle, muss die Anzahl der Spalten nicht vorher 
+angegeben werden. Das Ausrichtungssymbol sollte stets \emph{vor} dem Relationszeichen stehen, so
+dass die korrekten Abstände ermittelt werden können. 
+
 Der Befehl~\lstinline|\\| trennt die Zeilen.
 
 \begin{LTXexample}
-\begin{eqnarray}
-f(x) & = & \cos x       \\
-f'(x) & = & -\sin x     \\
+\begin{align}
+f(x) & =  \cos x       \\
+f'(x) & =  -\sin x     \\
 \int_{0}^{x} f(y)\,\mathrm{d}y &
  = & \sin x
-\end{eqnarray}
+\end{align}
 \end{LTXexample}
+
 
  
 \textbf{Zu lange Gleichungen} werden von \LaTeX\ \textit{nicht}
 automatisch abgeteilt.
 Der Autor muss bestimmen, an welcher Stelle abgeteilt und wie
 weit eingerückt werden soll.
-Meistens verwendet man dafür eine der beiden folgenden
-Varianten:
+Meistens verwendet man dafür folgende Variante:
 
 \begin{LTXexample}
-\begin{eqnarray}
-\sin x & = & x -\frac{x^{3}}{3!}
+\begin{align}
+\sin x & =  x -\frac{x^{3}}{3!}
      +\frac{x^{5}}{5!} - {} 
                     \nonumber\\
- & &{} -\frac{x^{7}}{7!} + \cdots
-\end{eqnarray}
-\end{LTXexample}
-
-
-\begin{LTXexample}
-\begin{eqnarray}
-\lefteqn{ \cos x = 1
-     -\frac{x^{2}}{2!} +{} }
-                    \nonumber\\
- & &{} +\frac{x^{4}}{4!}
-     -\frac{x^{6}}{6!} + \cdots
-\end{eqnarray}
+ &\mathrel{\phantom{=}} 
+  -\frac{x^{7}}{7!} + \cdots
+\end{align}
 \end{LTXexample}
 
 Der Befehl \lstinline|\nonumber| bewirkt, dass an diese Stelle keine
 Gleichungsnummer gesetzt wird.
-Der Befehl \lstinline|\lefteqn| ermöglicht Ausnahmen von der
-Spaltenaufteilung innerhalb \texttt{eqnarray}. 
-Genauere Informationen enthält das \manual.
+
+Die Dokumenation Mathmode wurde bereits erwähnt, soll aber an dieser Stelle
+nocheinmal ins Gedächnis gerufen werden. Neben Zahlreichen Beispielen kann
+die Dokumenation als Nachschlagewerk für den mathematischen Satz genutzt werden.
 
 \endinput
