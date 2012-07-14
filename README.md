@@ -6,6 +6,7 @@ The aim of this repository is to move the contents to a more "modern" level.
 
 
 Contact: Patrick Gundlach, patrick@gundla.ch
+This repository: https://github.com/texdoc/l2kurz
 
 
 README für l2kurz
@@ -14,4 +15,4 @@ Dieses Repository enthält die LaTeX Kurzbeschreibung von Walter Schmidt (und an
 
 
 Kontakt: Patrick Gundlach, patrick@gundla.ch
-
+Dieses Repository: https://github.com/texdoc/l2kurz
