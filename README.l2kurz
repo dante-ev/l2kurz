@@ -8,17 +8,23 @@ l2kurz2.pdf
   PDF, formatiert fuer doppelseitigen Ausdruck
   
 l2kurz.tex  (Stammdatei)
-l2k1.tex 
-l2k2.tex 
-l2k3.tex 
-l2k4.tex
-l2k5.tex 
-l2k6.tex, 
-l2ka.tex 
-l2ksym.tex 
-a.ps
-  LaTeX-Quelltext, benoetigt TC-Fonts und hyperref.sty
+
+einleitung.tex
+allgemeines.tex
+eingabefile.tex
+textsatz.tex
+mathematik.tex
+bilder.tex
+seitenaufbau.tex
+schriften.tex
+spezialitaeten.tex
+anhang.tex
+l2ksym.tex
+
+ozean.pdf
+ozean.svg (Quelle)
 
 Bitte, senden Sie Kommentare, Aenderungswuensche oder
-Hinweise auf Fehler an Walter Schmidt <w-a-schmidt@arcor.de>
+Hinweise auf Fehler an Patrick Gundlach <patrick@gundla.ch> 
+oder im Bugtracker auf https://github.com/texdoc/l2kurz
 
