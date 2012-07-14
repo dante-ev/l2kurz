@@ -145,23 +145,17 @@ Dieses Dokument wurde mit \LaTeX{} gesetzt.
 Zusätzlichen Abstand zwischen zwei Zeilen \emph{innerhalb}
 eines Absatzes oder einer Tabelle erreicht man mit dem Befehl
 \lstinline|\\[|\textit{länge}\lstinline|]|.
-\exa
+
+\begin{LTXexample}
 Albano Cesara \\
 Lindenallee 10 \\[1.5ex]
 95632 Pestitz
-\exb
-\begin{verbatim}
-Albano Cesara \\
-Lindenallee 10 \\[1.5ex]
-95632 Pestitz
-\end{verbatim}
-\exc
+\end{LTXexample}
 
-\smallskip
 
-\subsection{\LaTeX-Zeichenprogramme}
+% \subsection{\LaTeX-Zeichenprogramme}
 
-\todo[inline]{PG: hier eine kurze Erwähnung von TikZ und anschließend ein Bild, ohne große Erklärung? Hast du ein griffiges Beispiel oder sollen wir auf tex.sx nach einem fragen? Mehr als eine Seite würde ich auf keinen Fall damit verbrauchen, lieber mit einer Aufzählung, welche Vorteile sowas hat (Schriftart/Farben wie im Dokument, Grafik und Quelle sind beieinander, oftmals genauer als Zeichenprogramme, Verbindungen mit dem Text möglich) - aber auch hier Nachteil: Einarbeitung}
+% \todo[inline]{PG: hier eine kurze Erwähnung von TikZ und anschließend ein Bild, ohne große Erklärung? Hast du ein griffiges Beispiel oder sollen wir auf tex.sx nach einem fragen? Mehr als eine Seite würde ich auf keinen Fall damit verbrauchen, lieber mit einer Aufzählung, welche Vorteile sowas hat (Schriftart/Farben wie im Dokument, Grafik und Quelle sind beieinander, oftmals genauer als Zeichenprogramme, Verbindungen mit dem Text möglich) - aber auch hier Nachteil: Einarbeitung}
 
  
 
@@ -192,15 +186,11 @@ H.~Partl: \textit{German \TeX,}
 TUGboat Vol.~9, No.~1 (1988)
 \end{thebibliography}
 \end{LTXexample}
-\todo[inline,color=done]{PG: ltxexample verschluckt das \cs{cite} :(\\MD: Sehe ich gerade :-( -- Muss ich mir was einfallen lassen\\MD: DONE}
-
-\todo[inline,color=done]{PG: diesen Abschnitt habe ich mal eingefügt, kann aber auch wieder raus, wenn er unpassend ist.}
 
 \todo[inline,]{MD: Absätze überarbeitet.}
 
 Werden viele Literatureinträge zitiert bzw. verwendet, bietet sich die Nutzung
-einer Datenbank an. Der Name Datenbank soll in diesem Zusammenhang eine
-Datei mit der Endung \lstinline|bib| bedeutet. Die Datenbank besitzt ihre eigene Syntax,
+einer Datenbank an in Form einer Datei Endung \lstinline|bib| bedeutet. Die Datenbank besitzt ihre eigene Syntax,
 um die benötigten Literatureinträge zu verwalten. Für die komfortable Verwaltung
 von Literaturdatenbanken existieren viele Programme wie beispielsweise JabRef (frei) oder
 Endnote (kommerziell).
@@ -208,39 +198,10 @@ Endnote (kommerziell).
 Für die Verarbeitung dieser Literaturdatenbanken bieten sich zwei verschiedene 
 Hilfsmittel für \LaTeX{} an. Die klassische Variante ist \emph{Bib\TeX} in Verbindung
 mit einem Literaturverzeichnisstil. Die Anpassung an die eigenen Bedürfnisse
-gestalltet sich mehr als schwierig. Daher wurde in den letzten Jahren das \LaTeX{} 
-Makropaket \emph{biblatex} entwickelt, das neben \emph{Bib\TeX}  das mächtigere
-Programm \emph{biber} nutzt. Das Makropaket \emph{biblatex} erlaubt die Manipulation
+gestaltet sich mehr als schwierig. Daher wurde in den letzten Jahren das \LaTeX{} 
+Makropaket \emph{biblatex} entwickelt, das alternativ zu \emph{Bib\TeX} das mächtigere
+Programm \emph{biber} nutzen kann. Das Makropaket \emph{biblatex} erlaubt die Manipulation
 des Literaturverzeichnisses auf \LaTeX"=Ebene. Auf CTAN ist eine deutsche Übersetzung
-verfügbar\cite{biblatex-de}.
-
-
-
-%%Werden viele Literatureinträge zitiert, bieten sich zwei verschiedene Hilfsmittel für \LaTeX{} an. Die klassische Variante \emph{Bib\TeX} ist sehr weit verbreitet, hat aber Schwächen insbesondere bei dem Umgang mit Umlauten. Daher wurde in den letzten Jahren das \LaTeX{} Makropaket \emph{biblatex} entwickelt, das auf das Programm \emph{biber} aufsetzt, um Literatureinträge zu sortieren und für die Literaturverzeichnisse aufzubereiten. Die einzelnen Literatureinträge werden in der Regel in einer Textdatenbank gepflegt und mit \emph{biblatex} anhand der benutzten \lstinline|\cite|"=Befehle ausgegeben. Für die komfortable Verwaltung von Literaturdatenbanken gibt viele Programme wie beispielsweise JabRef (frei) oder Endnote (kommerziell).
-
-% \todo[inline]{PG: Üblicherweise wird dafür bibtex oder biblatex/biber benutzt. Ich denke mir, dass wir zumindest auf biblatex (da gibts 'ne Deutsche Übersetzung von) eingehen sollten bzw. erwähnen sollten. \newline Erweitert aber den Text ;-)\newline PG: stimmt auch wieder. Es ist ja 'ne Kurzeinführung und kein Lehrbuch. Also erst mal drin lassen und dann können wir immer noch schauen?}
-\subsection{Zerbrechliche Befehle}
-\todo[inline]{Ich finden den Abschnitt ganz gut, aber ein Beispiel wäre nicht schlecht. Vielleicht zeigen, dass eine Formel mit \cs{(}..\cs{)} nicht in Überschriften funktioniert oder vielleicht ein anderes \emph{griffiges} Beispiel? Mir fällt leider keines ein.\newline MD: Es hat nur auswirkungen, wenn man expandiert bzw. in eine Datei schreibt. Inhaltsverzeichnis ist dabei griffiger, als ein \string\edef }
-\todo[inline]{PG: Wenn ich so sehe, was wir alles noch mit reinnehmen wollen, dann würde ich auf diesen Abschnitt auch verzichten.}
- 
-Manche \LaTeX-Befehle "`verfrachten"' ihre Argumente an eine andere
-Stelle im Text; beispielsweise kann das Argument von \lstinline|\section|
-auch im Inhaltsverzeichnis und möglicherweise in der Kopfzeile auftauchen.  
-
-Bestimmte Befehle "`überstehen"' diesen Transport nicht, wenn sie
-ohne besondere Maßnahmen in einem solchen "`beweglichen Argument"'
-auftreten.
-Derartige Befehle heißen "`zerbrechlich"'.  Damit sie dennoch innerhalb
-von beweglichen Argumenten benutzt werden dürfen, 
-muss man ihnen einfach den Befehl \lstinline|\protect| voranstellen.
-
-Zerbrechlich sind insbesondere alle Befehle, die ein optionales Argument
-kennen, also auch \lstinline|\\|,
-außerdem die Befehle \lstinline|\(|, \lstinline|\)| und \lstinline|\footnote|.
-
-Bewegliche Argumente haben, neben den Gliederungsbefehlen,
-auch der Befehl \lstinline|\caption| und die Umgebung \texttt{letter}.
-
-\todo[inline]{PG: Kapitel \emph{Fehlermeldungen und Warnungen}, \emph{Hilfe, ich weiß nicht weiter} einfügen?}
+verfügbar \cite{biblatex-de}.
 
 \endinput

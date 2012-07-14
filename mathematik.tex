@@ -12,20 +12,21 @@
 
 \subsection{Allgemeines}
 
-\LaTeX{} verfügt über einen eigenen Mathemodus, der sich in einigen
-Punkten sehr stark vom Textmodus unterscheidet. Auf die Unterschiede
-wird im späteren Verlauf eingegangen. Der Mathematikmodus selbst
-kann in zwei Bereiche unterteilte werden, \todo{MD: Satz gefällt mir nicht}
-den abgesetzten und den integrierten Modus.
+\LaTeX{} verfügt über einen eigenen Modus für mathematische Formeln, der sich
+in einigen Punkten deutlich vom Textmodus unterscheidet. Formeln können sowohl
+im Fließtext als auch als eigenständige Elemente auf der Seite vorkommen.
+Trotz der unterschiedlichen Darstellung  unterscheidet sich die Eingabe der
+Formeln nur wenig voneinander.
 
-Die Füller der Möglichkeiten ist u.\,a.\ in der Onlindocumentation \emph{mathmode}
-zusammemgefasst und soll hier als Referenz dienen \cite{mathmode}.
+Die Fülle der Möglichkeiten ist u.\,a.\ in der Dokumentation \enquote{mathmode}
+zusammengefasst und soll hier als Referenz dienen \cite{mathmode}.
 
-Obwohl \LaTeX{} ohne Zusatzpakete eine Fülle von Möglichkeiten liefert,
-hat sich das Paket \texttt{amsmath} etabliert. Es erweitert die Standardmöglichkeiten
-um eine Vielzahl von Makros und Umgebungen. Im weiteren Verlauf wird daher auch
-vorausgesetzt, dass das Paket geladen ist. Neben der Dokumenation selbst, sind im genannten
-\emph{mathmode} die Möglichkeiten und Vorteile des Paktes gezeigt.
+Obwohl \LaTeX{} ohne Zusatzpakete eine viele Möglichkeiten bietet, wird häufig
+das Paket \texttt{amsmath} eingebunden. Es erweitert die in \LaTeX{}
+vorhandenen Möglichkeiten  um eine Vielzahl von Makros und Umgebungen. Im
+weiteren Verlauf wird daher auch vorausgesetzt, dass das Paket geladen ist. In
+dem genannten Dokument mit dem Titel \enquote{mathmode} wird \texttt{amsmath}
+ausführlich beschrieben.
  
 Mathematische Textteile innerhalb eines Absatzes werden zwischen
 \lstinline|\(| und~\lstinline|\)| oder zwischen \lstinline|$| und~\lstinline|$| oder
@@ -33,7 +34,8 @@ zwischen \lstinline|\begin{math}| und \lstinline|\end{math}|
 eingeschlossen.
 Als mathematische Texte gelten sowohl komplette mathematische
 Formeln als auch einzelne Variablennamen, die sich auf Formeln
-beziehen, griechische Buchstaben und diverse Sonderzeichen.\todo{PG: die nachfolgenden Elemente sollten \$...\$ benutzen, die Variante mit \cs{(} und \cs{)} sind nicht robust}
+beziehen, griechische Buchstaben und diverse Sonderzeichen.
+
 \begin{LTXexample}
 Seien $a$ und $b$ die Katheten
 und $c$ die Hypotenuse,
@@ -140,7 +142,7 @@ $\lambda, \xi, \pi, \mu,
 \end{LTXexample}
 
  
-Weiters gibt es eine Fülle von \textbf{mathematischen Symbolen}:
+Des weiteren gibt es eine Vielzahl von \textbf{mathematischen Symbolen}:
 von $\in$ über $\Rightarrow$ bis~$\infty$ (siehe
 Anhang~\vref{symbols}).
  
@@ -208,7 +210,7 @@ Seite~\pageref{mathakz} angeführten Befehle.
 Längere Tilden und Dacherln, die sich über mehrere (bis zu~3)
 Zeichen erstrecken können, erhält man mit \lstinline|\widetilde|
 bzw.\ \lstinline|\widehat|.
-Ableitungszeichen werden mit \lstinline|'| (Apostroph) eingegeben.\todo{PG: Hier würde ich statt displaymath auf \cs{[} und \cs{]} zurückgreifen, ist kürzer und besser lesbar (und wird in der Praxis vermutlich mehr benutzt?)}
+Ableitungszeichen werden mit \lstinline|'| (Apostroph) eingegeben.
 
 \begin{LTXexample}
 \[
@@ -304,7 +306,7 @@ speziellen Befehlen (z.\,B.~\lstinline|\updownarrow|).
  
 Setzt man den Befehl \lstinline|\left| vor öffnende Klammern und den
 Befehl \lstinline|\right| vor schließende, so wird automatisch die
-richtige Größe gewählt.\todo{MD: in gleicher Zeile!\\PG: ja. Das merkt der Anwender aber auch, wenn er es falsch macht.}
+richtige Größe gewählt.
 
 \begin{LTXexample}
 \[
@@ -395,26 +397,21 @@ x_{21} & x_{22} & \ldots \\
 \]
 \end{LTXexample}
 
-\todo{PG: eqnarray ist böse und sollte nicht verwendet werden. Besser: align. Zumindest habe ich das so in der letzten TUGboat gelesen.\\MD: Der komplette Abschnitt muss überarbeitet werden}
 
-\todo[inline]{MD: Absatz neu}
-Für \textbf{mehrzeilige} Formeln oder Gleichungssysteme bietet \LaTeX die
-interne Umgebung \texttt{eqnarray} an. Auf Grund verschiedenster Defizite
-dieser Umgebung sei an dieser Stelle nur gesagt, dass diese Umgebung nicht
-genutzt werden soll. Ein Standardpaket, welches für mathematische Zwecke
-sowieso geladen werden sollte, ist das Paket \texttt{amsmath} (siehe Abschnitte
-\ref{packages}). Um keine Verwirrung zu stiften, wird im folgenden allein mit dem
-Paket \texttt{amsmath} und der entsprechenden Standardumgebung \texttt{align}
-gearbeitet. Das Paket bietet weit aus mehr Möglichkeiten und besonders verschiedenste
-Umgebungen an, welche im Mathmode von Herbert Voß \cite{mathmode} 
-hervorragend beschrieben werden.
+Für \textbf{mehrzeilige} Formeln oder Gleichungssysteme bietet \LaTeX{} die
+Umgebung \texttt{eqnarray} an. Auf Grund verschiedener Defizite dieser
+Umgebung sei an dieser Stelle nur gesagt, dass diese Umgebung nicht genutzt
+werden soll. Das in der Einleitung zu diesem Kapitel genannte Paket
+\texttt{amsmath} bietet eine wesentlich verbesserte Umgebung \texttt{align}.
 
+
+\todo[inline]{PG: verstehe ich nicht:}
 Bei \texttt{align} erhält jede Zeile eine eigene
 Gleichungsnummer, bei \texttt{align} wird ebenso wie bei
 \lstinline|\[...\]| \emph{keine} Nummer hinzugefügt.
 
 Für Gleichungssysteme, die \emph{eine} gemeinsame Nummer
-erhalten sollen, kann bspw. auf die \texttt{array}-Umgebung oder die durch \texttt{amsmath}
+erhalten sollen, kann auf die \texttt{array}-Umgebung oder die durch \texttt{amsmath}
 bereitgestellte Umgebung \texttt{gather} zurückgegriffen werden.
 
 Die Umgebungen \texttt{align} arbeitet nach dem Prinzip einer Tabelle, wobei \texttt{\&} als
@@ -424,6 +421,7 @@ dass die korrekten Abstände ermittelt werden können.
 
 Der Befehl~\lstinline|\\| trennt die Zeilen.
 
+\todo[inline]{PG: ist das Beispiel so gewollt?}
 \begin{LTXexample}
 \begin{align}
 f(x) & =  \cos x       \\
@@ -454,8 +452,8 @@ Meistens verwendet man dafür folgende Variante:
 Der Befehl \lstinline|\nonumber| bewirkt, dass an diese Stelle keine
 Gleichungsnummer gesetzt wird.
 
-Die Dokumenation Mathmode wurde bereits erwähnt, soll aber an dieser Stelle
-nocheinmal ins Gedächnis gerufen werden. Neben Zahlreichen Beispielen kann
-die Dokumenation als Nachschlagewerk für den mathematischen Satz genutzt werden.
+Die Dokumentation mit dem Titel \enquote{Mathmode} wurde bereits erwähnt, soll aber an dieser Stelle
+noch einmal ins Gedächtnis gerufen werden. Neben Zahlreichen Beispielen kann
+die Dokumentation als Nachschlagewerk für den mathematischen Satz genutzt werden.
 
 \endinput
