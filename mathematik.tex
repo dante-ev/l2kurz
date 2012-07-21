@@ -406,11 +406,13 @@ werden soll. Das in der Einleitung zu diesem Kapitel genannte Paket
 
 
 \todo[inline]{PG: verstehe ich nicht:}
-Bei \texttt{align} erhält jede Zeile eine eigene
-Gleichungsnummer, bei \texttt{align} wird ebenso wie bei
-\lstinline|\[...\]| \emph{keine} Nummer hinzugefügt.
+\todo[inline,color=green!40]{MD: So?}
 
-Für Gleichungssysteme, die \emph{eine} gemeinsame Nummer
+Bei \texttt{align} erhält jede Zeile eine eigene
+Gleichungsnummer, bei \texttt{align*} wird ebenso wie bei
+\lstinline|\[...\]| \emph{keine} Gleichungsnummer hinzugefügt.
+
+Für Gleichungssysteme, die \emph{eine} gemeinsame Gleichungsnummer
 erhalten sollen, kann auf die \texttt{array}-Umgebung oder die durch \texttt{amsmath}
 bereitgestellte Umgebung \texttt{gather} zurückgegriffen werden.
 
@@ -422,12 +424,13 @@ dass die korrekten Abstände ermittelt werden können.
 Der Befehl~\lstinline|\\| trennt die Zeilen.
 
 \todo[inline]{PG: ist das Beispiel so gewollt?}
+\todo[inline,color=green!40]{MD: Hatte vergessen ein \& zu entfernen.}
 \begin{LTXexample}
 \begin{align}
 f(x) & =  \cos x       \\
 f'(x) & =  -\sin x     \\
 \int_{0}^{x} f(y)\,\mathrm{d}y &
- = & \sin x
+ =  \sin x
 \end{align}
 \end{LTXexample}
 
