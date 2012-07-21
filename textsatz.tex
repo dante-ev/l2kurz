@@ -293,9 +293,9 @@ berücksichtigen.  Die wichtigsten von ihnen sind:
 \lstinline|"~| für einen Bindestrich, an dem nicht umbrochen werden darf und  
 \lstinline|"=| für einen Trennstrich, an dem ein Umbruch stattfinden darf, beispielsweise bei zusammengesetzten Hauptwörtern.
 
-\todo[inline]{PG: Das hätte ich gerne in mehreren Zeilen!}
 
-\begin{LTXexample}
+\begin{LTXexample}[firstline=2]
+\obeylines
 x"~beliebig
 bergauf und "~ab
 Breisgau"=Hochschwarzwald
@@ -307,33 +307,21 @@ Breisgau"=Hochschwarzwald
 Einige der Zeichen, die bei der Eingabe eine Spezialbedeutung haben,
 können durch das Voranstellen des
 Zeichens \lstinline|\| (Backslash) ausgedruckt werden:
-\exa
+\begin{LTXexample}
 \$ \& \% \# \_ \{ \}
-\exb
-\begin{verbatim}
-\$ \& \% \# \_ \{ \}
-\end{verbatim}
-\exc
+\end{LTXexample}
 Für andere gibt es besondere Befehle.  Sie gelten nur für normalen
 Text; wie derartige Symbole innerhalb von mathematischen
 Formeln gesetzt werden, erfahren Sie im Kapitel~\ref{math}:
-\exa
-\textasciitilde \\
-\textasciicircum \\
-\textbackslash \\
-\textbar \\ 
-\textless\\
-\textgreater
-\exb
-\begin{verbatim}
+\begin{LTXexample}[firstline=2]
+\obeylines
 \textasciitilde
 \textasciicircum
 \textbackslash 
 \textbar  
 \textless  
 \textgreater
-\end{verbatim}
-\exc
+\end{LTXexample}
 
 \LaTeX\ ermöglicht darüber hinaus die Verwendung von Akzenten 
 und speziellen Buchstaben aus zahlreichen verschiedenen Sprachen, 
@@ -346,22 +334,6 @@ Wenn ein Akzent auf ein i oder~j gesetzt werden soll, muss der
 \lstinline|\i| und~\lstinline|\j|.
 Es steht auch ein Befehl \lstinline|\textcircled| für 
 eingekreiste Zeichen zur Verfügung.
-% \exa
-% Hôtel, na\"\i ve, smørebrød.\\[1\baselineskip]
-% Die hässliche Straße.\\[1\baselineskip]
-% !`Señorita!\\
-% \textcircled{x}
-% \exb
-% \begin{verbatim}
-% H\^otel, na\"\i ve,
-% sm\o rebr\o d.
-% Die h\"assliche
-% Stra\ss{}e.
-% !`Se\~norita!
-% \textcircled{x}
-% \end{verbatim}
-% \exc
-
 
 \begin{LTXexample}
 H\^otel, na\"\i ve, sm\o rebr\o d. \\
