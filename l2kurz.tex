@@ -1,6 +1,9 @@
 % This is  l2kurz.tex - LaTeX2e Kurzbeschreibung v3.0
 % Siehe https://github.com/texdoc/l2kurz
-
+% arara: pdflatex: {synctex: true}
+% arara: bibtex
+% arara: pdflatex: {synctex: true}
+% arara: pdflatex: {synctex: true}
 \newcommand{\lkver}{3.0}               % laufende Versionsnummer ...
 \newcommand{\lkdate}{1.\ Juli\ 2012}   % ... und Datum
 
@@ -116,7 +119,7 @@
 %Mit Farbe:
  keywordstyle=\color{blue!70!black}\bfseries,
  texcsstyle=*\color{blue!70!black}\bfseries,
- moretexcs={part,maketitle,SelectInputMappings,tableofcontents,subsection,subsubsection,chapter,mathcal,midrule,toprule,bottomrule},
+ moretexcs={part,maketitle,SelectInputMappings,tableofcontents,subsection,subsubsection,chapter,mathcal,midrule,toprule,bottomrule,text,includegraphics},
 % keywordsprefix={\  },
  literate=
           {\{}{\textcolor{red!70!black}{\{}}1
