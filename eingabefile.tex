@@ -77,7 +77,7 @@ Beispiel.
 \end{LTXexample}
  
 \subsection{Aufbau}
- \todo[inline]{MD: Erste Überarbeitung begonnen}
+
 Der erste Befehl in einem \LaTeX-Eingabefile muss der Befehl
 \begin{lstlisting}
  \documentclass
@@ -144,11 +144,11 @@ die für alle Dokumente dieses Typs gemeinsam sind.
 
 Zwischen den geschwungenen Klammern \emph{muss} genau eine Dokumentklasse
 angegeben werden.  Tabelle~\vref{docstyles} führt 
-Klassen auf, die in jeder \LaTeX-Installation existieren. 
+Klassen auf, die in jeder vollständigen \LaTeX-Installation existieren. 
 
-Zwischen den eckigen Klammern \emph{können}, durch Kommata getrennt, eine oder 
+Zwischen den eckigen Klammern \emph{können}, durch Kommas getrennt, eine oder 
 mehrere Optionen für das Klassenlayout angegeben werden. Die wichtigsten 
-Optionen sind in der Tabelle~\vref{options} angeführt.
+Optionen für die Standardklassen sind in der Tabelle~\vref{options} angeführt.
 Das Eingabefile für diese Beschreibung beginnt z.\,B.\ mit:
 \begin{lstlisting}
  \documentclass[11pt,a4paper]{article}
@@ -236,7 +236,7 @@ Mit dem Befehl
 \begin{lstlisting}
  \usepackage[<optionen>]{<paket>}
 \end{lstlisting}
-können im Vorspann ergänzende Makropakete (packages) geladen werden, die das 
+können im Vorspann ergänzende Makropakete (\emph{packages}) geladen werden, die das 
 Layout der Dokumentklasse modifizieren oder zusätzliche Funktionalität 
 bereitstellen. Eine Auswahl von Paketen findet sich in der Tabelle~\vref{pack}. Der Befehl \lstinline+\usepackage+ erlaubt das Laden
 mehrerer Pakete, wobei eine Optionenübergabe nicht möglich ist, bzw. die Optionen für alle Pakete gelten.
@@ -328,7 +328,7 @@ nur innerhalb von mathematischen Formeln erlaubt:
 Für Zeichen, die über obige Liste hinausgehen, beispielsweise die Umlaute, sind 
 unterschiedliche Kodierungen in
 Gebrauch. Die Kodierung ist hierbei vom Betriebssystem sowie vom Editor 
-abhängig. Um Umlaute direkt zu nutzen ohne auf spezielle Kodierung einzugehen
+abhängig. Um Umlaute direkt zu nutzen ohne auf spezielle Kodierung einzugehen,
 bietet sich das Paket \texttt{selinput} an. Es ermittelt während des 
 Kompilierungsvorgangs die verwendete Kodierung. Um dies sicher zu stellen, muss
 das Paket wie folgt in der Präambel eingebunden werden:
@@ -344,7 +344,7 @@ das Paket wie folgt in der Präambel eingebunden werden:
 
 Neben dem Paket \texttt{selinput} existiert auch das Paket \texttt{inputenc}.
 Hier gibt man die zu verwendende Kodierung als Paketoption vor, diese muss man
-jedoch dafür in Erfahrung bringen, was nicht immer einfach ist. Um Falle von
+jedoch dafür in Erfahrung bringen, was nicht immer einfach ist. Im Falle von
 UTF-8 als Eingabekodierung ist das:
 
 \begin{beispiel}

@@ -21,7 +21,7 @@ Formeln nur wenig voneinander.
 Die Fülle der Möglichkeiten ist u.\,a.\ in der Dokumentation \enquote{mathmode}
 zusammengefasst und soll hier als Referenz dienen \cite{mathmode}.
 
-Obwohl \LaTeX{} ohne Zusatzpakete eine viele Möglichkeiten bietet, wird häufig
+Obwohl \LaTeX{} ohne Zusatzpakete viele Möglichkeiten bietet, wird häufig
 das Paket \texttt{amsmath} eingebunden. Es erweitert die in \LaTeX{}
 vorhandenen Möglichkeiten  um eine Vielzahl von Makros und Umgebungen. Im
 weiteren Verlauf wird daher auch vorausgesetzt, dass das Paket geladen ist. In
@@ -77,8 +77,7 @@ im Text ansprechen.
 \begin{equation} \label{eps}
 \varepsilon > 0
 \end{equation}
- 
-Aus (\ref{eps}) folgt \dots
+ Aus (\ref{eps}) folgt \dots
 \end{LTXexample}
 
  
@@ -108,12 +107,12 @@ Text-Modus vor allem durch folgende Punkte:
   zusätzlichem Abstand).  Will man innerhalb eines
   mathematischen Textes normalen Text (in aufrechter Schrift, mit
   Wortabständen) setzen, muss man diesen in
-  \lstinline|\textnormal{...}| einschließen.
+  \lstinline|\text{...}|\footnote{Duch \texttt{amsmath} bereitgestell} einschließen.
 
 \begin{LTXexample}
 \begin{equation}
 x^{2} \geq 0\qquad
-\textnormal{f"ur alle }
+\text{f"ur alle }
 x \in \mathbf{R}
 \end{equation}
 \end{LTXexample}
@@ -127,7 +126,7 @@ x \in \mathbf{R}
 In diesem Abschnitt werden die wichtigsten Elemente, die in
 mathematischen Formeln verwendet werden, kurz beschrieben.  Eine
 Liste aller verfügbaren Symbole enthält
-Anahng~\vref{symbols}.
+Anhang~\vref{symbols}.
  
 \bigskip
 
@@ -230,7 +229,7 @@ Funktionen zur Verfügung:
 \arccos & \cos  & \csc & \exp & \ker    & \limsup & \min & \sinh \\
 \arcsin & \cosh & \deg & \gcd & \lg     & \ln     & \Pr  & \sup  \\
 \arctan & \cot  & \det & \hom & \lim    & \log    & \sec & \tan  \\
-\arg    & \coth & \dim & \inf & \liminf & \max    & \sin & \tanh \\
+\arg   & \coth & \dim & \inf & \liminf & \max    & \sin & \tanh \\
 \end{tabular}
 \end{LTXexample}
 
@@ -356,8 +355,9 @@ innerhalb von Formeln nicht zufrieden ist, kann man sie mit
 expliziten Befehlen verändern. Die wichtigsten sind
 \lstinline|\,| für einen sehr kleinen Abstand,
 \lstinline|\ | für einen mittleren,
-\lstinline|\quad| und \lstinline|\qquad| für große Abstände sowie\todo{MD: \texttt{\string\quad=1em \string\qquad=2em} . Sollte erwähnt werden, denn so erkennt man die Schriftabhängigkeit\\PG: OK}
-\lstinline|\!| für die Verkleinerung eines Abstands.
+\lstinline|\quad| und \lstinline|\qquad| für große Abstände sowie
+\lstinline|\!| für die Verkleinerung eines Abstands. Die Vergrößerung des Abstandes
+durch die Anweisungen \lstinline|\quad| und \lstinline|\qquad| ist gleichbedeutend zu den Breiten 1\,em und 2\,em (siehe \vref{abst:horiz}).
 
 \begin{LTXexample}
 \[
@@ -402,11 +402,9 @@ Für \textbf{mehrzeilige} Formeln oder Gleichungssysteme bietet \LaTeX{} die
 Umgebung \texttt{eqnarray} an. Auf Grund verschiedener Defizite dieser
 Umgebung sei an dieser Stelle nur gesagt, dass diese Umgebung nicht genutzt
 werden soll. Das in der Einleitung zu diesem Kapitel genannte Paket
-\texttt{amsmath} bietet eine wesentlich verbesserte Umgebung \texttt{align}.
-
-
-\todo[inline]{PG: verstehe ich nicht:}
-\todo[inline,color=green!40]{MD: So?}
+\texttt{amsmath} bietet die wesentlich verbesserte Umgebung \texttt{align}.
+\todo{PG: verstehe ich nicht:}
+\todo[color=green!40]{MD: So?}
 
 Bei \texttt{align} erhält jede Zeile eine eigene
 Gleichungsnummer, bei \texttt{align*} wird ebenso wie bei
@@ -422,9 +420,8 @@ angegeben werden. Das Ausrichtungssymbol sollte stets \emph{vor} dem Relationsze
 dass die korrekten Abstände ermittelt werden können. 
 
 Der Befehl~\lstinline|\\| trennt die Zeilen.
-
-\todo[inline]{PG: ist das Beispiel so gewollt?}
-\todo[inline,color=green!40]{MD: Hatte vergessen ein \& zu entfernen.}
+\todo{PG: ist das Beispiel so gewollt?}
+\todo[color=green!40]{MD: Hatte vergessen ein \& zu entfernen.}
 \begin{LTXexample}
 \begin{align}
 f(x) & =  \cos x       \\
@@ -455,7 +452,7 @@ Meistens verwendet man dafür folgende Variante:
 Der Befehl \lstinline|\nonumber| bewirkt, dass an diese Stelle keine
 Gleichungsnummer gesetzt wird.
 
-Die Dokumentation mit dem Titel \enquote{Mathmode} wurde bereits erwähnt, soll aber an dieser Stelle
+Die Dokumentation mit dem Titel \enquote{mathmode} wurde bereits erwähnt, soll aber an dieser Stelle
 noch einmal ins Gedächtnis gerufen werden. Neben Zahlreichen Beispielen kann
 die Dokumentation als Nachschlagewerk für den mathematischen Satz genutzt werden.
 

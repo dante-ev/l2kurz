@@ -23,9 +23,9 @@ Eine ausführliche Beschreibung dieses Pakets findet man in \cite{babel}.
 
 \subsubsection{Blocksatz}
 
-Normaler Text wird im Blocksatz, d.\,h.~mit Randausgleich
-gesetzt.  \LaTeX\ führt den Zeilen- und Seitenumbruch
-automatisch durch.  Dabei wird für jeden Absatz die
+\LaTeX{} setzt Text standardmäßig im Blocksatz, d.\,h.~mit Randausgleich,
+wobei der Zeilen- und Seitenumbruch automatisch durchgeführt wird.
+Dabei wird für jeden Absatz die
 bestmögliche Aufteilung der Wörter auf die Zeilen bestimmt,
 und wenn notwendig werden Wörter automatisch abgeteilt.
 \begin{LTXexample}
@@ -41,9 +41,10 @@ kennzeichnen das Ende von
 Absätzen.
 \end{LTXexample}
 
-Üblicherweise werden in \LaTeX{} Absätze mit Einrückungen gekennzeichnet. Mit
-dem Paket \texttt{parskip} kann man die Absatzeinrückung ausschalten und
-Absätze mit Abstand dazwischen kenntlich machen.
+Üblicherweise werden in \LaTeX{} Absätze mit Einrückungen gekennzeichnet. 
+Bei den Standardklassen kann dies mittels des Paketes \texttt{parskip}
+deaktiviert werden und Absätze mit Abstand dazwischen kenntlich machen. 
+Die sogenannten KOMA-Klassen bieten hierfür extra Optionen (siehe \cite{scrguide}).
 
 Mit Hilfe der in Abschnitt~\ref{env} beschriebenen Umgebungen ist
 es möglich, spezielle Textteile jeweils anders zu setzen.
@@ -345,18 +346,20 @@ Die h\"assliche Stra\ss{}e.\\
 
 \begin{table}[tbp]
 \caption{Akzente und spezielle Buchstaben} \label{akzente}
-\begin{symbols}
-\a`o  \>   \lstinline|\`o  | \> \a'o  \> \lstinline|\'o  | \> \^o   \>   \lstinline|\^o  | \\
-\~o   \>   \lstinline|\~o  | \> \a=o  \> \lstinline|\=o  | \> \.o   \>   \lstinline|\.o  | \\
-\u o  \>   \lstinline|\u o | \> \v o  \> \lstinline|\v o | \> \H o  \>   \lstinline|\H o | \\
-\"o   \>   \lstinline|\"o  | \> \c o  \> \lstinline|\c o | \> \d o  \>   \lstinline|\d o | \\
-\b o  \>   \lstinline|\b o | \> \r o  \> \lstinline|\r o | \> \t oo \>   \lstinline|\t oo| \\[6pt]
-\oe   \>   \lstinline|\oe  | \> \OE   \> \lstinline|\OE  | \> \ae   \>   \lstinline|\ae  | \\
-\AE   \>   \lstinline|\AE  | \> \aa   \> \lstinline|\aa  | \> \AA   \>   \lstinline|\AA  | \\
-\o    \>   \lstinline|\o   | \> \O    \> \lstinline|\O   | \> \l    \>   \lstinline|\l   | \\
-\L    \>   \lstinline|\L   | \> \i    \> \lstinline|\i   | \> \j    \>   \lstinline|\j   | \\
-\ss   \>   \lstinline|\ss  | \\
-\end{symbols}
+\centering
+\begin{tabular}{@{}*{6}{l@{\quad}l@{\qquad}}@{}}
+\a`o  &   \lstinline|\`o| & \a'o  & \lstinline|\'o| & \^o   &   \lstinline|\^o| &
+\~o   &   \lstinline|\~o| & \a=o  & \lstinline|\=o| & \.o   &   \lstinline|\.o| \\
+\u o  &   \lstinline|\u o| & \v o  & \lstinline|\v o| & \H o  &   \lstinline|\H o| &
+\"o   &   \lstinline|\"o| & \c o  & \lstinline|\c o| & \d o  &   \lstinline|\d o| \\
+\b o  &   \lstinline|\b o| & \r o  & \lstinline|\r o| & \t oo &   \lstinline|\t oo| \\[6pt]
+\oe   &   \lstinline|\oe| & \OE   & \lstinline|\OE| & \ae   &   \lstinline|\ae| &
+\AE   &   \lstinline|\AE| & \aa   & \lstinline|\aa| & \AA   &   \lstinline|\AA| \\
+\o    &   \lstinline|\o| & \O    & \lstinline|\O| & \l    &   \lstinline|\l| &
+\L    &   \lstinline|\L| & \i    & \lstinline|\i| & \j    &   \lstinline|\j| \\
+\ss   &   \lstinline|\ss| \\
+\end{tabular}
+
 \end{table}
  
 \begin{table}[tbp]
@@ -381,15 +384,12 @@ können
 Umlaute auch durch einfaches Voranstellen eines doppelten Anführungszeichen (\verb|"|) geschrieben werden, 
 also z.\,B.\ \lstinline|"o| für~"`ö"';
 für scharfes~s darf man \lstinline|"s| schreiben:
-\exa
-Die h"assliche Stra"se
-muss schöner werden.
-\exb
-\begin{verbatim}
+
+\begin{LTXexample}
 Die h"assliche Stra"se
 mu"s sch"oner werden.
-\end{verbatim}
-\exc
+\end{LTXexample}
+
 Diese Notation wurde eingeführt, als die direkte Eingabe und
 Anzeige von Umlauten auf vielen Rechnersystemen noch nicht möglich war.
 Als Quasi-Standard zum plattformübergreifenden Austausch von 
@@ -445,17 +445,16 @@ mit \lstinline|\label{...}| definierte Nummer ein.
 Auch hier wird immer die Nummer von der letzten vorherigen
 Verarbeitung des Eingabefiles genommen.
 Beispiel:
-\begin{quote}
-\begin{verbatim}
+\begin{beispiel}
+\begin{lstlisting}
 \section{Algorithmen}
 ...
 Der Beweis findet sich in Abschnitt~\ref{bew}.
 ...
 \section{Beweise} \label{bew}
 ...
-\end{verbatim}
-\end{quote}
- 
+\end{lstlisting}
+ \end{beispiel}
  
 \subsection{Fußnoten}
  
@@ -486,20 +485,15 @@ Der Befehl
 \LaTeX\ verwendet für den hervorgehobenen Text \textit{kursive}
 Schrift.
 
-\exa 
-\emph{Werden innerhalb eines hervorgehobenen Textes
-\emph{nochmals} Passagen hervorgehoben, so setzt \LaTeX\ diese in
-einer \emph{aufrechten} Schrift.}
-\exb
-\begin{verbatim}
+\begin{LTXexample}
 \emph{Werden innerhalb eines 
 hervorgehobenen Textes 
 \emph{nochmals} Passagen
 hervorgehoben, so setzt
 \LaTeX\ diese in einer 
 \emph{aufrechten} Schrift.}
-\end{verbatim}
-\exc
+\end{LTXexample}
+
 
 
 \subsection{Hochgestellter Text}
@@ -507,14 +501,12 @@ Hochgestellten Text in passender Größe generiert folgender Befehl:
 \begin{quote}
 \lstinline|\textsuperscript{|\textit{text}\lstinline|}|
 \end{quote}
-\exa
-le 2\textsuperscript{ième} régime
-\exb
-\begin{verbatim}
-le 2\textsuperscript{ième}
-régime
-\end{verbatim}
-\exc
+
+\begin{LTXexample}
+le 2\textsuperscript{i\`eme}
+r\`egime
+\end{LTXexample}
+
 
 
 
@@ -532,11 +524,15 @@ sogenannter Umgebungen (environments) in der Form
 Umgebungen sind \emph{Gruppen}.
 Sie können auch ineinander geschachtelt werden, dabei muss aber
 die richtige Reihenfolge beachtet werden:
-\begin{quote}
-\lstinline|\begin{aaa}|\\
-\lstinline|  ... \begin{bbb} ... \end{bbb} ... |\\
-\lstinline|\end{aaa}|
-\end{quote}
+\begin{beispiel}
+\begin{lstlisting}
+\begin{aaa}
+      \begin{bbb}
+      ......
+      \end{bbb} 
+\end{aaa}
+\end{lstlisting}	
+\end{beispiel}
 
 
 \subsubsection{Zitate (quote, quotation, verse)}
@@ -544,30 +540,29 @@ die richtige Reihenfolge beachtet werden:
 Die \texttt{quote}-Umgebung eignet sich für kürzere Zitate,
 hervorgehobene Sätze und Beispiele.
 Der Text wird links und rechts eingerückt.
-\exa
+%\exa
+%Eine typographische Faustregel
+%für die Zeilenlänge lautet:
+%\begin{quote}
+%
+%Keine Zeile soll mehr als
+%ca.\ 66~Buchstaben enthalten.
+%\end{quote}
+%Deswegen werden in Zeitungen
+%mehrere Spalten nebeneinander
+%verwendet.
+%\exb 
+\begin{LTXexample}
 Eine typographische Faustregel
 für die Zeilenlänge lautet:
 \begin{quote}
-
 Keine Zeile soll mehr als
 ca.\ 66~Buchstaben enthalten.
 \end{quote}
 Deswegen werden in Zeitungen
 mehrere Spalten nebeneinander
 verwendet.
-\exb 
-\begin{verbatim}
-Eine typographische Faustregel
-für die Zeilenlänge lautet:
-\begin{quote}
-Keine Zeile soll mehr als
-ca.\66~Buchstaben enthalten.
-\end{quote}
-Deswegen werden in Zeitungen
-mehrere Spalten nebeneinander
-verwendet.
-\end{verbatim}
-\exc
+\end{LTXexample}
 
 Die \texttt{quotation}-Umgebung unterscheidet sich in den
 Standardklassen (vgl.\ Tabelle~\ref{docstyles} auf
@@ -610,10 +605,10 @@ verschachteln:
 \end{itemize}
 \end{LTXexample}
 \caption{Beispiel für \texttt{itemize}} \label{item}
-\end{figure}
-
-
-\begin{figure}[!htbp]
+%\end{figure}
+%
+%
+%\begin{figure}[!htbp]
 \begin{LTXexample}
 Nummerierte Listen:
 \begin{enumerate}
@@ -646,10 +641,10 @@ Kleine Tierkunde:
 \item[Gemse:]
    ein gro\ss es Tier, das ...
 \item[Gürteltier:]
-   ein mittelgro\ss es Tier, das ...
+   ein mittelgro"s es Tier, das ...
 \end{description}
 \end{LTXexample}
-\todo[inline]{MD: Der Buchstabe ß kann scheinbar von LTXexample nicht verarbeitet werden }
+
 \caption{Beispiel für \texttt{description}} \label{desc}
 \end{figure}
 
@@ -715,7 +710,19 @@ vorgestellten Umgebungen \texttt{array} und \texttt{tabular} erlaubt
 die \texttt{tabbing}-Umgebung einen Seitenumbruch.
 
 %
-\exa
+%\exa
+%\begin{tabbing}
+%war einmal\quad \=
+% Mittelteil\quad \= \kill
+%links \> Mittelteil \> rechts\\
+%Es \\
+%war einmal \> und ist
+% \> nicht mehr\\
+%ein  \>  \> ausgestopfter\\
+% \>  \> Teddybär
+%\end{tabbing}
+%\exb
+\begin{LTXexample}
 \begin{tabbing}
 war einmal\quad \=
  Mittelteil\quad \= \kill
@@ -726,20 +733,8 @@ war einmal \> und ist
 ein  \>  \> ausgestopfter\\
  \>  \> Teddybär
 \end{tabbing}
-\exb
-\begin{verbatim}
-\begin{tabbing}
-war einmal\quad \=
- Mittelteil\quad \= \kill
-links \> Mittelteil \> rechts\\
-Es \\
-war einmal \> und ist
- \> nicht mehr\\
-ein  \>  \> ausgestopfter\\
- \>  \> Teddybär
-\end{tabbing}
-\end{verbatim}
-\exc
+\end{LTXexample}
+%\exc
 
 
 \subsubsection{Tabellen (tabular)} \label{tabular}
@@ -770,8 +765,7 @@ Strich. Anstelle von \lstinline|\hline| bietet das Paket \texttt{booktabs} unter
 
 \begingroup
 \def\arraystretch{1.1} 
-\vspace{0pt plus 1cm}
-\exa
+\begin{LTXexample}
 % \usepackage{booktabs}
 \begin{tabular}[t]{rl}
 \toprule
@@ -783,20 +777,7 @@ Wert & Zahlensystem \\
 1984 & dezimal \\
 \bottomrule
 \end{tabular}
-\exb
-\begin{verbatim}
-% \usepackage{booktabs}
-\begin{tabular}[t]{rl}
-\toprule
-Wert & Zahlensystem \\
-\midrule
-7C0 & hexadezimal \\
-3700 & oktal \\
-11111000000 & binär \\
-1984 & dezimal \\
-\bottomrule
-\end{verbatim}
-\exc
+\end{LTXexample}
 \endgroup
  
 \endinput
