@@ -1,6 +1,9 @@
 % This is  l2kurz.tex - LaTeX2e Kurzbeschreibung v3.0
 % Siehe https://github.com/texdoc/l2kurz
-
+% arara: pdflatex: {synctex: true}
+% arara: bibtex
+% arara: pdflatex: {synctex: true}
+% arara: pdflatex: {synctex: true}
 \newcommand{\lkver}{3.0}               % laufende Versionsnummer ...
 \newcommand{\lkdate}{1.\ Juli\ 2012}   % ... und Datum
 
@@ -10,25 +13,25 @@
 \typeout{   Copyright 1994, 1995 J.Knappen, H.Partl, E.Schlegl, I.Hyna   }
 \typeout{   Copyright 1987 H.Partl, E.Schlegl, I.Hyna                    }
 
-
+%: Start Header
 \documentclass[11pt,a4paper]{article} % ergaenze `twoside', wenn gewuenscht!
 \NeedsTeXFormat{LaTeX2e}[1998/06/01]  % wegen \mathring und Textsymbolen
 
 % Seitenlayout:
 \usepackage{geometry}
-% \geometry{%
-%  textheight=46\baselineskip,
-%  textwidth=5.2in,
-%  outer=0.5\dimexpr297mm-5.2in-2in\relax,
-% }
+ \geometry{%
+  textheight=46\baselineskip,
+  textwidth=5.2in,
+  outer=0.5\dimexpr297mm-5.2in-2in\relax,
+ }
 
 % für die Bearbeitung ist ein großer rechter Rand von Vorteil
-\geometry{%
- textheight=46\baselineskip,
- textwidth=5.2in,
- left=1cm,
- marginpar=5cm,
-}
+%\geometry{%
+% textheight=46\baselineskip,
+% textwidth=5.2in,
+% left=1cm,
+% marginpar=5cm,
+%}
 
 \usepackage[USenglish,ngerman]{babel}
 \usepackage[utf8]{inputenc}
@@ -116,7 +119,7 @@
 %Mit Farbe:
  keywordstyle=\color{blue!70!black}\bfseries,
  texcsstyle=*\color{blue!70!black}\bfseries,
- moretexcs={part,maketitle,SelectInputMappings,tableofcontents,subsection,subsubsection,chapter,mathcal,midrule,toprule,bottomrule},
+ moretexcs={part,maketitle,SelectInputMappings,tableofcontents,subsection,subsubsection,chapter,mathcal,midrule,toprule,bottomrule,text,includegraphics},
 % keywordsprefix={\  },
  literate=
           {\{}{\textcolor{red!70!black}{\{}}1
@@ -210,13 +213,13 @@
   \kern-.1em/\kern-.15em%
   \lower.25ex\hbox{\scriptsize #2}}
 
-
+%: begin document
 \begin{document}
 \pagenumbering{Roman}
 \nonfrenchspacing      % babel sets frenchspacing automatically.
 %  However, some examples are pointless with frenchspacing in action. 
 %  Besides, the larger space after a sentence make the text more readable.
-
+%: Einleitung
 \input{einleitung}
 
 \clearpage
@@ -224,30 +227,33 @@
 \tableofcontents
 
 \clearpage
- 
+
+%: Allgemeines 
 \input{allgemeines}
 \input{eingabefile}
 \clearpage
-
+%: Textsatz
 \input{textsatz}
 \clearpage
- 
+ %: Mathematik
 \input{mathematik}
 \clearpage
- 
+ %: Bilder
 \input{bilder}
+%: Seitenaufbau
 \input{seitenaufbau}
 \clearpage
-
+%: Schriften
 \input{schriften}
 \clearpage
-
+%: Spezialitäten 
 \input{spezialitaeten}
 \clearpage
-
+%: Anhang
 \input{anhang}
 
 \clearpage
+%: Literaturverzeichnis
 \phantomsection
 \addcontentsline{toc}{section}{\refname}
 \bibliographystyle{unsrtdin}

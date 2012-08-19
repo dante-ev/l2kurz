@@ -25,49 +25,42 @@ zu der von \lstinline:\documentclass: festgelegten Grundschrift.
 Ihr Wirkung reicht bis zum Ende der aktuellen Gruppe oder Umgebung.
 
 
-\begin{table}[hb]
+\begin{table}[!htb]
 \caption{Schriftgrößen} \label{sizes}
-\begin{lminipage}{10cm}
-\begin{tabbing}
-\texttt{xfootnotesizexx}\= und dann der Text \kill
-\lstinline|\tiny|         \> \tiny        winzig kleine Schrift \\
-\lstinline|\scriptsize|   \> \scriptsize  sehr kleine Schrift (wie Indizes)\\
-\lstinline|\footnotesize| \> \footnotesize     kleine Schrift (wie Fußnoten)\\
-\lstinline|\small|        \> \small            kleine Schrift \\
-\lstinline|\normalsize|   \> \normalsize  normale Schrift \\
-\lstinline|\large|        \> \large       große Schrift \\
-\lstinline|\Large|        \> \Large       größere Schrift \\
-\lstinline|\LARGE|        \> \LARGE       sehr große Schrift \\[3pt]
-\lstinline|\huge|         \> \huge        riesig groß \\[3pt]
-\lstinline|\Huge|         \> \Huge        gigantisch
-\end{tabbing}
-\end{lminipage}
+\def\arraystretch{1.25}
+\centering
+\begin{tabular}{@{}ll@{}}
+\toprule
+\lstinline|\tiny|         & \tiny        winzig kleine Schrift \\
+\lstinline|\scriptsize|   & \scriptsize  sehr kleine Schrift (wie Indizes)\\
+\lstinline|\footnotesize| & \footnotesize     kleine Schrift (wie Fußnoten)\\
+\lstinline|\small|        & \small            kleine Schrift \\
+\lstinline|\normalsize|   & \normalsize  normale Schrift \\
+\lstinline|\large|        & \large       große Schrift \\
+\lstinline|\Large|        & \Large       größere Schrift \\
+\lstinline|\LARGE|        & \LARGE       sehr große Schrift \\[3pt]
+\lstinline|\huge|         & \huge        riesig groß \\[3pt]
+\lstinline|\Huge|        & \Huge        gigantisch \\
+\bottomrule
+\end{tabular}
 \end{table}
  
 Die Größen-Befehle verändern auch die Zeilenabstände auf
 die jeweils passenden Werte -- aber nur, wenn die
 Leerzeile, die den Absatz beendet, innerhalb des
 Gültigkeitsbereichs des Größen-Befehls liegt:
-\exa
-{\Large zu enger\\
-Abstand}\par
-\exb
-\begin{verbatim}
+
+\begin{LTXexample}
 {\Large zu enger \\
 Abstand}\par
-\end{verbatim}
-\exc
-\exa
+\end{LTXexample}
+
+\begin{LTXexample}
 {\Large richtiger\\
 Abstand\par}
-\exb
-\begin{verbatim}
-{\Large richtiger\\
-Abstand\par}
-\end{verbatim}
-\exc
-Für korrekte
-Zeilenabstände darf die
+\end{LTXexample}
+
+Für korrekte Zeilenabstände darf die
 schließende geschwungene Klammer also nicht zu früh kommen,
 sondern erst nach einem Absatzende, das übrigens nicht nur als
 Leerzeile, sondern auch als Befehl \lstinline|\par|  eingegeben werden 
@@ -99,43 +92,37 @@ getrennt werden.\par
 
 \begin{table}[hbp]
 \caption{Schriftstile} \label{fonts}
-\begin{lminipage}{10cm}
-\begin{tabbing}\small
-\lstinline|\textnormal|\{\textit{text}\}\qquad\=\lstinline|\normalfont|\qquad\=\kill
-\lstinline|\textrm|\{\textit{text}\}         \>\lstinline|\rmfamily|       \>\textrm{Antiqua}\\
-\lstinline|\textsf|\{\textit{text}\}         \>\lstinline|\sffamily|       \>\textsf{Serifenlose}\\
-\lstinline|\texttt|\{\textit{text}\}         \>\lstinline|\ttfamily|       \>\texttt{Maschinenschrift}\\[1ex]
-\lstinline|\textmd|\{\textit{text}\}         \>\lstinline|\mdseries|       \>\textmd{normal}\\
-\lstinline|\textbf|\{\textit{text}\}         \>\lstinline|\bfseries|       \>\textbf{fett, breiter laufend}\\[1ex]
-\lstinline|\textup|\{\textit{text}\}         \>\lstinline|\upshape|        \>\textup{aufrecht}\\
-\lstinline|\textsl|\{\textit{text}\}         \>\lstinline|\slshape|        \>\textsl{geneigt}\\
-\lstinline|\textit|\{\textit{text}\}         \>\lstinline|\itshape|        \>\textit{kursiv}\\
-\lstinline|\textsc|\{\textit{text}\}         \>\lstinline|\scshape|        \>\textsc{Kapitälchen}\\[1ex]
-\lstinline|\textnormal|\{\textit{text}\}     \>\lstinline|\normalfont|     \>\textnormal{Die Grundschrift des Dokuments}
-\end{tabbing}
-\end{lminipage}
+\def\arraystretch{1.25}
+\centering
+\begin{tabular}{@{}lll@{}}
+\toprule
+\lstinline|\textrm|\{\textit{text}\}     &\lstinline|\rmfamily|   &\textrm{Antiqua}\\
+\lstinline|\textsf|\{\textit{text}\}     &\lstinline|\sffamily|   &\textsf{Serifenlose}\\
+\lstinline|\texttt|\{\textit{text}\}     &\lstinline|\ttfamily|   &\texttt{Maschinenschrift}\\
+\lstinline|\textmd|\{\textit{text}\}     &\lstinline|\mdseries|   &\textmd{normal}\\
+\lstinline|\textbf|\{\textit{text}\}     &\lstinline|\bfseries|   &\textbf{fett, breiter laufend}\\
+\lstinline|\textup|\{\textit{text}\}     &\lstinline|\upshape|    &\textup{aufrecht}\\
+\lstinline|\textsl|\{\textit{text}\}     &\lstinline|\slshape|    &\textsl{geneigt}\\
+\lstinline|\textit|\{\textit{text}\}     &\lstinline|\itshape|    &\textit{kursiv}\\
+\lstinline|\textsc|\{\textit{text}\}     &\lstinline|\scshape|    &\textsc{Kapitälchen}\\
+\lstinline|\textnormal|\{\textit{text}\} &\lstinline|\normalfont| &\textnormal{Die Grundschrift des Dokuments}\\
+\bottomrule
+\end{tabular}
 \end{table}
 
 Die Befehle für Familie, Serie und Form können untereinander und mit den
 Größen-Befehlen kombiniert werden;  allerdings muss nicht jede
 mögliche Kombination tatsächlich als reale Schrift (Font)
 zur Verfügung stehen.
-\exa
-{\small Die kleinen
-\textbf{fetten} Römer
-beherrschten }{\large das
-ganze große \textit{Italien}.}
-\\[6ex]
-{\Large\sffamily\slshape plakativ}
-\exb
-\begin{verbatim}
+
+\begin{LTXexample}
 {\small Die kleinen \textbf{fetten}
 Römer
 beherrschten }{\large das
-ganze große \textit{Italien}.}
+ganze gro"se \textit{Italien}.}
 {\Large\sffamily\slshape plakativ}
-\end{verbatim}
-\exc
+\end{LTXexample}
+
 
 Je \emph{weniger} verschiedene Schriftarten man verwendet, desto
 lesbarer und schöner wird das Schriftstück!
@@ -164,7 +151,7 @@ mit jedem aktuellen \LaTeX-System verwendbar sein \cite{postscript}.
 
 \begin{table}[htb]
 \caption[Pakete für alternative Schriftfamilien]
-{Pakete für alternative Schriftfamilien (Eine leere
+{Pakete für alternative Schriftfamilien \newline\small(Eine leere
 Tabellenspalte bedeutet, dass das Paket die betreffende Schriftfamilie nicht 
 verändert; * kennzeichnet die jeweils als Grundschrift eingestellte Familie.)}
 \label{families}

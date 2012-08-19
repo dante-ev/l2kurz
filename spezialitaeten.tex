@@ -21,13 +21,15 @@ als es in der Dokumentklasse vorgesehen ist, gibt es in
 und dann auf das gesamte Dokument wirkt.  Das kann beispielsweise
 dann notwendig werden, wenn eine Schrift benutzt wird, die eine größerer x-Höhe 
 hat als die voreingestellte Computer-Modern.  Für die Schrift "`Palatino"' etwa
-ist eine Vergrößerung des Zeilenabstandes um ca.\ 5\,\% angemessen:\todo{MD: Paket setspace\\PG: gut}
-
+ist eine Vergrößerung des Zeilenabstandes um ca.\ 5\,\% angemessen:
 \begin{quote}
 \lstinline|\usepackage{mathpazo}|\\
 \lstinline|\linespread{1.05}|
 \end{quote}
 
+Häufig wird ein einenhalbfacher Zeilenabstand gewünscht, wobei bspw. Fußnoten ausgenommen
+sein sollen. Der Befehle \lstinline:\linespread: macht diese Unterscheidung nicht. Zur
+Änderung des Zeilenabstandes sollte daher stets auf das Paket \texttt{setspace} zurückgegriffen werden.
  
  
  
@@ -35,67 +37,69 @@ ist eine Vergrößerung des Zeilenabstandes um ca.\ 5\,\% angemessen:\todo{MD: P
  
 Die Abstände zwischen Wörtern und Sätzen werden von \LaTeX\ 
 automatisch gesetzt.
-Sonstigen horizontalen Abstand kann man mit dem Befehl
+Sonstigen horizontalen Abstand kann man mit den Befehlen
 \begin{beispiel}
-\todo{MD: lieber die Sternvariante als Standard empfehlen\newline PG: OK, ich hab' davon keine Ahnung}
-\lstinline|\hspace{|\textit{länge}\lstinline|}|
+\lstinline|\hspace{|\textit{länge}\lstinline|}|\\
+\lstinline|\hspace*{|\textit{länge}\lstinline|}|
 \end{beispiel}
-einfügen.
-Wenn der Abstand auch am Beginn oder Ende einer Zeile
+einfügen. Wenn der Abstand auch am Beginn oder Ende einer Zeile
 erhalten bleiben soll, muss \lstinline|\hspace*| statt \lstinline|\hspace|
 geschrieben werden.
+
 Die Längenangabe besteht im einfachsten Fall aus einer Zahl
 und einer Einheit.  Die wichtigsten Einheiten sind in
 Tabelle~\ref{units} angeführt.
-\begin{table}[b]
+\begin{table}[!htb]
 \caption{Einheiten für Längenangaben} \label{units}
-\begin{lminipage}{11cm}
-\begin{tabbing}
-\texttt{mm}\qquad \= Millimeter                               \\
-\texttt{cm} \> Zentimeter = 10\,mm                            \\
-\texttt{in} \> inch \(= 25.4\,\mathrm{mm} \)                  \\
-\texttt{pt} \> point \( =(1/72.27)\,\mathrm{in}
-                        \approx 0.351\,\mathrm{mm}\)          \\
-\texttt{bp} \> big point \( =(1/72)\,\mathrm{in}
-                            \approx 0.353\,\mathrm{mm} \)      \\
+\centering
+\def\arraystretch{1.25}
+\begin{tabular}{@{}ll@{}}
+\toprule
+\texttt{mm} & Millimeter                               \\
+\texttt{cm} & Zentimeter = 10\,mm                            \\
+\texttt{in} & inch $= 25.4\,\mathrm{mm} $                 \\
+\texttt{pt} & point $ =(1/72.27)\,\mathrm{in}
+                        \approx 0.351\,\mathrm{mm}$         \\
+\texttt{bp} & big point $ =(1/72)\,\mathrm{in}
+                            \approx 0.353\,\mathrm{mm} $     \\
 %\texttt{dd} \> Didot-Punkt \( = (1238/1157)\,\mathrm{pt}
 %                              \approx 0.376\,\mathrm{mm} \)   \\
 % --- wegen unklarer Definition (0.375 ider 0.376mm) besser nicht benutzen!
-\texttt{em} \> Geviert (doppelte Breite einer Ziffer der aktuellen Schrift)\\
-\texttt{ex} \> Höhe des Buchstabens x der aktuellen Schrift
-\end{tabbing}                    
-\end{lminipage}
+\texttt{em}  &  Geviert (doppelte Breite einer Ziffer der aktuellen Schrift)\\
+\texttt{ex}   & Höhe des Buchstabens x der aktuellen Schrift \\
+\bottomrule
+\end{tabular}
 \end{table}
+
 Die Befehle in Tabelle~\ref{hspace} sind Abkürzungen zum Einfügen
 besonderer horizontaler Abstände.
-\begin{table}[t]
+
+\begin{table}[!htb]
 \caption{Befehle für horizontale Abstände} \label{hspace}
-\begin{lminipage}{13cm}
-\begin{tabbing}
-\texttt{xenspace}\qquad \= \kill
-\lstinline|\,|       \> ein sehr kleiner Abstand (siehe auch Abschnitt~\ref{abstaende})\\
-\lstinline|\enspace| \> so breit wie eine Ziffer \\
-\lstinline|\quad|    \> so breit, wie ein Buchstabe hoch ist
+\centering
+\def\arraystretch{1.25}
+\begin{tabular}{@{}ll@{}}
+\toprule
+\lstinline|\,|       & ein sehr kleiner Abstand (siehe auch Abschnitt~\ref{abstaende})\\
+\lstinline|\enspace| & so breit wie eine Ziffer \\
+\lstinline|\quad|    & so breit, wie ein Buchstabe hoch ist
                    ("`weißes Quadrat"') \\
-\lstinline|\qquad|   \> doppelt so breit wie ein \lstinline|\quad| \\
-\lstinline|\hfill|   \> ein Abstand, der sich von 0 bis \(\infty\)
-                   ausdehnen kann.
-\end{tabbing}
-\end{lminipage}
+\lstinline|\qquad|   & doppelt so breit wie ein \lstinline|\quad| \\
+\lstinline|\hfill|   & ein Abstand, der sich von 0 bis \(\infty\)
+                   ausdehnen kann. \\
+\bottomrule
+\end{tabular}
 \end{table}
-Der Befehl \lstinline|\hfill|\todo{MD: Oder \texttt{\string\hspace*\{\string\fill\}} kann dazu dienen, einen vorgegebenen}
-Platz auszufüllen.
-\exa
+
+Der Befehl \lstinline|\hfill|  kann dazu dienen, einen vorgegebenen Platz auszufüllen.
+
+\begin{LTXexample}
 \raggedright
 Schafft mir\hspace{1.5cm}Raum! \\
-\(\triangleleft\)\hfill \(\triangleright\)\\
-\exb
-\begin{verbatim}
-Schafft mir\hspace{1.5cm}Raum! \\
-\(\triangleleft\)\hfill 
-\(\triangleright\)
-\end{verbatim}
-\exc
+$\triangleleft$\hfill 
+$\triangleright$
+\end{LTXexample}
+
 
 
 \subsubsection{Spezielle vertikale Abstände} \label{vabstaende}
@@ -115,32 +119,34 @@ bleiben soll, muss \lstinline|\vspace*| statt \lstinline|\vspace|
 geschrieben werden.
 Die Befehle in Tabelle~\ref{vspace} sind Abkürzungen für
 bestimmte vertikale Abstände.
-\begin{table}[t]
+\begin{table}[!htb]
 \caption{Befehle für vertikale Abstände} \label{vspace}
-\begin{lminipage}{13cm}
-\begin{tabbing}
-\texttt{xsmallskip}\qquad \= \kill
-\lstinline|\smallskip| \> etwa \(\nfrac{1}{4}\) Zeile \\
-\lstinline|\medskip|   \> etwa \(\nfrac{1}{2}\) Zeile \\
-\lstinline|\bigskip|   \> etwa 1 Zeile \\
-\lstinline|\vfill|     \> ein Abstand, der sich von 0 bis \(\infty\)
-                     ausdehnen kann
-\end{tabbing}
-\end{lminipage}
+\centering
+\def\arraystretch{1.25}
+\begin{tabular}{@{}ll@{}}
+\toprule
+\lstinline|\smallskip| & etwa $\nfrac{1}{4}$ Zeile \\
+\lstinline|\medskip|   & etwa $\nfrac{1}{2}$ Zeile \\
+\lstinline|\bigskip|   & etwa 1 Zeile \\
+\lstinline|\vfill|     & ein Abstand, der sich von 0 bis $\infty$
+                     ausdehnen kann\\
+\bottomrule
+\end{tabular}
 \end{table}
-Der Befehl \lstinline|\vfill| \todo{MD: siehe hspace\\PG: gut} in Verbindung mit \lstinline|\newpage|
+
+Der Befehl \lstinline|\vfill| in Verbindung mit \lstinline|\newpage|
 kann dazu dienen, Text an den unteren Rand einer Seite zu setzen
 oder vertikal zu zentrieren.  Beispielsweise enthält der Quelltext
 für die zweite Seite der vorliegenden Beschreibung:
-\begin{quote}
-\begin{verbatim}
+\clearpage
+\begin{example}
 \vfill
 
 Dieses Dokument wurde mit \LaTeX{} gesetzt.
 ...
 \newpage
-\end{verbatim}
-\end{quote}
+\end{example}
+
  
 Zusätzlichen Abstand zwischen zwei Zeilen \emph{innerhalb}
 eines Absatzes oder einer Tabelle erreicht man mit dem Befehl
@@ -187,13 +193,13 @@ TUGboat Vol.~9, No.~1 (1988)
 \end{thebibliography}
 \end{LTXexample}
 
-\todo[inline,]{MD: Absätze überarbeitet.}
-
 Werden viele Literatureinträge zitiert bzw. verwendet, bietet sich die Nutzung
-einer Datenbank an in Form einer Datei Endung \lstinline|bib| bedeutet. Die Datenbank besitzt ihre eigene Syntax,
+einer Datenbank an. Die Datenbank besitzt ihre eigene Syntax,
 um die benötigten Literatureinträge zu verwalten. Für die komfortable Verwaltung
 von Literaturdatenbanken existieren viele Programme wie beispielsweise JabRef (frei) oder
-Endnote (kommerziell).
+Endnote (kommerziell). Die Datenbank ist im eigentlichen Sinne eine Textdatei mit
+Endung \lstinline|bib|. 
+
 
 Für die Verarbeitung dieser Literaturdatenbanken bieten sich zwei verschiedene 
 Hilfsmittel für \LaTeX{} an. Die klassische Variante ist \emph{Bib\TeX} in Verbindung
@@ -201,7 +207,7 @@ mit einem Literaturverzeichnisstil. Die Anpassung an die eigenen Bedürfnisse
 gestaltet sich mehr als schwierig. Daher wurde in den letzten Jahren das \LaTeX{} 
 Makropaket \emph{biblatex} entwickelt, das alternativ zu \emph{Bib\TeX} das mächtigere
 Programm \emph{biber} nutzen kann. Das Makropaket \emph{biblatex} erlaubt die Manipulation
-des Literaturverzeichnisses auf \LaTeX"=Ebene. Auf CTAN ist eine deutsche Übersetzung
+des Literaturverzeichnisses auf \LaTeX"=Ebene. Auf CTAN ist eine deutsche Übersetzung der Dokumenation
 verfügbar \cite{biblatex-de}.
 
 \endinput

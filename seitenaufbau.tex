@@ -1,3 +1,8 @@
+%!TEX root = l2kurz.tex
+
+% master: l2kurz.tex
+
+
 \section{Seitenaufbau}
 
 \subsection{Kopf- und Fußzeilen} 
@@ -27,7 +32,8 @@ außerdem mit dem Seitenstil
 \lstinline|\markboth|,
 \lstinline|\markright| und
 \lstinline|\pagenumbering|
-beeinflussen kann.
+beeinflussen kann. Zur Gestaltung der Kopf- und Fußzeilen stehen die Pakete \texttt{scrpage2}
+oder \texttt{fancyhdr} zur Verfügung, die dem Nutzer die Anpassungen erleichtern.
 
 \subsection{Gleitobjekte} \label{floats}
 Große Bilder und lange Tabellen lassen sich nicht immer genau 
@@ -45,7 +51,7 @@ Alles, was zwischen
 steht, wird automatisch an eine Stelle
 gesetzt, wo es komplett hinpasst, ohne durch einen Seitenwechsel
 zerrissen zu werden.
-\todo[inline]{PG: mehrfache Durchläufe notwendig bei \cs{ref} und \cs{label}}
+%%\todo[inline]{PG: mehrfache Durchläufe notwendig bei \cs{ref} und \cs{label}}
 
 Mit \lstinline|\caption{...}| setzt man die Bezeichnung der Abbildung.
 Dabei ist nur der Text anzugeben, das Wort "`Abbildung"' und die
@@ -55,33 +61,29 @@ Bei Abbildungen ist es allgemein üblich, die Bezeichnung
 Mit \lstinline|\label| und \lstinline|\ref| kann man die Nummer der
 Abbildung im Text ansprechen, mit \lstinline|\pageref| ihre Seitenzahl.
 Der Befehl \lstinline:\label: muss dabei \emph{nach} dem \lstinline:\caption:-Befehl
-stehen, sonst stimmt die Nummerierung nicht!
+stehen, sonst stimmt die Nummerierung nicht! Wie bereits in der Einführung zum Inhaltsverzeichnis
+erläutert, benötigt \LaTeX{} mindestens zwei Durchläufe für das korrekte setzen der Nummern und
+des Verweises.
 
 Im folgenden Beispiel wird einfach mit dem Befehl \lstinline|\vspace|
 (siehe Abschnitt \ref{vabstaende})
 leerer Raum für ein später einzusetzendes Bild gelassen\todo{PG: besseres Beispiel als ein so leerer weißer Fleck?}:
-\todo[inline]{PG: hier funktioniert die Umgebung LTXexample nicht, weil ein float definiert wird.}
-\exa
-Abbildung~\ref{weiss} auf S.~\pageref{weiss} zeigt ein
-Beispiel aus der Minimal art.
-\exb
-\begin{verbatim}
+\todo{PG: hier funktioniert die Umgebung LTXexample nicht, weil ein float definiert wird.}
+\todo[color=green]{MD: Doch, geändert. Problem sind eher die labels.}
+
+\begin{LTXexample}[preset=\let\label\origlabel]
 Abbildung~\ref{weiss} auf
 S.~\pageref{weiss} zeigt
 ein Beispiel aus der 
 Minimal art.
-\begin{figure}[tb]
-\vspace{6cm}
+\begin{figure}[!htb]
+\centering
+\rule{3cm}{1cm}
 \caption{Landschaft im
 Nebel} \label{weiss}
 \end{figure}
-\end{verbatim}
-\exc
-\begin{figure}[tb]
-\vspace{6cm}
-\caption{Landschaft im
-Nebel} \label{weiss}
-\end{figure}
+\end{LTXexample}
+
 
 \LaTeX\ kann eine Abbildung nach verschiedenen Kriterien platzieren:
 \texttt{h} "`here"' (hier),
@@ -141,5 +143,5 @@ Text stehen darf; die Tabelle muss nicht zwangsläufig durch die
 Der Unterschied zu \texttt{figure} besteht nur darin, 
 dass die Bezeichnung mit dem Wort "`Tabelle"' versehen wird,
 und dass die Tabellen unabhängig von den Abbildungen nummeriert werden.
-\todo[inline]{MD: Der Inhalt ist egal!\\PG: steht doch oben!?!?}
+
 \endinput
