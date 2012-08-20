@@ -26,3 +26,8 @@ l2kurz.brf
 l2kurz.fls
 # bis zu einem "stabileren Zeitpunkt" lohnt es sich m.E. nicht das PDF im Repository zu haben
 l2kurz.pdf
+
+fontspecbeispiel.pdf
+fontspecbeispiel.aux
+fontspecbeispiel.log
+

@@ -1,0 +1,13 @@
+% lualatex fontspecbeispiel
+% pdfcrop fontspecbeispiel.pdf  fontspec.pdf
+
+\documentclass{article}
+\usepackage[ngerman]{babel}
+\usepackage{nopageno}
+% Nur XeLaTeX und LuaLaTeX:
+\usepackage{fontspec}
+\setmainfont{Linux Libertine O}
+\begin{document}
+Das ist ein Text in der Schriftart Linux Libertine mit den Schnitten
+\textit{Kursiv}, \textbf{\textit{Fett Kursiv}} und \textsc{Kapitälchen}.
+\end{document}

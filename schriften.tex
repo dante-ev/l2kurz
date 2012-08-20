@@ -12,7 +12,29 @@ Im folgenden werden Befehle und Makropakete beschrieben, mit denen
 die Schrift auch explizit beeinflusst werden kann.
 Ausführlichere Erläuterungen zum Umgang mit Schriften in \LaTeX{}
 findet man im \textit{\LaTeX-Begleiter} \cite{wonne}
-und in der Online-Dokumentation \cite{fntguide}\todo{PG: wenigstens XeTeX und LuaTeX mit fontspec erwähnen?\\MD: Ich denke, dem sollte ein eigener Abschnitt gewidmet werden.\\PG: die Textlänge...}.
+und in der Online-Dokumentation \cite{fntguide}. Für \XeLaTeX{} und \LuaLaTeX{} steht das Paket
+\texttt{fontspec} zur Verfügung, mit dem beliebige OpenType und TrueType Schriftarten eingebunden werden können, ohne dass sie für \LaTeX{} angepasst werden müssen. 
+
+\begin{lstlisting}
+\documentclass{article}
+\usepackage[ngerman]{babel}
+% Nur XeLaTeX und LuaLaTeX:
+\usepackage{fontspec}
+\setmainfont{Linux Libertine O}
+\begin{document}
+Das ist ein Text in der Schriftart Linux Libertine mit den Schnitten
+\textit{Kursiv}, \textbf{\textit{Fett Kursiv}} und \textsc{Kapitälchen}.
+\end{document}
+\end{lstlisting}
+
+Ergibt einen Text in der Schriftart Linux Libertine:
+
+\medskip
+
+\noindent\includegraphics{fontspec}
+
+
+\todo[color=done,inline]{PG: wenigstens XeTeX und LuaTeX mit fontspec erwähnen?\\MD: Ich denke, dem sollte ein eigener Abschnitt gewidmet werden.\\PG: die Textlänge...}
 
 
 
