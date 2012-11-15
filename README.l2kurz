@@ -24,7 +24,12 @@ l2ksym.tex
 ozean.pdf
 ozean.svg (Quelle)
 
+fontspecbeispiel.tex (Ausgabe wird in l2kurz einbebunden)
+
 Bitte, senden Sie Kommentare, Aenderungswuensche oder
 Hinweise auf Fehler an Patrick Gundlach <patrick@gundla.ch> 
 oder im Bugtracker auf https://github.com/texdoc/l2kurz
 
+Die Lizenz (Open Publication License, v1.0 oder später) ist unter
+http://www.opencontent.org/openpub/ zu finden. Sie gilt
+für alle TeX-Dateien in diesem Verzeichnis.

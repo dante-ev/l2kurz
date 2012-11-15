@@ -9,6 +9,9 @@
 *~
 *.thumbs
 
+# for distribution
+l2kurz-ctan
+l2kurz-ctan.tgz
 
 # source #
 #########################
