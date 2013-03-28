@@ -42,18 +42,25 @@ Beendigung des Befehlsnamens oder einen eigenen Befehl für die Leerstelle
 verwenden.
 
 % PG: würde ich drin lassen
-\renewcommand{\today}{35.~Mai 2012}  % to make sure that the
+%\renewcommand{\today}{31.~Mai 2012}  % to make sure that the
 % line breaks look good, regardless of the date of printing.
-\begin{LTXexample}
+%MD: obeylines zu besseren Darstellung eingefuegt
+%MD: Redefinition von \today lokal halten
+\begin{LTXexample}[firstline=4]
+\renewcommand*\today{%
+  \the\numexpr\year-1978\relax.~Mai \the\year}
+\obeylines
 Heute ist der \today.
 Oder: Heute ist der \today .
 Falsch ist:
  Am \today regnet es.
-Richtig:
+Richtig ist:
  Am \today{} scheint die Sonne.
  Oder: Am \today\ schneit es.
 \end{LTXexample}
  
+
+
 Manche Befehle haben Parameter, die zwischen geschwungenen Klammern angegeben 
 werden müssen. Manche Befehle haben Parameter, die weggelassen oder zwischen
 eckigen Klammern angegeben werden können. Manche Befehle haben Varianten, die 
