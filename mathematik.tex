@@ -27,7 +27,7 @@ vorhandenen Möglichkeiten  um eine Vielzahl von Makros und Umgebungen. Im
 weiteren Verlauf wird daher auch vorausgesetzt, dass das Paket geladen ist. In
 dem genannten Dokument mit dem Titel \enquote{mathmode} wird \texttt{amsmath}
 ausführlich beschrieben.
- 
+
 Mathematische Textteile innerhalb eines Absatzes werden zwischen
 \lstinline|\(| und~\lstinline|\)| oder zwischen \lstinline|$| und~\lstinline|$| oder
 zwischen \lstinline|\begin{math}| und \lstinline|\end{math}|
@@ -50,11 +50,11 @@ Mit $\heartsuit$-lichen
  Grü\ss en
 \end{LTXexample}
 
- 
+
 Größere mathematische Formeln oder Gleichungen setzt man besser
-in eigene Zeilen. Wenn sie \emph{keine} Gleichungsnummer erhalten 
+in eigene Zeilen. Wenn sie \emph{keine} Gleichungsnummer erhalten
 sollen, stellt man sie dazu zwischen \lstinline|\begin{displaymath}| und
-\lstinline|\end{displaymath}| oder zwischen \lstinline|\[| und~\lstinline|\]|; 
+\lstinline|\end{displaymath}| oder zwischen \lstinline|\[| und~\lstinline|\]|;
 wenn sie eine Gleichungsnummer erhalten sollen, stellt man sie
 zwischen \lstinline|\begin{equation}| und \lstinline|\end{equation}|.
 
@@ -80,8 +80,8 @@ im Text ansprechen.
  Aus (\ref{eps}) folgt \dots
 \end{LTXexample}
 
- 
- 
+
+
 Das Setzen im mathematischen Modus unterscheidet sich vom
 Text-Modus vor allem durch folgende Punkte:
 \begin{enumerate}
@@ -101,13 +101,13 @@ Text-Modus vor allem durch folgende Punkte:
 \end{equation}
 \end{LTXexample}
 
- 
+
 \item Jeder einzelne Buchstabe wird als Name einer Variablen
   betrachtet und entsprechend gesetzt (kursiv mit
   zusätzlichem Abstand).  Will man innerhalb eines
   mathematischen Textes normalen Text (in aufrechter Schrift, mit
   Wortabständen) setzen, muss man diesen in
-  \lstinline|\text{...}|\footnote{Duch \texttt{amsmath} bereitgestell} einschließen.
+  \lstinline|\text{...}|\footnote{Durch \texttt{amsmath} bereitgestellt} einschließen.
 
 \begin{LTXexample}
 \begin{equation}
@@ -117,17 +117,17 @@ x \in \mathbf{R}
 \end{equation}
 \end{LTXexample}
 
- 
- 
+
+
 \end{enumerate}
- 
+
 \subsection{Elemente in mathematischen Formeln}
- 
+
 In diesem Abschnitt werden die wichtigsten Elemente, die in
 mathematischen Formeln verwendet werden, kurz beschrieben.  Eine
 Liste aller verfügbaren Symbole enthält
 Anhang~\vref{symbols}.
- 
+
 \bigskip
 
 Kleine \textbf{griechische Buchstaben} werden als \lstinline|\alpha|,
@@ -140,11 +140,11 @@ $\lambda, \xi, \pi, \mu,
  \Phi, \Omega $
 \end{LTXexample}
 
- 
+
 Des weiteren gibt es eine Vielzahl von \textbf{mathematischen Symbolen}:
 von $\in$ über $\Rightarrow$ bis~$\infty$ (siehe
 Anhang~\vref{symbols}).
- 
+
 \bigskip
 
 Neben der voreingestellten Kursivschrift für die Variablen
@@ -175,7 +175,7 @@ a_{1} \qquad x^{2} \qquad
 \]
 \end{LTXexample}
 
- 
+
 Das \textbf{Wurzelzeichen} wird mit \lstinline|\sqrt|, \textit{n}-te
 Wurzeln werden mit \lstinline|\sqrt[|\textit{n}\lstinline|]| eingegeben.
 Die Größe des Wurzelzeichens wird von \LaTeX\ automatisch
@@ -187,14 +187,14 @@ gewählt.
    \qquad \sqrt[3]{2}
 \]
 \end{LTXexample}
- 
+
 Die Befehle \lstinline|\overline| und \lstinline|\underline| bewirken
 \textbf{waagrechte Striche} direkt über bzw.\ unter einem
 Ausdruck.
 \begin{LTXexample}
 $\overline{m+n}$
 \end{LTXexample}
- 
+
 Die Befehle \lstinline|\overbrace| und \lstinline|\underbrace| bewirken
 \textbf{waagrechte Klammern} über bzw.\ unter einem Ausdruck.
 
@@ -202,7 +202,7 @@ Die Befehle \lstinline|\overbrace| und \lstinline|\underbrace| bewirken
 $\underbrace{a+b+\cdots+z}_{26}$
 \end{LTXexample}
 
- 
+
 Um mathematische \textbf{Akzente} wie Pfeile oder Schlangen auf
 Variablen zu setzen, gibt es die in Tabelle~\ref{mathakz} auf
 Seite~\pageref{mathakz} angeführten Befehle.
@@ -217,7 +217,7 @@ y=x^{2} \qquad y'=2x   \qquad y''=2
 \]
 \end{LTXexample}
 
- 
+
 Mathematische \textbf{Funktionen} werden in der Literatur
 üblicherweise nicht kursiv (wie die Namen von Variablen),
 sondern in "`normaler"' Schrift dargestellt.
@@ -237,14 +237,14 @@ Für die Modulo-Funktion gibt es zwei verschiedene Befehle:
 \lstinline|\bmod| für den binären Operator \(a \bmod b\) und
 \lstinline|\pmod{...}| für die Angabe in der Form \(x\equiv a
 \pmod{b}\).
- 
+
 \begin{LTXexample}
 \[
 \lim_{x \to 0} \frac{\sin x}{x}
 =1
 \]
 \end{LTXexample}
- 
+
 Ein \textbf{Bruch} (fraction) wird mit dem Befehl
 \lstinline|\frac{...}{...}| gesetzt.  Für einfache Brüche kann man
 aber auch den Operator~\lstinline|/| verwenden.
@@ -278,12 +278,12 @@ Das \textbf{Integralzeichen} wird mit \lstinline|\int| eingegeben, das
 \textbf{Summenzeichen} mit \lstinline|\sum|.
 Die obere und untere Grenze wird mit \lstinline|^| bzw.~\lstinline|_| wie
 beim \mbox{Hoch-}\slash Tiefstellen angegeben.
- 
+
 Normalerweise werden die Grenzen neben das Integralzeichen
 gesetzt (um Platz zu sparen), durch Einfügen des Befehls
 \lstinline|\limits| wird erreicht, dass die Grenzen oberhalb und
 unterhalb des Integralzeichens gesetzt werden.
- 
+
 Beim Summenzeichen hingegen werden die Grenzen bei der Angabe von
 \lstinline|\nolimits| oder im laufenden Text neben das Summenzeichen
 gesetzt, ansonsten aber unter- und oberhalb.
@@ -295,14 +295,14 @@ gesetzt, ansonsten aber unter- und oberhalb.
 \int \limits_{-\infty}^{+\infty}
 \]
 \end{LTXexample}
- 
-Für \textbf{Klammern} und andere Begrenzer gibt es in \TeX\ 
+
+Für \textbf{Klammern} und andere Begrenzer gibt es in \TeX\
 viele verschiedene Symbole
 (z.\,B.~\([\;\langle\;\|\;\updownarrow\)).
 Runde und eckige Klammern können mit den entsprechenden Tasten
 eingegeben werden, geschwungene mit~\lstinline|\{|, die anderen mit
 speziellen Befehlen (z.\,B.~\lstinline|\updownarrow|).
- 
+
 Setzt man den Befehl \lstinline|\left| vor öffnende Klammern und den
 Befehl \lstinline|\right| vor schließende, so wird automatisch die
 richtige Größe gewählt.
@@ -314,7 +314,7 @@ richtige Größe gewählt.
 \]
 \end{LTXexample}
 
- 
+
 In manchen Fällen möchte man die Größe der Klammern lieber
 selbst festlegen, dazu sind die Befehle
 \lstinline|\bigl|,
@@ -329,7 +329,7 @@ anzugeben.
 \Bigl( (x+1) (x-1) \Bigr) ^{2}
 \]
 \end{LTXexample}
- 
+
 Um in Formeln \textbf{3~Punkte} (z.\,B.\ für \(1,2,\ldots,n\))
 auszugeben, gibt es die Befehle
 \lstinline|\ldots| und \lstinline|\cdots|.
@@ -349,7 +349,7 @@ x_{1}+\cdots+x_{n}
 
 
 \subsection{Nebeneinander Setzen}
- 
+
 Wenn man mit den von \TeX\ gewählten \textbf{Abständen}
 innerhalb von Formeln nicht zufrieden ist, kann man sie mit
 expliziten Befehlen verändern. Die wichtigsten sind
@@ -369,10 +369,10 @@ F_{n} = F_{n-1} + F_{n-2}
 
 \begin{LTXexample}
 \[
-\int\!\!\!\int_{D} 
+\int\!\!\!\int_{D}
 \mathrm{d}x\,\mathrm{d}y
 \quad \textnormal{statt} \quad
-\int\int_{D} 
+\int\int_{D}
 \mathrm{d}x \mathrm{d}y
 \]
 \end{LTXexample}
@@ -413,9 +413,9 @@ erhalten sollen, kann auf die \texttt{array}-Umgebung oder die durch \texttt{ams
 bereitgestellte Umgebung \texttt{gather} zurückgegriffen werden.
 
 Die Umgebungen \texttt{align} arbeitet nach dem Prinzip einer Tabelle, wobei \texttt{\&} als
-Ausrichtungssymbol verwendet wird. Entgegen einer Tabelle, muss die Anzahl der Spalten nicht vorher 
+Ausrichtungssymbol verwendet wird. Entgegen einer Tabelle, muss die Anzahl der Spalten nicht vorher
 angegeben werden. Das Ausrichtungssymbol sollte stets \emph{vor} dem Relationszeichen stehen, so
-dass die korrekten Abstände ermittelt werden können. 
+dass die korrekten Abstände ermittelt werden können.
 
 Der Befehl~\lstinline|\\| trennt die Zeilen.
 \begin{LTXexample}
@@ -428,7 +428,7 @@ f'(x) & =  -\sin x     \\
 \end{LTXexample}
 
 
- 
+
 \textbf{Zu lange Gleichungen} werden von \LaTeX\ \textit{nicht}
 automatisch abgeteilt.
 Der Autor muss bestimmen, an welcher Stelle abgeteilt und wie
@@ -438,9 +438,9 @@ Meistens verwendet man dafür folgende Variante:
 \begin{LTXexample}
 \begin{align}
 \sin x & =  x -\frac{x^{3}}{3!}
-     +\frac{x^{5}}{5!} - {} 
+     +\frac{x^{5}}{5!} - {}
                     \nonumber\\
- &\mathrel{\phantom{=}} 
+ &\mathrel{\phantom{=}}
   -\frac{x^{7}}{7!} + \cdots
 \end{align}
 \end{LTXexample}
