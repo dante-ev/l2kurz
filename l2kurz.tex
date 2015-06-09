@@ -4,11 +4,11 @@
 % arara: bibtex
 % arara: pdflatex: {synctex: true}
 % arara: pdflatex: {synctex: true}
-\newcommand{\lkver}{3.0}               % laufende Versionsnummer ...
-\newcommand{\lkdate}{15.\ November\ 2012}   % ... und Datum
+\newcommand{\lkver}{3.0a}               % laufende Versionsnummer ...
+\newcommand{\lkdate}{9.\ Juni\ 2015}   % ... und Datum
 
 \typeout{   LaTeX2e-Kurzbeschreibung}
-\typeout{   Copyright 2012 Marco Daniel, Patrick Gundlach   }
+\typeout{   Copyright 2012,2015 Marco Daniel, Patrick Gundlach   }
 \typeout{   Copyright 1998--2003 W.Schmidt, J.Knappen, H.Partl, I.Hyna   }
 \typeout{   Copyright 1994, 1995 J.Knappen, H.Partl, E.Schlegl, I.Hyna   }
 \typeout{   Copyright 1987 H.Partl, E.Schlegl, I.Hyna                    }
@@ -160,11 +160,11 @@
 \markboth{}{}
 
 % Make float placement easier
-\renewcommand{\textfraction}{.1}      
+\renewcommand{\textfraction}{.1}
 \renewcommand{\floatpagefraction}{.7}
 
 \makeatletter
-% LaTeXe-Symbol fuer cmss/sbc mit groesserem Absstand L-a und 
+% LaTeXe-Symbol fuer cmss/sbc mit groesserem Absstand L-a und
 % halbfettem Epsilon
 \DeclareRobustCommand{\sbLaTeXe}{{\fontseries{sbc}\selectfont\boldmath%
         L\kern-.25em% -.36
@@ -177,7 +177,7 @@
         }%
         \kern-.15em%
         \TeX\kern.15em2$_{\textstyle\varepsilon}$}}
-        
+
 \makeatother
 \newcommand{\cs}[1]{\texttt{\textbackslash #1}}
 \newcommand\exa{\nopagebreak \begin{flushleft}\smallskip \nopagebreak
@@ -190,7 +190,7 @@
 \newenvironment{lminipage}[1]{%
  \begin{center}\begin{minipage}{#1}\noindent\hrule\medskip}%
  {\par\noindent\hrule \end{minipage}\end{center}}
- 
+
 \newenvironment{ttdescription}{%
   \renewcommand{\descriptionlabel}[1]{%
     \hspace{\labelsep}\texttt{##1}}%
@@ -218,7 +218,7 @@
 \begin{document}
 \pagenumbering{Roman}
 \nonfrenchspacing      % babel sets frenchspacing automatically.
-%  However, some examples are pointless with frenchspacing in action. 
+%  However, some examples are pointless with frenchspacing in action.
 %  Besides, the larger space after a sentence make the text more readable.
 %: Einleitung
 \input{einleitung}
@@ -229,7 +229,7 @@
 
 \clearpage
 
-%: Allgemeines 
+%: Allgemeines
 \input{allgemeines}
 \input{eingabefile}
 \clearpage
@@ -247,7 +247,7 @@
 %: Schriften
 \input{schriften}
 \clearpage
-%: Spezialitäten 
+%: Spezialitäten
 \input{spezialitaeten}
 \clearpage
 %: Anhang

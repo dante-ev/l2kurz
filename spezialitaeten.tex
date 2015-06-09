@@ -5,12 +5,12 @@
 % 2003-04-10 (WaS)
 
 \section{Spezialitäten}
- 
+
 Das komplette Menü der Spezialitäten, die von \LaTeX\ serviert
 werden, ist im \manual\ und in der Online-Dokumentation beschrieben.
 Hier soll nur auf einige besondere "`Schmankerln"' hingewiesen
 werden.
- 
+
 \subsection{Abstände}
 
 \subsubsection{Zeilenabstand}
@@ -19,7 +19,7 @@ Um in einem Schriftstück größere Zeilenabstände zu verwenden,
 als es in der Dokumentklasse vorgesehen ist, gibt es in
 \LaTeX\ den Befehl \lstinline:\linespread:, der im Vorspann stehen sollte
 und dann auf das gesamte Dokument wirkt.  Das kann beispielsweise
-dann notwendig werden, wenn eine Schrift benutzt wird, die eine größerer x-Höhe 
+dann notwendig werden, wenn eine Schrift benutzt wird, die eine größerer x-Höhe
 hat als die voreingestellte Computer-Modern.  Für die Schrift "`Palatino"' etwa
 ist eine Vergrößerung des Zeilenabstandes um ca.\ 5\,\% angemessen:
 \begin{quote}
@@ -27,15 +27,15 @@ ist eine Vergrößerung des Zeilenabstandes um ca.\ 5\,\% angemessen:
 \lstinline|\linespread{1.05}|
 \end{quote}
 
-Häufig wird ein einenhalbfacher Zeilenabstand gewünscht, wobei bspw. Fußnoten ausgenommen
+Häufig wird ein anderthalbfacher Zeilenabstand gewünscht, wobei bspw. Fußnoten ausgenommen
 sein sollen. Der Befehle \lstinline:\linespread: macht diese Unterscheidung nicht. Zur
 Änderung des Zeilenabstandes sollte daher stets auf das Paket \texttt{setspace} zurückgegriffen werden.
- 
- 
- 
+
+
+
 \subsubsection{Spezielle horizontale Abstände}\label{abst:horiz}
- 
-Die Abstände zwischen Wörtern und Sätzen werden von \LaTeX\ 
+
+Die Abstände zwischen Wörtern und Sätzen werden von \LaTeX\
 automatisch gesetzt.
 Sonstigen horizontalen Abstand kann man mit den Befehlen
 \begin{beispiel}
@@ -96,14 +96,14 @@ Der Befehl \lstinline|\hfill|  kann dazu dienen, einen vorgegebenen Platz auszuf
 \begin{LTXexample}
 \raggedright
 Schafft mir\hspace{1.5cm}Raum! \\
-$\triangleleft$\hfill 
+$\triangleleft$\hfill
 $\triangleright$
 \end{LTXexample}
 
 
 
 \subsubsection{Spezielle vertikale Abstände} \label{vabstaende}
- 
+
 Die Abstände zwischen Absätzen, Kapiteln usw.\ werden von
 \LaTeX\ automatisch bestimmt.
 In Spezialfällen kann man zusätzlichen Abstand
@@ -147,7 +147,7 @@ Dieses Dokument wurde mit \LaTeX{} gesetzt.
 \newpage
 \end{example}
 
- 
+
 Zusätzlichen Abstand zwischen zwei Zeilen \emph{innerhalb}
 eines Absatzes oder einer Tabelle erreicht man mit dem Befehl
 \lstinline|\\[|\textit{länge}\lstinline|]|.
@@ -163,7 +163,7 @@ Lindenallee 10 \\[1.5ex]
 
 % \todo[inline]{PG: hier eine kurze Erwähnung von TikZ und anschließend ein Bild, ohne große Erklärung? Hast du ein griffiges Beispiel oder sollen wir auf tex.sx nach einem fragen? Mehr als eine Seite würde ich auf keinen Fall damit verbrauchen, lieber mit einer Aufzählung, welche Vorteile sowas hat (Schriftart/Farben wie im Dokument, Grafik und Quelle sind beieinander, oftmals genauer als Zeichenprogramme, Verbindungen mit dem Text möglich) - aber auch hier Nachteil: Einarbeitung}
 
- 
+
 
 \subsection{Literaturangaben}
 
@@ -175,7 +175,7 @@ Literaturstelle im Text zitiert werden kann, und
 dann folgt der Text der Literaturangabe.
 Die Nummerierung erfolgt automatisch.
 Der Parameter bei \lstinline|\begin{thebibliography}| gibt die
-maximale Breite dieser Nummernangabe an, also z.\,B.\ 
+maximale Breite dieser Nummernangabe an, also z.\,B.\
 \lstinline|{99}| für maximal zweistellige Nummern.
 
 Im Text zitiert man die Literaturstelle dann mit dem Befehl \lstinline|\cite|
@@ -185,7 +185,7 @@ und dem vereinbarten Namen als Argument.
 \begin{LTXexample}[preset=\let\cite\origcite]
 Partl~\cite{pa} hat
 vorgeschlagen ...
- 
+
 \begin{thebibliography}{99}
 \bibitem{pa}
 H.~Partl: \textit{German \TeX,}
@@ -198,13 +198,13 @@ einer Datenbank an. Die Datenbank besitzt ihre eigene Syntax,
 um die benötigten Literatureinträge zu verwalten. Für die komfortable Verwaltung
 von Literaturdatenbanken existieren viele Programme wie beispielsweise JabRef (frei) oder
 Endnote (kommerziell). Die Datenbank ist im eigentlichen Sinne eine Textdatei mit
-Endung \lstinline|bib|. 
+Endung \lstinline|bib|.
 
 
-Für die Verarbeitung dieser Literaturdatenbanken bieten sich zwei verschiedene 
+Für die Verarbeitung dieser Literaturdatenbanken bieten sich zwei verschiedene
 Hilfsmittel für \LaTeX{} an. Die klassische Variante ist \emph{Bib\TeX} in Verbindung
 mit einem Literaturverzeichnisstil. Die Anpassung an die eigenen Bedürfnisse
-gestaltet sich mehr als schwierig. Daher wurde in den letzten Jahren das \LaTeX{} 
+gestaltet sich mehr als schwierig. Daher wurde in den letzten Jahren das \LaTeX{}
 Makropaket \emph{biblatex} entwickelt, das alternativ zu \emph{Bib\TeX} das mächtigere
 Programm \emph{biber} nutzen kann. Das Makropaket \emph{biblatex} erlaubt die Manipulation
 des Literaturverzeichnisses auf \LaTeX"=Ebene. Auf CTAN ist eine deutsche Übersetzung der Dokumenation
