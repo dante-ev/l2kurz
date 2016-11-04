@@ -11,7 +11,7 @@ This repository: https://github.com/texdoc/l2kurz
 
 README für l2kurz
 =================
-Dieses Repository enthält die LaTeX Kurzbeschreibung von Walter Schmidt (und anderen). Der Inhalt ist stellenweise nicht mehr aktuell und bedarf einer Überarbeitung. Diese Version hat als Ursprung die Version von [CTAN:info/lshort/german](http://mirror.ctan.org/info/lshort/german) vom 10. April 2003. Die Dokumentation unterliegt der Open Publication License (V1.0 or höher), siehe http://opencontent.org/openpub/.
+Dieses Repository enthält die LaTeX Kurzbeschreibung von Walter Schmidt (und anderen). Der Inhalt ist stellenweise nicht mehr aktuell und bedarf einer Überarbeitung. Diese Version hat als Ursprung die Version von [CTAN:info/lshort/german](http://mirror.ctan.org/info/lshort/german) vom 10. April 2003. Die Dokumentation unterliegt der Open Publication License (V1.0 oder höher), siehe http://opencontent.org/openpub/.
 
 Das Projekt ruht derzeit im dem Sinne, dass wir nur noch Tippfehler korrigieren. Jeder ist willkommen, Änderungen beizusteuern. Einfach eine Nachricht schicken und wir geben Schreibzugriff auf das Repsitory oder wir pflegen eure Änderungen ein.
 
