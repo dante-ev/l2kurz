@@ -7,3 +7,6 @@ jobs:
      steps:
        - checkout
        - run: latexmk l2kurz
+       - run: mkdir build && cp -r README.md l2kurz.pdf .github/_config.yml build/
+       - run: if [ "$CIRCLE_BRANCH" == "master" ]; then .circleci/deploy-ghpages.sh build/; fi
+
