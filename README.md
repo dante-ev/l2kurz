@@ -11,4 +11,6 @@ Die Dokumentation unterliegt der Open Publication License (V1.0 oder höher), si
 Das Projekt ruht derzeit im dem Sinne, dass wir nur noch Tippfehler korrigieren.
 Jeder ist willkommen, Änderungen beizusteuern.
 
+Generiertes PDF: [l2kurz.pdf](l2kurz.pdf) <!-- funktoiniert nur auf https://texdoc.github.io/l2kurz/ -->
+
 SPDX-License-Identifier:  OPL-1.0+
