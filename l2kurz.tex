@@ -14,9 +14,8 @@
 \typeout{   Copyright 1994, 1995 J.Knappen, H.Partl, E.Schlegl, I.Hyna   }
 \typeout{   Copyright 1987 H.Partl, E.Schlegl, I.Hyna                    }
 
-%: Start Header
 \documentclass[11pt,a4paper]{article} % ergaenze `twoside', wenn gewuenscht!
-\NeedsTeXFormat{LaTeX2e}[1998/06/01]  % wegen \mathring und Textsymbolen
+\NeedsTeXFormat{LaTeX2e}
 
 % Seitenlayout:
 \usepackage{geometry}
@@ -36,7 +35,6 @@
 
 \usepackage[USenglish,ngerman]{babel}
 
-%%
 % EN: Character protrusion and font expansion. See http://www.ctan.org/tex-archive/macros/latex/contrib/microtype/
 % DE: Optischer Randausgleich und Grauwerktkorrektur
 %     Falls bei einer Silbentrennung ploetzlich eine ganze Zeile fehlt (passiert unter Windows XP mit MikTex 2.5 und foxit reader als pdfreader oder \usepackage{pdfcprot}
@@ -110,7 +108,9 @@
 }
 \makeatother
 
-\usepackage{xcolor}
+\usepackage[hyperref,dvipsnames]{xcolor}
+\definecolor{darkblue}{rgb}{0,0,.5}
+
 % für todo-notes, kann später raus
 \colorlet{done}{green!40}
 
@@ -160,41 +160,40 @@
 % \usepackage[textsize=footnotesize]{todonotes}
 
 % Zum Schluss laden:
-\usepackage[pdfpagelabels,pageanchor=false, linktoc=all]{hyperref}
+\usepackage[unicode, pdfpagelabels,pageanchor=false, linktoc=all]{hyperref}
 
-\usepackage{hyperref}
 \usepackage{hyperxmp}
 \hypersetup{%
   pdftitle={LaTeX2e-Kurzbeschreibung},
   pdfauthor={Marco Daniel, Patrick Gundlach, Walter Schmidt et al.},     
 %  pdfcopyright={Copyright (C) 2017, <AUTOR(EN)>. This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License},
-   pdfsubject={LaTeX Kurzanleitung},
-   pdfkeywords={LaTeX, TeX, DANTE e.V.},%ggf. anpassen
-   %pdflicenseurl={http://creativecommons.org/licenses/by-sa/4.0/},
-   pdfcaptionwriter={},
-   pdfcontactaddress={},
-   pdfcontactcity={},
-   pdfcontactpostcode={},
-   pdfcontactcountry={Germany},
-   pdfcontactphone={},
-   pdfcontactemail={},
-   pdfcontacturl={},
-   pdflang={de},
-   pdfmetalang={de},
-    bookmarks=true,                     % show bookmarks bar
-    unicode=true,                      % non - Latin characters in Acrobat’s bookmarks
-    pdftoolbar=true,                        % show Acrobat’s toolbar
-    pdfmenubar=true,                        % show Acrobat’s menu
-    pdffitwindow=false,                 % window fit to page when opened
-    pdfstartview={FitH},                    % fits the width of the page to the window
-    pdfcreator={Creator},                   % creator of the document
-    pdfproducer={Producer},             % producer of the document
-    pdfnewwindow=true,                  % links in new window
-    colorlinks=true,                        % false: boxed links; true: colored links
-    linkcolor=red,                          % color of internal links
-    filecolor=red,                     % color of file links
-    citecolor=red,                     % color of file links
-    urlcolor=red                        % color of external links
+  pdfsubject={LaTeX Kurzanleitung},
+  pdfkeywords={LaTeX, TeX, DANTE e.V.},%ggf. anpassen
+  %pdflicenseurl={http://creativecommons.org/licenses/by-sa/4.0/},
+  pdfcaptionwriter={},
+  pdfcontactaddress={},
+  pdfcontactcity={},
+  pdfcontactpostcode={},
+  pdfcontactcountry={Germany},
+  pdfcontactphone={},
+  pdfcontactemail={},
+  pdfcontacturl={},
+  pdflang={de},
+  pdfmetalang={de},
+  breaklinks=true,
+  bookmarks=true,                    % show bookmarks bar
+  pdftoolbar=true,                   % show Acrobat’s toolbar
+  pdfmenubar=true,                   % show Acrobat’s menu
+  pdffitwindow=false,                % window fit to page when opened
+  pdfstartview={FitH},               % fits the width of the page to the window
+  pdfcreator={Creator},              % creator of the document
+  pdfproducer={Producer},            % producer of the document
+  pdfnewwindow=true,                 % links in new window
+  colorlinks=true,                   % false: boxed links; true: colored links
+  linkcolor=darkblue,                % color of internal links
+  filecolor=darkblue,                % color of file links
+  citecolor=darkblue,                % color of file links
+  urlcolor=darkblue                  % color of external links
 }
 
 
