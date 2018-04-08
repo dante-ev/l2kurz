@@ -252,44 +252,52 @@
   \lower.25ex\hbox{\scriptsize #2}}
 
 \begin{document}
-\pagenumbering{Roman}
 \nonfrenchspacing      % babel sets frenchspacing automatically.
 %  However, some examples are pointless with frenchspacing in action.
 %  Besides, the larger space after a sentence make the text more readable.
+
 %: Einleitung
 \input{einleitung}
-
 \clearpage
-\pagenumbering{arabic}
-\tableofcontents
 
+\tableofcontents
 \clearpage
 
 %: Allgemeines
 \input{allgemeines}
+\clearpage
+
 \input{eingabefile}
 \clearpage
+
 %: Textsatz
 \input{textsatz}
 \clearpage
+
  %: Mathematik
 \input{mathematik}
 \clearpage
+
  %: Bilder
 \input{bilder}
+\clearpage
+
 %: Seitenaufbau
 \input{seitenaufbau}
 \clearpage
+
 %: Schriften
 \input{schriften}
 \clearpage
+
 %: Spezialitäten
 \input{spezialitaeten}
 \clearpage
+
 %: Anhang
 \input{anhang}
-
 \clearpage
+
 %: Literaturverzeichnis
 \phantomsection
 \addcontentsline{toc}{section}{\refname}
@@ -298,4 +306,3 @@
 \bibliography{l2kurz}}
 
 \end{document}
-\endinput
