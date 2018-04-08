@@ -1,9 +1,16 @@
 
 version: 2
 jobs:
-   build:
-     docker:
-       - image: koppor/texlive:v1.5.0
-     steps:
-       - checkout
-       - run: latexmk l2kurz
+  build:
+    docker:
+      - image: koppor/texlive:v1.5.0
+    steps:
+      - checkout
+      - run: latexmk l2kurz
+      - run: mkdir build && cp -r README.md l2kurz.pdf .github/_config.yml build/
+      - store_artifacts:
+          path: build/
+      - run: make ctan
+      - store_artifacts:
+          path: l2kurz-ctan/
+      - run: if [ "$CIRCLE_BRANCH" == "master" ]; then .circleci/deploy-ghpages.sh build/; fi
