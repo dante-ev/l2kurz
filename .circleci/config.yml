@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: koppor/texlive:v1.5.0
+      - image: danteev/texlive:v1.6.0
     steps:
       - checkout
       - run: latexmk l2kurz
