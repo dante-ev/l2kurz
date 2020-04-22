@@ -13,4 +13,13 @@ Jeder ist willkommen, Änderungen beizusteuern.
 
 Generiertes PDF: [l2kurz.pdf](l2kurz.pdf) <!-- funktoiniert nur auf https://dante-ev.github.io/l2kurz/ -->
 
+## Interessante LaTeX-Links
+
+- [learnlatex](https://learnlatex.github.io/)
+- [latextemplates.github.io](https://latextemplates.github.io/) - Zusammenstellung von LaTeX-Templates
+- [awesome latex](https://github.com/egeerardyn/awesome-LaTeX#awesome-latex---) - Liste von begeisternden LaTeX links
+
+## Lizenz
+
 SPDX-License-Identifier:  OPL-1.0+
+
