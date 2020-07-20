@@ -11,7 +11,7 @@ Die Dokumentation unterliegt der Open Publication License (V1.0 oder höher), si
 Das Projekt ruht derzeit im dem Sinne, dass wir nur noch Tippfehler korrigieren.
 Jeder ist willkommen, Änderungen beizusteuern.
 
-Generiertes PDF: [l2kurz.pdf](l2kurz.pdf) <!-- funktoiniert nur auf https://dante-ev.github.io/l2kurz/ -->
+Generiertes PDF: <https://dante-ev.github.io/l2kurz/l2kurz.pdf>.
 
 ## Interessante LaTeX-Links
 
