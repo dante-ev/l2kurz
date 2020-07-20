@@ -1,0 +1,33 @@
+name: Build and publish to gh-pages
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: '1 2 2,16 * *'
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: latexmk l2kurz
+        uses: dante-ev/latex-action@master
+        with:
+          root_file: l2kurz.tex
+          args:
+      - name: make ctan
+        run: make ctan
+      - name: Gather build artifacts
+        run: mkdir build && cp -r README.md l2kurz.pdf .github/_config.yml l2kurz-ctan.tgz build/
+      - name: Gather build artifats
+        uses: actions/upload-artifact@v2
+        with:
+          name: build
+          path: build
+      - name: Deploy
+        if: github.ref == 'refs/heads/master'
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: gh-pages
+          build_dir: build
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
