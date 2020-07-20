@@ -11,7 +11,7 @@ jobs:
       - name: latexmk l2kurz
         uses: dante-ev/latex-action@master
         with:
-          root_file: l2kurz
+          root_file: l2kurz.tex
           args:
       - name: make ctan
         run: make ctan
