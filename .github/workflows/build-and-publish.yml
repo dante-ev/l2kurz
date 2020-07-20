@@ -8,6 +8,7 @@ jobs:
   build_latex:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: latexmk l2kurz
         uses: dante-ev/latex-action@master
         with:
