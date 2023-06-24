@@ -21,4 +21,4 @@ Generiertes PDF: <https://dante-ev.github.io/l2kurz/l2kurz.pdf>.
 
 ## Lizenz
 
-SPDX-License-Identifier: OPL-1.0+
+SPDX-License-Identifier: OPUBL-1.0+
