@@ -45,6 +45,7 @@ trimspaces
 url
 varwidth
 babel
+babel-german
 iftex
 epstopdf
 tcolorbox
