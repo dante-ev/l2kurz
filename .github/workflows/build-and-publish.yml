@@ -1,31 +1,45 @@
 name: Build and publish to gh-pages
 on:
   push:
+    branches:
+      - main
   pull_request:
   schedule:
-    - cron: '1 2 2,16 * *'
+    - cron: '1 2 5 * *'
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
 jobs:
-  build_latex:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: latexmk l2kurz
-        uses: dante-ev/latex-action@master
+      - name: Install TeX Live
+        uses: zauguin/install-texlive@v3
         with:
-          root_file: l2kurz.tex
-          args:
-      - name: make ctan
-        run: make ctan
+            package_file: tl_packages
+      - run: pdflatex l2kurz
+      - run: bibtex l2kurz
+      - run: pdflatex l2kurz
+      - run: pdflatex l2kurz
       - name: Gather build artifacts
-        run: mkdir build && cp -r README.md l2kurz.pdf .github/_config.yml l2kurz-ctan.tgz build/
-      - name: Gather build artifats
-        uses: actions/upload-artifact@v2
+        run: mkdir build && cp -r README.md l2kurz.pdf .github/_config.yml build/
+      - name: Upload build artifats
+        uses: actions/upload-artifact@v4
         with:
           name: build
           path: build
-      - name: Deploy
-        if: github.ref == 'refs/heads/master'
-        uses: crazy-max/ghaction-github-pages@v2
+      - name: Upload to gh-pages branch
+        if: >
+          (github.repository == 'dante-ev/l2kurz') &&
+          (github.ref == 'refs/heads/main')
+        uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: gh-pages
           build_dir: build
