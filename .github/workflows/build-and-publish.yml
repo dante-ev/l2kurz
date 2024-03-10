@@ -19,7 +19,7 @@ jobs:
       - name: Gather build artifacts
         run: mkdir build && cp -r README.md l2kurz.pdf .github/_config.yml l2kurz-ctan.tgz build/
       - name: Gather build artifats
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: build
           path: build
