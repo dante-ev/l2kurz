@@ -15,7 +15,6 @@
 \typeout{   Copyright 1987 H.Partl, E.Schlegl, I.Hyna                    }
 
 \documentclass[11pt,a4paper,DIV=calc,footinclude=false]{scrartcl}
-\NeedsTeXFormat{LaTeX2e}
 
 % für die Bearbeitung ist ein großer rechter Rand von Vorteil
 %\geometry{%
@@ -26,6 +25,25 @@
 %}
 
 \usepackage[USenglish,ngerman]{babel}
+
+\usepackage{ifluatex}
+
+\ifluatex
+  \usepackage{fontspec}
+\else
+  \usepackage[T1]{fontenc}
+\fi
+
+\usepackage{lmodern}
+\usepackage{dtk-logos}
+\usepackage{textcomp,ragged2e,csquotes}
+\usepackage{latexsym}
+\usepackage{graphicx}
+\usepackage[ngerman]{varioref}
+\usepackage{array,longtable,tabularx,booktabs}
+\usepackage{enumitem}
+
+\usepackage{amsmath}
 
 % EN: Character protrusion and font expansion. See http://www.ctan.org/tex-archive/macros/latex/contrib/microtype/
 % DE: Optischer Randausgleich und Grauwerktkorrektur
@@ -40,18 +58,6 @@
         %     In the standard configuration, this template is always in the final mode, so this option only makes a difference if "pros" use the draft mode
 ]{microtype}
 
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage{dtk-logos}
-\usepackage{textcomp,ragged2e,csquotes}
-\usepackage{latexsym}
-\usepackage{graphicx}
-\usepackage[ngerman]{varioref}
-\usepackage{array,longtable,tabularx,booktabs}
-\usepackage{enumitem}
-
-\usepackage{amsmath}
 
 \usepackage{caption}
 \makeatletter
@@ -69,38 +75,48 @@
 \usepackage[normalem]{ulem}
 
 \usepackage{showexpl}
-\makeatletter
-\let\LTXexample\@undefined
-\let\endLTXexample\@undefined
-\let\LTXexample@\@undefined
 
-\lstnewenvironment{LTXexample}[1][]
-{%
-  \@temptokena{#1}%
-  \begingroup
-    \advance\c@ltxexample\@ne \advance\c@lstlisting\@ne
-    \expandafter\lstset\expandafter{\SX@explpreset,#1}%
-    \edef\x{\endgroup
-      \def\noexpand\SX@codefile{\SX@codefile}%
-      \def\noexpand\SX@graphicname{\SX@graphicname}%
-      \def\noexpand\SX@graphicparam{\SX@graphicparam}}%
-  \x
-  \xdef\SX@@explpreset{\the\@temptokena,codefile=\SX@codefile,
-    graphic={[\SX@graphicparam]{\SX@graphicname}}}%
-  \setbox\@tempboxa=\hbox\bgroup% Warum noetig?
-  \def\lst@literate{}%
-  \lstset{extendedchars=true,inputencoding=latin1}%
-  \lst@BeginWriteFile{\SX@codefile}%
-}
-{%
-  \lst@EndWriteFile\egroup
-  \inputencoding{utf8}%
-  \lstset{extendedchars=true,inputencoding=utf8}%
-  \SX@put@code@result
-}
-\makeatother
 
-\usepackage[hyperref,dvipsnames]{xcolor}
+\usepackage[realmainfile]{currfile}
+\usepackage{tcolorbox}
+\tcbuselibrary{listings}
+
+% TODO: Change this to "/tcb/text and listing", tcolorbox Section 17.8 "Common Option Keys of all Libraries"
+\newcount\LTGbeginlineexample
+\newcount\LTGendlineexample
+\renewenvironment{LTXexample}%
+{\LTGbeginlineexample=\numexpr\inputlineno+1\relax}%
+{\LTGendlineexample=\numexpr\inputlineno-1\relax%
+%
+\tcbinputlisting{%
+  listing only,
+  %text and listing,
+  listing file=\currfilepath,
+  colback=green!5!white,
+  colframe=green!25,
+  coltitle=black!90,
+  coltext=black!90,
+  left=8mm,
+  title=Entsprechender \LaTeX{}-Quelltext von \texttt{\currfilepath},
+  listing options={%
+    frame=none,
+    language={[LaTeX]TeX},
+    escapeinside={},
+    firstline=\the\LTGbeginlineexample,
+    lastline=\the\LTGendlineexample,
+    firstnumber=\the\LTGbeginlineexample,
+    basewidth=.5em,
+    aboveskip=0mm,
+    belowskip=0mm,
+    numbers=left,
+    xleftmargin=0mm,
+    numberstyle=\tiny,
+    numbersep=8pt%
+  }
+}
+}
+
+\usepackage[dvipsnames]{xcolor}
 \definecolor{darkblue}{rgb}{0,0,.5}
 
 % für todo-notes, kann später raus
@@ -152,34 +168,34 @@
 % \usepackage[textsize=footnotesize]{todonotes}
 
 % Zum Schluss laden:
-\usepackage[unicode, pdfpagelabels,pageanchor=false, linktoc=all]{hyperref}
+\usepackage[unicode, pdfpagelabels, pageanchor=false, linktoc=all]{hyperref}
 
-\usepackage{hyperxmp}
+%\usepackage{hyperxmp}
 \hypersetup{%
   pdftitle={LaTeX2e-Kurzbeschreibung},
-  pdfauthor={Marco Daniel, Patrick Gundlach, Walter Schmidt et al.},     
+  %pdfauthor={Marco Daniel, Patrick Gundlach, Walter Schmidt et al.},     
 %  pdfcopyright={Copyright (C) 2017, <AUTOR(EN)>. This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License},
   pdfsubject={LaTeX Kurzanleitung},
   pdfkeywords={LaTeX, TeX, DANTE e.V.},%ggf. anpassen
   %pdflicenseurl={http://creativecommons.org/licenses/by-sa/4.0/},
-  pdfcaptionwriter={},
-  pdfcontactaddress={},
-  pdfcontactcity={},
-  pdfcontactpostcode={},
-  pdfcontactcountry={Germany},
-  pdfcontactphone={},
-  pdfcontactemail={},
-  pdfcontacturl={},
+  %pdfcaptionwriter={},
+  %pdfcontactaddress={},
+  %pdfcontactcity={},
+  %pdfcontactpostcode={},
+  %pdfcontactcountry={Germany},
+  %pdfcontactphone={},
+  %pdfcontactemail={},
+  %pdfcontacturl={},
   pdflang={de},
-  pdfmetalang={de},
+  %pdfmetalang={de},
   breaklinks=true,
-  bookmarks=true,                    % show bookmarks bar
+  % bookmarks=true,                    % show bookmarks bar
   pdftoolbar=true,                   % show Acrobat’s toolbar
   pdfmenubar=true,                   % show Acrobat’s menu
   pdffitwindow=false,                % window fit to page when opened
   pdfstartview={FitH},               % fits the width of the page to the window
-  pdfcreator={Creator},              % creator of the document
-  pdfproducer={Producer},            % producer of the document
+  %pdfcreator={Creator},              % creator of the document
+  %pdfproducer={Producer},            % producer of the document
   pdfnewwindow=true,                 % links in new window
   colorlinks=true,                   % false: boxed links; true: colored links
   linkcolor=darkblue,                % color of internal links
@@ -187,8 +203,6 @@
   citecolor=darkblue,                % color of file links
   urlcolor=darkblue                  % color of external links
 }
-
-
 
 %
 % Seitenzahlen oben, aber keine Kopfzeile
