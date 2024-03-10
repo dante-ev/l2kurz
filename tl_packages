@@ -6,7 +6,7 @@ hologo
 iftex
 infwarerr
 intcalc
-kvdefinedkeys
+kvdefinekeys
 ltxcmds
 pdfescape
 pdftexcmds
@@ -20,7 +20,6 @@ caption
 csquotes
 currfile
 dantelogo
-dtx-bibliography
 enumitem
 environ
 etoolbox
@@ -28,13 +27,13 @@ fetamont
 filehook
 float
 graphics
+hvlogos
 hycolor
 hyperref
 koma-script
 kvoptions
 kvsetkeys
 listings
-lmodern
 microtype
 pgf
 ragged2e
@@ -49,5 +48,4 @@ babel
 iftex
 epstopdf
 tcolorbox
-verbatim
 xcolor
