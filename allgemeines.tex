@@ -52,7 +52,6 @@ nicht um die Details von Gestaltung und Satz.
  
 Im Gegensatz dazu steht der visuell orientierte Entwurf eines
 Schriftstückes mit Textverarbeitungs- oder \textsc{dtp}-Programmen wie z.\,B.\ 
-\textsc{Word}.
 In diesem Fall legt der Autor das Layout des Textes gleich bei der
 interaktiven Eingabe fest. Dabei sieht er am Bildschirm das, was
 auch auf der gedruckten Seite stehen wird. Solche Systeme, die das
@@ -110,9 +109,9 @@ zeichnet sich \LaTeX{} vor allem durch die folgenden Vorteile aus:
 \begin{itemize}
 \item Der Anwender muss nur wenige, leicht verständliche Befehle
   angeben, die die logische Struktur des Schriftstücks
-  betreffen, und braucht sich um die gestalterischen Details
-  (fast) nicht zu kümmern.
-\item Das Setzen von mathematischen Formeln ist besonders gut
+  betreffen, und muss sich nicht um die gestalterischen Details
+  kümmern.
+\item Das Setzen von mathematischen Formeln wird besonders gut
   unterstützt.
 \item Auch anspruchsvolle Strukturen wie Fußnoten, Literaturverzeichnisse,
   Tabellen u.\,v.\,a.\  können mit wenig Aufwand erzeugt werden.
@@ -124,10 +123,10 @@ zeichnet sich \LaTeX{} vor allem durch die folgenden Vorteile aus:
 \item \LaTeX-Dokumente sind zwischen verschiedenen Installationen und
  Rechnerplattformen austauschbar.
 \item Im Gegensatz zu vielen \textsc{wysiwyg}-Programmen bearbeitet \LaTeX{} auch
-  lange oder komplizierte Dokumente zuverlässig,
-  und sein Ressourcenverbrauch (Speicher, Rechenleistung) ist vergleichsweise
-  mäßig.
+  lange oder komplizierte Dokumente zuverlässig, sein Ressourcenverbrauch -- was Arbeitsspeicher und Rechenleistung angeht -- ist vergleichsweise
+  gering.
 \end{itemize}
+
 Ein Nachteil soll freilich auch nicht verschwiegen werden:
 \begin{itemize}
 \item Dadurch, dass der Text erst von \LaTeX\ nach PDF gewandelt wird, unterscheidet sich der Arbeitsablauf von \LaTeX\ stark von den üblichen Textverarbeitungen bzw. DTP-Programmen. Das erfordert ein Umdenken und eine gewisse Einarbeitung.
@@ -138,9 +137,7 @@ Der typische Ablauf beim Arbeiten mit \LaTeX{} ist:
 \begin{enumerate}
   \item Eine Eingabedatei schreiben, das den Text und die \LaTeX-Befehle 
   enthält.
-  \item Dieses File mit \LaTeX{} bearbeiten; dabei wird eine Datei
-  erzeugt, die den gesetzten Text in einem geräteunabhängigen Format
-  (\textsc{dvi}, \textsc{pdf} oder auch PostScript) enthält.
+  \item Diese Datei mit einer \LaTeX-Engine wie lualatex oder pdflatex bearbeiten; dabei wird eine PDF-Datei erzeugt.
   \item Einen \enquote{Probeausdruck} davon auf dem Bildschirm anzeigen (Preview).
   \item Wenn nötig, die Eingabe korrigieren und zurück zu Schritt~2.
   \item Die Ausgabedatei drucken.
@@ -153,6 +150,7 @@ wiederholte \LaTeX-Bearbeitung des Textes muss noch von Hand
 angestoßen werden und läuft ebenfalls in einem eigenen Fenster ab.
 
 Wenn der Texteditor keine Schnittstelle anbietet, um \LaTeX{} direkt aus einem Menüpunkt heraus aufzurufen, dann ist der übliche Weg über die Kommandozeile bzw. Eingabeaufforderung. Dort wird dann das Kommando \texttt{pdflatex} aufgerufen und als Parameter wird der Name der Datei angegeben, unter der das Dokument auf der Festplatte gespeichert ist.
+
 \begin{beispiel}
   \texttt{pdflatex masterarbeit.tex}
 \end{beispiel}
