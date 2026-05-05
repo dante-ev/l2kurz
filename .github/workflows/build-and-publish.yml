@@ -31,7 +31,7 @@ jobs:
       - name: Gather build artifacts
         run: mkdir build && cp -r README.md l2kurz.pdf .github/_config.yml build/
       - name: Upload build artifats
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: build
           path: build
