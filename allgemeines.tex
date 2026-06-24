@@ -22,7 +22,7 @@ entsprechend der logischen Struktur des Dokuments auf vorgefertigte
 Layout-Elemente zurückgreift.
 
 
-\LaTeXe{} ist die aktuelle Version und mit dem Fokus auf Stabilität werden derzeit nur noch Fehler behoben. Eine Weiterentwicklung findet im \LaTeX{}3"=Projekt statt, einige Zusatzmodule (\emph{Pakete}) für \LaTeX{} benutzen schon die neue Version, für den Benutzer ist dies jedoch in der Regel unsichtbar.
+\LaTeXe{} ist die aktuelle Version und mit dem Fokus auf Stabilität werden derzeit nur noch Fehler behoben. Eine Weiterentwicklung findet im \LaTeX{}3"=Projekt statt. Viele Zusatzmodule (\emph{Pakete}) für \LaTeX{} benutzen schon die neue Version, für den Benutzer ist dies jedoch in der Regel nicht erkennbar.
 
 
 \subsection{Grundkonzept}
@@ -39,20 +39,17 @@ dafür notwendigen Anweisungen dazu.
 das Programm \TeX{} ist sein Setzer.
  
 Ein menschlicher Buch-Designer erkennt die Absichten des Autors
-(z.\,B.\ Kapitel"=Überschriften, Zitate, Beispiele, Formeln
-\dots) meistens aufgrund seines Fachwissens aus dem Inhalt des
+(z.\,B.\ Kapitel"=Überschriften, Zitate, Beispiele, Formeln,
+\ldots) meistens aufgrund seines Fachwissens aus dem Inhalt des
 Manuskripts.  \LaTeX{} dagegen ist \enquote{nur} ein Programm und
 benötigt daher zusätzliche Informationen vom Autor, die die
 logische Struktur des Textes beschreiben.
-Diese Informationen werden in Form von sogenannten \enquote{Befehlen}
-innerhalb des Textes angegeben.
-Der Autor braucht sich also
-(weitgehend) nur um die logische Struktur seines Werkes zu kümmern,
-nicht um die Details von Gestaltung und Satz.
+Diese Informationen werden in Form von Formatierungsanweisungen, den sogenannten \enquote{Befehlen}, innerhalb des Textes angegeben.
+Der Autor braucht sich also (weitgehend) nur um die logische Struktur seines Werkes zu kümmern, nicht um die Details von Gestaltung und Satz.
  
 Im Gegensatz dazu steht der visuell orientierte Entwurf eines
 Schriftstückes mit Textverarbeitungs- oder \textsc{dtp}-Programmen wie z.\,B.\ 
-\textsc{Word} oder \textsc{OpenOffice/LibreOffice} .
+\textsc{Microsoft Word} oder \textsc{OpenOffice/LibreOffice} .
 In diesem Fall legt der Autor das Layout des Textes gleich bei der
 interaktiven Eingabe fest. Dabei sieht er am Bildschirm das, was
 auch auf der gedruckten Seite stehen wird. Solche Systeme, die das
@@ -61,9 +58,8 @@ visuelle Entwerfen unterstützen, werden auch \textsc{wysiwyg}-Systeme
  
 Bei \LaTeX{} sieht der Autor beim Schreiben der Eingabedatei in
 der Regel noch nicht sofort, wie der Text nach dem Formatieren 
-aussehen wird. Er kann aber %durch Aufruf des entsprechenden Programms 
-jederzeit einen \enquote{Probe-Ausdruck} seines Schriftstücks auf dem
-Bildschirm machen und danach seine Eingabedatei entsprechend 
+aussehen wird. Er kann aber durch das regelmäßige Übersetzen jederzeit einen \enquote{Probe-Ausdruck} seines Schriftstücks auf dem
+Bildschirm erstellen und danach seine Eingabedatei entsprechend 
 korrigieren und die Arbeit fortsetzen.
  
  
@@ -76,8 +72,8 @@ vor allem eine Frage der Ästhetik ist -- wenn das
 Schriftstück vom künstlerischen Standpunkt aus \enquote{schön}
 aussieht, dann ist es schon gut \enquote{designed}.
 Da Schriftstücke jedoch gelesen und nicht in einem Museum
-aufgehängt werden, sind die leichtere Lesbarkeit und bessere
-Verständlichkeit wichtiger als das schöne Aussehen.
+aufgehängt werden, sind leichtere Lesbarkeit und bessere
+Verständlichkeit wichtiger als schönes Aussehen.
  
 Beispiele:
 Die Schriftgröße und Nummerierung von Überschriften soll so
@@ -150,7 +146,7 @@ also nicht immer wieder von neuem gestartet werden.  Nur die
 wiederholte \LaTeX-Bearbeitung des Textes muss noch von Hand 
 angestoßen werden und läuft ebenfalls in einem eigenen Fenster ab.
 
-Wenn der Texteditor keine Schnittstelle anbietet, um \LaTeX{} direkt aus einem Menüpunkt heraus aufzurufen, dann ist der übliche Weg über die Kommandozeile bzw. Eingabeaufforderung. Dort wird dann das Kommando \texttt{pdflatex} aufgerufen und als Parameter wird der Name der Datei angegeben, unter der das Dokument auf der Festplatte gespeichert ist.
+Wenn der Texteditor keine Schnittstelle anbietet, um \LaTeX{} direkt aus einem Menüpunkt heraus aufzurufen, dann ist der übliche Weg über die Kommandozeile bzw. Eingabeaufforderung. Dort wird dann beispielsweise der Befehl \texttt{pdflatex} aufgerufen, als Parameter wird der Name der Datei angegeben, unter der das Dokument auf der Festplatte gespeichert ist.
 
 \begin{beispiel}
   \texttt{pdflatex masterarbeit.tex}
